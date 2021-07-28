@@ -8,7 +8,7 @@ date: "23/09/2020"
 - [Documentación Api´s para Beyond Up Mutualidad](#documentación-apis-para-beyond-up-mutualidad)
   - [Objetivo](#objetivo)
   - [Restricciones](#restricciones)
-  - [1.- Factibilidad](##1--factibilidad)
+  - [1.- Factibilidad](#1--factibilidad)
     - [1.1.- Factibilidad por Homepass](#11--factibilidad-por-homepass)
         - [1.1.1.- Ejemplo de llamada](#111--ejemplo-de-llamada)
         - [1.1.2.- Respuesta de Salida](#112--respuesta-de-salida)
@@ -111,7 +111,8 @@ Disponer Apis para que beyond Up realice gestión sobre los Homepass de Mundo Pa
 A partir de la habilitación de estas Apis, beyond UP debe deja de hacer gestión sobre Homepass y de asignación de Bocas de Naps.
 
 ## 1.- Factibilidad
-## 1.- Factibilidad por Homepass
+Breve descripción
+### 1.1.- Factibilidad por Homepass
 Este método permite consultar la factibilidad de un homepass.
 
 Los parámetros que recibe son los siguientes:
@@ -144,18 +145,18 @@ Datos de Salida
 
 Ruta : GET /factibilidad/consultahp
 
-### 1.1.- Ejemplo de llamada
+#### 1.1.1- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
 		"codigoHomepass": "98024346"	 
 	}
-### 1.2.- Respuesta de Salida
+#### 1.1.2.- Respuesta de Salida
 
 codigo: 200 éxito mensaje: descripción del mensaje
 
-### 1.2.1- Respuesta de Error Homepass no disponible
+##### 1.1.2.1.- Respuesta de Error Homepass no disponible
 
 	{
 		"error": {
@@ -167,7 +168,7 @@ codigo: 200 éxito mensaje: descripción del mensaje
 	} 
 
 
-### 1.2.2- Respuesta de Error código Homepass erróneo
+##### 1.1.2.2.- Respuesta de Error código Homepass erróneo
 
 	{
     “error”: {
@@ -178,7 +179,7 @@ codigo: 200 éxito mensaje: descripción del mensaje
     “codigo”: 404
 	}
   
-### 1.2.3- Respuesta de Exito
+##### 1.1.2.3.- Respuesta de Exito
 
 	{
     "success": {
