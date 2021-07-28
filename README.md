@@ -103,16 +103,16 @@ date: "23/09/2020"
     - [8.2 .- Listado de Provincias](#82---listado-de-provincias)
     - [8.3 .- Listado de Comunas](#83---listado-de-comunas)
 
-## Objetivo
+# Objetivo
 
 Disponer Apis para que beyond Up realice gestión sobre los Homepass de Mundo Pacífico.
 
-## Restricciones
+# Restricciones
 A partir de la habilitación de estas Apis, beyond UP debe deja de hacer gestión sobre Homepass y de asignación de Bocas de Naps.
 
-## 1.- Factibilidad
+# 1.- Factibilidad
 Breve descripción
-### 1.1.- Factibilidad por Homepass
+## 1.1.- Factibilidad por Homepass
 Este método permite consultar la factibilidad de un homepass.
 
 Los parámetros que recibe son los siguientes:
@@ -143,20 +143,21 @@ Datos de Salida
 | bocaDisponible  | string | Si no esta ocupado indicar si hay boca disponible (SI o NO) | 
 | Nodo            | string |  Nodo al que esta asignado el Homepass |
 
-Ruta : GET /factibilidad/consultahp
+Ruta : GET `/factibilidad/consultahp`
 
-#### 1.1.1- Ejemplo de llamada
+### 1.1.1- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
 		"codigoHomepass": "98024346"	 
 	}
-#### 1.1.2.- Respuesta de Salida
+
+### 1.1.2.- Respuesta de Salida
 
 codigo: 200 éxito mensaje: descripción del mensaje
 
-##### 1.1.2.1.- Respuesta de Error Homepass no disponible
+#### 1.1.2.1.- Respuesta de Error Homepass no disponible
 
 	{
 		"error": {
@@ -168,79 +169,78 @@ codigo: 200 éxito mensaje: descripción del mensaje
 	} 
 
 
-##### 1.1.2.2.- Respuesta de Error código Homepass erróneo
+#### 1.1.2.2.- Respuesta de Error código Homepass erróneo
 
 	{
-    “error”: {
-        “codigoRespuesta”: 0,
-        “descripcionRespuesta”: “Error”,
-        “detalleRespuesta”: "Código Homepass no existente"
-    },
-    “codigo”: 404
+        “error”: {
+            “codigoRespuesta”: 0,
+            “descripcionRespuesta”: “Error”,
+            “detalleRespuesta”: "Código Homepass no existente"
+        },
+        “codigo”: 404
 	}
   
-##### 1.1.2.3.- Respuesta de Exito
+#### 1.1.2.3.- Respuesta de Exito
 
 	{
-    "success": {
-        "codigoRespuesta": 1,
-        "descripcionRespuesta": {
-            "data": [
-                {
-                  "idHomepass": 458530,
-                  "codigoHomepass": 26001745,
-                  "tecnologia": "ftth",
-                  "codigonap": 9879,
-                  "nap": "01",
-                  "comuna": "chillan",
-                  "codigoPostal": 1458744,
-                  "via": "Pasaje",
-                  "calle": "EL MEDIO",
-                  "numero": "235",
-                  "departamento": null,
-                  "acceso": "G",
-                  "estado": "Ocupado",
-                  "cliente": "CC1451474",
-                  "bocaNap": "01",
-                  "bocadisponible": "SI",
-                   "nodo": "CHIL_01"
-                }
-            ]
-        }
-    },
-    "codigo": 200
-	}
-
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                    "idHomepass": 458530,
+                    "codigoHomepass": 26001745,
+                    "tecnologia": "ftth",
+                    "codigonap": 9879,
+                    "nap": "01",
+                    "comuna": "chillan",
+                    "codigoPostal": 1458744,
+                    "via": "Pasaje",
+                    "calle": "EL MEDIO",
+                    "numero": "235",
+                    "departamento": null,
+                    "acceso": "G",
+                    "estado": "Ocupado",
+                    "cliente": "CC1451474",
+                    "bocaNap": "01",
+                    "bocadisponible": "SI",
+                    "nodo": "CHIL_01"
+                    }
+                ]
+            }
+        },
+        "codigo": 200
+    }
 
 
 	{
-    "success": {
-        "codigoRespuesta": 1,
-        "descripcionRespuesta": {
-            "data": [
-                {
-                "idHomepass":458530,
-               "codigoHomepass":26001745,
-               "tecnologia":"ftth",
-               "codigonap":98794,
-               "nap":"01",
-               "comuna":"chillan",
-               "codigoPostal":1458744,
- 	             "via": "Pasaje",
-               "calle":"EL MEDIO",
-               "numero":"235",
-               "departamento":null,
-               "acceso":"G",
-               "estado":"Disponible",
-               "cliente":"",
-               "bocaNap":"",
-               "bocadisponible":"NO",
-	             "nodo": "CHIL_01"
-                }
-            ]
-        }
-    },
-    "codigo": 200
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                    "idHomepass":458530,
+                "codigoHomepass":26001745,
+                "tecnologia":"ftth",
+                "codigonap":98794,
+                "nap":"01",
+                "comuna":"chillan",
+                "codigoPostal":1458744,
+                    "via": "Pasaje",
+                "calle":"EL MEDIO",
+                "numero":"235",
+                "departamento":null,
+                "acceso":"G",
+                "estado":"Disponible",
+                "cliente":"",
+                "bocaNap":"",
+                "bocadisponible":"NO",
+                    "nodo": "CHIL_01"
+                    }
+                ]
+            }
+        },
+        "codigo": 200
 	}
 
 ## 2.- Creación de Reserva
