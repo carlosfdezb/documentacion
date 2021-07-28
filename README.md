@@ -220,22 +220,137 @@ codigo: 200 éxito mensaje: descripción del mensaje
                 "data": [
                     {
                     "idHomepass":458530,
-                "codigoHomepass":26001745,
-                "tecnologia":"ftth",
-                "codigonap":98794,
-                "nap":"01",
-                "comuna":"chillan",
-                "codigoPostal":1458744,
-                    "via": "Pasaje",
-                "calle":"EL MEDIO",
-                "numero":"235",
-                "departamento":null,
-                "acceso":"G",
-                "estado":"Disponible",
-                "cliente":"",
-                "bocaNap":"",
-                "bocadisponible":"NO",
+                    "codigoHomepass":26001745,
+                    "tecnologia":"ftth",
+                    "codigonap":98794,
+                    "nap":"01",
+                    "comuna":"chillan",
+                    "codigoPostal":1458744,
+                        "via": "Pasaje",
+                    "calle":"EL MEDIO",
+                    "numero":"235",
+                    "departamento":null,
+                    "acceso":"G",
+                    "estado":"Disponible",
+                    "cliente":"",
+                    "bocaNap":"",
+                    "bocadisponible":"NO",
                     "nodo": "CHIL_01"
+                    }
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.2.- Factibilidad por direccion
+Este método permite consultar la factibildiad de una dirección.
+
+Los parámetros que recibe son los siguientes:
+
+*Parámetros de entrada:*
+| Campo  |  Tipo  | Formato |     Requerido      |             Descripción     |
+|:------ |:------:|:-------:|:------------------:|----------------------------:|
+| calle  | string |         |         Si         |          nombre de la calle |
+| numero | string |   no    |         No         |        número de la calle   |
+|comuna  |  int   |         |      Si            |Código de comuna según Subtel|
+|forcenap|  int   |         |      Si            |Al indicar 1, solo se valide que exista boca disponible|
+
+*Datos de Salida:*
+| Campo          |  Tipo  |                         Descripción              |
+|:---------------|:------:|-------------------------------------------------:| 
+| idHomepass     |  int   |                 Código interno del Homepass      |
+| codigoHomepass |  int   |                 Código del Homepass              | 
+| tecnologia     | string |                 Indica la tecnología             |
+| codigonap      |  int   |                       Código del Nap        |         
+| nap            | string |                     Descripción del Nap      |               
+| comuna         | string |                     Nombre de la comuna       |              
+| codigoPostal   |  int   |                        Código Postal           |      
+| via            |  string|                        Tipo de Calle        |                
+| calle          | string |                     Nombre de la calle       |               
+| numero         | string |                   Numeración de la calle      |              
+| departamento   | string |                       Departamento             |           
+| acceso         | string |                                          |           
+| estado         | string |                                           |                  
+| cliente        | string |        Si esta ocupado indicar el codigo de cliente|         
+| bocaNap        | string |               Si esta ocupado indicar la boca     |        
+| bocaDisponible | string | Si no esta ocupado indicar si hay boca disponible (SI o NO) |
+| Nodo           | string |            Nodo al que esta asignado el Homepass |
+
+Ruta : GET `/factibilidad/consultaFactibilidad?calle={Calle}&numero={Numero}&comuna={Comuna}&forceNap={ForceNap}`
+
+### 1.2.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "calle":"MINERO VICTOR FUENTEALBA"
+        "numero":"981" 	
+        "comuna":"8102" 
+        "forcenap":"" 
+	}
+
+### 1.2.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.2.2.1- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados "
+        },
+        "codigo": 404
+	} 
+  
+#### 1.2.2.2- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                    "idHomepass": 458530,
+                    "codigoHomepass": 26001745,
+                    "tecnologia": "ftth",
+                    "codigonap": 9879,
+                    "nap": "01",
+                    "codComuna": 8102,
+                    "comuna": "chillan",
+                    "codigoPostal": 1458744,
+                    "via": "Pasaje",
+                    "calle": "MINERO LUIS ALFREDO AMAYA",
+                    "numero": "235",
+                    "departamento": null,
+                    "acceso": "G",
+                    "estado": "Ocupado",
+                    "cliente": "CC1451474",
+                    "bocaNap": "01",
+                    "bocadisponible": "SI",
+                    "nodo": "CHIL_01"
+                    },
+                    {
+                    "idHomepass": 458531,
+                    "codigoHomepass": 26001715,
+                    "tecnologia": "ftth",
+                    "codigonap": 9879,
+                    "nap": "01",
+                    "codComuna": 8102,
+                    "comuna": "chillan",
+                    "codigoPostal": 1458744,
+                    "via": "Pasaje",
+                    "calle": "MINERO LUIS ALFREDO AMAYA",
+                    "numero": "235",
+                    "departamento": null,
+                    "acceso": "G",
+                    "estado": "Disponible",
+                    "cliente": "CC1451474",
+                    "bocaNap": "01",
+                    "bocadisponible": "SI",
+                    "nodo": "CHIL_01"               
                     }
                 ]
             }
@@ -479,119 +594,6 @@ codigo: 200 éxito mensaje: descripcion del mensaje
     "total": 2
 	}
 
-
-## 5.- Factibilidad por direccion
-Este método permite consultar la factibildiad de una dirección.
-
-Los parámetros que recibe son los siguientes:
-
-Parámetros de entrada
-| Campo  |  Tipo  | Formato |     Requerido      |             Descripción     |
-|:------ |:------:|:-------:|:------------------:|----------------------------:|
-| calle  | string |         |         Si         |          nombre de la calle |
-| numero | string |   no    |         No         |        número de la calle   |
-|comuna  |  int   |         |      Si            |Código de comuna según Subtel|
-|forcenap|  int   |         |      Si            |Al indicar 1, solo se valide que exista boca disponible|
-
-Ruta : GET /factibilidad/consultaFactibilidad
-
-Datos de Salida
-| Campo          |  Tipo  |                         Descripción              |
-|:---------------|:------:|-------------------------------------------------:| 
-| idHomepass     |  int   |                 Código interno del Homepass      |
-| codigoHomepass |  int   |                 Código del Homepass              | 
-| tecnologia     | string |                 Indica la tecnología             |
-| codigonap      |  int   |                       Código del Nap        |         
-| nap            | string |                     Descripción del Nap      |               
-| comuna         | string |                     Nombre de la comuna       |              
-| codigoPostal   |  int   |                        Código Postal           |      
-| via            |  string|                        Tipo de Calle        |                
-| calle          | string |                     Nombre de la calle       |               
-| numero         | string |                   Numeración de la calle      |              
-| departamento   | string |                       Departamento             |           
-| acceso         | string |                                          |           
-| estado         | string |                                           |                  
-| cliente        | string |        Si esta ocupado indicar el codigo de cliente|         
-| bocaNap        | string |               Si esta ocupado indicar la boca     |        
-| bocaDisponible | string | Si no esta ocupado indicar si hay boca disponible (SI o NO) |
-| Nodo           | string |            Nodo al que esta asignado el Homepass |
-
-### 5.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-	  "calle":"MINERO VICTOR FUENTEALBA"
-	  "numero":"981" 	
-	  "comuna":"8102" 
-	  "forcenap":"" 
-	}
-
-### 5.2.- Respuesta de Salida
-codigo: 200 éxito mensaje: descripcion del mensaje
-### 5.2.1- Respuesta de Error
-
-	{
-    "error": {
-        "codigoRespuesta": 0,
-        "descripcionRespuesta": "Error",
-        "detalleRespuesta": "No hay datos relacionados "
-    },
-    "codigo": 404
-	} 
-  
-### 6.2.2- Respuesta de Exito
-
-	{
-    "success": {
-        "codigoRespuesta": 1,
-        "descripcionRespuesta": {
-            "data": [
-                {
-                  "idHomepass": 458530,
-                  "codigoHomepass": 26001745,
-                  "tecnologia": "ftth",
-                  "codigonap": 9879,
-                  "nap": "01",
-                  "codComuna": 8102,
-                  "comuna": "chillan",
-                  "codigoPostal": 1458744,
-                  "via": "Pasaje",
-                  "calle": "MINERO LUIS ALFREDO AMAYA",
-                  "numero": "235",
-                  "departamento": null,
-                  "acceso": "G",
-                  "estado": "Ocupado",
-                  "cliente": "CC1451474",
-                  "bocaNap": "01",
-                  "bocadisponible": "SI",
-                   "nodo": "CHIL_01"
-                },
-                {
-                   "idHomepass": 458531,
-                  "codigoHomepass": 26001715,
-                  "tecnologia": "ftth",
-                  "codigonap": 9879,
-                  "nap": "01",
-                  "codComuna": 8102,
-                  "comuna": "chillan",
-                  "codigoPostal": 1458744,
-                  "via": "Pasaje",
-                  "calle": "MINERO LUIS ALFREDO AMAYA",
-                  "numero": "235",
-                  "departamento": null,
-                  "acceso": "G",
-                  "estado": "Disponible",
-                  "cliente": "CC1451474",
-                  "bocaNap": "01",
-                  "bocadisponible": "SI",
-                   "nodo": "CHIL_01"               
-                }
-            ]
-        }
-    },
-    "codigo": 200
-	}
 
 
 ## 6.-Datos de Ubicaciones Geográficas de Chile
