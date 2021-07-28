@@ -117,12 +117,12 @@ Este método permite consultar la factibilidad de un homepass.
 
 Los parámetros que recibe son los siguientes:
 
-Parámetros de entrada
+*Parámetros de entrada:*
 | Campo           |  Tipo  | Formato | Requerido |   Descripción      |
 |:---------------:|:------:|:-------:|:---------:|-------------------:|
 | codigoHomepass  | int    |         |    Si     | Codigo del Homepass|
 
-Datos de Salida
+*Datos de Salida:*
 |  Campo          |  Tipo  | Descripción                      |
 |:----------------|:------:|----------------------------------:|
 | idHomepass      |  int   | Codigo interno del Homepass       |                 
@@ -143,7 +143,7 @@ Datos de Salida
 | bocaDisponible  | string | Si no esta ocupado indicar si hay boca disponible (SI o NO) | 
 | Nodo            | string |  Nodo al que esta asignado el Homepass |
 
-Ruta : GET `/factibilidad/consultahp`
+Ruta : GET `/factibilidad/consultahp?codigoHomepass={codigo}`
 
 ### 1.1.1- Ejemplo de llamada
 
@@ -153,11 +153,11 @@ Ejemplo: JSON
 		"codigoHomepass": "98024346"	 
 	}
 
-### 1.1.2.- Respuesta de Salida
+### 1.1.2.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripción del mensaje
 
-#### 1.1.2.1.- Respuesta de Error Homepass no disponible
+#### 1.1.2.1.- Respuesta de error Homepass no disponible
 
 	{
 		"error": {
@@ -169,7 +169,7 @@ codigo: 200 éxito mensaje: descripción del mensaje
 	} 
 
 
-#### 1.1.2.2.- Respuesta de Error código Homepass erróneo
+#### 1.1.2.2.- Respuesta de error código Homepass erróneo
 
 	{
         “error”: {
@@ -180,7 +180,7 @@ codigo: 200 éxito mensaje: descripción del mensaje
         “codigo”: 404
 	}
   
-#### 1.1.2.3.- Respuesta de Exito
+#### 1.1.2.3.- Respuesta de éxito
 
 	{
         "success": {
