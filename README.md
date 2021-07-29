@@ -20,12 +20,22 @@ date: "23/09/2020"
         - [1.2.2.- Respuesta de Salida](#122--respuesta-de-salida)
             - [1.2.2.1- Respuesta de error](#1221--respuesta-de-error)
             - [1.2.2.2- Respuesta de éxito](#1222--respuesta-de-éxito)
+    - [1.3.- Factibilidad por servicios](#13--factibilidad-por-servicios)
+        - [1.3.1.- Ejemplo de llamada](#131--ejemplo-de-llamada)
+        - [1.3.2.- Respuesta de Salida](#132--respuesta-de-salida)
+            - [1.3.2.1- Respuesta de error](#1321--respuesta-de-error)
+            - [1.3.2.2- Respuesta de éxito](#1322--respuesta-de-éxito)
   - [2.- Naps](#2--naps)
     - [2.1.- setGeoreferencia](#21--setgeoreferencia)
         - [2.1.1.- Ejemplo de llamada](#211--ejemplo-de-llamada)
         - [2.1.2.- Respuesta de Salida](#212--respuesta-de-salida)
             - [2.1.2.1- Respuesta de error](#2121--respuesta-de-error)
             - [2.1.2.2- Respuesta de éxito](#2122--respuesta-de-éxito)
+    - [2.2.- getBocaDisponible](#22--getBocaDisponible)
+        - [2.2.1.- Ejemplo de llamada](#221--ejemplo-de-llamada)
+        - [2.2.2.- Respuesta de Salida](#222--respuesta-de-salida)
+            - [2.2.2.1- Respuesta de error](#2221--respuesta-de-error)
+            - [2.2.2.2- Respuesta de éxito](#2222--respuesta-de-éxito)
   - [3.- Nivel de señal](#3--nivel-de-señal)
     - [3.1.- Niveles](#31--niveles)
         - [3.1.1.- Ejemplo de llamada](#311--ejemplo-de-llamada)
@@ -77,6 +87,16 @@ date: "23/09/2020"
         - [6.2.2.- Respuesta de Salida](#622--respuesta-de-salida)
             - [6.2.2.1.- Respuesta de error](#6221--respuesta-de-error)
             - [6.2.2.2.- Respuesta de éxito](#6222--respuesta-de-éxito)
+    - [6.3.- Servicialidad por Planta](#63--servicialidad-por-planta)
+        - [6.3.1.- Ejemplo de llamada](#631--ejemplo-de-llamada)
+        - [6.3.2.- Respuesta de Salida](#632--respuesta-de-salida)
+            - [6.3.2.1.- Respuesta de error](#6321--respuesta-de-error)
+            - [6.3.2.2.- Respuesta de éxito](#6322--respuesta-de-éxito)
+    - [6.4.- Servicialidad por Planta paginada](#64--servicialidad-por-planta)
+        - [6.4.1.- Ejemplo de llamada](#641--ejemplo-de-llamada)
+        - [6.4.2.- Respuesta de Salida](#642--respuesta-de-salida)
+            - [6.4.2.1.- Respuesta de error](#6421--respuesta-de-error)
+            - [6.4.2.2.- Respuesta de éxito](#6422--respuesta-de-éxito)
   - [7.- Datos de Ubicaciones Geográficas de Chile](#7--datos-de-ubicaciones-geográficas-de-chile)
     - [7.1.- Listado de Regiones](#71--listado-de-regiones)
     - [7.2.- Listado de Provincias](#72--listado-de-provincias)
@@ -336,6 +356,61 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         },
         "codigo": 200
 	}
+
+## 1.3.- Factibilidad por servicios
+Breve descripción
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/factibilidad/factibilidadMundo`
+
+**Parámetros de entrada:**
+| Campo  |  Tipo  | Formato |     Requerido      |             Descripción     |
+|:------ |:------:|:-------:|:------------------:|----------------------------:|
+| calle  | string |         |         Si         |          Nombre de la calle |
+| numero |  int   |   no    |         No         |        Número de la calle   |
+|comuna  |  int   |         |      Si            |Código de comuna según Subtel|
+|forcenap|  int   |         |      Si            |Al indicar 1, solo se valide que exista boca disponible|
+
+**Datos de salida:**
+| Campo          |  Tipo  |                         Descripción              |
+|:---------------|:------:|-------------------------------------------------:| 
+| ?              |  ?     |                 ?                                |
+
+### 1.3.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "calle":"Las rosas",
+        "numero":388,
+        "comuna":6115,
+        "forcenap":"" 
+	}
+
+### 1.3.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.3.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados "
+        },
+        "codigo": 404
+	} 
+  
+#### 1.3.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+                ?
+        },
+        "codigo": 200
+	}
 # 2.- Naps
 ## 2.1.- setGeoreferencia
 Breve descripción
@@ -379,6 +454,54 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	} 
   
 #### 2.1.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            ?
+        },
+        "codigo": 200
+	}
+
+## 2.2.- getBocaDisponible
+Breve descripción
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/bocaNap/bocaDisponible`
+
+**Parámetros de entrada:**
+| Campo          |  Tipo  | Formato  | Requerido | Descripción                |
+|:---------------|:------:|:--------:|:---------:|---------------------------:|
+| codigoHomepass | int    |          |    Si     |       ?                    |
+
+**Datos de salida:**
+| Campo          |  Tipo  |                         Descripción              |
+|:---------------|:------:|-------------------------------------------------:| 
+| ?              |  ?     |                 ?                                | 
+
+### 2.2.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "codigoHomepass": 152002770
+	}
+### 2.2.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 2.2.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados "
+        },
+        "codigo": 404
+	} 
+  
+#### 2.2.2.2.- Respuesta de éxito
 
 	{
         "success": {
@@ -707,7 +830,7 @@ Debe dejar habilitado el Homepass y la boca reservada con anterioridad
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : PUT `/reserva/anular`
+Ruta : PATCH `/reserva/anular`
 
 **Parámetros de entrada**
 | Campo          |  Tipo  | Formato  | Requerido |  Descripción          |
@@ -863,7 +986,7 @@ Breve descripción
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/servicialidad/getServicialidad`
+Ruta : GET `/servicialidad/getServicialidad`
 
 **Parámetros de entrada:**
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
@@ -919,7 +1042,7 @@ Breve descripción
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/servicialidad/getServicialidadMufa`
+Ruta : GET `/servicialidad/getServicialidadMufa`
 
 **Parámetros de entrada:**
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
@@ -959,6 +1082,108 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	} 
   
 #### 6.2.2.2- Respuesta de éxito
+
+	{
+        "success": {
+            ?
+        },
+        "codigo": 200
+	}
+
+## 6.3.- Servicialidad por planta
+Breve descripción
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/servicialidad/getServicialidadPlanta`
+
+**Parámetros de entrada:**
+| Campo          |  Tipo  | Formato  | Requerido | Descripción                |
+|:---------------|:------:|:--------:|:---------:|---------------------------:|
+| codigoInfraestructura|string|      |    Si     |       ?                    |
+
+**Datos de salida:**
+| Campo          |  Tipo  |                         Descripción              |
+|:---------------|:------:|-------------------------------------------------:| 
+| ?              |  ?     |                 ?                                | 
+
+### 6.3.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "codigoInfraestructura":"ANGO_HUB1"
+    }
+    
+### 6.3.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 6.3.2.1- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados "
+        },
+        "codigo": 404
+	} 
+  
+#### 6.3.2.2- Respuesta de éxito
+
+	{
+        "success": {
+            ?
+        },
+        "codigo": 200
+	}
+
+## 6.4.- Servicialidad por planta paginada
+Breve descripción
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/servicialidad/getServicialidadPlantaGis`
+
+**Parámetros de entrada:**
+| Campo          |  Tipo  | Formato  | Requerido | Descripción                |
+|:---------------|:------:|:--------:|:---------:|---------------------------:|
+| codigoInfraestructura|string|      |    Si     |       ?                    |
+| per_page       |  int   |          |    Si     |       ?                    |
+| page           |  int   |          |    Si     |       ?                    |
+
+**Datos de salida:**
+| Campo          |  Tipo  |                         Descripción              |
+|:---------------|:------:|-------------------------------------------------:| 
+| ?              |  ?     |                 ?                                | 
+
+### 6.3.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "codigoInfraestructura":"ANGO_HUB1",
+        "per_page": 20,
+        "page": 1
+    }
+    
+### 6.3.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 6.3.2.1- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados "
+        },
+        "codigo": 404
+	} 
+  
+#### 6.3.2.2- Respuesta de éxito
 
 	{
         "success": {
