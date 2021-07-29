@@ -111,13 +111,12 @@ Disponer Apis para que beyond Up realice gestión sobre los Homepass de Mundo Pa
 A partir de la habilitación de estas Apis, beyond UP debe deja de hacer gestión sobre Homepass y de asignación de Bocas de Naps.
 
 # 1.- Factibilidad
-Breve descripción
 ## 1.1.- Factibilidad por Homepass
 Este método permite consultar la factibilidad de un homepass.
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : GET `/factibilidad/consultahp?codigoHomepass={codigo}`
+Ruta : GET `/factibilidad/consultahp`
 
 **Parámetros de entrada:**
 | Campo           |  Tipo  | Formato | Requerido |   Descripción      |
@@ -249,7 +248,7 @@ Este método permite consultar la factibilidad de una dirección.
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : <p style="color: green">GET</p> `/factibilidad/consultaFactibilidad?calle={Calle}&numero={Numero}&comuna={Comuna}&forcenap={ForceNap}`
+Ruta : GET `/factibilidad/consultaFactibilidad`
 
 **Parámetros de entrada:**
 | Campo  |  Tipo  | Formato |     Requerido      |             Descripción     |
@@ -358,6 +357,106 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         },
         "codigo": 200
 	}
+# 2.- Naps
+## 2.1.- setGeoreferencia
+Breve descripción
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/niveles`
+
+**Parámetros de entrada:**
+| Campo          |  Tipo  | Formato  | Requerido | Descripción                |
+|:---------------|:------:|:--------:|:---------:|---------------------------:|
+| idBoca         | int    |          |    Si     |       ?                    |       
+| nivel          | int?   |          |    Si     |       ?                    |
+
+**Datos de salida:**
+| Campo          |  Tipo  |                         Descripción              |
+|:---------------|:------:|-------------------------------------------------:| 
+| ?              |  ?     |                 ?                                | 
+
+### 2.1.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "idBoca": 1
+        "nivel": 145
+	}
+### 2.1.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 2.1.2.1- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados "
+        },
+        "codigo": 404
+	} 
+  
+#### 2.1.2.2- Respuesta de éxito
+
+	{
+        "success": {
+            ?
+        },
+        "codigo": 200
+	}
+
+# 3.- Nivel de señal
+## 3.1.- Niveles
+Breve descripción
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/support/getOntSignal`
+
+**Parámetros de entrada:**
+| Campo          |  Tipo  | Formato  | Requerido | Descripción                |
+|:---------------|:------:|:--------:|:---------:|---------------------------:|
+| idReserva      | int    |          |    Si     |       ?                    |
+
+**Datos de salida:**
+| Campo          |  Tipo  |                         Descripción              |
+|:---------------|:------:|-------------------------------------------------:| 
+| ?              |  ?     |                 ?                                | 
+
+### 2.1.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "idReserva": 57
+	}
+### 2.1.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 2.1.2.1- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados "
+        },
+        "codigo": 404
+	} 
+  
+#### 2.1.2.2- Respuesta de éxito
+
+	{
+        "success": {
+            ?
+        },
+        "codigo": 200
+	}
+
 
 ## 2.- Creación de Reserva
 Este método permite crear una reserva de Homepass y entrega la boca del NAP asignada al HP.
