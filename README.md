@@ -26,7 +26,7 @@ date: "23/09/2020"
         - [2.1.2.- Respuesta de Salida](#212--respuesta-de-salida)
             - [2.1.2.1- Respuesta de error](#2121--respuesta-de-error)
             - [2.1.2.2- Respuesta de éxito](#2122--respuesta-de-éxito)
-  - [3.- Nivel de señal](#3--nivel-de-senal)
+  - [3.- Nivel de señal](#3--nivel-de-señal)
     - [3.1.- Niveles](#31--niveles)
         - [3.1.1.- Ejemplo de llamada](#311--ejemplo-de-llamada)
         - [3.1.2.- Respuesta de Salida](#312--respuesta-de-salida)
@@ -348,7 +348,7 @@ Ruta : GET `/niveles`
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | idBoca         | int    |          |    Si     |       ?                    |       
-| nivel          | int?   |          |    Si     |       ?                    |
+| nivel          | int    |          |    Si     |       ?                    |
 
 **Datos de salida:**
 | Campo          |  Tipo  |                         Descripción              |
@@ -447,17 +447,17 @@ Ruta : POST `/support/alta`
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | idReserva      | int    |          |    Si     |       ?                    |
-| externalId     | string    |          |    Si     |       ?                    |
+| externalId     | string |          |    Si     |       ?                    |
 | idPackage      | int    |          |    Si     |       ?                    |
-| internet       | string    |          |    Si     |       ?                    |
+| internet       | string |          |    Si     |       ?                    |
 | telefono       | int    |          |    Si     |       ?                    |
-| user           | string    |          |    Si     |       ?                    |
-| pass           | string    |          |    Si     |       ?                    |
-| serieOnt       | string    |          |    Si     |       ?                    |
-| tv             | string    |          |    Si     |       ?                    |
+| user           | string |          |           |       ?                    |
+| pass           | string |          |           |       ?                    |
+| serieOnt       | string |          |    Si     |       ?                    |
+| tv             | string |          |    Si     |       ?                    |
 | telefono       | int    |          |    Si     |       ?                    |
-| user           | string    |          |    Si     |       ?                    |
-| pass           | string    |          |    Si     |       ?                    |
+| user           | string |          |           |       ?                    |
+| pass           | string |          |           |       ?                    |
 
 **Datos de salida:**
 | Campo          |  Tipo  |                         Descripción              |
@@ -774,7 +774,7 @@ Ruta : GET  `/reserva`
 | codigo_operador |   int     |         |    Si       | Código del operador  | 
 | per_page   |  int      |         |    Si       |    numero de paginas      |
 
-**Parámetros de salida:**
+**Datos de salida:**
 | Campo         |  Tipo  |         Descripción         |
 |:------------- |:------:|:---------------------------:|
 | current_page   |  int  | Página actual               |
