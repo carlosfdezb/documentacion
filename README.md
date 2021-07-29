@@ -92,7 +92,7 @@ date: "23/09/2020"
         - [6.3.2.- Respuesta de Salida](#632--respuesta-de-salida)
             - [6.3.2.1.- Respuesta de error](#6321--respuesta-de-error)
             - [6.3.2.2.- Respuesta de éxito](#6322--respuesta-de-éxito)
-    - [6.4.- Servicialidad por Planta paginada](#64--servicialidad-por-planta)
+    - [6.4.- Servicialidad por Planta paginada](#64--servicialidad-por-planta-paginada)
         - [6.4.1.- Ejemplo de llamada](#641--ejemplo-de-llamada)
         - [6.4.2.- Respuesta de Salida](#642--respuesta-de-salida)
             - [6.4.2.1.- Respuesta de error](#6421--respuesta-de-error)
@@ -120,7 +120,7 @@ Ruta : GET `/factibilidad/consultahp`
 **Parámetros de entrada:**
 | Campo           |  Tipo  | Formato | Requerido |   Descripción      |
 |:---------------:|:------:|:-------:|:---------:|-------------------:|
-| codigoHomepass  | int    |         |    Si     | Codigo del Homepass|
+| codigoHomepass  | int    |         |    Si     | Código del Homepass|
 
 **Datos de salida:**
 |  Campo          |  Tipo  | Descripción                      |
@@ -472,7 +472,7 @@ Ruta : GET `/bocaNap/bocaDisponible`
 **Parámetros de entrada:**
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
-| codigoHomepass | int    |          |    Si     |       ?                    |
+| codigoHomepass | int    |          |    Si     |  Código del Homepass       |
 
 **Datos de salida:**
 | Campo          |  Tipo  |                         Descripción              |
@@ -570,7 +570,7 @@ Ruta : POST `/support/alta`
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | idReserva      | int    |          |    Si     |       ?                    |
-| externalId     | string |          |    Si     |       ?                    |
+| externalId     | string |          |    Si     |Identificador del Cliente del Operador|
 | idPackage      | int    |          |    Si     |       ?                    |
 | internet       | string |          |    Si     |       ?                    |
 | telefono       | int    |          |    Si     |       ?                    |
@@ -692,7 +692,7 @@ Ruta : POST `/support/desconectar`
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | idReserva      | int    |          |    Si     |       ?                    |
-| operador      | string    |          |    Si     |       ?                    |
+| operador       | string |          |    Si     |Código del operador         |
 
 **Datos de salida:**
 | Campo          |  Tipo  |                         Descripción              |
@@ -991,8 +991,8 @@ Ruta : GET `/servicialidad/getServicialidad`
 **Parámetros de entrada:**
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
-| nodo           |string  |          |    Si     |       ?                    |
-| nap            | int    |          |    Si     |       ?                    |
+| nodo           |string  |          |    Si     |Nodo al que esta asignado el Homepass|
+| nap            | int    |          |    Si     |Descripción del Nap         |
 | mufad          | int    |          |    Si     |       ?                    |
 | splitter       | int    |          |    Si     |       ?                    |
 
@@ -1047,7 +1047,7 @@ Ruta : GET `/servicialidad/getServicialidadMufa`
 **Parámetros de entrada:**
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
-| nodo           |string  |          |    Si     |       ?                    |
+| nodo           |string  |          |    Si     |Nodo al que esta asignado el Homepass|
 | tipoMufa       | string |          |    Si     |       ?                    |
 | mufa           | int    |          |    Si     |       ?                    |
 
@@ -1150,8 +1150,8 @@ Ruta : GET `/servicialidad/getServicialidadPlantaGis`
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | codigoInfraestructura|string|      |    Si     |       ?                    |
-| per_page       |  int   |          |    Si     |       ?                    |
-| page           |  int   |          |    Si     |       ?                    |
+| per_page       |  int   |          |    Si     |Cantidad de resultados por página|
+| page           |  int   |          |    Si     |Especificación de página    |
 
 **Datos de salida:**
 | Campo          |  Tipo  |                         Descripción              |

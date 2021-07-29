@@ -1,5 +1,5 @@
 1. factibilidad
-	1.3 	breve descripción ruta
+	1.3 	breve descripción ruta (Consulta factibilidad servicios)
 			descripción de parámetros de entrada
 			datos de salida
 	1.3.2.1. Respuestas de error específicas (si es que hay)
