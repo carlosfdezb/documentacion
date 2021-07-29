@@ -14,7 +14,7 @@ date: "23/09/2020"
         - [1.1.2.- Respuesta de Salida](#112--respuesta-de-salida)
             - [1.1.2.1- Respuesta de error Homepass no disponible](#1121--respuesta-de-error-homepass-no-disponible)
             - [1.1.2.2- Respuesta de error código Homepass erróneo](#1122--respuesta-de-error-código-homepass-erróneo)
-            - [1.1.2.3- Respuesta de éxito](#1123--respuesta-de-exito)
+            - [1.1.2.3- Respuesta de éxito](#1123--respuesta-de-éxito)
     - [1.2.- Factibilidad por dirección](#12--factibilidad-por-dirección)
         - [1.2.1.- Ejemplo de llamada](#121--ejemplo-de-llamada)
         - [1.2.2.- Respuesta de Salida](#122--respuesta-de-salida)
@@ -404,7 +404,7 @@ Ruta : GET `/support/getOntSignal`
 |:---------------|:------:|-------------------------------------------------:| 
 | ?              |  ?     |                 ?                                | 
 
-### 2.1.1.- Ejemplo de llamada
+### 3.1.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
@@ -412,11 +412,11 @@ Ejemplo: JSON
         "idReserva": 57
 	}
 
-### 2.1.2.- Respuesta de salida
+### 3.1.2.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
 
-#### 2.1.2.1- Respuesta de error
+#### 3.1.2.1- Respuesta de error
 
 	{
         "error": {
@@ -427,7 +427,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "codigo": 404
 	} 
   
-#### 2.1.2.2- Respuesta de éxito
+#### 3.1.2.2- Respuesta de éxito
 
 	{
         "success": {
