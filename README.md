@@ -77,7 +77,7 @@ date: "23/09/2020"
         - [6.2.2.- Respuesta de Salida](#622--respuesta-de-salida)
             - [6.2.2.1.- Respuesta de error](#6221--respuesta-de-error)
             - [6.2.2.2.- Respuesta de éxito](#6222--respuesta-de-exito)
-  - [7.-Datos de Ubicaciones Geográficas de Chile](#7-datos-de-ubicaciones-geográficas-de-chile)
+  - [7.- Datos de Ubicaciones Geográficas de Chile](#7-datos-de-ubicaciones-geográficas-de-chile)
     - [7.1.- Listado de Regiones](#71---listado-de-regiones)
     - [7.2.- Listado de Provincias](#72---listado-de-provincias)
     - [7.3.- Listado de Comunas](#73---listado-de-comunas)
