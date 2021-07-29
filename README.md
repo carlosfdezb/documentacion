@@ -117,6 +117,8 @@ Este método permite consultar la factibilidad de un homepass.
 
 Los parámetros que recibe son los siguientes:
 
+Ruta : GET `/factibilidad/consultahp?codigoHomepass={codigo}`
+
 **Parámetros de entrada:**
 | Campo           |  Tipo  | Formato | Requerido |   Descripción      |
 |:---------------:|:------:|:-------:|:---------:|-------------------:|
@@ -125,25 +127,24 @@ Los parámetros que recibe son los siguientes:
 **Datos de salida:**
 |  Campo          |  Tipo  | Descripción                      |
 |:----------------|:------:|----------------------------------:|
-| idHomepass      |  int   | Codigo interno del Homepass       |                 
-| codigoHomepass  |  int   | Codigo del Homepass               |                   
+| idHomepass      |  int   | Código interno del Homepass       |                 
+| codigoHomepass  |  int   | Código del Homepass               |                   
 | tecnologia      | string | Indica la tecnología              |
-| codigonap       |  int   | Codigo del Nap                    |                     
-| nap             | string | Descripcion del Nap               |
+| codigonap       |  int   | Código del Nap                    |                     
+| nap             | string | Descripción del Nap               |
 | comuna          | string | Nombre de la comuna               |
-| codigoPostal    |  int   | Codigo Postal                     |
+| codigoPostal    |  int   | Código Postal                     |
 | via             |  string| Tipo de Calle                     |
 | calle           | string | Nombre de la calle                |
-| numero          | string | Numeracion de la calle            |
+| numero          | string | Numeración de la calle            |
 | departamento    | string | Departamento                      |
 | acceso          | string |                                   |                    
 | estado          | string |                                   |                    
-| cliente         | string | Si esta ocupado indicar el codigo de cliente|
-| bocaNap         | string | Si esta ocupado indicar la boca   |
-| bocaDisponible  | string | Si no esta ocupado indicar si hay boca disponible (SI o NO) | 
-| Nodo            | string |  Nodo al que esta asignado el Homepass |
+| cliente         | string | Si está ocupado indicar el codigo de cliente|
+| bocaNap         | string | Si está ocupado indicar la boca   |
+| bocaDisponible  | string | Si no está ocupado indicar si hay boca disponible (SI o NO) | 
+| Nodo            | string |  Nodo al que está asignado el Homepass |
 
-Ruta : GET `/factibilidad/consultahp?codigoHomepass={codigo}`
 
 ### 1.1.1- Ejemplo de llamada
 
@@ -248,11 +249,13 @@ Este método permite consultar la factibilidad de una dirección.
 
 Los parámetros que recibe son los siguientes:
 
+Ruta : <p style="color: green">GET</p> `/factibilidad/consultaFactibilidad?calle={Calle}&numero={Numero}&comuna={Comuna}&forcenap={ForceNap}`
+
 **Parámetros de entrada:**
 | Campo  |  Tipo  | Formato |     Requerido      |             Descripción     |
 |:------ |:------:|:-------:|:------------------:|----------------------------:|
-| calle  | string |         |         Si         |          nombre de la calle |
-| numero | string |   no    |         No         |        número de la calle   |
+| calle  | string |         |         Si         |          Nombre de la calle |
+| numero | string |   no    |         No         |        Número de la calle   |
 |comuna  |  int   |         |      Si            |Código de comuna según Subtel|
 |forcenap|  int   |         |      Si            |Al indicar 1, solo se valide que exista boca disponible|
 
@@ -272,12 +275,10 @@ Los parámetros que recibe son los siguientes:
 | departamento   | string |                       Departamento             |           
 | acceso         | string |                                          |           
 | estado         | string |                                           |                  
-| cliente        | string |        Si esta ocupado indicar el codigo de cliente|         
-| bocaNap        | string |               Si esta ocupado indicar la boca     |        
-| bocaDisponible | string | Si no esta ocupado indicar si hay boca disponible (SI o NO) |
+| cliente        | string |        Si está ocupado indicar el codigo de cliente|         
+| bocaNap        | string |               Si está ocupado indicar la boca     |        
+| bocaDisponible | string | Si no está ocupado indicar si hay boca disponible (SI o NO) |
 | Nodo           | string |            Nodo al que esta asignado el Homepass |
-
-Ruta : GET `/factibilidad/consultaFactibilidad?calle={Calle}&numero={Numero}&comuna={Comuna}&forcenap={ForceNap}`
 
 ### 1.2.1.- Ejemplo de llamada
 

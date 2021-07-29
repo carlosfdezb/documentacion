@@ -1,2 +1,9 @@
-2. naps
-	2.1 que hace ruta GET/ setGeoreferencia
+2. naps (mutualidad.test)
+	2.1 que hace ruta GET/ niveles
+3. nivel de señal
+	3.1 que hace ruta GET/ getOntSignal
+4. provision
+	4.1 que hace ruta Alta, Baja, Desconectar
+6. servicialidad
+	6.1 que hace ruta GET/ servicialidad por nodo
+	6.2 que hace ruta GET/ servicialidad por mufa
