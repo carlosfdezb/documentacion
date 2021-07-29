@@ -284,9 +284,9 @@ Ruta : GET `/factibilidad/consultaFactibilidad`
 Ejemplo: JSON 
 
 	{
-        "calle":"MINERO VICTOR FUENTEALBA"
-        "numero":"981" 	
-        "comuna":"8102" 
+        "calle":"MINERO VICTOR FUENTEALBA",
+        "numero":"981",
+        "comuna":"8102",
         "forcenap":"" 
 	}
 
@@ -294,7 +294,7 @@ Ejemplo: JSON
 
 codigo: 200 éxito mensaje: descripcion del mensaje
 
-#### 1.2.2.1- Respuesta de error
+#### 1.2.2.1.- Respuesta de error
 
 	{
         "error": {
@@ -305,7 +305,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "codigo": 404
 	} 
   
-#### 1.2.2.2- Respuesta de éxito
+#### 1.2.2.2.- Respuesta de éxito
 
 	{
         "success": {
@@ -381,14 +381,14 @@ Ruta : GET `/niveles`
 Ejemplo: JSON 
 
 	{
-        "idBoca": 1
+        "idBoca": 1,
         "nivel": 145
 	}
 ### 2.1.2.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
 
-#### 2.1.2.1- Respuesta de error
+#### 2.1.2.1.- Respuesta de error
 
 	{
         "error": {
@@ -399,7 +399,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "codigo": 404
 	} 
   
-#### 2.1.2.2- Respuesta de éxito
+#### 2.1.2.2.- Respuesta de éxito
 
 	{
         "success": {
@@ -407,7 +407,6 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         },
         "codigo": 200
 	}
-
 # 3.- Nivel de señal
 ## 3.1.- Niveles
 Breve descripción
@@ -433,6 +432,7 @@ Ejemplo: JSON
 	{
         "idReserva": 57
 	}
+
 ### 2.1.2.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
@@ -456,15 +456,188 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         },
         "codigo": 200
 	}
+# 4.- Provisión
+## 4.1.- Alta
+Breve descripción
 
+Los parámetros que recibe son los siguientes:
 
-## 2.- Creación de Reserva
+Ruta : POST `/support/alta`
+
+**Parámetros de entrada:**
+| Campo          |  Tipo  | Formato  | Requerido | Descripción                |
+|:---------------|:------:|:--------:|:---------:|---------------------------:|
+| idReserva      | int    |          |    Si     |       ?                    |
+| externalId     | string    |          |    Si     |       ?                    |
+| idPackage      | int    |          |    Si     |       ?                    |
+| internet       | string    |          |    Si     |       ?                    |
+| telefono       | int    |          |    Si     |       ?                    |
+| user           | string    |          |    Si     |       ?                    |
+| pass           | string    |          |    Si     |       ?                    |
+| serieOnt       | string    |          |    Si     |       ?                    |
+| tv             | string    |          |    Si     |       ?                    |
+| telefono       | int    |          |    Si     |       ?                    |
+| user           | string    |          |    Si     |       ?                    |
+| pass           | string    |          |    Si     |       ?                    |
+
+**Datos de salida:**
+| Campo          |  Tipo  |                         Descripción              |
+|:---------------|:------:|-------------------------------------------------:| 
+| ?              |  ?     |                 ?                                | 
+
+### 4.1.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "idReserva":60,
+        "externalID":"CC46000049",
+        "idPackage"
+        {
+            "internet":"500"
+            "telefono":0,
+            "user":"",
+            "pass":""
+        }:25,
+        "serieOnt":"464854549225A878",
+        "tv":"no",
+        "telefono":0,
+        "user":"",
+        "pass":""
+    }
+    
+### 4.1.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 4.1.2.1- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados "
+        },
+        "codigo": 404
+	} 
+  
+#### 4.1.2.2- Respuesta de éxito
+
+	{
+        "success": {
+            ?
+        },
+        "codigo": 200
+	}
+
+## 4.2.- Baja
+Breve descripción
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/support/baja`
+
+**Parámetros de entrada:**
+| Campo          |  Tipo  | Formato  | Requerido | Descripción                |
+|:---------------|:------:|:--------:|:---------:|---------------------------:|
+| idReserva      | int    |          |    Si     |       ?                    |
+
+**Datos de salida:**
+| Campo          |  Tipo  |                         Descripción              |
+|:---------------|:------:|-------------------------------------------------:| 
+| ?              |  ?     |                 ?                                | 
+
+### 4.2.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "idReserva":56,
+    }
+    
+### 4.2.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 4.2.2.1- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados "
+        },
+        "codigo": 404
+	} 
+  
+#### 4.2.2.2- Respuesta de éxito
+
+	{
+        "success": {
+            ?
+        },
+        "codigo": 200
+	}
+
+## 4.3.- Desconexión
+Breve descripción
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/support/desconectar`
+
+**Parámetros de entrada:**
+| Campo          |  Tipo  | Formato  | Requerido | Descripción                |
+|:---------------|:------:|:--------:|:---------:|---------------------------:|
+| idReserva      | int    |          |    Si     |       ?                    |
+| operador      | string    |          |    Si     |       ?                    |
+
+**Datos de salida:**
+| Campo          |  Tipo  |                         Descripción              |
+|:---------------|:------:|-------------------------------------------------:| 
+| ?              |  ?     |                 ?                                | 
+
+### 4.3.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "idReserva":56,
+        "operador":"000"  
+    }
+    
+### 4.3.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 4.3.2.1- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados "
+        },
+        "codigo": 404
+	} 
+  
+#### 4.3.2.2- Respuesta de éxito
+
+	{
+        "success": {
+            ?
+        },
+        "codigo": 200
+	}
+# 5.- Reservas
+## 5.1.- Creación de Reserva
 Este método permite crear una reserva de Homepass y entrega la boca del NAP asignada al HP.
 
 Los parámetros que recibe son los siguientes:
 
-Parámetros de entrada
+Ruta : POST `/reserva`
 
+**Parámetros de entrada**
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | operador       | String |          |    Si     |        Código del operador |       
@@ -472,24 +645,22 @@ Parámetros de entrada
 | codigoHomepass |  int   | NNNNNNNN |    Si     |  Código del Homepass        |
 | descripcion    |  string|          |    no     | Descripción de la reserva   |    
 
-Ruta : POST /reserva
-
-### 2.1.- Ejemplo de llamada
+### 5.1.1.- Ejemplo de llamada
 
 Ejemplo: JSON
 
 	{
-		"operador":"123" 	 
-		"externalId":"CC12548745200" 
-		"codigoHomepass":"12548745" 
+		"operador":"123", 	 
+		"externalId":"CC12548745200",
+		"codigoHomepass":"12548745",
 		"descripcion":"Reserva Casa Hualpen" 
 	}
 	
-### 2.2.- Respuesta de Salida
+### 5.1.2.- Respuesta de Salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
 
-### 2.2.1- Respuesta de Error Homepass no disponible
+#### 5.1.2.1.- Respuesta de error Homepass no disponible
 
 	{
     "error": {
@@ -501,7 +672,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	} 
 
 
-### 1.2.2- Respuesta de Error código Homepass erróneo
+#### 5.1.2.2.- Respuesta de error código Homepass erróneo
 
 	{
     “error”: {
@@ -512,7 +683,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
     “codigo”: 404
 	}
 
-### 1.2.3- Respuesta de Error código de Operador
+#### 5.1.2.3.- Respuesta de error código de operador
 
 	{
     “error”: {
@@ -524,7 +695,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	}
 
   
-### 3.2.2- Respuesta de Exito
+### 5.1.2.4.- Respuesta de éxito
 
 	{
     "success": {
@@ -551,35 +722,35 @@ codigo: 200 éxito mensaje: descripcion del mensaje
     "codigo": 201
 	}
 
-## 3.- Anular de Reserva
+## 5.2.- Anular de Reserva
 Este método permite Anular la reserva de un Homepass.
 Debe dejar habilitado el Homepass y la boca reservada con anterioridad
 
 Los parámetros que recibe son los siguientes:
 
-Parámetros de entrada
+Ruta : PUT `/reserva/anular`
+
+**Parámetros de entrada**
 | Campo          |  Tipo  | Formato  | Requerido |  Descripción          |
 |:---------------|:------:|:--------:|:---------:|----------------------:|
 | id_reserva     | int    | NNNNNNN  |    Si     | Identificador de la Reserva |
 | motivo         | String |          |    Si     | Motivo de la Anulacion |
 
-Ruta : PUT reserva/anular
-
-### 3.1.- Ejemplo de llamada
+### 5.2.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-    "id_reserva":21,
-    "motivo":"Cliente no acepta plan",
-    "operador":"000"
+        "id_reserva":21,
+        "motivo":"Cliente no acepta plan",
+        "operador":"000"
 	}
 	
-### 3.2.- Respuesta de Salida
+### 5.2.2.- Respuesta de Salida
 
 codigo: 200 éxito mensaje: descripción del mensaje
 
-### 3.2.2- Respuesta de Error al anular Reserva de Homepass
+#### 5.2.2.1.- Respuesta de error al anular Reserva de Homepass
 
 	{
     “error”: {
@@ -590,31 +761,33 @@ codigo: 200 éxito mensaje: descripción del mensaje
     “codigo”: 500
 	}
   
-### 3.2.2- Respuesta de Exito
+#### 5.2.2.2.- Respuesta de éxito
 	{
     "success": {
         "codigoRespuesta": 1,
         "descripcionRespuesta": {
             "data":  {
-               "id_reserva":21
-               "idHomepass":418535,
-               "codigoHomepass":77020466,
-               "codigonap":98799,
-               "nap":"02",
-               "bocaNap":"01",
-	             "nodo": "CHIL_01"
+                "id_reserva":21,
+                "idHomepass":418535,
+                "codigoHomepass":77020466,
+                "codigonap":98799,
+                "nap":"02",
+                "bocaNap":"01",
+	            "nodo": "CHIL_01"
             }
         }
     },
     "codigo": 200
 	}
 
-## 4.- Obtener Reservas
+## 5.3.- Obtener Reservas
 Este método permite Buscar las reservas de un operador.
 
 Los parámetros que recibe son los siguientes:
 
-Parámetros de entrada
+Ruta : GET  `/reserva`
+
+**Parámetros de entrada:**
 | Campo         |  Tipo  | Formato | Requerido |         Descripción         |
 |:------------- |:------:|:-------:|:---------:|----------------------------:|
 | fecha_desde   |  date  | yyyy-mm-dd |    Si  | Fecha de Inicio de búsqueda |
@@ -622,9 +795,21 @@ Parámetros de entrada
 | codigo_operador |   int     |         |    Si       | Código del operador  | 
 | per_page   |  int      |         |    Si       |    numero de paginas      |
 
-Ruta : GET  /reserva
+**Parámetros de salida:**
+| Campo         |  Tipo  |         Descripción         |
+|:------------- |:------:|:---------------------------:|
+| current_page   |  int  | Página actual               |
+| idReserva      | int   |  ?                          |
+| descripcion    |string |  ?                          | 
+| fechaReserva   |string |  ?                          | 
+| fechaCaducidad |string |  ?                          | 
+| externalId     |string |  ?                          | 
+| codigoHomepass |string |  ?                          | 
+| calle          |string |  ?                          | 
+| numero         |string |  ?                          | 
+| estado         |string |  ?                          | 
 
-### 4.1.- Ejemplo de llamada
+### 5.3.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
@@ -635,11 +820,11 @@ Ejemplo: JSON
      "per_page" : "2"
 	}
 
-### 4.2.- Respuesta de Salida
+### 5.3.2.- Respuesta de Salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
 
-### 4.2.1- Respuesta de Error
+#### 5.3.2.1.- Respuesta de Error
 
 	{
     "error": {
@@ -650,7 +835,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
     "codigo": 404
 	} 
   
-### 4.2.2- Respuesta de Exito
+#### 5.3.2.2.- Respuesta de Exito
 
 	{
     "current_page": 1,
