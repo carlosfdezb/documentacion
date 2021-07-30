@@ -42,7 +42,7 @@ date: "23/09/2020"
             - [2.3.2.1- Respuesta de error](#2321--respuesta-de-error)
             - [2.3.2.2- Respuesta de éxito](#2322--respuesta-de-éxito)
   - [3.- Nivel de señal](#3--nivel-de-señal)
-    - [3.1.- Niveles](#31--niveles)
+    - [3.1.- Nivel de señal de ONT](#31--nivel-de-señal-de-ont)
         - [3.1.1.- Ejemplo de llamada](#311--ejemplo-de-llamada)
         - [3.1.2.- Respuesta de Salida](#312--respuesta-de-salida)
             - [3.1.2.1- Respuesta de error](#3121--respuesta-de-error)
