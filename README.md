@@ -458,7 +458,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	}
 # 2.- Naps
 ## 2.1.- Asignar ubicación exacta del dispositivo
-Esta ruta permite asignar la ubicación exacta del elemento o dispositivo.
+Este método permite asignar la ubicación exacta del elemento o dispositivo.
 
 Los parámetros que recibe son los siguientes:
 
@@ -512,7 +512,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	}
 
 ## 2.2.- Obtener bocas disponibles
-Ruta que entrega las bocas disponibles para la conexión de un homepass.
+Este método entrega las bocas disponibles para la conexión de un homepass.
 
 Los parámetros que recibe son los siguientes:
 
