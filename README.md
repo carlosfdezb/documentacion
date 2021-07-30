@@ -108,7 +108,7 @@ date: "23/09/2020"
         - [7.1.2.- Respuesta de Salida](#712--respuesta-de-salida)
             - [7.1.2.1- Respuesta de error](#7121--respuesta-de-error)
             - [7.1.2.2- Respuesta de éxito](#7122--respuesta-de-éxito)
-    - [7.2.- Obtener Nodos por HUB(#71--obtener-nodos-por-hub)
+    - [7.2.- Obtener Nodos por HUB](#71--obtener-nodos-por-hub)
         - [7.2.1.- Ejemplo de llamada](#711--ejemplo-de-llamada)
         - [7.2.2.- Respuesta de Salida](#712--respuesta-de-salida)
             - [7.2.2.1- Respuesta de error](#7121--respuesta-de-error)
