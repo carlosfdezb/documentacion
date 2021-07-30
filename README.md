@@ -102,10 +102,26 @@ date: "23/09/2020"
         - [6.4.2.- Respuesta de Salida](#642--respuesta-de-salida)
             - [6.4.2.1.- Respuesta de error](#6421--respuesta-de-error)
             - [6.4.2.2.- Respuesta de éxito](#6422--respuesta-de-éxito)
-  - [7.- Datos de Ubicaciones Geográficas de Chile](#7--datos-de-ubicaciones-geográficas-de-chile)
-    - [7.1.- Listado de Regiones](#71--listado-de-regiones)
-    - [7.2.- Listado de Provincias](#72--listado-de-provincias)
-    - [7.3.- Listado de Comunas](#73--listado-de-comunas)
+  - [7.- Servicios externos](#7--servicios-externos)
+    - [7.1.- Obtener todos los HUBS](#71--obtener-todos-los-hubs)
+        - [7.1.1.- Ejemplo de llamada](#711--ejemplo-de-llamada)
+        - [7.1.2.- Respuesta de Salida](#712--respuesta-de-salida)
+            - [7.1.2.1- Respuesta de error](#7121--respuesta-de-error)
+            - [7.1.2.2- Respuesta de éxito](#7122--respuesta-de-éxito)
+    - [7.2.- Obtener Nodos por HUB(#71--obtener-nodos-por-hub)
+        - [7.2.1.- Ejemplo de llamada](#711--ejemplo-de-llamada)
+        - [7.2.2.- Respuesta de Salida](#712--respuesta-de-salida)
+            - [7.2.2.1- Respuesta de error](#7121--respuesta-de-error)
+            - [7.2.2.2- Respuesta de éxito](#7122--respuesta-de-éxito)
+    - [7.3.- Obtener Token ArcGis](#73--obtener-token-arcgis)
+        - [7.3.1.- Ejemplo de llamada](#731--ejemplo-de-llamada)
+        - [7.3.2.- Respuesta de Salida](#732--respuesta-de-salida)
+            - [7.3.2.1- Respuesta de error](#7321--respuesta-de-error)
+            - [7.3.2.2- Respuesta de éxito](#7322--respuesta-de-éxito)
+  - [8.- Datos de Ubicaciones Geográficas de Chile](#8--datos-de-ubicaciones-geográficas-de-chile)
+    - [8.1.- Listado de Regiones](#81--listado-de-regiones)
+    - [8.2.- Listado de Provincias](#82--listado-de-provincias)
+    - [8.3.- Listado de Comunas](#83--listado-de-comunas)
 
 # Objetivo
 
@@ -374,13 +390,24 @@ Ruta : GET `/factibilidad/factibilidadMundo`
 |:------ |:------:|:-------:|:------------------:|----------------------------:|
 | calle  | string |         |         Si         |          Nombre de la calle |
 | numero |  int   |   no    |         No         |        Número de la calle   |
-|comuna  |  int   |         |      Si            |Código de comuna según Subtel|
-|forcenap|  int   |         |      Si            |Al indicar 1, solo se valide que exista boca disponible|
+| comuna |  int   |         |         Si         |Código de comuna según Subtel|
+|forcenap|  int   |         |         Si         |Al indicar 1, solo se valide que exista boca disponible|
 
 **Datos de salida:**
 | Campo          |  Tipo  |                         Descripción              |
 |:---------------|:------:|-------------------------------------------------:| 
-| ?              |  ?     |                 ?                                |
+|   idHomepass   |  int   | Código interno del Homepass                      |                 
+| codigoHomepass |  int   | Código del Homepass                              |
+|   nap          | string | Descripción del Nap                              |
+|   comuna       | string | Nombre de la comuna                              |
+|   calle        | string | Nombre de la calle                               |               
+| numero         | string | Numeración de la calle                           |              
+| departamento   | string | Departamento                                     |
+|   edificio     | string | Edificio                                         |
+|   acceso       | string |                                                  |
+|   habilitado   | string |                                                  |
+|   servicios    | string | Servicios disponibles                            |
+|   tecnologia   | string | Tecnología disponible                            |
 
 ### 1.3.1.- Ejemplo de llamada
 
@@ -403,7 +430,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "error": {
             "codigoRespuesta": 0,
             "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados "
+            "detalleRespuesta": "No se han encontrados datos"
         },
         "codigo": 404
 	} 
@@ -526,12 +553,12 @@ Ruta : GET `/bocaNap/bocaDisponible`
 **Datos de salida:**
 | Campo          |  Tipo  |                         Descripción              |
 |:---------------|:------:|-------------------------------------------------:| 
-| IdHomepass     |  ?     |   Identificador del homepass                     | 
-| codigoHomepass |  ?     |   Código del homepass                            | 
-| codigoNap      |  ?     |   Código de la nap                               | 
-| nap            |  ?     |                 ?                                | 
-| bocaNap        |  ?     |                 ?                                | 
-| nodo           |  ?     |                 ?                                | 
+| IdHomepass     | int    |   Identificador del homepass                     | 
+| codigoHomepass | int    |   Código del homepass                            | 
+| codigoNap      | int    |   Código de la nap                               | 
+| nap            | string |   Descripción del Nap                            | 
+| bocaNap        | string |   Si está ocupado indica la boca                 | 
+| nodo           | string |   Nodo al que está asignado el Homepass          | 
 
 ### 2.2.1.- Ejemplo de llamada
 
@@ -575,7 +602,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	}
 
 ## 2.3.- Niveles
-Breve descripción
+Este metodo permite setear los niveles de intensidad de cada boca del nap.
 
 Los parámetros que recibe son los siguientes:
 
@@ -592,7 +619,8 @@ Ruta : POST `/bocaNap/niveles`
 Ejemplo: JSON 
 
 	{
-        "codigoHomepass": 152002770
+        "idBocaNap": ,
+        "nivel":
 	}
 ### 2.3.2.- Respuesta de salida
 
@@ -621,8 +649,8 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "codigo": 200
 	}
 # 3.- Nivel de señal
-## 3.1.- Niveles
-Breve descripción
+## 3.1.- Nivel de señal de ONT
+Este método permite obtener los niveles de señal de ONT.
 
 Los parámetros que recibe son los siguientes:
 
@@ -631,7 +659,7 @@ Ruta : GET `/support/getOntSignal`
 **Parámetros de entrada:**
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
-| idReserva      | int    |          |    Si     |       ?                    |
+| idReserva      | int    |          |    Si     | Identificador de la reserva |
 
 **Datos de salida:**
 | Campo          |  Tipo  |                         Descripción              |
@@ -676,7 +704,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	}
 # 4.- Provisión
 ## 4.1.- Alta
-Breve descripción
+Método que permite dar alta de servicio a un cliente.
 
 Los parámetros que recibe son los siguientes:
 
@@ -685,11 +713,10 @@ Ruta : POST `/support/alta`
 **Parámetros de entrada:**
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
-| idReserva      | int    |          |    Si     |       ?                    |
-| externalId     | string |          |    Si     |Identificador del Cliente del Operador|
-| idPackage      | int    |          |    Si     |       ?                    |
-| internet       | string |          |    Si     |       ?                    |
-| telefono       | int    |          |    Si     |       ?                    |
+| idReserva      | int    |          |    Si     | Identificador de la reserva|
+| externalId     | string |          |    Si     | Identificador del Cliente del Operador|
+| internet       | string |          |    Si     | Plan de internet|
+| telefono       | int    |          |    Si     | Plan de teléfono|
 | user           | string |          |           |       ?                    |
 | pass           | string |          |           |       ?                    |
 | serieOnt       | string |          |    Si     |       ?                    |
@@ -698,11 +725,6 @@ Ruta : POST `/support/alta`
 | user           | string |          |           |       ?                    |
 | pass           | string |          |           |       ?                    |
 
-**Datos de salida:**
-| Campo          |  Tipo  |                         Descripción              |
-|:---------------|:------:|-------------------------------------------------:| 
-| ?              |  ?     |                 ?                                | 
-
 ### 4.1.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
@@ -710,13 +732,13 @@ Ejemplo: JSON
 	{
         "idReserva":60,
         "externalID":"CC46000049",
-        "idPackage"
+        "idPackage" :
         {
             "internet":"500"
             "telefono":0,
             "user":"",
             "pass":""
-        }:25,
+        },
         "serieOnt":"464854549225A878",
         "tv":"no",
         "telefono":0,
@@ -743,13 +765,16 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 	{
         "success": {
-            ?
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": "Alta realizada correctamente"
+            }
         },
         "codigo": 200
 	}
 
 ## 4.2.- Baja
-Breve descripción
+Método para dar de baja de servicio a un cliente.
 
 Los parámetros que recibe son los siguientes:
 
@@ -758,12 +783,7 @@ Ruta : POST `/support/baja`
 **Parámetros de entrada:**
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
-| idReserva      | int    |          |    Si     |       ?                    |
-
-**Datos de salida:**
-| Campo          |  Tipo  |                         Descripción              |
-|:---------------|:------:|-------------------------------------------------:| 
-| ?              |  ?     |                 ?                                | 
+| idReserva      | int    |          |    Si     | Identificador de la reserva   |
 
 ### 4.2.1.- Ejemplo de llamada
 
@@ -792,13 +812,16 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 	{
         "success": {
-            ?
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": "Baja realizada correctamente"
+            }
         },
         "codigo": 200
 	}
 
 ## 4.3.- Desconexión
-Breve descripción
+Método para quitar servicios a un cliente.
 
 Los parámetros que recibe son los siguientes:
 
@@ -807,14 +830,8 @@ Ruta : POST `/support/desconectar`
 **Parámetros de entrada:**
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
-| idReserva      | int    |          |    Si     |       ?                    |
+| idReserva      | int    |          |    Si     | Identificador de la reserva|
 | operador       | string |          |    Si     |Código del operador         |
-
-**Datos de salida:**
-| Campo          |  Tipo  |                         Descripción              |
-|:---------------|:------:|-------------------------------------------------:| 
-| ?              |  ?     |                 ?                                | 
-
 ### 4.3.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
@@ -843,7 +860,10 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 	{
         "success": {
-            ?
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": "Desconexion realizada correctamente"
+            }
         },
         "codigo": 200
 	}
@@ -1017,15 +1037,15 @@ Ruta : GET  `/reserva`
 | Campo         |  Tipo  |         Descripción         |
 |:------------- |:------:|:---------------------------:|
 | current_page   |  int  | Página actual               |
-| idReserva      | int   |  ?                          |
-| descripcion    |string |  ?                          | 
-| fechaReserva   |string |  ?                          | 
-| fechaCaducidad |string |  ?                          | 
-| externalId     |string |  ?                          | 
-| codigoHomepass |string |  ?                          | 
-| calle          |string |  ?                          | 
-| numero         |string |  ?                          | 
-| estado         |string |  ?                          | 
+| idReserva      | int   | Identificador de la reserva |
+| descripcion    |string | Nombre de la reserva | 
+| fechaReserva   |string | Fecha de la reserva         | 
+| fechaCaducidad |string | Fecha de vencimiento de la reserva | 
+| externalId     |string | Identificador del cliente   | 
+| codigoHomepass |string | Código único del homepass   | 
+| calle          |string | Nombre de la calle          | 
+| numero         |string | Numeración de la calle      | 
+| estado         |string | Estado de la reserva        | 
 
 ### 5.3.1.- Ejemplo de llamada
 
@@ -1098,7 +1118,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	}
 # 6.- Servicialidad
 ## 6.1.- Servicialidad por nodo
-Breve descripción
+Api utilizada por Gis para buscar la servicialidad de acuerdo a un nodo.
 
 Los parámetros que recibe son los siguientes:
 
@@ -1109,13 +1129,28 @@ Ruta : GET `/servicialidad/getServicialidad`
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | nodo           |string  |          |    Si     |Nodo al que esta asignado el Homepass|
 | nap            | int    |          |    Si     |Descripción del Nap         |
-| mufad          | int    |          |    Si     |       ?                    |
-| splitter       | int    |          |    Si     |       ?                    |
+| mufad          | int    |          |    Si     |Descripción de la mufa      |
+| splitter       | int    |          |    Si     |Descripción del splitter    |
 
 **Datos de salida:**
 | Campo          |  Tipo  |                         Descripción              |
 |:---------------|:------:|-------------------------------------------------:| 
-| ?              |  ?     |                 ?                                | 
+| correlativoRed |  int   | Identificador de la servicialidad                |
+| nodo           | string | Identificador del nodo                           | 
+| nap            |  int   | Identificador de la nap                          | 
+| mufa           |  int   | Identificador de la mufa                         | 
+| spliterMufa    |  int   | Identificador del splitter de la mufa            | 
+| bocaNap        |  int   | Identificador de la boca de la mufa              | 
+| spliterNap     |  int   | Identificador del splitter de la nap             | 
+| puertaPon      |  int   | Identificador de la puertaPon                    | 
+| ponEdfa        |  ?     |  ?                                               | 
+| homepass       |  int   | Identificador del homepass                       | 
+| calle          | string | Nombre de la calle                               | 
+| numero         | string | Numeración de la calle                           | 
+| olt            |  int   | Identificador del OLT                            | 
+| tarjetaPon     |  int   | Identificador de la tarjetaPon                   | 
+| edfa           |  int   | ?                                                | 
+| spliter        |  int   | Identificador del splitter                       | 
 
 ### 6.1.1.- Ejemplo de llamada
 
@@ -1147,14 +1182,54 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 	{
         "success": {
-            ?
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                        "correlativoRed": 840250,
+                        "nodo": "RENC_86",
+                        "nap": "01",
+                        "mufa": "1",
+                        "spliterMufa": "5",
+                        "bocaNap": "09",
+                        "spliterNap": "2",
+                        "puertaPon": "14",
+                        "ponEdfa": "15",
+                        "homepass": 62019123,
+                        "calle": "HERCULES",
+                        "numero": "1179",
+                        "olt": "3",
+                        "tarjetaPon": "16",
+                        "edfa": "21",
+                        "spliter": "02"
+                    },
+                    {
+                        "correlativoRed": 840251,
+                        "nodo": "RENC_86",
+                        "nap": "01",
+                        "mufa": "1",
+                        "spliterMufa": "5",
+                        "bocaNap": "10",
+                        "spliterNap": "2",
+                        "puertaPon": "14",
+                        "ponEdfa": "15",
+                        "homepass": 62019124,
+                        "calle": "HERCULES",
+                        "numero": "1171",
+                        "olt": "3",
+                        "tarjetaPon": "16",
+                        "edfa": "21",
+                        "spliter": "02"
+                    },
+                ]
+            }
         },
         "codigo": 200
 	}
 
 
 ## 6.2.- Servicialidad por mufa
-Breve descripción
+Api utilizada por Gis para buscar la servicialidad de acuerdo a una mufa.
 
 Los parámetros que recibe son los siguientes:
 
@@ -1164,13 +1239,24 @@ Ruta : GET `/servicialidad/getServicialidadMufa`
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | nodo           |string  |          |    Si     |Nodo al que esta asignado el Homepass|
-| tipoMufa       | string |          |    Si     |       ?                    |
-| mufa           | int    |          |    Si     |       ?                    |
+| tipoMufa       | string |          |    Si     |Tipo de mufa                |
+| mufa           | int    |          |    Si     |Código de mufa              |
 
 **Datos de salida:**
 | Campo          |  Tipo  |                         Descripción              |
 |:---------------|:------:|-------------------------------------------------:| 
-| ?              |  ?     |                 ?                                | 
+| correlativoRed |  int   | Identificador de la servicialidad                |
+| nodo           | string | Identificador del nodo                           | 
+| mufaTroncal    | string | Identificador de la mufa troncal                 | 
+|mufaDistribucion| string | ?                                                | 
+| nap            | string | Código del Nap                                   | 
+| mufa           | string | Identificador del nodo                           | 
+| spliterMufa    | string | Identificador del splitter de la mufa            | 
+| bocaNap        | string | Identificador de la boca del nap                 | 
+| spliterNap     | string | Identificador del splitter del nap               | 
+| homepass       |  int   | Identificador del homepass                       | 
+| calle          | string | Nombre de la calle                               | 
+| numero         | string | Numeración de la calle                           | 
 
 ### 6.2.1.- Ejemplo de llamada
 
@@ -1201,13 +1287,46 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 	{
         "success": {
-            ?
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                        "correlativoRed": 840258,
+                        "nodo": "RENC_86",
+                        "mufaTroncal": "04",
+                        "mufaDistribucion": "1",
+                        "nap": "02",
+                        "mufa": "1",
+                        "spliterMufa": "1",
+                        "bocaNap": "01",
+                        "spliterNap": "1",
+                        "homepass": 62019062,
+                        "calle": "ARGOS",
+                        "numero": "7438"
+                    },
+                    {
+                        "correlativoRed": 840402,
+                        "nodo": "RENC_86",
+                        "mufaTroncal": "04",
+                        "mufaDistribucion": "2",
+                        "nap": "11",
+                        "mufa": "2",
+                        "spliterMufa": "3",
+                        "bocaNap": "01",
+                        "spliterNap": "1",
+                        "homepass": 62019201,
+                        "calle": "VICUNA MACKENNA",
+                        "numero": "7698"
+                    }
+                
+                ]
+            }
         },
         "codigo": 200
 	}
 
 ## 6.3.- Servicialidad por planta
-Breve descripción
+Api utilizada por Gis para buscar la servicialidad de acuerdo a la planta.
 
 Los parámetros que recibe son los siguientes:
 
@@ -1216,12 +1335,20 @@ Ruta : GET `/servicialidad/getServicialidadPlanta`
 **Parámetros de entrada:**
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
-| codigoInfraestructura|string|      |    Si     |       ?                    |
+| codigoInfraestructura|string|      |    Si     | Identificador del HUB      |
 
 **Datos de salida:**
 | Campo          |  Tipo  |                         Descripción              |
 |:---------------|:------:|-------------------------------------------------:| 
-| ?              |  ?     |                 ?                                | 
+| hub            |string  | Identificador del HUB                            | 
+| direccion      |string  | ?                                                | 
+| olt            |string  | Identificador del OLT                            | 
+| nodo           |string  | Identificador del nodo                           | 
+| edfa           |string  | ?                                                | 
+| tarjetaPon     |string  | Identificador de tarjetaPon                      | 
+| ponEdfa        |string  | ?                                                | 
+| puertaPon      |string  | Identificador de puertaPon                       | 
+| splitter       |string  | Identificador del splitter                       | 
 
 ### 6.3.1.- Ejemplo de llamada
 
@@ -1250,13 +1377,40 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 	{
         "success": {
-            ?
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                        "hub": "ANGO_HUB1",
+                        "direccion": "Rancagua #291",
+                        "olt": "1",
+                        "nodo": "ANGO_12",
+                        "edfa": "1",
+                        "tarjetaPon": "02",
+                        "ponEdfa": "24",
+                        "puertaPon": "07",
+                        "splitter": "1X2"
+                    },
+                    {
+                        "hub": "ANGO_HUB1",
+                        "direccion": "Rancagua #291",
+                        "olt": "2",
+                        "nodo": "ANGO_79",
+                        "edfa": "11",
+                        "tarjetaPon": "10",
+                        "ponEdfa": "16",
+                        "puertaPon": "15",
+                        "splitter": "1X2"
+                    }
+                
+                ]
+            }
         },
         "codigo": 200
 	}
 
 ## 6.4.- Servicialidad por planta paginada
-Breve descripción
+Api utilizada por Gis para buscar la servicialidad de acuerdo a la planta.
 
 Los parámetros que recibe son los siguientes:
 
@@ -1265,14 +1419,22 @@ Ruta : GET `/servicialidad/getServicialidadPlantaGis`
 **Parámetros de entrada:**
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
-| codigoInfraestructura|string|      |    Si     |       ?                    |
+| codigoInfraestructura|string|      |    Si     | Identificador del HUB      |
 | per_page       |  int   |          |    Si     |Cantidad de resultados por página|
 | page           |  int   |          |    Si     |Especificación de página    |
 
 **Datos de salida:**
 | Campo          |  Tipo  |                         Descripción              |
 |:---------------|:------:|-------------------------------------------------:| 
-| ?              |  ?     |                 ?                                | 
+| hub            |string  | Identificador del HUB                            | 
+| direccion      |string  | ?                                                | 
+| olt            |string  | Identificador del OLT                            | 
+| nodo           |string  | Identificador del nodo                           | 
+| edfa           |string  | ?                                                | 
+| tarjetaPon     |string  | Identificador de tarjetaPon                      | 
+| ponEdfa        |string  | ?                                                | 
+| puertaPon      |string  | Identificador de puertaPon                       | 
+| splitter       |string  | Identificador del splitter                       | 
 
 ### 6.3.1.- Ejemplo de llamada
 
@@ -1302,24 +1464,260 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 6.3.2.2- Respuesta de éxito
 
 	{
-        "success": {
-            ?
+         "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": {
+                    "current_page": 1,
+                    "data": [
+                        {
+                            "hub": "ANGO_HUB1",
+                            "direccion": "Rancagua #291",
+                            "olt": "1",
+                            "nodo": "ANGO_01",
+                            "edfa": "7",
+                            "tarjetaPon": "01",
+                            "ponEdfa": "01",
+                            "puertaPon": "00",
+                            "splitter": "1X2"
+                        },
+                        {
+                            "hub": "ANGO_HUB1",
+                            "direccion": "Rancagua #291",
+                            "olt": "1",
+                            "nodo": "ANGO_01",
+                            "edfa": "7",
+                            "tarjetaPon": "01",
+                            "ponEdfa": "02",
+                            "puertaPon": "01",
+                            "splitter": "1X2"
+                        },
+                        {
+                            "hub": "ANGO_HUB1",
+                            "direccion": "Rancagua #291",
+                            "olt": "1",
+                            "nodo": "ANGO_01",
+                            "edfa": "7",
+                            "tarjetaPon": "16",
+                            "ponEdfa": "01",
+                            "puertaPon": "00",
+                            "splitter": "1X2"
+                        },
+                        {
+                            "hub": "ANGO_HUB1",
+                            "direccion": "Rancagua #291",
+                            "olt": "1",
+                            "nodo": "ANGO_01",
+                            "edfa": "7",
+                            "tarjetaPon": "16",
+                            "ponEdfa": "02",
+                            "puertaPon": "01",
+                            "splitter": "1X2"
+                        },
+                        {
+                            "hub": "ANGO_HUB1",
+                            "direccion": "Rancagua #291",
+                            "olt": "1",
+                            "nodo": "ANGO_02",
+                            "edfa": "7",
+                            "tarjetaPon": "01",
+                            "ponEdfa": "03",
+                            "puertaPon": "02",
+                            "splitter": "1X2"
+                        }
+                    ],
+                    "first_page_url": "https://mutualidad.mundopacifico.cl/servicialidad/getServicialidadPlantaGis?page=1",
+                    "from": 1,
+                    "last_page": 69,
+                    "last_page_url": "https://mutualidad.mundopacifico.cl/servicialidad/getServicialidadPlantaGis?page=69",
+                    "next_page_url": "https://mutualidad.mundopacifico.cl/servicialidad/getServicialidadPlantaGis?page=2",
+                    "path": "https://mutualidad.mundopacifico.cl/servicialidad/getServicialidadPlantaGis",
+                    "per_page": "5",
+                    "prev_page_url": null,
+                    "to": 5,
+                    "total": 344
+                }
+            }
         },
         "codigo": 200
 	}
-# 7.- Datos de Ubicaciones Geográficas de Chile
+
+# 7.- Servicios externos
+
+## 7.1.- Obtener todos los HUBS
+Api utilizada por Gis para obtener todos los HUBS.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/arcgis/rest/services/web_map/GIS_ARCGIS_MUNDO/FeatureServer/1/query`
+
+**Parámetros de entrada:**
+| Campo          |  Tipo  | Formato  | Requerido | Descripción                |
+|:---------------|:------:|:--------:|:---------:|---------------------------:|
+| where          |string  |          |    Si     |          ?                 |
+| outFields      |string  |          |    Si     |          ?                 |
+| returnGeometry |boolean |          |    Si     |          ?                 |
+| f              |string  |          |    Si     |          ?                 |
+
+**Datos de salida:**
+| Campo          |  Tipo  |                         Descripción              |
+|:---------------|:------:|-------------------------------------------------:| 
+| ?              |  ?     | ?                                                |
+
+### 7.1.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "where":"estado_p%3D3",
+        "outFields":"id_planta%2C+cod_infraestructura%2C+nombre%2C+direccion%2C+dom_comuna%2C+nom_comuna%2C+dom_region%2C+region_nom%2C+estado%2C+descripcion", 
+        "returnGeometry":false,  
+        "f":"json"
+    }
+    
+### 7.1.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 7.1.2.1- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados "
+        },
+        "codigo": 404
+	} 
+  
+#### 7.1.2.2- Respuesta de éxito
+
+	{
+        "success": {
+
+        },
+        "codigo": 200
+	}
+
+## 7.2.- Obtener Nodos por HUB
+Api utilizada por Gis para obtener nodos de un HUB.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/arcgis/rest/services/web_map/GIS_ARCGIS_MUNDO/MapServer/6/query`
+
+**Parámetros de entrada:**
+| Campo          |  Tipo  | Formato  | Requerido | Descripción                |
+|:---------------|:------:|:--------:|:---------:|---------------------------:|
+| where          |string  |          |    Si     |          ?                 |
+| outFields      |string  |          |    Si     |          ?                 |
+| returnGeometry |boolean |          |    Si     |          ?                 |
+| f              |string  |          |    Si     |          ?                 |
+
+**Datos de salida:**
+| Campo          |  Tipo  |                         Descripción              |
+|:---------------|:------:|-------------------------------------------------:| 
+| ?              |  ?     | ?                                                |
+
+### 7.2.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "where":"id_planta%3D10",
+        "outFields":"id_nodo,nombre_nodo,id_planta", 
+        "returnGeometry":false,  
+        "f":"json"
+    }
+    
+### 7.2.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 7.2.2.1- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados "
+        },
+        "codigo": 404
+	} 
+  
+#### 7.2.2.2- Respuesta de éxito
+
+	{
+        "success": {
+
+        },
+        "codigo": 200
+	}
+
+## 7.3.- Obtener Token ArcGis
+Api utilizada por Gis para obtener token.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/arcgis/sharing/rest/generateToken`
+
+**Parámetros de entrada:**
+| Campo          |  Tipo  | Formato  | Requerido | Descripción                |
+|:---------------|:------:|:--------:|:---------:|---------------------------:|
+| username       |string  |          |    Si     |        Usuario             |
+| password       |string  |          |    Si     |        Contraseña          |
+| referer        |boolean |          |    Si     |        Url                 |
+| f              |string  |          |    Si     |          ?                 |
+| expiration     |string  |          |    Si     |          ?                 |
+
+### 7.3.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "username":"usuario",
+        "password":"contraseña", 
+        "referer":"https://GISMUNDO.MUNDOPACIFICO.CL:7443/arcgis",  
+        "f":"json",
+        "expiration":"20160"
+    }
+    
+### 7.3.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 7.3.2.1- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados "
+        },
+        "codigo": 404
+	} 
+  
+#### 7.3.2.2- Respuesta de éxito
+
+	{
+        "success": {
+
+        },
+        "codigo": 200
+	}
+# 8.- Datos de Ubicaciones Geográficas de Chile
 Para obtener los datos de regiones, provincias y comunas de Chile, Mundo pacífico pondrá a disposición de los operadores las apis necesarias para ese fin.
 
-### 7.1.- Listado de Regiones
+### 8.1.- Listado de Regiones
 
 Ruta : GET `/parametros/regiones`
 
-### 7.2.- Listado de Provincias
+### 8.2.- Listado de Provincias
 
 Ruta : GET `/parametros/provincias`
 Parámetro : codigoRegion
 
-### 7.3.- Listado de Comunas
+### 8.3.- Listado de Comunas
 
 Rut : GET `/parametros/comunas`
 Parámetro : codigoRegion
