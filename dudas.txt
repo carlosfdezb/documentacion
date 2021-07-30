@@ -1,9 +1,9 @@
-1. factibilidad
-	1.3 	breve descripción ruta (Consulta factibilidad servicios)
-			descripción de parámetros de entrada
+1. factibilidad x
+	1.3 	breve descripción ruta (Consulta factibilidad servicios) x
+			descripción de parámetros de entrada x
 			datos de salida
-	1.3.2.1. Respuestas de error específicas (si es que hay)
-	1.3.2.2. Ejemplo respuesta de éxito
+	1.3.2.1. Respuestas de error específicas (si es que hay) x
+	1.3.2.2. Ejemplo respuesta de éxito x
 
 
 2. naps
@@ -16,7 +16,6 @@
 
 	2.2 	Nombre descriptivo para ruta (getBocaDisponible)
 	    	breve descripción ruta
-			descripción de parámetros de entrada
 			datos de salida
 	2.2.2.1. Respuestas de error específicas (si es que hay)
 	2.2.2.2. Ejemplo respuesta de éxito

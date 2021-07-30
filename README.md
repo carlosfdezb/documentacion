@@ -20,22 +20,27 @@ date: "23/09/2020"
         - [1.2.2.- Respuesta de Salida](#122--respuesta-de-salida)
             - [1.2.2.1- Respuesta de error](#1221--respuesta-de-error)
             - [1.2.2.2- Respuesta de éxito](#1222--respuesta-de-éxito)
-    - [1.3.- Factibilidad por servicios](#13--factibilidad-por-servicios)
+    - [1.3.- Factibilidad por dirección con servicios](#13--factibilidad-por-dirección-con-servicios)
         - [1.3.1.- Ejemplo de llamada](#131--ejemplo-de-llamada)
         - [1.3.2.- Respuesta de Salida](#132--respuesta-de-salida)
             - [1.3.2.1- Respuesta de error](#1321--respuesta-de-error)
             - [1.3.2.2- Respuesta de éxito](#1322--respuesta-de-éxito)
   - [2.- Naps](#2--naps)
-    - [2.1.- setGeoreferencia](#21--setgeoreferencia)
+    - [2.1.- Asignar ubicación exacta del dispositivo](#21--asignar-ubicación-exacta-del-dispositivo)
         - [2.1.1.- Ejemplo de llamada](#211--ejemplo-de-llamada)
         - [2.1.2.- Respuesta de Salida](#212--respuesta-de-salida)
             - [2.1.2.1- Respuesta de error](#2121--respuesta-de-error)
             - [2.1.2.2- Respuesta de éxito](#2122--respuesta-de-éxito)
-    - [2.2.- getBocaDisponible](#22--getBocaDisponible)
+    - [2.2.- Obtener bocas disponibles](#22--obtener-bocas-disponibles)
         - [2.2.1.- Ejemplo de llamada](#221--ejemplo-de-llamada)
         - [2.2.2.- Respuesta de Salida](#222--respuesta-de-salida)
             - [2.2.2.1- Respuesta de error](#2221--respuesta-de-error)
             - [2.2.2.2- Respuesta de éxito](#2222--respuesta-de-éxito)
+    - [2.3.- Niveles](#23--niveles)
+        - [2.3.1.- Ejemplo de llamada](#231--ejemplo-de-llamada)
+        - [2.3.2.- Respuesta de Salida](#232--respuesta-de-salida)
+            - [2.3.2.1- Respuesta de error](#2321--respuesta-de-error)
+            - [2.3.2.2- Respuesta de éxito](#2322--respuesta-de-éxito)
   - [3.- Nivel de señal](#3--nivel-de-señal)
     - [3.1.- Niveles](#31--niveles)
         - [3.1.1.- Ejemplo de llamada](#311--ejemplo-de-llamada)
@@ -252,10 +257,10 @@ Ruta : GET `/factibilidad/consultaFactibilidad`
 **Parámetros de entrada:**
 | Campo  |  Tipo  | Formato |     Requerido      |             Descripción     |
 |:------ |:------:|:-------:|:------------------:|----------------------------:|
-| calle  | string |         |         Si         |          Nombre de la calle |
-| numero | string |   no    |         No         |        Número de la calle   |
-|comuna  |  int   |         |      Si            |Código de comuna según Subtel|
-|forcenap|  int   |         |      Si            |Al indicar 1, solo se valide que exista boca disponible|
+| calle  | string |         |         Si         |   Nombre de la calle        |
+| numero | string |   no    |         No         |   Número de la calle        |
+|comuna  |  int   |         |         Si         |   Código de comuna según Subtel|
+|forcenap|  int   |         |         Si         |   Al indicar 1, solo se valide que exista boca disponible|
 
 **Datos de salida:**
 | Campo          |  Tipo  |                         Descripción              |
@@ -263,18 +268,18 @@ Ruta : GET `/factibilidad/consultaFactibilidad`
 | idHomepass     |  int   |                 Código interno del Homepass      |
 | codigoHomepass |  int   |                 Código del Homepass              | 
 | tecnologia     | string |                 Indica la tecnología             |
-| codigonap      |  int   |                       Código del Nap        |         
-| nap            | string |                     Descripción del Nap      |               
-| comuna         | string |                     Nombre de la comuna       |              
-| codigoPostal   |  int   |                        Código Postal           |      
-| via            |  string|                        Tipo de Calle        |                
-| calle          | string |                     Nombre de la calle       |               
-| numero         | string |                   Numeración de la calle      |              
-| departamento   | string |                       Departamento             |           
-| acceso         | string |                                          |           
-| estado         | string |                                           |                  
-| cliente        | string |        Si está ocupado indicar el codigo de cliente|         
-| bocaNap        | string |               Si está ocupado indicar la boca     |        
+| codigonap      |  int   |                       Código del Nap             |         
+| nap            | string |                     Descripción del Nap          |               
+| comuna         | string |                     Nombre de la comuna          |              
+| codigoPostal   |  int   |                        Código Postal             |      
+| via            |  string|                        Tipo de Calle             |                
+| calle          | string |                     Nombre de la calle           |               
+| numero         | string |                   Numeración de la calle         |              
+| departamento   | string |                       Departamento               |           
+| acceso         | string |                                                  |           
+| estado         | string |                                                  |                  
+| cliente        | string |      Si está ocupado indicar el codigo de cliente|         
+| bocaNap        | string |              Si está ocupado indicar la boca     |        
 | bocaDisponible | string | Si no está ocupado indicar si hay boca disponible (SI o NO) |
 | Nodo           | string |            Nodo al que esta asignado el Homepass |
 
@@ -357,8 +362,8 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "codigo": 200
 	}
 
-## 1.3.- Factibilidad por servicios
-Breve descripción
+## 1.3.- Factibilidad por dirección con servicios
+Este método permite consultar la factibilidad de una dirección, también indica los servicios disponibles.
 
 Los parámetros que recibe son los siguientes:
 
@@ -406,37 +411,78 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.3.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-                ?
-        },
+          "success": {
+                "codigoRespuesta": 1,
+                "descripcionRespuesta": {
+                    "data": [
+                        {
+                            "idHomepass": 1157345,
+                            "codigoHomepass": 53014160,
+                            "nap": "15",
+                            "comuna": 6115,
+                            "calle": "LAS ROSAS",
+                            "numero": "388",
+                            "departamento": null,
+                            "edificio": null,
+                            "acceso": "N/A",
+                            "habilitado": 0,
+                            "servicios": [
+                                {
+                                    "idServicio": 5,
+                                    "servicio": "Digital"
+                                },
+                                {
+                                    "idServicio": 3,
+                                    "servicio": "Telefonía"
+                                },
+                                {
+                                    "idServicio": 2,
+                                    "servicio": "Internet"
+                                },
+                                {
+                                    "idServicio": 1,
+                                    "servicio": "Televisión"
+                                }
+                            ],
+                            "tecnologia": [
+                                {
+                                    "idTecnologia": 4,
+                                    "tecnologia": "FTTH"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
         "codigo": 200
 	}
 # 2.- Naps
-## 2.1.- setGeoreferencia
-Breve descripción
+## 2.1.- Asignar ubicación exacta del dispositivo
+Esta ruta permite asignar la ubicación exacta del elemento o dispositivo.
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : GET `/niveles`
+Ruta : POST `/nap/georeferencia`
 
 **Parámetros de entrada:**
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
-| idBoca         | int    |          |    Si     |       ?                    |       
-| nivel          | int    |          |    Si     |       ?                    |
-
-**Datos de salida:**
-| Campo          |  Tipo  |                         Descripción              |
-|:---------------|:------:|-------------------------------------------------:| 
-| ?              |  ?     |                 ?                                | 
+| idNap          | int    |          |    Si     |Identificador único del nap |       
+| latitud        | int    |          |    Si     |      Latitud               | 
+| longitud       | int    |          |    Si     |     Longitud               | 
+| altitud        | int    |          |    Si     |     Altitud                | 
+| presicion      | int    |          |    Si     |     Presición              |
 
 ### 2.1.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "idBoca": 1,
-        "nivel": 145
+        "idNap": 1,
+        "latitud": -36.8931574,
+        "longitud": -73.1421935,
+        "altitud": 50,
+        "presicion": 1
 	}
 ### 2.1.2.- Respuesta de salida
 
@@ -445,11 +491,11 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 2.1.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados "
-        },
+         "error": {
+                "codigoRespuesta": 0,
+                "descripcionRespuesta": "Error",
+                "detalleRespuesta": "No existe el nap con el id :88444445555551"
+            },
         "codigo": 404
 	} 
   
@@ -457,13 +503,16 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 	{
         "success": {
-            ?
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": "Nap actualizado correctamente"
+            }
         },
         "codigo": 200
 	}
 
-## 2.2.- getBocaDisponible
-Breve descripción
+## 2.2.- Obtener bocas disponibles
+Ruta que entrega las bocas disponibles para la conexión de un homepass.
 
 Los parámetros que recibe son los siguientes:
 
@@ -477,7 +526,12 @@ Ruta : GET `/bocaNap/bocaDisponible`
 **Datos de salida:**
 | Campo          |  Tipo  |                         Descripción              |
 |:---------------|:------:|-------------------------------------------------:| 
-| ?              |  ?     |                 ?                                | 
+| IdHomepass     |  ?     |   Identificador del homepass                     | 
+| codigoHomepass |  ?     |   Código del homepass                            | 
+| codigoNap      |  ?     |   Código de la nap                               | 
+| nap            |  ?     |                 ?                                | 
+| bocaNap        |  ?     |                 ?                                | 
+| nodo           |  ?     |                 ?                                | 
 
 ### 2.2.1.- Ejemplo de llamada
 
@@ -496,7 +550,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "error": {
             "codigoRespuesta": 0,
             "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados "
+            "detalleRespuesta": "Homepass no encontrado"
         },
         "codigo": 404
 	} 
@@ -504,8 +558,65 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 2.2.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            ?
+         "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": {
+                    "IdHomepass": 2267454,
+                    "codigoHomepass": "152002770",
+                    "codigoNap": 1520183,
+                    "nap": "10",
+                    "bocaNap": "01",
+                    "nodo": "PELL_10"
+                }
+            }
+        },
+        "codigo": 200
+	}
+
+## 2.3.- Niveles
+Breve descripción
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/bocaNap/niveles`
+
+**Parámetros de entrada:**
+| Campo          |  Tipo  | Formato  | Requerido | Descripción                |
+|:---------------|:------:|:--------:|:---------:|---------------------------:|
+| idBocaNap      | int    |          |    Si     | Identificador de la boca del nap|
+| nivel          | int    |          |    Si     | Intensidad de señal de la boca|
+
+### 2.3.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "codigoHomepass": 152002770
+	}
+### 2.3.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 2.3.2.1.- Respuesta de error
+
+	{
+         "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No existe boca de nap con el id :1584848484848"
+        },
+        "codigo": 404
+	} 
+  
+#### 2.3.2.2.- Respuesta de éxito
+
+	{
+         "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": "Boca de nap  actualizada correctamente"
+            }
         },
         "codigo": 200
 	}
@@ -553,8 +664,13 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 3.1.2.2- Respuesta de éxito
 
 	{
-        "success": {
-            ?
+         "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": {
+                    "señalOnt": {}
+                }
+            }
         },
         "codigo": 200
 	}
