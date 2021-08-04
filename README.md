@@ -3,6 +3,9 @@ title: "Apis Mutualidad para uso de Beyond UP"
 author: "Alvaro Muñoz B."
 date: "23/09/2020"
 ---
+
+|Tipo de seguridad:| Ningún tipo de seguridad | 
+
 # Documentación Api´s para Beyond Up Mutualidad
 
 - [Documentación Api´s para Beyond Up Mutualidad](#documentación-apis-para-beyond-up-mutualidad)
@@ -102,26 +105,10 @@ date: "23/09/2020"
         - [6.4.2.- Respuesta de Salida](#642--respuesta-de-salida)
             - [6.4.2.1.- Respuesta de error](#6421--respuesta-de-error)
             - [6.4.2.2.- Respuesta de éxito](#6422--respuesta-de-éxito)
-  - [7.- Servicios externos](#7--servicios-externos)
-    - [7.1.- Obtener todos los HUBS](#71--obtener-todos-los-hubs)
-        - [7.1.1.- Ejemplo de llamada](#711--ejemplo-de-llamada)
-        - [7.1.2.- Respuesta de Salida](#712--respuesta-de-salida)
-            - [7.1.2.1- Respuesta de error](#7121--respuesta-de-error)
-            - [7.1.2.2- Respuesta de éxito](#7122--respuesta-de-éxito)
-    - [7.2.- Obtener Nodos por HUB](#72--obtener-nodos-por-hub)
-        - [7.2.1.- Ejemplo de llamada](#721--ejemplo-de-llamada)
-        - [7.2.2.- Respuesta de Salida](#722--respuesta-de-salida)
-            - [7.2.2.1- Respuesta de error](#7221--respuesta-de-error)
-            - [7.2.2.2- Respuesta de éxito](#7222--respuesta-de-éxito)
-    - [7.3.- Obtener Token ArcGis](#73--obtener-token-arcgis)
-        - [7.3.1.- Ejemplo de llamada](#731--ejemplo-de-llamada)
-        - [7.3.2.- Respuesta de Salida](#732--respuesta-de-salida)
-            - [7.3.2.1- Respuesta de error](#7321--respuesta-de-error)
-            - [7.3.2.2- Respuesta de éxito](#7322--respuesta-de-éxito)
-  - [8.- Datos de Ubicaciones Geográficas de Chile](#8--datos-de-ubicaciones-geográficas-de-chile)
-    - [8.1.- Listado de Regiones](#81--listado-de-regiones)
-    - [8.2.- Listado de Provincias](#82--listado-de-provincias)
-    - [8.3.- Listado de Comunas](#83--listado-de-comunas)
+  - [7.- Datos de Ubicaciones Geográficas de Chile](#7--datos-de-ubicaciones-geográficas-de-chile)
+    - [7.1.- Listado de Regiones](#71--listado-de-regiones)
+    - [7.2.- Listado de Provincias](#72--listado-de-provincias)
+    - [7.3.- Listado de Comunas](#73--listado-de-comunas)
 
 # Objetivo
 
@@ -1542,182 +1529,20 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "codigo": 200
 	}
 
-# 7.- Servicios externos
 
-## 7.1.- Obtener todos los HUBS
-Api utilizada por Gis para obtener todos los HUBS.
-
-Los parámetros que recibe son los siguientes:
-
-Ruta : GET `/arcgis/rest/services/web_map/GIS_ARCGIS_MUNDO/FeatureServer/1/query`
-
-**Parámetros de entrada:**
-| Campo          |  Tipo  | Formato  | Requerido | Descripción                |
-|:---------------|:------:|:--------:|:---------:|---------------------------:|
-| where          |string  |          |    Si     |          ?                 |
-| outFields      |string  |          |    Si     |          ?                 |
-| returnGeometry |boolean |          |    Si     |          ?                 |
-| f              |string  |          |    Si     |          ?                 |
-
-**Datos de salida:**
-| Campo          |  Tipo  |                         Descripción              |
-|:---------------|:------:|-------------------------------------------------:| 
-| ?              |  ?     | ?                                                |
-
-### 7.1.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-        "where":"estado_p%3D3",
-        "outFields":"id_planta%2C+cod_infraestructura%2C+nombre%2C+direccion%2C+dom_comuna%2C+nom_comuna%2C+dom_region%2C+region_nom%2C+estado%2C+descripcion", 
-        "returnGeometry":false,  
-        "f":"json"
-    }
-    
-### 7.1.2.- Respuesta de salida
-
-codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 7.1.2.1- Respuesta de error
-
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados "
-        },
-        "codigo": 404
-	} 
-  
-#### 7.1.2.2- Respuesta de éxito
-
-	{
-        "success": {
-
-        },
-        "codigo": 200
-	}
-
-## 7.2.- Obtener Nodos por HUB
-Api utilizada por Gis para obtener nodos de un HUB.
-
-Los parámetros que recibe son los siguientes:
-
-Ruta : GET `/arcgis/rest/services/web_map/GIS_ARCGIS_MUNDO/MapServer/6/query`
-
-**Parámetros de entrada:**
-| Campo          |  Tipo  | Formato  | Requerido | Descripción                |
-|:---------------|:------:|:--------:|:---------:|---------------------------:|
-| where          |string  |          |    Si     |          ?                 |
-| outFields      |string  |          |    Si     |          ?                 |
-| returnGeometry |boolean |          |    Si     |          ?                 |
-| f              |string  |          |    Si     |          ?                 |
-
-**Datos de salida:**
-| Campo          |  Tipo  |                         Descripción              |
-|:---------------|:------:|-------------------------------------------------:| 
-| ?              |  ?     | ?                                                |
-
-### 7.2.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-        "where":"id_planta%3D10",
-        "outFields":"id_nodo,nombre_nodo,id_planta", 
-        "returnGeometry":false,  
-        "f":"json"
-    }
-    
-### 7.2.2.- Respuesta de salida
-
-codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 7.2.2.1- Respuesta de error
-
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados "
-        },
-        "codigo": 404
-	} 
-  
-#### 7.2.2.2- Respuesta de éxito
-
-	{
-        "success": {
-
-        },
-        "codigo": 200
-	}
-
-## 7.3.- Obtener Token ArcGis
-Api utilizada por Gis para obtener token.
-
-Los parámetros que recibe son los siguientes:
-
-Ruta : POST `/arcgis/sharing/rest/generateToken`
-
-**Parámetros de entrada:**
-| Campo          |  Tipo  | Formato  | Requerido | Descripción                |
-|:---------------|:------:|:--------:|:---------:|---------------------------:|
-| username       |string  |          |    Si     |        Usuario             |
-| password       |string  |          |    Si     |        Contraseña          |
-| referer        |boolean |          |    Si     |        Url                 |
-| f              |string  |          |    Si     |          ?                 |
-| expiration     |string  |          |    Si     |          ?                 |
-
-### 7.3.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-        "username":"usuario",
-        "password":"contraseña", 
-        "referer":"https://GISMUNDO.MUNDOPACIFICO.CL:7443/arcgis",  
-        "f":"json",
-        "expiration":"20160"
-    }
-    
-### 7.3.2.- Respuesta de salida
-
-codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 7.3.2.1- Respuesta de error
-
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados "
-        },
-        "codigo": 404
-	} 
-  
-#### 7.3.2.2- Respuesta de éxito
-
-	{
-        "success": {
-
-        },
-        "codigo": 200
-	}
-# 8.- Datos de Ubicaciones Geográficas de Chile
+# 7.- Datos de Ubicaciones Geográficas de Chile
 Para obtener los datos de regiones, provincias y comunas de Chile, Mundo pacífico pondrá a disposición de los operadores las apis necesarias para ese fin.
 
-### 8.1.- Listado de Regiones
+### 7.1.- Listado de Regiones
 
 Ruta : GET `/parametros/regiones`
 
-### 8.2.- Listado de Provincias
+### 7.2.- Listado de Provincias
 
 Ruta : GET `/parametros/provincias`
 Parámetro : codigoRegion
 
-### 8.3.- Listado de Comunas
+### 7.3.- Listado de Comunas
 
 Rut : GET `/parametros/comunas`
 Parámetro : codigoRegion
