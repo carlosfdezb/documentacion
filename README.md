@@ -4,7 +4,9 @@ author: "Alvaro Muñoz B."
 date: "23/09/2020"
 ---
 
-|Tipo de seguridad:| Ningún tipo de seguridad | 
+| Tipo de seguridad|
+|:----------------:|
+| Ningún tipo de seguridad |
 
 # Documentación Api´s para Beyond Up Mutualidad
 
