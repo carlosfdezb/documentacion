@@ -142,7 +142,7 @@ Ruta : GET `/factibilidad/consultahp`
 | nap             | string | Descripción del Nap               |
 | comuna          | string | Nombre de la comuna               |
 | codigoPostal    |  int   | Código Postal                     |
-| via             |  string| Tipo de Calle                     |
+| via             | string | Tipo de Calle                     |
 | calle           | string | Nombre de la calle                |
 | numero          | string | Numeración de la calle            |
 | departamento    | string | Departamento                      |
@@ -277,7 +277,7 @@ Ruta : GET `/factibilidad/consultaFactibilidad`
 | nap            | string |                     Descripción del Nap          |               
 | comuna         | string |                     Nombre de la comuna          |              
 | codigoPostal   |  int   |                        Código Postal             |      
-| via            |  string|                        Tipo de Calle             |                
+| via            | string |                        Tipo de Calle             |                
 | calle          | string |                     Nombre de la calle           |               
 | numero         | string |                   Numeración de la calle         |              
 | departamento   | string |                       Departamento               |           
@@ -728,32 +728,25 @@ Ruta : POST `/support/alta`
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | idReserva      | int    |          |    Si     | Identificador de la reserva|
 | externalId     | string |          |    Si     | Identificador del Cliente del Operador|
-| internet       | string |          |    Si     | Plan de internet|
-| telefono       | int    |          |    Si     | Plan de teléfono|
-| user           | string |          |           |       ?                    |
-| pass           | string |          |           |       ?                    |
-| serieOnt       | string |          |    Si     |       ?                    |
-| tv             | string |          |    Si     |       ?                    |
-| telefono       | int    |          |    Si     |       ?                    |
-| user           | string |          |           |       ?                    |
-| pass           | string |          |           |       ?                    |
+| idPackage      | string |          |    Si     | Plan de internet           |
+| internet       | string |          |    Si     | Plan de internet           |
+| serieOnt       | string |          |    Si     | Código de ONT              |
+| tv             | string |          |    Si     | Plan de tv                 |
+| telefono       | int    |          |    Si     | Plan de teléfono           |
+| user           | string |          |           | Usuario                    |
+| pass           | string |          |           | Contraseña                 |
 
 ### 4.1.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "idReserva":60,
-        "externalID":"CC46000049",
-        "idPackage" :
-        {
-            "internet":"500"
-            "telefono":0,
-            "user":"",
-            "pass":""
-        },
-        "serieOnt":"464854549225A878",
-        "tv":"no",
+        "idReserva":31,
+        "externalID": "CC20210804",
+        "idPackage" :"10",
+        "internet" :"500",   
+        "serieOnt": "4857544395AFD29B",
+        "tv" :"no",
         "telefono":0,
         "user":"",
         "pass":""
@@ -778,11 +771,25 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 	{
         "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": "Alta realizada correctamente"
+        "codigoRespuesta": 1,
+        "descripcionRespuesta": {
+            "data": {
+                "Provision creada correctamente": {
+                    "external_id": "CC20210804",
+                    "name": "Chirs hooper",
+                    "surname": null,
+                    "address": null,
+                    "contact_phone": null,
+                    "ont": "4857544395AFD29B",
+                    "id": "http://172.16.1.4:8000/customer/CC20210804",
+                    "product_package_groups": "http://172.16.1.4:8000/product_package_group/4857544395AFD29B",
+                    "created_at": "2021-08-04 18:13:47",
+                    "updated_at": "2021-08-04 18:13:47",
+                    "operador": "000"
+                }
             }
-        },
+        }
+    },
         "codigo": 200
 	}
 
@@ -796,7 +803,7 @@ Ruta : POST `/support/baja`
 **Parámetros de entrada:**
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
-| idReserva      | int    |          |    Si     | Identificador de la reserva   |
+| idReserva      | int    |          |    Si     | Identificador de la reserva|
 
 ### 4.2.1.- Ejemplo de llamada
 
@@ -844,7 +851,7 @@ Ruta : POST `/support/desconectar`
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | idReserva      | int    |          |    Si     | Identificador de la reserva|
-| operador       | string |          |    Si     |Código del operador         |
+| operador       | string |          |    Si     | Código del operador        |
 ### 4.3.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
@@ -1042,9 +1049,9 @@ Ruta : GET  `/reserva`
 | Campo         |  Tipo  | Formato | Requerido |         Descripción         |
 |:------------- |:------:|:-------:|:---------:|----------------------------:|
 | fecha_desde   |  date  | yyyy-mm-dd |    Si  | Fecha de Inicio de búsqueda |
-| fecha_hasta     | date |    yyyy-mm-dd      |    Si     |   Fecha de termino de búsqueda   |
-| codigo_operador |   int     |         |    Si       | Código del operador  | 
-| per_page   |  int      |         |    Si       |    numero de paginas      |
+| fecha_hasta     | date | yyyy-mm-dd |    Si  | Fecha de termino de búsqueda|
+| codigo_operador | int  |         |    Si     | Código del operador         | 
+| per_page   |  int      |         |    Si     |    numero de paginas        |
 
 **Datos de salida:**
 | Campo         |  Tipo  |         Descripción         |
