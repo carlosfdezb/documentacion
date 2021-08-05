@@ -114,10 +114,10 @@ date: "23/09/2020"
 
 # Objetivo
 
-Disponer Apis para que beyond Up realice gestión sobre los Homepass de Mundo Pacífico.
+Disponer Api's para realizar la gestión sobre los Homepass de Mundo.
 
 # Restricciones
-A partir de la habilitación de estas Apis, beyond UP debe deja de hacer gestión sobre Homepass y de asignación de Bocas de Naps.
+En este documento solo se describen Api's propias del sistema, no externas a este.
 
 # 1.- Factibilidad
 ## 1.1.- Factibilidad por Homepass
