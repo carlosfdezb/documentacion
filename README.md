@@ -6,7 +6,7 @@ date: "23/09/2020"
 
 | Tipo de seguridad|
 |:----------------:|
-| Ningún tipo de seguridad |
+| Ninguna          |
 
 # Documentación Api´s para Beyond Up Mutualidad
 
@@ -653,7 +653,18 @@ Ruta : GET `/support/getOntSignal`
 **Datos de salida:**
 | Campo          |  Tipo  |                         Descripción              |
 |:---------------|:------:|-------------------------------------------------:| 
-| ?              |  ?     |                 ?                                | 
+| RunStatus      | int    |   Encendida o apagada                            | 
+| TxOnt          | string |   Transmite la ONT                               |
+| RxOnt          | string |   Recepción de la ONT                            |
+| RxCATV         | string |   Recepción de CATV                              |
+| RxOlt          | string |   Transmite la OLT                               |
+| TxOlt          | string |   Recepción de la ONT                            |
+| IP             | string |   IP de la ONT                                   |
+|AtenuacionBajada| string |   Rango de señal de bajada                       |
+|AtenuacionSubida| string |   Rango de señal de subida                       |
+| board          | int    |   Identificador de la tarjeta                    |
+| port           | int    |   Identificador del puerto                       |
+| ont            | int    |   Identificador de la ont                        |
 
 ### 3.1.1.- Ejemplo de llamada
 
@@ -681,11 +692,24 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 3.1.2.2- Respuesta de éxito
 
 	{
-         "success": {
+        "success": {
             "codigoRespuesta": 1,
             "descripcionRespuesta": {
                 "data": {
-                    "señalOnt": {}
+                    "señalOnt": {
+                        "RunStatus": 1,
+                        "TxOnt": "2.23",
+                        "RxOnt": "-17.10",
+                        "RxCATV": 3.43,
+                        "RxOlt": "-19.34",
+                        "TxOlt": "7.07",
+                        "IP": "10.142.224.154",
+                        "AtenuacionBajada": "24.17",
+                        "AtenuacionSubida": "21.57",
+                        "board": 5,
+                        "port": 1,
+                        "ont": 6
+                    }
                 }
             }
         },
@@ -803,7 +827,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "success": {
             "codigoRespuesta": 1,
             "descripcionRespuesta": {
-                "data": "Baja realizada correctamente"
+                "data": null
             }
         },
         "codigo": 200
@@ -851,7 +875,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "success": {
             "codigoRespuesta": 1,
             "descripcionRespuesta": {
-                "data": "Desconexion realizada correctamente"
+                "data": null
             }
         },
         "codigo": 200
@@ -1132,13 +1156,13 @@ Ruta : GET `/servicialidad/getServicialidad`
 | bocaNap        |  int   | Identificador de la boca de la mufa              | 
 | spliterNap     |  int   | Identificador del splitter de la nap             | 
 | puertaPon      |  int   | Identificador de la puertaPon                    | 
-| ponEdfa        |  ?     |  ?                                               | 
+| ponEdfa        |string  | Pon conectado al EDFA                            | 
 | homepass       |  int   | Identificador del homepass                       | 
 | calle          | string | Nombre de la calle                               | 
 | numero         | string | Numeración de la calle                           | 
 | olt            |  int   | Identificador del OLT                            | 
 | tarjetaPon     |  int   | Identificador de la tarjetaPon                   | 
-| edfa           |  int   | ?                                                | 
+| edfa           |string  | Amplificador de fibra                            |  
 | spliter        |  int   | Identificador del splitter                       | 
 
 ### 6.1.1.- Ejemplo de llamada
@@ -1237,7 +1261,7 @@ Ruta : GET `/servicialidad/getServicialidadMufa`
 | correlativoRed |  int   | Identificador de la servicialidad                |
 | nodo           | string | Identificador del nodo                           | 
 | mufaTroncal    | string | Identificador de la mufa troncal                 | 
-|mufaDistribucion| string | ?                                                | 
+|mufaDistribucion| string | Distribución de cables                           | 
 | nap            | string | Código del Nap                                   | 
 | mufa           | string | Identificador del nodo                           | 
 | spliterMufa    | string | Identificador del splitter de la mufa            | 
@@ -1330,12 +1354,12 @@ Ruta : GET `/servicialidad/getServicialidadPlanta`
 | Campo          |  Tipo  |                         Descripción              |
 |:---------------|:------:|-------------------------------------------------:| 
 | hub            |string  | Identificador del HUB                            | 
-| direccion      |string  | ?                                                | 
+| direccion      |string  | Dirección del HUB                                | 
 | olt            |string  | Identificador del OLT                            | 
 | nodo           |string  | Identificador del nodo                           | 
-| edfa           |string  | ?                                                | 
+| edfa           |string  | Amplificador de fibra                            | 
 | tarjetaPon     |string  | Identificador de tarjetaPon                      | 
-| ponEdfa        |string  | ?                                                | 
+| ponEdfa        |string  | Pon conectado al EDFA                            | 
 | puertaPon      |string  | Identificador de puertaPon                       | 
 | splitter       |string  | Identificador del splitter                       | 
 
@@ -1416,12 +1440,12 @@ Ruta : GET `/servicialidad/getServicialidadPlantaGis`
 | Campo          |  Tipo  |                         Descripción              |
 |:---------------|:------:|-------------------------------------------------:| 
 | hub            |string  | Identificador del HUB                            | 
-| direccion      |string  | ?                                                | 
+| direccion      |string  | Dirección del HUB                                | 
 | olt            |string  | Identificador del OLT                            | 
 | nodo           |string  | Identificador del nodo                           | 
-| edfa           |string  | ?                                                | 
+| edfa           |string  | Amplificador de fibra                            | 
 | tarjetaPon     |string  | Identificador de tarjetaPon                      | 
-| ponEdfa        |string  | ?                                                | 
+| ponEdfa        |string  | Pon conectado al EDFA                            | 
 | puertaPon      |string  | Identificador de puertaPon                       | 
 | splitter       |string  | Identificador del splitter                       | 
 
