@@ -431,7 +431,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	}
 
 ## 5.- diaactual
-Breve descripción de ruta
+Método que responde si el día corresponde o no a un día feriado, y si es o no irrenunciable.
 
 Los parámetros que recibe son los siguientes:
 
@@ -639,6 +639,1630 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	} 
   
 #### 8.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 9.- feriados
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/feriados`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 9.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 9.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 9.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 9.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 10.- guardarReceptor
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/guardarReceptor`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 10.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 10.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 10.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 10.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 11.- hubspot
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/hubspot`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 11.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 11.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 11.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 11.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 12.- informarContingencia
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/informarContingencia`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 12.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 12.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 12.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 12.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 13.- mjeOut
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mjeOut`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 13.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 13.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 13.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 13.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 14.- mjein
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mjein`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 14.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 14.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 14.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 14.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 15.- purgaMails
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/purgaMails`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 15.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 15.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 15.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 15.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 16.- recibeFacebook
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/recibeFacebook`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 16.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 16.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 16.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 16.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 17.- recibeMensajeFb
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/recibeMensajeFb`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 17.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 17.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 17.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 17.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 18.- recibeMensajeInst
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/recibeMensajeInst`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 18.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 18.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 18.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 18.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 19.- recibeMensajeWsp
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/recibeMensajeWsp`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 19.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 19.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 19.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 19.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 20.- recibeMensajeWspFail
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/recibeMensajeWspFail`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 20.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 20.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 20.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 20.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 21.- recibeMensajeWspStatus
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/recibeMensajeWspStatus`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 21.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 21.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 21.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 21.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 22.- recibeMjeMsn
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/recibeMjeMsn`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 22.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 22.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 22.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 22.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 23.- recibeMjeTelegram
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/recibeMjeTelegram`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 23.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 23.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 23.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 23.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 24.- recibeMjeTelegramConnect
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/recibeMjeTelegramConnect`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 24.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 24.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 24.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 24.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 25.- recibeMjeTelegramSoporte
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/recibeMjeTelegramSoporte`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 25.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 25.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 25.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 25.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 26.- recibeMjeTelegramSoporteEmpresa
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/recibeMjeTelegramSoporteEmpresa`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 26.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 26.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 26.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 26.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 27.- recibeMjeTelegramSoporteTecnico
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/recibeMjeTelegramSoporteTecnico`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 27.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 27.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 27.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 27.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 28.- recibeMjeTelegramTest
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/recibeMjeTelegramTest`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 28.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 28.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 28.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 28.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 29.- recibeMjeTelegramVentas
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/recibeMjeTelegramVentas`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 29.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 29.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 29.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 29.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 30.- recibeTwitter
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/recibeTwitter`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 30.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 30.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 30.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 30.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 31.- recibirComentariosFb
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/recibirComentariosFb`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 31.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 31.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 31.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 31.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 32.- recibirConversaciones
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/recibirConversaciones`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 32.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 32.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 32.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 32.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 33.- recibirMail
+Método que permite la recepción de mails sin esperar al cron.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/recibirMail`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 33.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 33.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 33.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 33.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 34.- registraTelegram
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/registraTelegram`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 34.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 34.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 34.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 34.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 35.- storeArchivo
+Método que permite guardar archivos en el servidor.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/storeArchivo`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 35.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 35.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 35.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 35.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 36.- test
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/test`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 36.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 36.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 36.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 36.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 37.- twitterfixer
+Método que permite reenviar todos los mensajes de twitter que en su momento no fueron entregados. (Debe revisarse BD antes de usar) 
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/twitterfixer`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 37.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 37.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 37.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 37.2.2.- Respuesta de éxito
 
 	{
         "success": {
