@@ -309,7 +309,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "error": {
             "codigoRespuesta": 0,
             "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados "
+            "detalleRespuesta": "No hay datos relacionados"
         },
         "codigo": 404
 	} 
