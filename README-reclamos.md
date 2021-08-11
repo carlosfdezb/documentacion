@@ -25,17 +25,17 @@
         - [1.3.2.- Respuesta de Salida](#132--respuesta-de-salida)
             - [1.3.2.1- Respuesta de error](#1321--respuesta-de-error)
             - [1.3.2.2- Respuesta de éxito](#1322--respuesta-de-éxito)
-    - [1.4.- Tipo Notificación](#14--tipo-notificación)
+    - [1.4.- Tipos de Notificación](#14--tipos-de-notificación)
         - [1.4.1.- Ejemplo de llamada](#141--ejemplo-de-llamada)
         - [1.4.2.- Respuesta de Salida](#142--respuesta-de-salida)
             - [1.4.2.1- Respuesta de error](#1421--respuesta-de-error)
             - [1.4.2.2- Respuesta de éxito](#1422--respuesta-de-éxito)
-    - [1.5.- Servicio](#15--servicio)
+    - [1.5.- Tipos de Servicios](#15--tipos-de-servicios)
         - [1.5.1.- Ejemplo de llamada](#151--ejemplo-de-llamada)
         - [1.5.2.- Respuesta de Salida](#152--respuesta-de-salida)
             - [1.5.2.1- Respuesta de error](#1521--respuesta-de-error)
             - [1.5.2.2- Respuesta de éxito](#1522--respuesta-de-éxito)
-    - [1.6.- Tipo Servicio](#16--tipo-servicio)
+    - [1.6.- Tipos de Servicios 2](#16--tipos-de-servicios-2)
         - [1.6.1.- Ejemplo de llamada](#161--ejemplo-de-llamada)
         - [1.6.2.- Respuesta de Salida](#162--respuesta-de-salida)
             - [1.6.2.1- Respuesta de error](#1621--respuesta-de-error)
@@ -516,3 +516,1629 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         },
         "codigo": 200
 	}
+
+## 1.4.- Tipos de Notificación
+Método que retorna los tipos de medios de notificación para el cliente.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/listado/tipo-notificacion`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.4.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.4.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.4.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.4.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.5.- Tipos de Servicios
+Método que retorna lista de tipos de servicios.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/listado/servicio`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.5.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.5.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.5.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.5.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.6.- Tipos de Servicios 2
+Método que retorna lista de tipos de servicios.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/listado/tiposervicio`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.6.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.6.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.6.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.6.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.7.- Motivos
+Método que retorna lista de motivos de reclamo.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/listado/motivo`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.7.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.7.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.7.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.7.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.8.- Tipos de Registro
+Método que retorna lista de tipos de registro de reclamos.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/listado/tipo-registro`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.8.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.8.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.8.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.8.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.9.- Submotivos
+Método que retorna lista de submotivos de reclamos.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/listado/submotivo`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.9.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.9.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.9.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.9.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.10.- Reclamos
+Método que retorna detalle de reclamo o lista de reclamos.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/listado/reclamo`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.10.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.10.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.10.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.10.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.11.- Estado de Reclamo
+Método que retorna lisa de estaos de reclamo.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/listado/estado-reclamos`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.11.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.11.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.11.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.11.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.12.- Ingresar Reclamos por Ejecutivos
+Método que permite ingresar reclamos en el portal por ejecutivos.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/reclamos/reclamo-ejecutivo-ingresar`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.12.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.12.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.12.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.12.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.13.- Total Reclamos Comunas
+Método que retorna los datos para el reporte gráfico de reclamos de todas las comunas.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/reclamos/grafico-reclamo-total-comuna`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.13.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.13.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.13.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.13.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.14.- Reclamos por Comuna
+Método que retorna los datos para el reporte gráfico de reclamos por comuna.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/reclamos/grafico-reclamo-por-comuna`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.14.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.14.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.14.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.14.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+    
+## 1.15.- Reclamos por Fecha
+Método que retorna los datos para el reporte gráfico de reclamos por rango de fecha.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/reclamos/grafico-reclamo-por-fecha`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.15.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.15.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.15.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.15.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.16.- Reclamos por Motivo y Servicio
+Método que retorna los datos para el reporte gráfico de reclamos por motivos y servicios.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/reclamos/grafico-reclamo-por-servicio-motivo`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.16.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.16.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.16.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.16.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+    
+## 1.17.- Tipos de Conformidad
+Método que retorna el listado de tipos de conformidad del reclamo.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/listado/tipo-conformidad`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.17.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.17.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.17.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.17.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.18.- Macromotivos
+Método que retorna el listado de macromotivos de reclamos.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/listado/macromotivo`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.18.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.18.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.18.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.18.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.19.- Editar Reclamo
+Método que permite editar un reclamo.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/reclamos/reclamo-editar`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.19.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.19.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.19.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.19.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.20.- Exportar Reclamos
+Método que permite generar un reporte de datos de reclamos para exportar a excel.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/informes/reclamo-export`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.20.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.20.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.20.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.20.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.21.- Tipos de Teléfonos
+Método que retorna lista de tipos de teléfonos.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/listado/tipo-telefono`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.21.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.21.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.21.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.21.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.22.- Contingencias Cliente
+Método que retorna las contingencias que tiene el cliente.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/contingenciasNodos`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.22.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.22.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.22.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.22.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.23.- Datos del Cliente
+Método que retorna los datos del cliente.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/consultaCliente`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.23.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.23.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.23.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.23.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.24.- Datos del Cliente IVR
+Método que retorna los datos del cliente IVR.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/consultaClienteIVR`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.24.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.24.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.24.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.24.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.25.- Datos Domicilio de Cliente
+Método que retorna los datos del domicilio del cliente.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/divGeoClientePrincipal`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.25.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.25.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.25.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.25.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.26.- Lista de Comunas
+Método que retorna lista de comunas.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/comunas`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.26.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.26.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.26.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.26.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.27.- Lista de Regiones
+Método que retorna lista de regiones.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/regiones`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.27.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.27.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.27.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.27.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.28.- Servicios Contratados por Cliente
+Método que retorna los servicios contratados por el cliente.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/datos-cliente-tipo-servicio`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.28.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.28.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.28.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.28.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.29.- Ingresar Comentario de Reclamo
+Método que permite ingresar comentios de reclamos.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/reclamos/ingresar-comentario-reclamo`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.29.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.29.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.29.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.29.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.30.- Lista Subcategorías Internas
+Método que retorna lista de subcategorías internas.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/listado/subcategorias-internas`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.30.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.30.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.30.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.30.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.31.- Ingresar Oficio de Reclamo Subtel
+SOAP service para ingreso de oficios de reclamos de subtel.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/subtel/OficioReclamo`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.31.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.31.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.31.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.31.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 1.32.- Ingresar Resolución de Reclamo Subtel
+SOAP service para ingreso de resoluciones de reclamos de subtel.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/reclamos/subtel/ResolucionReclamo`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 1.32.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 1.32.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 1.32.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 1.32.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+# 2.- Sucursal
