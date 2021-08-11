@@ -2142,3 +2142,1856 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	}
 
 # 2.- Sucursal
+## 2.1.- Ingresar Reclamos desde Sucursal
+Método que permite el ingreso de reclamos de clientes desde la sucursal.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/sucursalVirtual/reclamo-ingresar`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 2.1.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 2.1.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 2.1.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 2.1.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 2.2.- Tipos de Reclamos.
+Método que retorna lista de tipos de reclamos - Sucursal virtual.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/sucursalVirtual/listado/tipo-reclamo`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 2.2.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 2.2.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 2.2.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 2.2.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 2.3.- Tipos de Medios de Notificación
+Método que retorna lista de tipos de medios de notificación - Sucursal virtual.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/sucursalVirtual/listado/tipo-notificacion`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 2.3.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 2.3.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 2.3.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 2.3.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 2.4.- Tipos de Servicios Contratados
+Método que retorna lista de tipos de servicios contratados por el cliente (Móvil o Fijo) - Sucursal virtual.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/sucursalVirtual/listado/servicio`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 2.4.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 2.4.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 2.4.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 2.4.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 2.5.- Lista de Servicios Contratados
+Método que retorna lista de servicios contratados por el cliente - Sucursal virtual.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/sucursalVirtual/listado/tiposervicio`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 2.5.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 2.5.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 2.5.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 2.5.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 2.6.- Lista de Motivos de Reclamo
+Método que retorna lista de motivos de reclamo - Sucursal virtual.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/sucursalVirtual/listado/motivo`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 2.6.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 2.6.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 2.6.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 2.6.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 2.7.- Lista de Submotivos de Reclamo
+Método que retorna lista de submotivos de reclamo - Sucursal virtual.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/sucursalVirtual/listado/submotivo`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 2.7.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 2.7.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 2.7.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 2.7.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 2.8.- Lista de Reclamos por Cliente
+Método que retorna lista con detalle de reclamos realizados por el cliente - Sucursal virtual.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/sucursalVirtual/informes/reclamo-cliente`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 2.8.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 2.8.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 2.8.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 2.8.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 2.9.- Tipos de Teléfono
+Método que retorna lista de tipos de teléfono - Sucursal virtual.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/sucursalVirtual/listado/tipo-telefono`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 2.9.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 2.9.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 2.9.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 2.9.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 2.10.- Contingencias Cliente
+Método que retorna las posibles contingencias relacionadas al cliente - Sucursal virtual.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/sucursalVirtual/contigenciasNodos`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 2.10.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 2.10.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 2.10.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 2.10.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 2.11.- Consultar Datos de Cliente IVR
+Método que permite consultar datos del cliente para IVR.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/sucursalVirtual/consultaClienteIVR`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 2.11.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 2.11.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 2.11.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 2.11.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 2.12.- Datos Domicilio de Cliente
+Método que retorna los datos del domicilio del cliente - Sucursal virtual.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/sucursalVirtual/divGeoClientePrincipal`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 2.12.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 2.12.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 2.12.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 2.12.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 2.13.- Servicios Contratados por Cliente
+Método que retorna los servicios contratados por el cliente - Sucursal virtual.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/sucursalVirtual/datos-cliente-tipo-servicio`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 2.13.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 2.13.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 2.13.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 2.13.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+
+# 3.- IVR
+## 3.1.- Informe Reclamos
+Método que retorna informe de datos de reclamos IVR por cliente para Mundo social.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/ivr/MundoSocial/informe-reclamos`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 3.1.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 3.1.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 3.1.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 3.1.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 3.2.- Finalizar
+BREVE DESCRIPCIÓN
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/ivr/finalizar`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 3.2.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 3.2.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 3.2.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 3.2.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 3.3.- Grabar Registro
+Método que permite grabar el registro inicial de IVR de forma temporal.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/ivr/grabarregistro`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 3.3.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 3.3.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 3.3.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 3.3.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 3.4.- Ingresar
+BREVE DESCRIPCIÓN
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/ivr/ingresar`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 3.4.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 3.4.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 3.4.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 3.4.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 3.5.- Ingresar Reclamo
+BREVE DESCRIPCIÓN
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/ivr/ingresarReclamo`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 3.5.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 3.5.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 3.5.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 3.5.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 3.6.- Actualizar Contingencia
+Método que permite actualizar contingencia del cliente en la tabla temporal IVR.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/ivr/upd-contingencia`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 3.6.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 3.6.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 3.6.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 3.6.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 3.7.- Actualizar Estado de Reclamo
+Método que permite actualizar estado del reclamo del cliente en tabla temporal IVR.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/ivr/upd-estado`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 3.7.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 3.7.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 3.7.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 3.7.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 3.8.- Actualizar Teléfono de Cliente
+Método que permite actualizar el teléfono del cliente en tabla temporal IVR.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/ivr/upd-fono`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 3.8.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 3.8.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 3.8.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 3.8.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 3.9.- Actualizar Teléfono Reclamado por Cliente
+Método que permite actualizar el teléfono reclamado por el cliente en tabla temporal IVR.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/ivr/upd-fono-reclamo`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 3.9.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 3.9.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 3.9.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 3.9.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 3.10.- Actualizar Motivo de Reclamo
+Método que permite actualizar el motivo del reclamo del cliente en tabla temporal IVR.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/ivr/upd-motivo`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 3.10.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 3.10.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 3.10.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 3.10.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 3.11.- Actualizar Rut de Cliente
+Método que permite actualizar el rut del cliente en tabla temporal IVR.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/ivr/upd-rut`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 3.11.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 3.11.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 3.11.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 3.11.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 3.12.- Actualizar Rut de Cliente Solicitante
+Método que permite actualizar el rut del cliente solicitante en tabla temporal IVR.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/ivr/upd-rut-solicitante`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 3.12.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 3.12.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 3.12.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 3.12.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 3.13.- Actualizar Servicio del Cliente
+Método que permite actualizar el servicio del cliente solicitante en tabla temporal IVR.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/ivr/upd-servicio`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 3.13.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 3.13.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 3.13.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 3.13.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 3.14.- Actualizar Submotivo de Reclamo
+Método que permite actualizar el submotivo de reclamo IVR.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/ivr/upd-submotivo`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 3.14.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 3.14.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 3.14.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 3.14.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+
+## 3.15.- Actualizar Medio de Notificación
+Método que permite actualizar el medio de notificación del cliente en table temporal IVR.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/ivr/upd-tipo-notificacion`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 3.15.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 3.15.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 3.15.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 3.15.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 3.16.- Actualizar Tipo de Teléfono Reclamado
+Método que permite actualizar el tipo de teléfono reclamado - IVR.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/ivr/upd-tipo-telefono`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 3.16.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 3.16.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 3.16.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 3.16.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 3.17.- Actualizar Tipo de Servicio
+Método que permite actualizar el tipo de servicio en tabla temporal - IVR.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/ivr/upd-tiposervicio`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 3.17.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 3.17.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 3.17.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 3.17.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 3.18.- Actualizar Número Móvil Reclamado
+Método que permite actualizar el número móvil reclamado - IVR.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/ivr/update-celular-reclamado`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 3.18.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 3.18.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 3.18.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 3.18.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 3.19.- Actualizar Cliente Reclamante
+Método que permite actualizar en tabla temporal si el cliente es reclamante o no - IVR.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/ivr/update-cliente-es-reclamante`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 3.19.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 3.19.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 3.19.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 3.19.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+## 3.20.- Actualizar Teléfono Reclamado
+Método que permite actualizar el teléfono reclamado en tabla temporal del IVR.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/ivr/update-telefono-reclamado`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 3.20.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "NOMBRE_CAMPO":"valor"
+	}
+
+### 3.20.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 3.20.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No hay datos relacionados"
+        },
+        "codigo": 404
+	} 
+  
+#### 3.20.2.2.- Respuesta de éxito
+
+	{
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "data": [
+                    {
+                     DATA
+                    },
+                ]
+            }
+        },
+        "codigo": 200
+	}
+
+
+
