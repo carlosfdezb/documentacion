@@ -1,0 +1,7 @@
+asignacion de usuario->asignar usuario a ticket
+==
+autoasignacion->autoasignacion
+
+cierre masivo = vacio
+
+canales->get == cuentas internas->get cuenta by canal
