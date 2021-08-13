@@ -5,3 +5,9 @@ autoasignacion->autoasignacion
 cierre masivo = vacio
 
 canales->get == cuentas internas->get cuenta by canal
+
+
+----
+
+
+cuenta by canal
