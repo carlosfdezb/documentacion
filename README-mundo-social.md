@@ -530,12 +530,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.1.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 1.1.2.2.- Respuesta de éxito
@@ -555,8 +550,8 @@ Ruta : POST `/api/mundosocial/ticket/asignausuario`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| tick_id      | int          |                                | Si                                         | Identificador del ticket    |
-| usua_id      | int          |                                | Si                                         | Identificador del usuario   |
+| tick_id      | int          |                                | Si                                         | Código Interno del ticket    |
+| usua_id      | int          |                                | Si                                         | Código Interno del usuario   |
 
 ### 1.2.1.- Ejemplo de llamada
 
@@ -597,7 +592,7 @@ Ruta : POST `/api/mundosocial/ticket/asignausuario`
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
 | auto         | string       |                                | Si                                         | Indica                      |
-| tick_id      | int          |                                | Si                                         | Identificador del ticket    |
+| tick_id      | int          |                                | Si                                         | Código Interno del ticket    |
 | mail         | string       |                                | Si                                         | Email de                    |
 
 ### 2.1.1.- Ejemplo de llamada
@@ -695,7 +690,7 @@ Ruta : GET `/api/mundosocial/cuentacanales`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| cana_id      | int          |                                | Si                                         | Identificador de            |
+| cana_id      | int          |                                | Si                                         | Código Interno de            |
 
 **Datos de salida:**
 | Campo             |  Tipo        |                         Descripción              |
@@ -720,12 +715,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 4.1.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 4.1.2.2.- Respuesta de éxito
@@ -760,7 +750,7 @@ Ruta : GET `/api/mundosocial/canalgrupo`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| grup_id      | int          |                                | Si                                         | Identificador de            |
+| grup_id      | int          |                                | Si                                         | Código Interno del grupo    |
 
 **Datos de salida:**
 | Campo             |  Tipo        |                         Descripción              |
@@ -782,12 +772,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 5.1.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 5.1.2.2.- Respuesta de éxito
@@ -808,8 +793,8 @@ Ruta : POST `/api/mundosocial/canalgrupo`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| grup_id      | int          |                                | Si                                         | Identificador de            |
-| cuen_id      | int          |                                | Si                                         | Identificador de            |
+| grup_id      | int          |                                | Si                                         | Código Interno del grupo    |
+| cuen_id      | int          |                                | Si                                         | Código Interno de la cuenta |
 | cagr_usa_bot | boolean      |                                | Si                                         |                             |
 
 
@@ -830,12 +815,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 5.2.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 5.2.2.2.- Respuesta de éxito
@@ -854,9 +834,9 @@ Ruta : POST `/api/mundosocial/canalgrupo/update`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| cagr_id      | int          |                                | Si                                         | Identificador de            |
-| grup_id      | int          |                                | Si                                         | Identificador de            |
-| cuen_id      | int          |                                | Si                                         | Identificador de            |
+| cagr_id      | int          |                                | Si                                         | Código Interno de            |
+| grup_id      | int          |                                | Si                                         | Código Interno del grupo     |
+| cuen_id      | int          |                                | Si                                         | Código Interno de la cuenta  |
 | cagr_usa_bot | boolean      |                                | Si                                         |                             |
 
 
@@ -878,12 +858,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 5.3.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 5.3.2.2.- Respuesta de éxito
@@ -902,7 +877,7 @@ Ruta : POST `/api/mundosocial/canalgrupo/delete`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| cagr_id      | int          |                                | Si                                         | Identificador de            |
+| cagr_id      | int          |                                | Si                                         | Código Interno de            |
 
 
 ### 5.4.1.- Ejemplo de llamada
@@ -920,12 +895,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 5.4.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 5.4.2.2.- Respuesta de éxito
@@ -944,7 +914,7 @@ Ruta : GET `/api/mundosocial/cuentabycanal`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| grup_id      | int          |                                | Si                                         | Identificador de            |
+| grup_id      | int          |                                | Si                                         | Código Interno del grupo      |
 
 
 ### 5.5.1.- Ejemplo de llamada
@@ -962,12 +932,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 5.5.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 5.5.2.2.- Respuesta de éxito
@@ -994,7 +959,7 @@ Ruta : GET `/api/mundosocial/cliente`
 **Datos de salida:**
 | Campo                 |  Tipo        |                         Descripción              |
 |:----------------------|:------------:|-------------------------------------------------:| 
-| clie_id               | int          | Identificador del cliente                        |
+| clie_id               | int          | Código Interno del cliente                        |
 | clie_rut              | string       | Rut del cliente                                  |
 | clie_nombre           | string       | Nombres del cliente                              |
 | clie_apellido1        | string       | Apellido paterno del cliente                     |
@@ -1096,12 +1061,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 6.2.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	}
   
 #### 6.2.2.2.- Respuesta de éxito
@@ -1109,4 +1069,314 @@ codigo: 200 éxito mensaje: descripcion del mensaje
     {
         "mensaje": "ok",
         ...
+    }
+
+## 6.3.- ClienteTicket
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/cliente/cliente`
+
+**Parámetros de entrada:**
+| Campo                 |  Tipo        | Formato               |     Requerido           |             Descripción          |
+|:---------------------:|:------------:|:---------------------:|:-----------------------:|---------------------------------:|
+| tick_id               | string       |                       |  Si                     | Código Interno del ticket        |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| clie_nombre           | string       | Nombres del cliente                              |
+| clie_apellido1        | string       | Apellido paterno del cliente                     |
+| clie_id_canales       | int          |                                                  |
+| calc_identificador    | string       |                                                  |
+| clie_id               | int          | Código Interno del cliente                       |
+
+
+### 6.3.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "tick_id": 188,
+	}
+
+### 6.3.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 6.3.2.1.- Respuesta de error
+
+	{
+        ...
+	}
+  
+#### 6.3.2.2.- Respuesta de éxito
+
+    {
+        "cliente": {
+            "clie_nombre": "Daniel",
+            "clie_apellido1": "Bustos",
+            "cana_id_canales": 1,
+            "cacl_identificador": "whatsapp:+56961877547",
+            "clie_id": 28
+        }
+    }
+
+
+# 7.- Colas
+## 7.1.- Buscar Siguiente Ticket
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/siguienteticket`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| mail         | string       |                                | Si                                         | Mail del X                  |
+
+### 7.1.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "mail": "daniel.bustos@prueba.com"
+	}
+
+### 7.1.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 7.1.2.1.- Respuesta de error
+
+	{
+        "mensaje": "Usuario no se encuentra en línea"
+    }
+  
+#### 7.1.2.2.- Respuesta de éxito
+
+    {
+        ...
+    }
+
+## 7.2.- Cambiar Grupo
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/cambiargrupo`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| tick_id      | int          |                                | Si                                         | Código interno del ticket   |
+| grup_id      | int          |                                | Si                                         | Código interno del grupo    |
+
+### 7.2.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "mail": "daniel.bustos@prueba.com"
+	}
+
+### 7.2.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 7.2.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 7.2.2.2.- Respuesta de éxito
+
+    {
+        ...
+    }
+
+## 7.3.- Diferencia
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/diferencia`
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| enviados              | int          |                                                  |
+| mensajeEnviado        | string       |                                                  |
+
+### 7.3.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+       null
+	}
+
+### 7.3.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 7.3.2.1.- Respuesta de error
+
+	{
+       ...
+    }
+  
+#### 7.3.2.2.- Respuesta de éxito
+
+    {
+        "enviados": 367,
+        "mensajeEnviado": "En este momento nuestros ejecutivos se encuentran ocupados,en unos minutos un ejecutivo analizara su solicitud."
+    }
+
+
+# 8.- Cuentas Internas
+## 8.1.- getCuentabyCanal
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/cuentacanales`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| cana_id      | int          |                                | Si                                         | Identificador del canal     |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| cuen_id               | int          | Código interno de la cuenta                      |
+| cuen_identificador    | string       | Identificador de la cuenta                       |
+| cuen_bot              | boolean      |                                                  |
+| cuen_descripcion      | string       | Descripción de la cuenta                         |
+
+### 8.1.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "cana_id": 3
+	}
+
+### 8.1.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 8.1.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 8.1.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "cuentas": [
+            {
+                "cuen_id": 6,
+                "cuen_identificador": "875674658",
+                "cuen_bot": false,
+                "cuen_descripcion": "TWITTER RECLAMOS"
+            },
+            {
+                "cuen_id": 7,
+                "cuen_identificador": "963289466",
+                "cuen_bot": false,
+                "cuen_descripcion": "Twitter Reclamos 2"
+            }
+        ]
+    }
+
+## 8.2.- Update
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/cuentainterna/update`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| cuen_bot     | boolean      |                                | Si                                         |                             |
+
+### 8.2.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "cuen_bot": true
+	}
+
+### 8.2.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 8.2.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 8.2.2.2.- Respuesta de éxito
+
+    {
+        ...
+    }
+
+
+# 9.- Departamento
+## 9.1.- Get
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/departamento`
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| depa_id               | int          | Código interno del departamento                  |
+| depa_descripcion      | string       | Nombre del departamento                          |
+
+### 9.1.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        null
+	}
+
+### 9.1.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 9.1.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 9.1.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "departamentos": [
+            {
+                "depa_id": 2,
+                "depa_descripcion": "Ventas"
+            },
+            {
+                "depa_id": 3,
+                "depa_descripcion": "Cobranza"
+            },
+            ...
     }
