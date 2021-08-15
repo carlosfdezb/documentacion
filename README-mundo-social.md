@@ -129,7 +129,7 @@
             - [9.4.2.1- Respuesta de error](#9421--respuesta-de-error)
             - [9.4.2.2- Respuesta de éxito](#9422--respuesta-de-éxito)
   - [10.- Estado de Conexión](#10--estado-de-conexión)
-    - [10.1.- Estados de Conexión](#101--esados-de-conexión)
+    - [10.1.- Estados de Conexión](#101--estados-de-conexión)
         - [10.1.1.- Ejemplo de llamada](#1011--ejemplo-de-llamada)
         - [10.1.2.- Respuesta de Salida](#1012--respuesta-de-salida)
             - [10.1.2.1- Respuesta de error](#10121--respuesta-de-error)
@@ -1379,4 +1379,213 @@ codigo: 200 éxito mensaje: descripcion del mensaje
                 "depa_descripcion": "Cobranza"
             },
             ...
+    }
+
+## 9.2.- Crear
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/departamento`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| depa_descripcion  | string       |                                |  Si                     | Nombre del departamento         |
+
+### 9.2.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "depa_descripcion": "Contabilidad"
+	}
+
+### 9.2.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 9.2.2.1.- Respuesta de error
+
+	{
+        "mensaje": "Ya existe el departamento"
+    }
+    
+#### 9.2.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "departamentoId": 16
+    }
+
+## 9.3.- Update
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/departamento/update`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido                              |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:------------------------------------------:|--------------------------------:|
+| depa_id           | int          |                                |  Si                                        | Código interno del departamento |
+| depa_descripcion  | string       |                                |  Si                                        | Nombre del departamento         |
+
+### 9.3.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "depa_id": 16,
+        "depa_descripcion": "Contabilidad Modificado"
+	}
+
+### 9.3.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 9.3.2.1.- Respuesta de error
+
+	{
+        "mensaje": "Ya existe el departamento en otro registro"
+    }
+    
+#### 9.3.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "departamentoId": 16
+    }
+
+## 9.4.- Delete
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/departamento/delete`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido                              |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:------------------------------------------:|--------------------------------:|
+| depa_id           | int          |                                |  Si                                        | Código interno del departamento |
+
+### 9.4.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "depa_id": 16
+	}
+
+### 9.4.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 9.4.2.1.- Respuesta de error
+
+	{
+        "mensaje": "No existe el departamento"
+    }
+    
+#### 9.4.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "eliminado"
+    }
+
+
+# 10.- Estado de Conexión
+## 10.1.- Estados de Conexión
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/estadosconex`
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| esco_id               | int          | Código interno del estado de conexión            |
+| esco_descripcion      | string       | Descripción del estado de conexión               |
+| esco_activo           | boolean      |                                                  |
+| esco_orden            | int          |                                                  |
+| esco_desconecta       | boolean      |                                                  |
+
+### 10.1.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        null
+	}
+
+### 10.1.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 10.1.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 10.1.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "estados": [
+            {
+                "esco_id": 1,
+                "esco_descripcion": "En Línea",
+                "esco_activo": true,
+                "esco_orden": 1,
+                "esco_desconecta": true
+            },
+            {
+                "esco_id": 2,
+                "esco_descripcion": "Ausente",
+                "esco_activo": true,
+                "esco_orden": 2,
+                "esco_desconecta": true
+            },
+            ...
+    }
+
+## 10.2.- Modificar Estado de Conexión
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/modificaestadoconex`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| usua_nombre       | string       |                                |  Si                     | Mail                            |
+| esco_id           | int          |                                |  Si                     | Código interno del estado de conexión  |
+
+### 10.2.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "usua_nombre": "NoAsignado@mail.com",
+        "esco_id": 1
+	}
+
+### 10.2.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 10.2.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+    
+#### 10.2.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "validaEstado": true
     }
