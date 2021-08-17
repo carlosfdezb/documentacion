@@ -2496,7 +2496,24 @@ Ruta : POST `/api/mundosocial/crearCliente`
 Ejemplo: JSON 
 
 	{
-        ...
+        "numDocumentacion": "191403991",
+        "nombre": "Carlos",
+        "apellido1": "Fernández",
+        "apellido2": "Barra",
+        "sexo": 0,
+        "telefono": 123456789,
+        "fechaNacimiento": "1996-08-13",
+        "correo": "carlos.fernandez.b@mundopacifico.cl",
+        "codigoPostal": 4130000,
+        "localidad": "San Pedro de la Paz",
+        "tipoVia": 4,
+        "direccion": "Prueba",
+        "numero": 1051,
+        "piso": 0,
+        "puerta": 0,
+        "bloque": 0,
+        "acceso": 0,
+        "actividadProfesional": 882
 	}
 
 ### 16.1.1.2.- Respuesta de salida
@@ -2625,14 +2642,44 @@ Ruta : POST `/api/mundosocial/crearClienteEmpresa`
 **Parámetros de entrada:**
 | Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
 |:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
-|                   |              |                                |                         |                                 |
+| codigoPostal      | int          |                                |                         | Código postal del domicilio de la empresa  |
+| localidad         | string       |                                |                         | Localidad del domicilio de la empresa  |
+| sexo              | int          | 0 = hombre, 1 = mujer          |                         | Sexo de la empresa              |
+| telefono          | int          |                                |                         | Teléfono de la empresa          |
+| correo            | string       |                                |                         | Correo electrónico de la empresa|
+| direccion         | string       |                                |                         | Calle del domicilio de la empresa |
+| numero            | int          |                                |                         | Número del domicilio de la empresa |
+| piso              | int          |                                |                         | Número de piso del domicilio de la empresa  |
+| nombre            | string       |                                |                         | Nombre de la empresa  |
+| razonSocial       | string       |                                |                         | Razón social de la empresa  |
+| puerta            | int          |                                |                         | Número de puerta del domicilio de la empresa|
+| bloque            | int          |                                |                         | Número de bloque del domicilio de la empresa|
+| acceso            | int          |                                |                         | Número de acceso del domicilio de la empresa|
+| numDocumentacion  | string       |                                |                         | Rut de la empresa|
+| actividad         | int          |                                |                         | Rubro de la empresa|
+| esEmprendedor     | int          | 1 = si, 0 = no                 |                         | Si la empresa corresponde o no a un emprendimiento|
 
 ### 16.1.2.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        ...
+        "codigoPostal": 4130000,
+        "localidad": ""SAN PEDRO DE LA PAZ,
+        "sexo": 0,
+        "telefono": 2313123,
+        "correo": "carlos.fernandez.b@mundopacifico.cl",
+        "direccion": "Prueba",
+        "numero": 1051,
+        "piso": 2,
+        "nombre": EmpresaTest,
+        "razonSocial": EmpresaTest ltda,
+        "puerta": 1,
+        "bloque": 1,
+        "acceso": 1,
+        "numDocumentacion": 216664590,
+        "actividad": 888,
+        "esEmprendedor": 1,
 	}
 
 ### 16.1.2.2.- Respuesta de salida
@@ -2648,5 +2695,1210 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 16.1.2.2.2.- Respuesta de éxito
 
     {
+        "mensaje": "ok",
+        "cliente": {
+            "codigo": "200",
+            "mensaje": "OK.",
+            "object": {
+                "id": 1178909,
+                "numDocumentacion": "216664590",
+                "tipoDocumento": 5,
+                "segmentacion": {
+                    "id": 1178909,
+                    "fuente": {
+                        "id": 1
+                    },
+                    "segmento": {
+                        "id": 1
+                    }
+                },
+                "contactoPrincipal": {
+                    "id": 1187813,
+                    "nombre": "EmpresaTest",
+                    "sexo": 0,
+                    "cargo": {
+                        "id": 4
+                    },
+                    "telefono": "2313123",
+                    "movil": "2313123",
+                    "email": "carlos.fernandez.b@mundopacifico.cl",
+                    "esPrincipal": true,
+                    "delegaciones": [
+                        {
+                            "id": 2017980,
+                            "nombre": "EmpresaTest",
+                            "via": 4,
+                            "direccion": "Prueba",
+                            "numero": "1051",
+                            "piso": "2",
+                            "puerta": "1",
+                            "codigoPostal": {
+                                "id": 75761,
+                                "codigoPostal": "4130000",
+                                "valorCampo1": "San Pedro De La Paz",
+                                "valorCampo2": "San Pedro De La Paz",
+                                "valorCampo3": "Concepción",
+                                "valorCampo4": "Biobío"
+                            },
+                            "latitud": -36.8305354,
+                            "longitud": -73.1167368,
+                            "esPrincipal": true,
+                            "esFiscal": true,
+                            "esEnvio": true,
+                            "bloque": "1",
+                            "acceso": "1",
+                            "esInstalacion": false
+                        }
+                    ],
+                    "esFiscal": true,
+                    "esEnvio": true
+                },
+                "delegacionPrincipal": {
+                    "id": 2017980,
+                    "nombre": "EmpresaTest",
+                    "via": 4,
+                    "direccion": "Prueba",
+                    "numero": "1051",
+                    "piso": "2",
+                    "puerta": "1",
+                    "codigoPostal": {
+                        "id": 75761,
+                        "codigoPostal": "4130000",
+                        "valorCampo1": "San Pedro De La Paz",
+                        "valorCampo2": "San Pedro De La Paz",
+                        "valorCampo3": "Concepción",
+                        "valorCampo4": "Biobío"
+                    },
+                    "latitud": -36.8305354,
+                    "longitud": -73.1167368,
+                    "esPrincipal": true,
+                    "esFiscal": true,
+                    "esEnvio": true,
+                    "bloque": "1",
+                    "acceso": "1",
+                    "esInstalacion": false
+                },
+                "actividad": {
+                    "id": 888
+                },
+                "razonSocial": "EmpresaTest",
+                "tipoCliente": 1
+            }
+        }
+    }
+
+## 16.1.3.- Fuente y Segmentación
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/beyond/fuente`
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| id                    | int          | ID de                                            |
+| nombre                | string       | Número de día                                    |
+
+### 16.1.3.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 16.1.3.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 16.1.3.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 16.1.3.2.2.- Respuesta de éxito
+
+    {
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "fuentes": [
+                    {
+                        "id": 5,
+                        "nombre": "Activación Marketing"
+                    },
+                    {
+                        "id": 11,
+                        "nombre": "Convertia"
+                    },
+                    {
+                        "id": 9,
+                        "nombre": "Funcionario MP"
+                    },
+                    ...
+                ],
+                "segmentos": [
+                    {
+                        "id": 13,
+                        "nombre": "A"
+                    },
+                    {
+                        "id": 10,
+                        "nombre": "B"
+                    },
+                    {
+                        "id": 12,
+                        "nombre": "C"
+                    },
+                    ...
+                ]
+            }
+        },
+        "codigo": 200
+    }
+    
+
+## 16.1.4.- Actividades Profesionales
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/beyond/actividadesprof`
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| id                    | int          | ID de la actividad profesional                   |
+| descripcion           | string       | Nombre de la actividad profesional               |
+| codigo                | string       | Código de la actividad profesional               |
+
+### 16.1.4.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 16.1.4.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 16.1.4.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 16.1.4.2.2.- Respuesta de éxito
+
+    {
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "actividades": [
+                    {
+                        "id": 1,
+                        "descripcion": "Abogado",
+                        "codigo": "001"
+                    },
+                    {
+                        "id": 2,
+                        "descripcion": "Administrativo",
+                        "codigo": "002"
+                    },
+                    {
+                        "id": 3,
+                        "descripcion": "Agricultor",
+                        "codigo": "003"
+                    },
+                    ...
+                ]
+            }
+        },
+        "codigo": 200
+    }
+
+## 16.1.5.- Cargos
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/beyond/cargos`
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| id                    | int          | ID del cargo                                     |
+| descripcion           | string       | Descripción del cargo                            |
+
+### 16.1.5.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 16.1.5.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 16.1.5.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 16.1.5.2.2.- Respuesta de éxito
+
+    {
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "cargos": [
+                    {
+                        "id": 4,
+                        "descripcion": "Contacto"
+                    },
+                    {
+                        "id": 2,
+                        "descripcion": "Influyente"
+                    },
+                    {
+                        "id": 3,
+                        "descripcion": "Titular / Administrador"
+                    }
+                ]
+            }
+        },
+        "codigo": 200
+    }
+
+
+## 16.1.6.- Tipo Vía
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/beyond/tipoVia`
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| value                 | int          | ID del tipo de vía                               |
+| label                 | string       | Nombre del tipo de vía                           |
+
+### 16.1.6.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 16.1.6.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 16.1.6.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 16.1.6.2.2.- Respuesta de éxito
+
+    {
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "tipoVia": [
+                    {
+                        "value": 0,
+                        "label": "Acera"
+                    },
+                    {
+                        "value": 1,
+                        "label": "Autopista"
+                    },
+                    {
+                        "value": 2,
+                        "label": "Autovía"
+                    },
+                    {
+                        "value": 3,
+                        "label": "Avenida"
+                    },
+                    ...
+                ]
+            }
+        },
+        "codigo": 200
+    }
+
+
+## 16.1.7.- Localidades
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/beyond/localidades`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| codigoPostal      | int          |                                |                         | Código postal a buscar          |
+
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| localidades           |              | Lista con las localidades encontradas            |
+
+### 16.1.7.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "codigoPostal": 4130000
+	}
+
+### 16.1.7.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 16.1.7.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 16.1.7.2.2.- Respuesta de éxito
+
+    {
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "localidades": [
+                    "Andalué",
+                    "El Venado",
+                    "Gran Concepcion (p)",
+                    "Gran Concepción",
+                    "Lagunillas",
+                    "Lomas Coloradas",
+                    "Los Pinares",
+                    "Monteáguila",
+                    "San Pedro De La Paz"
+                ]
+            }
+        },
+        "codigo": 200
+    }
+
+
+## 16.1.8.- Comunas
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/beyond/comuna`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| codigoPostal      | int          |                                |                         | Código postal a buscar          |
+| localidad         | string       |                                |                         | Localidad a buscar              |
+
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| comuna                | string       | Comuna encontrada                                |
+
+### 16.1.8.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "codigoPostal": 4130000,
+        "localidad": "San Pedro de la Paz"
+	}
+
+### 16.1.8.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 16.1.8.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 16.1.8.2.2.- Respuesta de éxito
+
+    {
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "comuna": "San Pedro De La Paz"
+            }
+        },
+        "codigo": 200
+    }
+
+## 16.2.- Ofertas
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/ofertas`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| tick_id           | int          |                                | Si                      |  ID del ticket                  |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| id                    | int          | ID de                                            |
+| codigoMp              | string       | Código de                                        |
+| estado                | string       | Estado de                                        |
+| direccion             | string       | Dirección del                                    |
+| numero                | string       | Número del                                       |
+| campoDireccion1       | string       | Ciudad                                           |
+| campoDireccion4       | string       | Región                                           |
+| nodo                  | string       | Nodo                                             |
+| direccioncomp         | string       | Dirección completa del domicilio                 |
+| tipoOferta            | string       | Tipo de plan/oferta                              |
+| detalle               | string       | Detalle oferta                                   |
+| clienteId             | int          | ID del cliente                                   |
+| servicios             |              | Listado de servicios                             |
+| servicios->id         | int          | ID del servicio                                  |
+| servicios->descripcion| string       | Descripción del servicio                         |
+| servicios->tipoProducto| string      | Tipo de servicio                                 |
+| terminales            |              | Listado de terminales                            |
+| terminales->descripcion| string      | Descripción del terminal                         |
+| terminales->NumeroSerie| string      | Número de serie del terminal                     |
+
+### 16.2.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "tick_id": 710
+	}
+
+### 16.2.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 16.2.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 16.2.2.2.- Respuesta de éxito
+
+    {
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "mensaje": "ok",
+                "DataFormat": [
+                    {
+                        "id": 1068557,
+                        "codigoMp": "MP20/0552091",
+                        "estado": "Conectado",
+                        "direccion": "VICENTE PALACIOS",
+                        "numero": "2678",
+                        "campoDireccion1": "TOME",
+                        "campoDireccion4": "BIOBIO",
+                        "nodo": "TOME_90",
+                        "direccioncomp": "VICENTE PALACIOS 2678 TOME",
+                        "tipoOferta": "Mundo Fijo",
+                        "detalle": "FIBRA + TV",
+                        "clienteId": 464092,
+                        "servicios": [
+                            {
+                                "id": 601,
+                                "descripcion": "Televisión Básica FTTH",
+                                "tipoProducto": "TV"
+                            },
+                            {
+                                "id": 596,
+                                "descripcion": "500/500 Mb",
+                                "tipoProducto": "Internet"
+                            },
+                            {
+                                "id": 43,
+                                "descripcion": "Ampliación cobertura wifi interior",
+                                "tipoProducto": "Servicios conexos"
+                            }
+                        ],
+                        "terminales": [
+                            {
+                                "descripcion": "ONT HUAWEI EG 8247 Q",
+                                "NumeroSerie": "4857544391C6079F"
+                            }
+                        ]
+                    },
+                    ...
+                ],
+                "error": ""
+            }
+        },
+        "codigo": 200
+    }
+
+
+## 16.3.- Tareas
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/tareas`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| tick_id           | int          |                                | Si                      |  ID del ticket                  |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| identificador         | string       | Identificador de la tarea                        |
+| estado                | string       | Estado de la tarea                               |
+| motivo                | string       | Motivo de la tarea                               |
+| tipoTarea             | string       | Tipo de tarea                                    |
+| fechaHoraInicio       | string       | Fecha y hora de inicio                           |
+| fechaHoraFin          | string       | Fecha y hora de fin                              |
+
+### 16.3.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "tick_id": 710
+	}
+
+### 16.3.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 16.3.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 16.3.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "tareas": [
+            {
+                "identificador": "TAR20/4619318",
+                "estado": "Cerrado",
+                "motivo": "Servicios Conexos",
+                "tipoTarea": "Op - Alta Adicional",
+                "fechaHoraInicio": "2020-12-22 11:10:00",
+                "fechaHoraFin": "2020-12-22 12:14:25"
+            },
             ...
+        ]
+    }
+
+## 16.4.- Crear Tarea Oferta
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/crearTareaOferta`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| idOferta          | int          |                                | Si                      |  ID de la oferta                |
+| clienteID         | int          |                                | Si                      |  ID del cliente                 |
+| usuarioBeyond     | int          |                                | Si                      |  ID del usuario de beyond       |
+| observacion       | string       |                                | Si                      |  Observación respecto de la tarea|
+| fechaHoraInicio   | string       | dd/mm/YYYY hh:mm:ss            | Si                      |  Fecha y hora de la tarea       |
+| estadoTareaId     | int          |                                | Si                      |  ID del estado de la tarea      |
+| motivoTarea       | int          |                                | Si                      |  ID del motivo de la tarea      |
+| tipoTarea         | int          |                                | Si                      |  ID del tipo de tarea           |
+| mailusuario       | string       |                                | Si                      |  Correo electrónico del usuario |
+
+### 16.4.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "idOferta": 547933,
+        "clienteID": 690950,
+        "usuarioBeyond": 2269,
+        "observacion": "Crear Tarea desde mundo social",
+        "fechaHoraInicio": "18/11/2020 09:05:00",
+        "estadoTareaId": 22,
+        "motivoTarea": 297,
+        "tipoTarea": 35,
+        "mailusuario": "carlos.fernandez.b@mundopacifico.cl",
+	}
+
+### 16.4.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 16.4.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 16.4.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "tarea": {
+            "codigo": "200",
+            "mensaje": "OK.",
+            "object": {
+                "tarea": {
+                    "id": 9273088,
+                    "identificador": "TAR21/3376015",
+                    "estadoTarea": {
+                        "id": 22,
+                        "motivoTarea": [
+                            {
+                                "id": 297,
+                                "tipoTarea": {
+                                    "id": 35
+                                }
+                            }
+                        ]
+                    },
+                    "fechaHoraInicio": {
+                        "dayOfWeek": "WEDNESDAY",
+                        "dayOfYear": 323,
+                        "monthValue": 11,
+                        "dayOfMonth": 18,
+                        "hour": 9,
+                        "minute": 5,
+                        "second": 0,
+                        "nano": 0,
+                        "year": 2020,
+                        "month": "NOVEMBER",
+                        "chronology": {
+                            "calendarType": "iso8601",
+                            "id": "ISO"
+                        }
+                    },
+                    "observacion": "Crear Tarea desde mundo social",
+                    "informarCliente": false,
+                    "gestionadoPor": {
+                        "id": 1868
+                    },
+                    "usuario": {
+                        "id": 1868
+                    },
+                    "evento": {
+                        "id": 9294245
+                    },
+                    "cliente": {
+                        "id": 690950
+                    },
+                    "editableMotivoEstado": false,
+                    "aceptacion": "PENDIENTE_ACEPTACION",
+                    "rol": {
+                        "id": 171,
+                        "descripcion": "Ejecutivo Bienvenida"
+                    },
+                    "contactosAEnviar": []
+                },
+                "idOfertaOp": 547933
+            }
+        },
+        "info": "creada"
+    }
+
+
+## 16.5.- Tipos de Tareas
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/tipostareas`
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| id                    | int          | Identificador de la tarea                        |
+| nombre                | string       | Nombre de la tarea                               |
+
+### 16.5.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 16.5.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 16.5.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 16.5.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "data": [
+            {
+                "id": 58,
+                "nombre": "Agente T. - Actividad"
+            },
+            {
+                "id": 123,
+                "nombre": "Aplicación de Exentos"
+            },
+            {
+                "id": 35,
+                "nombre": "Bienvenida"
+            },
+            ...
+        ]
+    }
+
+## 16.6.- Motivos de Tareas
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/motivoTareas`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| idTipoTarea       | int          |                                | Si                      |  ID del tipo de tarea           |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| id                    | int          | Identificador del motivo                        |
+| nombre                | string       | Nombre del motivo                               |
+| tipoTarea             |              | Lista con el tipo de tarea                      |
+| tipoTarea->id         | int          | Identificador del tipo de tarea                 |
+| tipoTarea->nombre     | int          | Nombre del tipo de tarea                        |
+| tiposActividad        | int          | Lista con el tipo de tarea                      |
+| tieneSlo              | boolean      |                         |
+| tieneSla              | boolean      |                         |
+| tipoSla               | boolean      |                         |
+| bloqueoSla            | boolean      |                         |
+| unidadTiempoSla       | string       | Unidad de tiempo                                |
+| tiempoSla             | int          |                         |
+| habilSla              | boolean      |                         |
+| rolesNoAutorizados    |              | Lista con roles no autorizados                  |
+| ubicacionesAsociadas  |              | Lista con ubicaciones asociadas                 |
+| flujoSecuencial       | boolean      |                         |
+
+### 16.6.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "idTipoTarea": 36
+	}
+
+### 16.6.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 16.6.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 16.6.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "data": [
+            {
+                "id": 234,
+                "nombre": "Gestión Comercial",
+                "tipoTarea": {
+                    "id": 36,
+                    "nombre": "Contención RRSS"
+                },
+                "tiposActividad": [],
+                "tieneSlo": false,
+                "tieneSla": true,
+                "tipoSla": false,
+                "bloqueoSla": false,
+                "unidadTiempoSla": "Dias",
+                "tiempoSla": 1,
+                "habilSla": false,
+                "rolesNoAutorizados": [],
+                "ubicacionesAsociadas": [],
+                "flujoSecuencial": false
+            },
+            ...
+        ]
+    }
+
+
+# 17.- Listar Tickets
+## 17.1.- Listar Tickets
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/mensajes`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| page              | int          |                                |                         | Número de página                |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| clie_nombre           | string       | Nombre del cliente?                              |
+| cacl_identificador    | string       | email?                                           |
+| tick_id               |  int         | ID del ticket                                    |
+| tick_fecha_creacion   | timestamp    | Fecha de creación del ticket                     |
+| tick_fecha_asignacion | timestamp    | Fecha de asignación del ticket                   |
+| esta_descripcion      | string       | Descripción del ticket                           |
+| usua_id               | int          | ID del usuario                                   |
+| usua_nombre           | string       | Nombre del usuario                               |
+| cana_id               | int          | ID del ?                                         |
+| alerta                | boolean      |                                                  |
+
+### 17.1.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "page": 1
+	}
+
+### 17.1.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 17.1.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 17.1.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "data": {
+            "current_page": 1,
+            "data": [
+                {
+                    "clie_nombre": "Pedro",
+                    "cacl_identificador": "mail@mail.com",
+                    "tick_id": 718,
+                    "tick_fecha_creacion": "2021-08-13 16:37:11",
+                    "tick_fecha_asignacion": null,
+                    "esta_descripcion": "CERRADO",
+                    "usua_id": 1,
+                    "usua_nombre": "NoAsignado@mail.com",
+                    "cana_id": 4,
+                    "alerta": false
+                },
+                ...
+            ],
+            "first_page_url": "...URL/api/mundosocial/mensajes?page=1",
+            "from": 1,
+            "last_page": 24,
+            "last_page_url": "...URL/api/mundosocial/mensajes?page=24",
+            "next_page_url": "...URL/api/mundosocial/mensajes?page=2",
+            "path": "URL/api/mundosocial/mensajes",
+            "per_page": 25,
+            "prev_page_url": null,
+            "to": 25,
+            "total": 577
+        }
+    }
+
+
+## 17.2.- Cola Tickets
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/colatickets`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| mail              | string       |                                | Si                      | Correo electrónico de ?          |
+| page              | int          |                                |                         | Número de página                |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| clie_nombre           | string       | Nombre del cliente?                              |
+| cacl_identificador    | string       | email?                                           |
+| tick_id               |  int         | ID del ticket                                    |
+| tick_fecha_creacion   | timestam     | Fecha de creación del ticket                     |
+| tick_fecha_asignacion | timestamp    | Fecha de asignación del ticket                   |
+| esta_descripcion      | string       | Descripción del ticket                           |
+| usua_id               | int          | ID del usuario                                   |
+| usua_nombre           | string       | Nombre del usuario                               |
+| cana_id               | int          | ID del ?                                         |
+| alerta                | boolean      |                                                  |
+| tick_ultimo_msj_cliente| timestamp   | Fecha del último mensaje                         |
+| grup_auto_asigna      | boolean      |                                                  |
+| cuen_descripcion      | string       |                                                  |
+| cuen_identificador    | string       |                                                  |
+
+### 17.2.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "mail": "daniel.bustos@prueba.com",
+        "page": 1
+	}
+
+### 17.2.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 17.2.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 17.2.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "data": {
+            "current_page": 1,
+            "data": [
+                {
+                    "clie_nombre": "PENDIENTE",
+                    "cacl_identificador": "prueba@mail.com",
+                    "tick_id": 716,
+                    "tick_fecha_creacion": "2021-08-13 16:32:09",
+                    "tick_fecha_asignacion": null,
+                    "esta_descripcion": "No asignado",
+                    "usua_id": 1,
+                    "usua_nombre": "NoAsignado@mail.com",
+                    "cana_id": 4,
+                    "alerta": false,
+                    "tick_ultimo_msj_cliente": "2021-08-13 16:32:09",
+                    "grup_auto_asigna": false,
+                    "cuen_descripcion": "MAIL SOPORTE",
+                    "cuen_identificador": "prueba@mundopacifico.cl"
+                },
+                ...
+            ],
+            "first_page_url": "...URL/api/mundosocial/colatickets?page=1",
+            "from": 1,
+            "last_page": 5,
+            "last_page_url": "...URL/api/mundosocial/colatickets?page=5",
+            "next_page_url": "...URL/api/mundosocial/colatickets?page=2",
+            "path": "...URL/api/mundosocial/colatickets",
+            "per_page": 25,
+            "prev_page_url": null,
+            "to": 25,
+            "total": 106
+        },
+        "hoy": 0,
+        "orden": "Desc"
+    }
+
+
+## 17.3.- Mis Tickets en Proceso
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/misticketsenproceso`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| mail              | string       |                                | Si                      | Correo electrónico de ?          |
+| page              | int          |                                |                         | Número de página                |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| clie_nombre           | string       | Nombre del cliente?                              |
+| cacl_identificador    | string       | email?                                           |
+| tick_id               |  int         | ID del ticket                                    |
+| tick_fecha_creacion   | timestam     | Fecha de creación del ticket                     |
+| tick_fecha_asignacion | timestamp    | Fecha de asignación del ticket                   |
+| esta_descripcion      | string       | Descripción del ticket                           |
+| usua_id               | int          | ID del usuario                                   |
+| usua_nombre           | string       | Nombre del usuario                               |
+| cana_id               | int          | ID del ?                                         |
+| alerta                | boolean      |                                                  |
+| tick_ultimo_msj_cliente| timestamp   | Fecha del último mensaje                         |
+| cuen_descripcion      | string       |                                                  |
+| cuen_identificador    | string       |                                                  |
+
+### 17.3.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "mail": "daniel.bustos@prueba.com",
+        "page": 1
+	}
+
+### 17.3.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 17.3.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 17.3.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "data": {
+            "current_page": 1,
+            "data": [
+                {
+                    "clie_nombre": "PENDIENTE",
+                    "cacl_identificador": "158056|Daniel Enrique Bustos Romero",
+                    "tick_id": 667,
+                    "tick_fecha_creacion": "2021-06-10 19:39:54",
+                    "tick_fecha_asignacion": "2021-06-10 19:40:52",
+                    "esta_descripcion": "ASIGNADO",
+                    "usua_id": 2,
+                    "usua_nombre": "daniel.bustos@prueba.com",
+                    "cana_id": 2,
+                    "alerta": false,
+                    "tick_ultimo_msj_cliente": "2021-06-10 19:39:54",
+                    "cuen_descripcion": "msn MundoCl",
+                    "cuen_identificador": "tumundo.cl"
+                },
+                ...
+            ],
+            "first_page_url": "...URL/api/mundosocial/misticketsenproceso?page=1",
+            "from": 1,
+            "last_page": 1,
+            "last_page_url": "...URL/api/mundosocial/misticketsenproceso?page=1",
+            "next_page_url": null,
+            "path": "...URL/api/mundosocial/misticketsenproceso",
+            "per_page": 1000,
+            "prev_page_url": null,
+            "to": 13,
+            "total": 13
+        },
+        "hoy": 0
+    }
+
+
+## 17.4.- Mis Tickets Cerrados
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/misticketscerrados`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| mail              | string       |                                | Si                      | Correo electrónico de ?          |
+| page              | int          |                                |                         | Número de página                |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| clie_nombre           | string       | Nombre del cliente?                              |
+| cacl_identificador    | string       | email?                                           |
+| tick_id               |  int         | ID del ticket                                    |
+| tick_fecha_creacion   | timestam     | Fecha de creación del ticket                     |
+| tick_fecha_asignacion | timestamp    | Fecha de asignación del ticket                   |
+| esta_descripcion      | string       | Descripción del ticket                           |
+| usua_id               | int          | ID del usuario                                   |
+| usua_nombre           | string       | Nombre del usuario                               |
+| cana_id               | int          | ID del ?                                         |
+| alerta                | boolean      |                                                  |
+| tick_ultimo_msj_cliente| timestamp   | Fecha del último mensaje                         |
+| cuen_descripcion      | string       |                                                  |
+| cuen_identificador    | string       |                                                  |
+
+### 17.4.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "mail": "daniel.bustos@prueba.com",
+        "page": 1
+	}
+
+### 17.4.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 17.4.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 17.4.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "data": {
+            "current_page": 1,
+            "data": [
+                {
+                    "clie_nombre": "daniel",
+                    "cacl_identificador": "158056|Daniel Enrique Bustos Romero",
+                    "tick_id": 664,
+                    "tick_fecha_creacion": "2021-06-10 19:01:00",
+                    "tick_fecha_asignacion": null,
+                    "esta_descripcion": "CERRADO",
+                    "usua_id": 2,
+                    "usua_nombre": "daniel.bustos@prueba.com",
+                    "cana_id": 5,
+                    "alerta": false,
+                    "tick_ultimo_msj_cliente": "2021-06-10 19:01:00",
+                    "cuen_descripcion": "Fb MundoCl",
+                    "cuen_identificador": "tumundo.cl"
+                },
+                ...
+            ],
+            "first_page_url": "...URL/api/mundosocial/misticketscerrados?page=1",
+            "from": 1,
+            "last_page": 2,
+            "last_page_url": "...URL/api/mundosocial/misticketscerrados?page=2",
+            "next_page_url": "...URL/api/mundosocial/misticketscerrados?page=2",
+            "path": "...URL/api/mundosocial/misticketscerrados",
+            "per_page": 25,
+            "prev_page_url": null,
+            "to": 25,
+            "total": 26
+        },
+        "hoy": 0
     }
