@@ -345,16 +345,11 @@
         - [18.4.2.- Respuesta de Salida](#1842--respuesta-de-salida)
             - [18.4.2.1- Respuesta de error](#18421--respuesta-de-error)
             - [18.4.2.2- Respuesta de éxito](#18422--respuesta-de-éxito)
-    - [18.5.- Sale dmtw](#185--sale-dmtw)
+    - [18.5.- Sucursal](#185--sucursal)
         - [18.5.1.- Ejemplo de llamada](#1851--ejemplo-de-llamada)
         - [18.5.2.- Respuesta de Salida](#1852--respuesta-de-salida)
             - [18.5.2.1- Respuesta de error](#18521--respuesta-de-error)
             - [18.5.2.2- Respuesta de éxito](#18522--respuesta-de-éxito)
-    - [18.6.- Sucursal](#186--sucursal)
-        - [18.6.1.- Ejemplo de llamada](#1861--ejemplo-de-llamada)
-        - [18.6.2.- Respuesta de Salida](#1862--respuesta-de-salida)
-            - [18.6.2.1- Respuesta de error](#18621--respuesta-de-error)
-            - [18.6.2.2- Respuesta de éxito](#18622--respuesta-de-éxito)
   - [19.- Omnicanalidad](#19--omnicanalidad)
     - [19.1.- Listar Canales](#191--listar-canales)
         - [19.1.1.- Ejemplo de llamada](#1911--ejemplo-de-llamada)
@@ -938,8 +933,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 5.5.2.2.- Respuesta de éxito
 
     {
-        "mensaje": "ok",
-        "cuentas": []
+        ...
     }
 
 
@@ -1067,7 +1061,6 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 6.2.2.2.- Respuesta de éxito
 
     {
-        "mensaje": "ok",
         ...
     }
 
@@ -1393,6 +1386,11 @@ Ruta : POST `/api/mundosocial/departamento`
 |:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
 | depa_descripcion  | string       |                                |  Si                     | Nombre del departamento         |
 
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| departamentoId        | int          | ID del departamento creado                       |
+
 ### 9.2.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
@@ -1430,6 +1428,11 @@ Ruta : POST `/api/mundosocial/departamento/update`
 |:-----------------:|:------------:|:------------------------------:|:------------------------------------------:|--------------------------------:|
 | depa_id           | int          |                                |  Si                                        | ID del departamento |
 | depa_descripcion  | string       |                                |  Si                                        | Nombre del departamento         |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| departamentoId        | int          | ID del departamento modificado                   |
 
 ### 9.3.1.- Ejemplo de llamada
 
@@ -1563,6 +1566,11 @@ Ruta : POST `/api/mundosocial/modificaestadoconex`
 |:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
 | usua_nombre       | string       |                                |  Si                     | Mail                            |
 | esco_id           | int          |                                |  Si                     | ID del estado de conexión  |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| validaEstado          | boolean      | ??                  |
 
 ### 10.2.1.- Ejemplo de llamada
 
@@ -2037,6 +2045,11 @@ Ruta : POST `/api/mundosocial/grupos`
 | depa_id           | int          |                                |  Si                     | ID del departamento         |
 | grup_feriado      | boolean      |                                |  Si                     |         |
 
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| grup_id               | int          | ID del grupo creado                       |
+
 ### 12.2.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
@@ -2075,23 +2088,30 @@ Ruta : POST `/api/mundosocial/grupos/update`
 **Parámetros de entrada:**
 | Campo                |  Tipo        | Formato                        |     Requerido                              |             Descripción         |
 |:--------------------:|:------------:|:------------------------------:|:------------------------------------------:|--------------------------------:|
-| grup_id              | int          |                                |  Si                                        | ID del departamento             |
-| grup_auto_asigna     | int          |                                |  Si                                        | ID del departamento             |
-| grup_reasigna        | int          |                                |  Si                                        | ID del departamento             |
-| grup_toma_otro       | int          |                                |  Si                                        | ID del departamento             |
-| configuracion        | int          |                                |  Si                                        | ID del departamento             |
-| grup_usa_auxiliar1   | int          |                                |  Si                                        | ID del departamento             |
-| grup_usa_auxiliar2   | int          |                                |  Si                                        | ID del departamento             |
-| grup_auxiliar1_nombre| int          |                                |  Si                                        | ID del departamento             |
-| grup_auxiliar2_nombre| int          |                                |  Si                                        | ID del departamento             |
+| grup_id              | int          |                                |  Si                                        | ??             |
+| grup_auto_asigna     | boolean      |                                |  Si                                        | ??             |
+| grup_reasigna        | boolean      |                                |  Si                                        | ??             |
+| grup_toma_otro       | boolean      |                                |  Si                                        | ??             |
+| configuracion        | string       |                                |  Si                                        | ??             |
+| grup_usa_auxiliar1   | boolean      |                                |  Si                                        | ??             |
+| grup_usa_auxiliar2   | boolean      |                                |  Si                                        | ??             |
+| grup_auxiliar1_nombre| string       |                                |  Si                                        | ??             |
+| grup_auxiliar2_nombre| string       |                                |  Si                                        | ??             |
 
 ### 12.3.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "depa_id": 16,
-        "depa_descripcion": "Contabilidad Modificado"
+        "grup_id": 1,
+        "grup_auto_asigna": true,
+        "grup_reasigna": true,
+        "grup_toma_otro": true,
+        "configuracion": "S",
+        "grup_usa_auxiliar1": true,
+        "grup_usa_auxiliar2": true,
+        "grup_auxiliar1_nombre": "Tecnología",
+        "grup_auxiliar2_nombre": "Comuna"
 	}
 
 ### 12.3.2.- Respuesta de salida
@@ -2101,14 +2121,13 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 12.3.2.1.- Respuesta de error
 
 	{
-        "mensaje": "Ya existe el departamento en otro registro"
+        ...
     }
     
 #### 12.3.2.2.- Respuesta de éxito
 
     {
-        "mensaje": "ok",
-        "departamentoId": 16
+        ...
     }
 
 ## 12.4.- Delete
@@ -3333,6 +3352,11 @@ Ruta : POST `/api/mundosocial/crearTareaOferta`
 | tipoTarea         | int          |                                | Si                      |  ID del tipo de tarea           |
 | mailusuario       | string       |                                | Si                      |  Correo electrónico del usuario |
 
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+|                      |               | ?                                                |
+
 ### 16.4.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
@@ -3901,4 +3925,1523 @@ codigo: 200 éxito mensaje: descripcion del mensaje
             "total": 26
         },
         "hoy": 0
+    }
+
+
+# 18.- Mensajes
+## 18.1.- Recibe
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/mensajes/recibe`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| remitente         | string       |                                |  Si                     | Remitente del                |
+| destinatario      | string       |                                |  Si                     | Destinatario del                |
+| mensaje           | string       |                                |  Si                     | Mensaje a enviar?               |
+| canal_id          | int          |                                |  Si                     | ID del canal               |
+| tipo              | string       |                                |  Si                     | Tipo del mensaje                |
+| url               | string       |                                |  Si                     | Url de ?                |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| mensaje               | string       | ?                              |
+| etapa                 | string       | ?                                           |
+| informadosocket       | string       | ?                                    |
+| tick_id               | int          | ID del ticket                     |
+| socketUsuario         | string       |                    |
+
+### 18.1.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "remitente": "@dbustos_",
+        "destinatario": "@no_existe",
+        "mensaje": "test",
+        "canal_id": 7,
+        "tipo": "txt",
+        "url": "www.prueba.cl",
+	}
+
+### 18.1.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 18.1.2.1.- Respuesta de error
+
+	{
+        "mensaje": "La cuenta de destino no existe en Mundo Social"
+    }
+  
+#### 18.1.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "etapa": "mensaje conversacion",
+        "informadosocket": "DESHABILITAR",
+        "tick_id": 568,
+        "socketUsuario": "NO ASIGNADO"
+    }
+
+
+## 18.2.- Sale
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/mensajes/sale`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| tick_id           | int          |                                |  Si                     | ID del ticket                   |
+| mensaje           | string       |                                |  Si                     | Contenido del mensaje           |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| endpoint              | string       | Ruta del endpoint                              |
+| mensajes              | int          | ?                                           |
+| canal                 | int          | ?                                    |
+| cuenta                | string       | ?                     |
+
+### 18.2.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "tick_id": 254,
+        "mensaje": "test salida"
+	}
+
+### 18.2.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 18.2.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 18.2.2.2.- Respuesta de éxito
+
+    {
+        "endpoint": "...URL/api/enviarMensaje",
+        "mensajes": 502,
+        "canal": 4,
+        "cuenta": "promociones99@mundopacifico.cl"
+    }
+
+
+## 18.3.- Conversaciones
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/mensajes/conversacion`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| tick_id           | int          |                                |  Si                     | ID del ticket                   |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| emisor                | string       | Ruta del endpoint                                |
+| mensaje               | string       | Contenido del mensaje                            |
+| fecha                 | timestamp    | ?                                |
+| tipo                  | string       | Tipo de mensaje                                  |
+| url                   | string       | ?                                |
+| id                    | int          | ID de la conversación                            |
+
+### 18.3.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "tick_id": 254
+	}
+
+### 18.3.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 18.3.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 18.3.2.2.- Respuesta de éxito
+
+    {
+        "mensajes": [
+            {
+                "emisor": "promociones99@mundopacifico.cl",
+                "mensaje": "Estimado cliente nuestro horario de atención es desde las 08:00 hasta las 18:00 horas.",
+                "fecha": "2021-03-31 21:44:01",
+                "tipo": "text",
+                "url": "#",
+                "id": 2
+            },
+            ...
+        ]
+    }
+
+
+## 18.4.- Mensajes No Leídos
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/mensajes/noLeidos`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| tick_id           | int          |                                |  Si                     | ID del ticket                   |
+| ultimoid          | int          |                                |  Si                     | ?                   |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| emisor                | string       | Ruta del endpoint                                |
+| mensaje               | string       | Contenido del mensaje                            |
+| fecha                 | timestamp    | ?                                |
+| tipo                  | string       | Tipo de mensaje                                  |
+| url                   | string       | ?                                |
+| id                    | int          | ID de la conversación                            |
+| ultimo                | int          | ?                                |
+
+### 18.4.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "tick_id": 254,
+        "ultimoid": 1
+	}
+
+### 18.4.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 18.4.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 18.4.2.2.- Respuesta de éxito
+
+    {
+        "mensajes": [
+            {
+                "emisor": "promociones99@mundopacifico.cl",
+                "mensaje": "Estimado cliente nuestro horario de atención es desde las 08:00 hasta las 18:00 horas.",
+                "fecha": "2021-03-31 21:44:01",
+                "tipo": "text",
+                "url": "#",
+                "id": 2,
+                "ultimo": "1"
+            },
+            ...
+        ]
+    }
+
+
+## 18.5.- Sucursal
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/sucursalvirtual`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| remitente         | string       |                                |  Si                     | ?                   |
+| destinatario      | string       |                                |  Si                     | ?                   |
+| mensaje           | string       |                                |  Si                     | ?                   |
+| canal_id          | int          |                                |  Si                     | ?                   |
+| tipo              | string       | txt o html                     |  Si                     | ?                   |
+| url               | string       |                                |  Si                     | ?                   |
+| rut               | string       |                                |  Si                     | ?                   |
+| nombre            | string       |                                |  Si                     | ?                   |
+| apellido1         | string       |                                |  Si                     | ?                   |
+| apellido2         | string       |                                |  Si                     | ?                   |
+| telefono          | int          |                                |  Si                     | ?                   |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| ?                     | ?            | ?                            |
+
+### 18.5.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "remitente": "remitente@prueba.cl",
+        "destinatario": "destinatario@prueba.cl",
+        "mensaje": "Mensaje prueba",
+        "canal_id": 4,
+        "tipo": "txt",
+        "url": "www.prueba.cl",
+        "rut": "54298455",
+        "nombre": "Carlos",
+        "apellido1": "Fernández",
+        "apellido2": "Barra",
+        "telefono": 999988881,
+	}
+
+### 18.5.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 18.5.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 18.5.2.2.- Respuesta de éxito
+
+    {
+        ..
+    }
+
+
+# 19.- Omnicanalidad
+## 19.1.- Listar Canales
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/omnicanalidad/canales`
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| cana_id               | int          | ID del canal                                     |
+| cana_descripcion      | string       | Descripción del canal                            |
+
+### 19.1.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 19.1.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 19.1.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 19.1.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "canales": [
+            {
+                "cana_id": 1,
+                "cana_descripcion": "Whatsapp"
+            },
+            {
+                "cana_id": 2,
+                "cana_descripcion": "Messenger Facebook"
+            },
+            ...
+        ]
+    }
+
+
+## 19.2.- Listar Canales
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/omnicanalidad/canalescliente`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| clie_id           | int          |                                |  Si                     | ID del cliente                  |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| cana_id               | int          | ID del canal                                     |
+| cana_descripcion      | string       | Descripción del canal                            |
+| cacl_id               | int          | ID de canal de un cliente                        |
+| cacl_identificador    | string       | ?                            |
+
+### 19.2.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 19.2.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 19.2.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 19.2.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "canales": [
+            {
+                "cana_id": 2,
+                "cana_descripcion": "Messenger Facebook",
+                "cacl_id": 137,
+                "cacl_identificador": "122222221"
+            }
+        ]
+    }
+
+
+## 19.3.- Crear Canal del Cliente
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/omnicanalidad/canalescliente`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| cacl_identificador| string       |                                |  Si                     | ?                  |
+| cana_id           | int          |                                |  Si                     | ID del canal                    |
+| clie_id           | int          |                                |  Si                     | ID del cliente                  |
+
+
+### 19.3.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "cacl_identificador": "+56988543265",
+        "cana_id": 1,
+        "clie_id": 34
+	}
+
+### 19.3.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 19.3.2.1.- Respuesta de error
+
+	{
+        "mensaje": "este canal ya ese encuentra registrado"
+    }
+  
+#### 19.3.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok"
+    }
+
+
+## 19.4.- Tickets Abiertos de una Cuenta de Cliente
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/omnicanalidad/ticketsrelacionadoscuenta`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| cacl_id           | int          |                                |  Si                     | ID de canal de un cliente       |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| tick_id               | int          | ID del ticket                                    |
+| cana_descripcion      | string       | Descripción del canal                            |
+| cacl_identificador    | string       | ?                            |
+| esta_descripcion      | string       | ?                            |
+
+
+### 19.4.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "cacl_id": 225
+	}
+
+### 19.4.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 19.4.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 19.4.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "ticketsRelacionados": [
+            {
+                "tick_id": 370,
+                "cana_descripcion": "Mail",
+                "cacl_identificador": "prueba@correo.cl",
+                "esta_descripcion": "No asignado"
+            }
+        ]
+    }
+
+
+## 19.5.- Tickets Relacionados All
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/omnicanalidad/ticketsrelacionadosall`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| ?                 | ?            |                                |  Si                     | ?       |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| tick_id               | int          | ID del ticket                                    |
+| cana_descripcion      | string       | Descripción del canal                            |
+| cacl_identificador    | string       | ?                            |
+| esta_descripcion      | string       | ?                            |
+
+
+### 19.5.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 19.5.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 19.5.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 19.5.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "ticketsRelacionados": [
+            {
+                "tick_id": 301,
+                "cana_descripcion": "Messenger Facebook",
+                "cacl_identificador": "33123123131313",
+                "esta_descripcion": "No asignado"
+            }
+        ]
+    }
+
+
+## 19.6.- Vincular Ticket
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/omnicanalidad/vincularticket`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| ?                 | ?            |                                |  Si                     | ?       |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| ?               | ?          | ?                                    |
+
+
+### 19.6.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 19.6.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 19.6.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 19.6.2.2.- Respuesta de éxito
+
+    {
+       ...
+    }
+
+
+## 19.7.- Vincular Todos
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/omnicanalidad/vinculartodos`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| ?                 | ?            |                                |  Si                     | ?       |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| ?               | ?          | ?                                    |
+
+
+### 19.7.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 19.7.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 19.7.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 19.7.2.2.- Respuesta de éxito
+
+    {
+       ...
+    }
+
+
+# 20.- Plantilla Wsp
+## 20.1.- Get
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/plantillawsp`
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| ?               | ?          | ?                                     |
+
+### 20.1.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 20.1.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 20.1.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 20.1.2.2.- Respuesta de éxito
+
+    {
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "plantilla": []
+            }
+        },
+        "codigo": 200
+    }
+
+## 20.2.- Generar Ticket desde Mundo
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/plantillawsp`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| cuen_id           | int          |                                |  Si                     | ID de la cuenta?                |
+| telefono_cliente  | string       |                                |  Si                     | Teléfono del cliente            |
+| usuario_mail      | string       |                                |  Si                     | Mail del usuario                |
+| plan_id           | int          |                                |  Si                     | ID del plan                     |
+
+
+### 20.2.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "cuen_id": 4,
+        "telefono_cliente": "+56988543265",
+        "usuario_mail": "mundoSocialAdmin@tumundo.cl",
+        "plan_id": 1
+	}
+
+### 20.2.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 20.2.2.1.- Respuesta de error
+
+	{
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "Error al generar ticket desde Mundo al cliente"
+        },
+        "codigo": 400
+    }
+  
+#### 20.2.2.2.- Respuesta de éxito
+
+    {
+        ...
+    }
+
+
+# 21.- Publicaciones
+## 21.1.- GetById
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/publicacion`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| publ_id           | int          |                                |  Si                     | ID de la publicación            |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| publ_id               | int          | ID de la publicación                             |
+| grup_id               | int          | ID del grupo                                     |
+| cuen_id               | int          | ID de la cuenta                                  |
+| publ_titulo           | string       | Título de la publicación                         |
+| publ_descripcion      | string       | Descripción de la publicación                    |
+| publ_ignorar          | boolean      | ?                                                |
+| publ_foto             | string       | Fotografía de la publicación                     |
+
+### 21.1.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "publ_id": 20
+	}
+
+### 21.1.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 21.1.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 21.1.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "data": {
+            "publ_id": 20,
+            "grup_id": 1,
+            "cuen_id": 5,
+            "publ_titulo": "t",
+            "publ_descripcion": "des",
+            "publ_ignorar": false,
+            "publ_foto": "...FOTO"
+        }
+    }
+
+
+## 21.2.- GetAll
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/publicaciones`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| grup_id           | int          |                                |  Si                     | ID del grupo                    |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| publ_id               | int          | ID de la publicación                             |
+| grup_id               | int          | ID del grupo                                     |
+| cuen_id               | int          | ID de la cuenta                                  |
+| publ_titulo           | string       | Título de la publicación                         |
+| publ_descripcion      | string       | Descripción de la publicación                    |
+| publ_ignorar          | boolean      | ?                                                |
+
+### 21.2.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "grup_id": 1
+	}
+
+### 21.2.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 21.2.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 21.2.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "data": [
+            {
+                "publ_id": 1,
+                "grup_id": 1,
+                "cuen_id": 5,
+                "publ_titulo": "t",
+                "publ_descripcion": "des",
+                "publ_ignorar": false
+            },
+            ...
+        ]
+    }
+
+## 21.3.- Guardar
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/publicaciones`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| grup_id           | int          |                                |  Si                     | ID del grupo                    |
+| cuen_id           | int          |                                |  Si                     | ID de la cuenta                 |
+| publ_titulo       | string       |                                |  Si                     | Título de la publicación        |
+| publ_descripcion  | string       |                                |  Si                     | Descripción de la publicación   |
+| publ_ignorar      | boolean      |                                |  Si                     | ?                               |
+| publ_foto         | file         |                                |  Si                     | Fotografía de la publicación    |
+
+### 21.3.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "grup_id": 1,
+        "cuen_id": 4,
+        "publ_titulo": "t",
+        "publ_descripcion": "des",
+        "publ_ignorar": false,
+        "publ_foto": archivo-ejemplo.jpg
+	}
+
+### 21.3.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 21.3.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 21.3.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "respApiMensajeria": 502
+    }
+
+
+## 21.4.- Update
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/publicaciones/update`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| publ_id           | int          |                                |  Si                     | ID de la publicación            |
+| grup_id           | int          |                                |  Si                     | ID del grupo                    |
+| cuen_id           | int          |                                |  Si                     | ID de la cuenta                 |
+| publ_titulo       | string       |                                |  Si                     | Título de la publicación        |
+| publ_descripcion  | string       |                                |  Si                     | Descripción de la publicación   |
+| publ_ignorar      | boolean      |                                |  Si                     | ?                               |
+| publ_foto         | file         |                                |  Si                     | Fotografía de la publicación    |
+
+### 21.4.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "publ_id": 67,
+        "grup_id": 1,
+        "cuen_id": 4,
+        "publ_titulo": "t update",
+        "publ_descripcion": "des update",
+        "publ_ignorar": false,
+        "publ_foto": archivo-ejemplo-update.jpg
+	}
+
+### 21.4.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 21.4.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 21.4.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok"
+    }
+
+
+## 21.5.- Delete
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/publicaciones/delete`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| publ_id           | int          |                                |  Si                     | ID de la publicación            |
+
+### 21.5.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "publ_id": 67
+	}
+
+### 21.5.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 21.5.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 21.5.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok"
+    }
+
+
+# 22.- Reportes
+## 22.1.- Reporte
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/reportes/tickets`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| paginate          | int          |                                |                         | Cantidad de resultados por página|
+| mail              | int          |                                |  Si                     | Correo electrónico de?            |
+| estado            | int          |                                |  Si                     | Estado de?            |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| clie_nombre           | string       | Nombres del cliente                              ||
+| cacl_identificador    | string       | email?                                           |
+| tick_id               |  int         | ID del ticket                                    |
+| tick_fecha_creacion   | timestamp    | Fecha de creación del ticket                     |
+| tick_fecha_asignacion | timestamp    | Fecha de asignación del ticket                   |
+| esta_descripcion      | string       | Descripción del ticket                           |
+| usua_id               | int          | ID del usuario                                   |
+| usua_nombre           | string       | Nombre del usuario                               |
+| cana_id               | int          | ID del ?                                         |
+
+### 22.1.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "paginate": 25,
+        "mail": "daniel.bustos@prueba.com",
+        "estado": 2
+	}
+
+### 22.1.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 22.1.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 22.1.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "data": {
+            "current_page": 1,
+            "data": [
+                {
+                    "clie_nombre": "PENDIENTE",
+                    "cacl_identificador": "158056|Daniel Enrique Bustos Romero",
+                    "tick_id": 667,
+                    "tick_fecha_creacion": "2021-06-10 19:39:54",
+                    "tick_fecha_asignacion": "2021-06-10 19:40:52",
+                    "esta_descripcion": "ASIGNADO",
+                    "usua_id": 2,
+                    "usua_nombre": "daniel.bustos@prueba.com",
+                    "cana_id": 2
+                },
+                ...
+            ],
+            "first_page_url": "...URL/api/mundosocial/reportes/tickets?page=1",
+            "from": 1,
+            "last_page": 1,
+            "last_page_url": "...URL/api/mundosocial/reportes/tickets?page=1",
+            "next_page_url": null,
+            "path": "...URL/api/mundosocial/reportes/tickets",
+            "per_page": 15,
+            "prev_page_url": null,
+            "to": 13,
+            "total": 13
+        }
+    }
+
+
+# 23.- Respuestas Rápidas
+## 23.1.- GetAll
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/respuestasrapida`
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| resp_id               | int          | ID de la respuesta rápida                        |
+| resp_descripcion      | string       | Descripción de la respuesta rápida               |
+| resp_contenido        | string       | Contenido de la respuesta rápida                 |
+| resp_tipo             | int          | Tipo de respuesta rápida                         |
+
+### 23.1.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 23.1.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 23.1.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 23.1.2.2.- Respuesta de éxito
+
+    {
+        "data": [
+            {
+                "resp_id": 6,
+                "resp_descripcion": "Pedir documentos",
+                "resp_contenido": "Estimado buenas tardes, hemos recibido su solicitud por favor envíenos: *Copia de su cédula de identidad\n*Boleta de servicios",
+                "resp_tipo": 2
+            },
+            {
+                "resp_id": 3,
+                "resp_descripcion": "Saludo Inicial",
+                "resp_contenido": "Hola bienvenidos mi nombre [[ejecutivo]], en que podemos ayudarlos",
+                "resp_tipo": 1
+            },
+            ...
+        ] 
+    }
+
+## 23.2.- Store
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/respuestasrapida`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| resp_descripcion  | string       |                                |  Si                     | Descripción de la respuesta rápida|
+| resp_contenido    | string       |                                |  Si                     | Contenido de la respuesta rápida|
+
+### 23.2.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "resp_descripcion": "Despedida Final",
+        "resp_contenido": "Mi nombre [[ejecutivo]], espero haberlo ayudado, hasta pronto."
+	}
+
+### 23.2.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 23.2.2.1.- Respuesta de error
+
+    {
+        "mensajes": "Título ya existe"
+    }
+  
+#### 23.2.2.2.- Respuesta de éxito
+
+    {
+        "mensajes": "ok"
+    }
+
+
+## 23.3.- Update
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/respuestasrapida/update`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| resp_id           | int          |                                |  Si                     | ID de la respuesta rápida       |
+| resp_descripcion  | string       |                                |  Si                     | Descripción de la respuesta rápida|
+| resp_contenido    | string       |                                |  Si                     | Contenido de la respuesta rápida|
+
+### 23.3.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "resp_id": 47,
+        "resp_descripcion": "Despedida Final Update",
+        "resp_contenido": "Mi nombre [[ejecutivo]], espero haberlo ayudado, hasta pronto."
+	}
+
+### 23.3.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 23.3.2.1.- Respuesta de error
+
+    {
+        "mensajes": "Título ya existe"
+    }
+  
+#### 23.3.2.2.- Respuesta de éxito
+
+    {
+        "mensajes": "ok"
+    }
+
+## 23.4.- Delete
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/respuestasrapida/delete`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| resp_id           | int          |                                |  Si                     | ID de la respuesta rápida       |
+
+### 23.4.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "resp_id": 47
+	}
+
+### 23.4.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 23.4.2.1.- Respuesta de error
+
+    {
+        ...
+    }
+  
+#### 23.4.2.2.- Respuesta de éxito
+
+    {
+        "mensajes": "eliminado"
+    }
+
+
+# 24.- Usuarios
+## 24.1.- Get Usuarios
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/usuario/listar`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| todos             | string       |                                |  Si                     | ?                               |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| usua_id               | int          | ID del usuario                                   |
+| usua_rol              | string       | Rol del usuario                                  |
+| usua_nombre           | string       | Correo electrónico del usuario                   |
+| esco_id               | int          | ?                         |
+| usua_fecha_set_estado | timestamp    | ?                         |
+
+### 24.1.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "todos": "s"
+	}
+
+### 24.1.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 24.1.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 24.1.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "usuarios": [
+            {
+                "usua_id": 18,
+                "usua_rol": "ejecutivo",
+                "usua_nombre": "ejecutivoEjemplo@tumundo.cl",
+                "esco_id": null,
+                "usua_fecha_set_estado": null
+            },
+            {
+                "usua_id": 1,
+                "usua_rol": "ejecutivo",
+                "usua_nombre": "NoAsignado@mail.com",
+                "esco_id": 1,
+                "usua_fecha_set_estado": "2021-08-15 16:09:07"
+            },
+            ...
+        ] 
+    }
+
+## 24.2.- Get Usuario
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/usuario`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| mail              | string       |                                |  Si                     | Correo electrónico del usuario a buscar|
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| usua_id               | int          | ID del usuario                                   |
+| usua_rol              | string       | Rol del usuario                                  |
+| usua_nombre           | string       | Correo electrónico del usuario                   |
+| esco_id               | int          | ?                         |
+| usua_fecha_set_estado | timestamp    | ?                         |
+
+### 24.2.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "mail": "daniel.bustos@prueba.com"
+	}
+
+### 24.2.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 24.2.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 24.2.2.2.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "usuarios": {
+            "usua_id": 2,
+            "usua_rol": "admin",
+            "usua_nombre": "daniel.bustos@prueba.com",
+            "esco_id": 2,
+            "usua_fecha_set_estado": "2021-08-16 12:52:49"
+        }
+    }
+
+
+## 24.3.- Crear
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/usuario`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| mail              | string       |                                |  Si                     | Correo electrónico del usuario a crear|
+| rol               | string       |                                |  Si                     | Rol del usuario a crear         |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| ?               | ?          | ?                                   |
+
+### 24.3.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "mail": "carlos.fernandez.b@mundopacifico.cl",
+        "rol": "programador"
+	}
+
+### 24.3.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 24.3.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 24.3.2.2.- Respuesta de éxito
+
+    {
+        ...
+    }
+
+
+## 24.4.- Roles
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/mundosocial/usuario/roles`
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| value                 | string       | Tipo de rol                                      |
+| label                 | string       | Nombre del rol                                   |
+
+### 24.4.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 24.4.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 24.4.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 24.4.2.2.- Respuesta de éxito
+
+    {
+        "rol": [
+            {
+                "value": "admin",
+                "label": "admin"
+            },
+            {
+                "value": "ejecutivo",
+                "label": "ejecutivo"
+            }
+            ...
+        ]
+    }
+
+## 24.5.- Update
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/usuario/update`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| usua_id           | int          |                                |  Si                     | ID del usuario a modificar      |
+| mail              | string       |                                |  Si                     | Correo electrónico del usuario a crear|
+| rol               | string       |                                |  Si                     | Rol del usuario a crear         |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| ?               | ?          | ?                                   |
+
+### 24.5.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "usua_id": ?,
+        "mail": "carlos.fernandez.b@mundopacifico.cl",
+        "rol": "admin update"
+	}
+
+### 24.5.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 24.5.2.1.- Respuesta de error
+
+	{
+        ...
+    }
+  
+#### 24.5.2.2.- Respuesta de éxito
+
+    {
+        ...
+    }
+
+## 24.6.- Delete
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/api/mundosocial/usuario/delete`
+
+**Parámetros de entrada:**
+| Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
+|:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
+| usua_id           | int          |                                |  Si                     | ID del usuario a modificar      |
+| mail              | string       |                                |  Si                     | Correo electrónico del usuario a crear|
+| rol               | string       |                                |  Si                     | Rol del usuario a crear         |
+
+**Datos de salida:**
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| ?                     | ?            | ?                                   |
+
+### 24.6.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        "usua_id": ?
+	}
+
+### 24.6.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 24.6.2.1.- Respuesta de error
+
+	{
+        "mensaje": "El usuario tiene grupos asignados"
+    }
+  
+#### 24.6.2.2.- Respuesta de éxito
+
+    {
+        ...
     }

@@ -14,4 +14,10 @@ cuenta by canal
 
 ----
 
-ggrupos->update(configuraciones)
+grupos->update(configuraciones)
+
+
+------------
+
+
+16.4 datos de salida
