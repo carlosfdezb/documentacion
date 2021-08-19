@@ -1,8 +1,9 @@
----
-title: "Apis Mutualidad para uso de Beyond UP"
-author: "Alvaro Muñoz B."
-date: "23/09/2020"
----
+
+| "Apis Mutualidad para uso de Beyond UP"        |
+|:-----------------------------------------------|
+| author: "Alvaro Muñoz B."                      |
+| date: "23/09/2020"                             |
+
 
 | Tipo de seguridad|
 |:----------------:|
@@ -14,103 +15,103 @@ date: "23/09/2020"
   - [Objetivo](#objetivo)
   - [Restricciones](#restricciones)
   - [1.- Factibilidad](#1--factibilidad)
-    - [1.1.- Factibilidad por Homepass](#11--factibilidad-por-homepass)
-        - [1.1.1.- Ejemplo de llamada](#111--ejemplo-de-llamada)
-        - [1.1.2.- Respuesta de Salida](#112--respuesta-de-salida)
-            - [1.1.2.1- Respuesta de error Homepass no disponible](#1121--respuesta-de-error-homepass-no-disponible)
-            - [1.1.2.2- Respuesta de error código Homepass erróneo](#1122--respuesta-de-error-código-homepass-erróneo)
-            - [1.1.2.3- Respuesta de éxito](#1123--respuesta-de-éxito)
-    - [1.2.- Factibilidad por dirección](#12--factibilidad-por-dirección)
-        - [1.2.1.- Ejemplo de llamada](#121--ejemplo-de-llamada)
-        - [1.2.2.- Respuesta de Salida](#122--respuesta-de-salida)
-            - [1.2.2.1- Respuesta de error](#1221--respuesta-de-error)
-            - [1.2.2.2- Respuesta de éxito](#1222--respuesta-de-éxito)
-    - [1.3.- Factibilidad por dirección con servicios](#13--factibilidad-por-dirección-con-servicios)
-        - [1.3.1.- Ejemplo de llamada](#131--ejemplo-de-llamada)
-        - [1.3.2.- Respuesta de Salida](#132--respuesta-de-salida)
-            - [1.3.2.1- Respuesta de error](#1321--respuesta-de-error)
-            - [1.3.2.2- Respuesta de éxito](#1322--respuesta-de-éxito)
+        - [1.1.- Factibilidad por Homepass](#11--factibilidad-por-homepass)
+            - [1.1.1.- Ejemplo de llamada](#111--ejemplo-de-llamada)
+            - [1.1.2.- Respuesta de Salida](#112--respuesta-de-salida)
+                - [1.1.2.1- Respuesta de error Homepass no disponible](#1121--respuesta-de-error-homepass-no-disponible)
+                - [1.1.2.2- Respuesta de error código Homepass erróneo](#1122--respuesta-de-error-código-homepass-erróneo)
+                - [1.1.2.3- Respuesta de éxito](#1123--respuesta-de-éxito)
+        - [1.2.- Factibilidad por dirección](#12--factibilidad-por-dirección)
+            - [1.2.1.- Ejemplo de llamada](#121--ejemplo-de-llamada)
+            - [1.2.2.- Respuesta de Salida](#122--respuesta-de-salida)
+                - [1.2.2.1- Respuesta de error](#1221--respuesta-de-error)
+                - [1.2.2.2- Respuesta de éxito](#1222--respuesta-de-éxito)
+        - [1.3.- Factibilidad por dirección con servicios](#13--factibilidad-por-dirección-con-servicios)
+            - [1.3.1.- Ejemplo de llamada](#131--ejemplo-de-llamada)
+            - [1.3.2.- Respuesta de Salida](#132--respuesta-de-salida)
+                - [1.3.2.1- Respuesta de error](#1321--respuesta-de-error)
+                - [1.3.2.2- Respuesta de éxito](#1322--respuesta-de-éxito)
   - [2.- Naps](#2--naps)
-    - [2.1.- Asignar ubicación exacta del dispositivo](#21--asignar-ubicación-exacta-del-dispositivo)
-        - [2.1.1.- Ejemplo de llamada](#211--ejemplo-de-llamada)
-        - [2.1.2.- Respuesta de Salida](#212--respuesta-de-salida)
-            - [2.1.2.1- Respuesta de error](#2121--respuesta-de-error)
-            - [2.1.2.2- Respuesta de éxito](#2122--respuesta-de-éxito)
-    - [2.2.- Obtener bocas disponibles](#22--obtener-bocas-disponibles)
-        - [2.2.1.- Ejemplo de llamada](#221--ejemplo-de-llamada)
-        - [2.2.2.- Respuesta de Salida](#222--respuesta-de-salida)
-            - [2.2.2.1- Respuesta de error](#2221--respuesta-de-error)
-            - [2.2.2.2- Respuesta de éxito](#2222--respuesta-de-éxito)
-    - [2.3.- Niveles](#23--niveles)
-        - [2.3.1.- Ejemplo de llamada](#231--ejemplo-de-llamada)
-        - [2.3.2.- Respuesta de Salida](#232--respuesta-de-salida)
-            - [2.3.2.1- Respuesta de error](#2321--respuesta-de-error)
-            - [2.3.2.2- Respuesta de éxito](#2322--respuesta-de-éxito)
+        - [2.1.- Asignar ubicación exacta del dispositivo](#21--asignar-ubicación-exacta-del-dispositivo)
+            - [2.1.1.- Ejemplo de llamada](#211--ejemplo-de-llamada)
+            - [2.1.2.- Respuesta de Salida](#212--respuesta-de-salida)
+                - [2.1.2.1- Respuesta de error](#2121--respuesta-de-error)
+                - [2.1.2.2- Respuesta de éxito](#2122--respuesta-de-éxito)
+        - [2.2.- Obtener bocas disponibles](#22--obtener-bocas-disponibles)
+            - [2.2.1.- Ejemplo de llamada](#221--ejemplo-de-llamada)
+            - [2.2.2.- Respuesta de Salida](#222--respuesta-de-salida)
+                - [2.2.2.1- Respuesta de error](#2221--respuesta-de-error)
+                - [2.2.2.2- Respuesta de éxito](#2222--respuesta-de-éxito)
+        - [2.3.- Niveles](#23--niveles)
+            - [2.3.1.- Ejemplo de llamada](#231--ejemplo-de-llamada)
+            - [2.3.2.- Respuesta de Salida](#232--respuesta-de-salida)
+                - [2.3.2.1- Respuesta de error](#2321--respuesta-de-error)
+                - [2.3.2.2- Respuesta de éxito](#2322--respuesta-de-éxito)
   - [3.- Nivel de señal](#3--nivel-de-señal)
-    - [3.1.- Nivel de señal de ONT](#31--nivel-de-señal-de-ont)
-        - [3.1.1.- Ejemplo de llamada](#311--ejemplo-de-llamada)
-        - [3.1.2.- Respuesta de Salida](#312--respuesta-de-salida)
-            - [3.1.2.1- Respuesta de error](#3121--respuesta-de-error)
-            - [3.1.2.2- Respuesta de éxito](#3122--respuesta-de-éxito)
+        - [3.1.- Nivel de señal de ONT](#31--nivel-de-señal-de-ont)
+            - [3.1.1.- Ejemplo de llamada](#311--ejemplo-de-llamada)
+            - [3.1.2.- Respuesta de Salida](#312--respuesta-de-salida)
+                - [3.1.2.1- Respuesta de error](#3121--respuesta-de-error)
+                - [3.1.2.2- Respuesta de éxito](#3122--respuesta-de-éxito)
   - [4.- Provisión](#4--provisión)
-    - [4.1.- Alta](#41--alta)
-        - [4.1.1.- Ejemplo de llamada](#411--ejemplo-de-llamada)
-        - [4.1.2.- Respuesta de Salida](#412--respuesta-de-salida)
-            - [4.1.2.1- Respuesta de error](#4121--respuesta-de-error)
-            - [4.1.2.2- Respuesta de éxito](#4122--respuesta-de-éxito)
-    - [4.2.- Baja](#42--baja)
-        - [4.2.1.- Ejemplo de llamada](#421--ejemplo-de-llamada)
-        - [4.2.2.- Respuesta de Salida](#422--respuesta-de-salida)
-            - [4.2.2.1- Respuesta de error](#4221--respuesta-de-error)
-            - [4.2.2.2- Respuesta de éxito](#4222--respuesta-de-éxito)
-    - [4.3.- Desconexión](#43--desconexión)
-        - [4.3.1.- Ejemplo de llamada](#431--ejemplo-de-llamada)
-        - [4.3.2.- Respuesta de Salida](#432--respuesta-de-salida)
-            - [4.3.2.1- Respuesta de error](#4321--respuesta-de-error)
-            - [4.3.2.2- Respuesta de éxito](#4322--respuesta-de-éxito)
+        - [4.1.- Alta](#41--alta)
+            - [4.1.1.- Ejemplo de llamada](#411--ejemplo-de-llamada)
+            - [4.1.2.- Respuesta de Salida](#412--respuesta-de-salida)
+                - [4.1.2.1- Respuesta de error](#4121--respuesta-de-error)
+                - [4.1.2.2- Respuesta de éxito](#4122--respuesta-de-éxito)
+        - [4.2.- Baja](#42--baja)
+            - [4.2.1.- Ejemplo de llamada](#421--ejemplo-de-llamada)
+            - [4.2.2.- Respuesta de Salida](#422--respuesta-de-salida)
+                - [4.2.2.1- Respuesta de error](#4221--respuesta-de-error)
+                - [4.2.2.2- Respuesta de éxito](#4222--respuesta-de-éxito)
+        - [4.3.- Desconexión](#43--desconexión)
+            - [4.3.1.- Ejemplo de llamada](#431--ejemplo-de-llamada)
+            - [4.3.2.- Respuesta de Salida](#432--respuesta-de-salida)
+                - [4.3.2.1- Respuesta de error](#4321--respuesta-de-error)
+                - [4.3.2.2- Respuesta de éxito](#4322--respuesta-de-éxito)
   - [5.- Reservas](#5--reservas)
-    - [5.1.- Creación de Reserva](#51--creación-de-reserva)
-        - [5.1.1.- Ejemplo de llamada](#511--ejemplo-de-llamada)
-        - [5.1.2.- Respuesta de Salida](#512--respuesta-de-salida)
-            - [5.1.2.1- Respuesta de error Homepass no disponible](#5121--respuesta-de-error-homepass-no-disponible)
-            - [5.1.2.2- Respuesta de error código Homepass erróneo](#5122--respuesta-de-error-código-homepass-erróneo-1)
-            - [5.1.2.3- Respuesta de error código de Operador](#5123--respuesta-de-error-código-de-operador)
-            - [5.1.2.4- Respuesta de éxito](#5124--respuesta-de-éxito)
-    - [5.2.- Anular Reserva](#52--anular-reserva)
-        - [5.2.1.- Ejemplo de llamada](#521--ejemplo-de-llamada)
-        - [5.2.2.- Respuesta de Salida](#522--respuesta-de-salida)
-            - [5.2.2.1- Respuesta de error al anular Reserva de Homepass](#5221--respuesta-de-error-al-anular-reserva-de-homepass)
-            - [5.2.2.2- Respuesta de éxito](#5222--respuesta-de-éxito-1)
-    - [5.3.- Obtener Reservas](#53--obtener-reservas)
-        - [5.3.1.- Ejemplo de llamada](#531--ejemplo-de-llamada)
-        - [5.3.2.- Respuesta de Salida](#532--respuesta-de-salida)
-            - [5.3.2.1.- Respuesta de error](#5321--respuesta-de-error)
-            - [5.3.2.2.- Respuesta de éxito](#5322--respuesta-de-éxito)
+        - [5.1.- Creación de Reserva](#51--creación-de-reserva)
+            - [5.1.1.- Ejemplo de llamada](#511--ejemplo-de-llamada)
+            - [5.1.2.- Respuesta de Salida](#512--respuesta-de-salida)
+                - [5.1.2.1- Respuesta de error Homepass no disponible](#5121--respuesta-de-error-homepass-no-disponible)
+                - [5.1.2.2- Respuesta de error código Homepass erróneo](#5122--respuesta-de-error-código-homepass-erróneo-1)
+                - [5.1.2.3- Respuesta de error código de Operador](#5123--respuesta-de-error-código-de-operador)
+                - [5.1.2.4- Respuesta de éxito](#5124--respuesta-de-éxito)
+        - [5.2.- Anular Reserva](#52--anular-reserva)
+            - [5.2.1.- Ejemplo de llamada](#521--ejemplo-de-llamada)
+            - [5.2.2.- Respuesta de Salida](#522--respuesta-de-salida)
+                - [5.2.2.1- Respuesta de error al anular Reserva de Homepass](#5221--respuesta-de-error-al-anular-reserva-de-homepass)
+                - [5.2.2.2- Respuesta de éxito](#5222--respuesta-de-éxito-1)
+        - [5.3.- Obtener Reservas](#53--obtener-reservas)
+            - [5.3.1.- Ejemplo de llamada](#531--ejemplo-de-llamada)
+            - [5.3.2.- Respuesta de Salida](#532--respuesta-de-salida)
+                - [5.3.2.1.- Respuesta de error](#5321--respuesta-de-error)
+                - [5.3.2.2.- Respuesta de éxito](#5322--respuesta-de-éxito)
   - [6.- Servicialidad](#6--servicialidad)
-    - [6.1.- Servicialidad por Nodo](#61--servicialidad-por-nodo)
-        - [6.1.1.- Ejemplo de llamada](#611--ejemplo-de-llamada)
-        - [6.1.2.- Respuesta de Salida](#612--respuesta-de-salida)
-            - [6.1.2.1.- Respuesta de error](#6121--respuesta-de-error)
-            - [6.1.2.2.- Respuesta de éxito](#6122--respuesta-de-éxito)
-    - [6.2.- Servicialidad por Mufa](#62--servicialidad-por-mufa)
-        - [6.2.1.- Ejemplo de llamada](#621--ejemplo-de-llamada)
-        - [6.2.2.- Respuesta de Salida](#622--respuesta-de-salida)
-            - [6.2.2.1.- Respuesta de error](#6221--respuesta-de-error)
-            - [6.2.2.2.- Respuesta de éxito](#6222--respuesta-de-éxito)
-    - [6.3.- Servicialidad por Planta](#63--servicialidad-por-planta)
-        - [6.3.1.- Ejemplo de llamada](#631--ejemplo-de-llamada)
-        - [6.3.2.- Respuesta de Salida](#632--respuesta-de-salida)
-            - [6.3.2.1.- Respuesta de error](#6321--respuesta-de-error)
-            - [6.3.2.2.- Respuesta de éxito](#6322--respuesta-de-éxito)
-    - [6.4.- Servicialidad por Planta paginada](#64--servicialidad-por-planta-paginada)
-        - [6.4.1.- Ejemplo de llamada](#641--ejemplo-de-llamada)
-        - [6.4.2.- Respuesta de Salida](#642--respuesta-de-salida)
-            - [6.4.2.1.- Respuesta de error](#6421--respuesta-de-error)
-            - [6.4.2.2.- Respuesta de éxito](#6422--respuesta-de-éxito)
+        - [6.1.- Servicialidad por Nodo](#61--servicialidad-por-nodo)
+            - [6.1.1.- Ejemplo de llamada](#611--ejemplo-de-llamada)
+            - [6.1.2.- Respuesta de Salida](#612--respuesta-de-salida)
+                - [6.1.2.1.- Respuesta de error](#6121--respuesta-de-error)
+                - [6.1.2.2.- Respuesta de éxito](#6122--respuesta-de-éxito)
+        - [6.2.- Servicialidad por Mufa](#62--servicialidad-por-mufa)
+            - [6.2.1.- Ejemplo de llamada](#621--ejemplo-de-llamada)
+            - [6.2.2.- Respuesta de Salida](#622--respuesta-de-salida)
+                - [6.2.2.1.- Respuesta de error](#6221--respuesta-de-error)
+                - [6.2.2.2.- Respuesta de éxito](#6222--respuesta-de-éxito)
+        - [6.3.- Servicialidad por Planta](#63--servicialidad-por-planta)
+            - [6.3.1.- Ejemplo de llamada](#631--ejemplo-de-llamada)
+            - [6.3.2.- Respuesta de Salida](#632--respuesta-de-salida)
+                - [6.3.2.1.- Respuesta de error](#6321--respuesta-de-error)
+                - [6.3.2.2.- Respuesta de éxito](#6322--respuesta-de-éxito)
+        - [6.4.- Servicialidad por Planta paginada](#64--servicialidad-por-planta-paginada)
+            - [6.4.1.- Ejemplo de llamada](#641--ejemplo-de-llamada)
+            - [6.4.2.- Respuesta de Salida](#642--respuesta-de-salida)
+                - [6.4.2.1.- Respuesta de error](#6421--respuesta-de-error)
+                - [6.4.2.2.- Respuesta de éxito](#6422--respuesta-de-éxito)
   - [7.- Datos de Ubicaciones Geográficas de Chile](#7--datos-de-ubicaciones-geográficas-de-chile)
-    - [7.1.- Listado de Regiones](#71--listado-de-regiones)
-    - [7.2.- Listado de Provincias](#72--listado-de-provincias)
-    - [7.3.- Listado de Comunas](#73--listado-de-comunas)
+        - [7.1.- Listado de Regiones](#71--listado-de-regiones)
+        - [7.2.- Listado de Provincias](#72--listado-de-provincias)
+        - [7.3.- Listado de Comunas](#73--listado-de-comunas)
 
 # Objetivo
 
@@ -128,11 +129,13 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/factibilidad/consultahp`
 
 **Parámetros de entrada:**
+
 | Campo           |  Tipo  | Formato | Requerido |   Descripción      |
 |:---------------:|:------:|:-------:|:---------:|-------------------:|
 | codigoHomepass  | int    |         |    Si     | Código del Homepass|
 
 **Datos de salida:**
+
 |  Campo          |  Tipo  | Descripción                      |
 |:----------------|:------:|----------------------------------:|
 | idHomepass      |  int   | Código interno del Homepass       |                 
@@ -260,6 +263,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/factibilidad/consultaFactibilidad`
 
 **Parámetros de entrada:**
+
 | Campo  |  Tipo  | Formato |     Requerido      |             Descripción     |
 |:------ |:------:|:-------:|:------------------:|----------------------------:|
 | calle  | string |         |         Si         |   Nombre de la calle        |
@@ -268,6 +272,7 @@ Ruta : GET `/factibilidad/consultaFactibilidad`
 |forcenap|  int   |         |         Si         |   Al indicar 1, solo se valide que exista boca disponible|
 
 **Datos de salida:**
+
 | Campo          |  Tipo  |                         Descripción              |
 |:---------------|:------:|-------------------------------------------------:| 
 | idHomepass     |  int   |                 Código interno del Homepass      |
@@ -375,6 +380,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/factibilidad/factibilidadMundo`
 
 **Parámetros de entrada:**
+
 | Campo  |  Tipo  | Formato |     Requerido      |             Descripción     |
 |:------ |:------:|:-------:|:------------------:|----------------------------:|
 | calle  | string |         |         Si         |          Nombre de la calle |
@@ -383,6 +389,7 @@ Ruta : GET `/factibilidad/factibilidadMundo`
 |forcenap|  int   |         |         Si         |Al indicar 1, solo se valide que exista boca disponible|
 
 **Datos de salida:**
+
 | Campo          |  Tipo  |                         Descripción              |
 |:---------------|:------:|-------------------------------------------------:| 
 |   idHomepass   |  int   | Código interno del Homepass                      |                 
@@ -481,6 +488,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/nap/georeferencia`
 
 **Parámetros de entrada:**
+
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | idNap          | int    |          |    Si     |Identificador único del nap |       
@@ -535,11 +543,13 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/bocaNap/bocaDisponible`
 
 **Parámetros de entrada:**
+
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | codigoHomepass | int    |          |    Si     |  Código del Homepass       |
 
 **Datos de salida:**
+
 | Campo          |  Tipo  |                         Descripción              |
 |:---------------|:------:|-------------------------------------------------:| 
 | IdHomepass     | int    |   Identificador del homepass                     | 
@@ -598,6 +608,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/bocaNap/niveles`
 
 **Parámetros de entrada:**
+
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | idBocaNap      | int    |          |    Si     | Identificador de la boca del nap|
@@ -646,11 +657,13 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/support/getOntSignal`
 
 **Parámetros de entrada:**
+
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | idReserva      | int    |          |    Si     | Identificador de la reserva |
 
 **Datos de salida:**
+
 | Campo          |  Tipo  |                         Descripción              |
 |:---------------|:------:|-------------------------------------------------:| 
 | RunStatus      | int    |   Encendida o apagada                            | 
@@ -724,6 +737,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/support/alta`
 
 **Parámetros de entrada:**
+
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | idReserva      | int    |          |    Si     | Identificador de la reserva|
@@ -801,6 +815,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/support/baja`
 
 **Parámetros de entrada:**
+
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | idReserva      | int    |          |    Si     | Identificador de la reserva|
@@ -848,6 +863,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/support/desconectar`
 
 **Parámetros de entrada:**
+
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | idReserva      | int    |          |    Si     | Identificador de la reserva|
@@ -896,6 +912,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/reserva`
 
 **Parámetros de entrada**
+
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | operador       | String |          |    Si     |        Código del operador |       
@@ -989,6 +1006,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : PATCH `/reserva/anular`
 
 **Parámetros de entrada**
+
 | Campo          |  Tipo  | Formato  | Requerido |  Descripción          |
 |:---------------|:------:|:--------:|:---------:|----------------------:|
 | id_reserva     | int    | NNNNNNN  |    Si     | Identificador de la Reserva |
@@ -1046,6 +1064,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET  `/reserva`
 
 **Parámetros de entrada:**
+
 | Campo         |  Tipo  | Formato | Requerido |         Descripción         |
 |:------------- |:------:|:-------:|:---------:|----------------------------:|
 | fecha_desde   |  date  | yyyy-mm-dd |    Si  | Fecha de Inicio de búsqueda |
@@ -1054,6 +1073,7 @@ Ruta : GET  `/reserva`
 | per_page   |  int      |         |    Si     |    numero de paginas        |
 
 **Datos de salida:**
+
 | Campo         |  Tipo  |         Descripción         |
 |:------------- |:------:|:---------------------------:|
 | current_page   |  int  | Página actual               |
@@ -1145,6 +1165,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/servicialidad/getServicialidad`
 
 **Parámetros de entrada:**
+
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | nodo           |string  |          |    Si     |Nodo al que esta asignado el Homepass|
@@ -1153,6 +1174,7 @@ Ruta : GET `/servicialidad/getServicialidad`
 | splitter       | int    |          |    Si     |Descripción del splitter    |
 
 **Datos de salida:**
+
 | Campo          |  Tipo  |                         Descripción              |
 |:---------------|:------:|-------------------------------------------------:| 
 | correlativoRed |  int   | Identificador de la servicialidad                |
@@ -1256,6 +1278,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/servicialidad/getServicialidadMufa`
 
 **Parámetros de entrada:**
+
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | nodo           |string  |          |    Si     |Nodo al que esta asignado el Homepass|
@@ -1263,6 +1286,7 @@ Ruta : GET `/servicialidad/getServicialidadMufa`
 | mufa           | int    |          |    Si     |Código de mufa              |
 
 **Datos de salida:**
+
 | Campo          |  Tipo  |                         Descripción              |
 |:---------------|:------:|-------------------------------------------------:| 
 | correlativoRed |  int   | Identificador de la servicialidad                |
@@ -1353,11 +1377,13 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/servicialidad/getServicialidadPlanta`
 
 **Parámetros de entrada:**
+
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | codigoInfraestructura|string|      |    Si     | Identificador del HUB      |
 
 **Datos de salida:**
+
 | Campo          |  Tipo  |                         Descripción              |
 |:---------------|:------:|-------------------------------------------------:| 
 | hub            |string  | Identificador del HUB                            | 
@@ -1437,6 +1463,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/servicialidad/getServicialidadPlantaGis`
 
 **Parámetros de entrada:**
+
 | Campo          |  Tipo  | Formato  | Requerido | Descripción                |
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | codigoInfraestructura|string|      |    Si     | Identificador del HUB      |
@@ -1444,6 +1471,7 @@ Ruta : GET `/servicialidad/getServicialidadPlantaGis`
 | page           |  int   |          |    Si     |Especificación de página    |
 
 **Datos de salida:**
+
 | Campo          |  Tipo  |                         Descripción              |
 |:---------------|:------:|-------------------------------------------------:| 
 | hub            |string  | Identificador del HUB                            | 
