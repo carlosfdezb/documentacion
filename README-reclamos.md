@@ -861,14 +861,88 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/api/reclamos/listado/reclamo`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo        |  Tipo        | Formato                        |     Requerido         |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:---------------------:|----------------------------:|
+| IdReclamo    | int          |                                | No                    | ID de reclamo               |
+| page         | int          |                                | No                    | Número de página            |
 
 **Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo                           |  Tipo        |                         Descripción              |
+|:--------------------------------|:------------:|-------------------------------------------------:| 
+| RERE_ID_RECLAMO                 | Tipo de dato | Breve descripción                                | 
+| RERE_ID_SUBCATEGORIA_INTERNA    | Tipo de dato | Breve descripción                                | 
+| RERE_NOMBRE_USUARIO             | Tipo de dato | Breve descripción                                | 
+| RERE_USUARIO_ACTUALIZA          | Tipo de dato | Breve descripción                                | 
+| RERE_ID_TIPO_TELEFONO           | Tipo de dato | Breve descripción                                | 
+| RERE_DIRECCION_CEL_RECLAMADO    | Tipo de dato | Breve descripción                                | 
+| RERE_FECHA_CIERRE               | Tipo de dato | Breve descripción                                | 
+| RERE_FECHA_NOTIFICACION         | Tipo de dato | Breve descripción                                | 
+| RERE_FOLIO                      | Tipo de dato | Breve descripción                                | 
+| RERE_TEXTO                      | Tipo de dato | Breve descripción                                | 
+| RERE_FECHA_REGISTRO             | Tipo de dato | Breve descripción                                | 
+| RERE_FECHA_RECLAMO              | Tipo de dato | Breve descripción                                | 
+| RERE_CALLER_ID                  | Tipo de dato | Breve descripción                                | 
+| RERE_ID_TIPO_NOTIFICACION       | Tipo de dato | Breve descripción                                | 
+| RERE_ID_ESTADO_RECLAMO          | Tipo de dato | Breve descripción                                | 
+| RERE_ID_SOLICITANTE             | Tipo de dato | Breve descripción                                | 
+| RERE_ID_TIPO_RECLAMO            | Tipo de dato | Breve descripción                                | 
+| RERE_ID_TIPO_SOLUCION           | Tipo de dato | Breve descripción                                | 
+| RERE_ID_TIPO_REGISTRO           | Tipo de dato | Breve descripción                                | 
+| RERE_ID_SERVICIO                | Tipo de dato | Breve descripción                                | 
+| RERE_ID_TIPO_SERVICIO           | Tipo de dato | Breve descripción                                | 
+| RERE_ID_MOTIVO                  | Tipo de dato | Breve descripción                                | 
+| RERE_ID_SUB_MOTIVO              | Tipo de dato | Breve descripción                                | 
+| RERE_ID_MACROMOTIVO             | Tipo de dato | Breve descripción                                | 
+| RERE_ID_CONFORMIDAD             | Tipo de dato | Breve descripción                                | 
+| RERE_HORAS_SIN_SERVICIO         | Tipo de dato | Breve descripción                                | 
+| RERE_MONTO_TOTAL_RECLAMADO      | Tipo de dato | Breve descripción                                | 
+| RERE_CELULAR_RECLAMADO          | Tipo de dato | Breve descripción                                | 
+| RERE_AREA_TELEFONO_RECLAMADO    | Tipo de dato | Breve descripción                                | 
+| RERE_TELEFONO_RECLAMADO         | Tipo de dato | Breve descripción                                | 
+| RERE_DIRECCION_TEL_RECLAMADO    | Tipo de dato | Breve descripción                                | 
+| RERE_TOTAL_DESCUENTO            | Tipo de dato | Breve descripción                                | 
+| RERE_MONTO_INDEMNIZACION        | Tipo de dato | Breve descripción                                | 
+| RERE_MONTO_DESCUENTO            | Tipo de dato | Breve descripción                                | 
+| RERE_ID_RECLAMO_SUBTEL          | Tipo de dato | Breve descripción                                | 
+| RERE_ID_RECLAMO_SERNAC          | Tipo de dato | Breve descripción                                | 
+| RERE_ID_USUARIO                 | Tipo de dato | Breve descripción                                | 
+| RERE_ID_USUARIO_ACTUALIZA       | Tipo de dato | Breve descripción                                | 
+| RERE_ID_ME_QUIERO_SALIR         | Tipo de dato | Breve descripción                                | 
+| ↓ tipo_notificacion             | array[object]| Breve descripción                                | 
+| RETS_DESCRIPCION                | Tipo de dato | Breve descripción                                | 
+| RETS_ID_SUBTIPO                 | Tipo de dato | Breve descripción                                | 
+| ↓ estado                        | array[object]| Breve descripción                                | 
+| RETS_DESCRIPCION                | Tipo de dato | Breve descripción                                | 
+| RETS_ID_SUBTIPO                 | Tipo de dato | Breve descripción                                | 
+| ↓ solicitante                   | array[object]| Breve descripción                                | 
+| RESO_RUT                        | Tipo de dato | Breve descripción                                | 
+| RESO_ES_TITULAR                 | Tipo de dato | Breve descripción                                | 
+| RESO_RUT_DV                     | Tipo de dato | Breve descripción                                | 
+| RESO_NUMERO_CALLE_REPRESENTANTE | Tipo de dato | Breve descripción                                | 
+| RESO_NOMBRE_RAZON               | Tipo de dato | Breve descripción                                | 
+| RESO_CODIGO_CLIENTE_BU          | Tipo de dato | Breve descripción                                | 
+| RESO_ID_SOLICITANTE             | Tipo de dato | Breve descripción                                | 
+| RESO_COMUNA                     | Tipo de dato | Breve descripción                                | 
+| RESO_ID_COMUNA                  | Tipo de dato | Breve descripción                                | 
+| RESO_REGION                     | Tipo de dato | Breve descripción                                | 
+| RESO_ID_REGION                  | Tipo de dato | Breve descripción                                | 
+| RESO_PLAN_PRINCIPAL             | Tipo de dato | Breve descripción                                | 
+| RESO_NODO                       | Tipo de dato | Breve descripción                                | 
+| RESO_RUT_REPRESENTANTE          | Tipo de dato | Breve descripción                                | 
+| RESO_RUT_DV_REPRESENTANTE       | Tipo de dato | Breve descripción                                | 
+| RESO_NOMBRE_REPRESENTANTE       | Tipo de dato | Breve descripción                                | 
+| RESO_APELLIDOS_REPRESENTANTE    | Tipo de dato | Breve descripción                                | 
+| RESO_TELEFONO_REPRESENTANTE     | Tipo de dato | Breve descripción                                | 
+| RESO_EMAIL_REPRESENTANTE        | Tipo de dato | Breve descripción                                | 
+| RESO_EMAIL                      | Tipo de dato | Breve descripción                                | 
+| RESO_COMUNA_REPRESENTANTE       | Tipo de dato | Breve descripción                                | 
+| RESO_ID_COMUNA_REPRESENTANTE    | Tipo de dato | Breve descripción                                | 
+| RESO_DIRECCION_REPRESENTANTE    | Tipo de dato | Breve descripción                                | 
+| RESO_ID_REGION_REPRESENTANTE    | Tipo de dato | Breve descripción                                | 
+| RESO_REGION_REPRESENTANTE       | Tipo de dato | Breve descripción                                | 
+| RESO_CALLE                      | Tipo de dato | Breve descripción                                | 
+| RESO_CLIENTE_UNIFICADO          | Tipo de dato | Breve descripción                                |  
+| ↓ tipo_reclamo                  | array[object]| Breve descripción                                |
 
 ### 1.10.1.- Ejemplo de llamada
 
@@ -896,18 +970,129 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.10.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
+        "current_page": 1,
+        "data": [
+            {
+                "RERE_ID_RECLAMO": 63,
+                "RERE_ID_SUBCATEGORIA_INTERNA": null,
+                "RERE_NOMBRE_USUARIO": null,
+                "RERE_USUARIO_ACTUALIZA": null,
+                "RERE_ID_TIPO_TELEFONO": null,
+                "RERE_DIRECCION_CEL_RECLAMADO": null,
+                "RERE_FECHA_CIERRE": null,
+                "RERE_FECHA_NOTIFICACION": null,
+                "RERE_FOLIO": "10878",
+                "RERE_TEXTO": "asda",
+                "RERE_FECHA_REGISTRO": "2020-12-23 15:45:27",
+                "RERE_FECHA_RECLAMO": "2020-12-23 00:00:00",
+                "RERE_CALLER_ID": null,
+                "RERE_ID_TIPO_NOTIFICACION": 2,
+                "RERE_ID_ESTADO_RECLAMO": 25,
+                "RERE_ID_SOLICITANTE": 55,
+                "RERE_ID_TIPO_RECLAMO": 7,
+                "RERE_ID_TIPO_SOLUCION": null,
+                "RERE_ID_TIPO_REGISTRO": null,
+                "RERE_ID_SERVICIO": 1,
+                "RERE_ID_TIPO_SERVICIO": 1,
+                "RERE_ID_MOTIVO": 1,
+                "RERE_ID_SUB_MOTIVO": null,
+                "RERE_ID_MACROMOTIVO": null,
+                "RERE_ID_CONFORMIDAD": null,
+                "RERE_HORAS_SIN_SERVICIO": 1,
+                "RERE_MONTO_TOTAL_RECLAMADO": 1,
+                "RERE_CELULAR_RECLAMADO": null,
+                "RERE_AREA_TELEFONO_RECLAMADO": null,
+                "RERE_TELEFONO_RECLAMADO": null,
+                "RERE_DIRECCION_TEL_RECLAMADO": null,
+                "RERE_TOTAL_DESCUENTO": null,
+                "RERE_MONTO_INDEMNIZACION": null,
+                "RERE_MONTO_DESCUENTO": null,
+                "RERE_ID_RECLAMO_SUBTEL": null,
+                "RERE_ID_RECLAMO_SERNAC": null,
+                "RERE_ID_USUARIO": null,
+                "RERE_ID_USUARIO_ACTUALIZA": null,
+                "RERE_ID_ME_QUIERO_SALIR": null,
+                "tipo_notificacion": {
+                    "RETS_DESCRIPCION": "Teléfono",
+                    "RETS_ID_SUBTIPO": 2
+                },
+                "estado": {
+                    "RETS_DESCRIPCION": "Cerrado",
+                    "RETS_ID_SUBTIPO": 25
+                },
+                "solicitante": {
+                    "RESO_RUT": 18348381,
+                    "RESO_ES_TITULAR": false,
+                    "RESO_RUT_DV": "1",
+                    "RESO_NUMERO_CALLE_REPRESENTANTE": null,
+                    "RESO_NOMBRE_RAZON": "Patrick Alexander",
+                    "RESO_CODIGO_CLIENTE_BU": null,
+                    "RESO_ID_SOLICITANTE": 55,
+                    "RESO_COMUNA": null,
+                    "RESO_ID_COMUNA": 8101,
+                    "RESO_REGION": null,
+                    "RESO_ID_REGION": null,
+                    "RESO_PLAN_PRINCIPAL": "FIBRA + TVHD + FIJO",
+                    "RESO_NODO": null,
+                    "RESO_RUT_REPRESENTANTE": 18348381,
+                    "RESO_RUT_DV_REPRESENTANTE": "1",
+                    "RESO_NOMBRE_REPRESENTANTE": "Patrick Alexander",
+                    "RESO_APELLIDOS_REPRESENTANTE": "Chavarria",
+                    "RESO_TELEFONO_REPRESENTANTE": 944660808,
+                    "RESO_EMAIL_REPRESENTANTE": "patrick.chavarria.veloso@gmail.com",
+                    "RESO_EMAIL": "patrick.chavarria.veloso@gmail.com",
+                    "RESO_COMUNA_REPRESENTANTE": "Concepción",
+                    "RESO_ID_COMUNA_REPRESENTANTE": 8101,
+                    "RESO_DIRECCION_REPRESENTANTE": "Anibal Pinto",
+                    "RESO_ID_REGION_REPRESENTANTE": null,
+                    "RESO_REGION_REPRESENTANTE": null,
+                    "RESO_CALLE": "Anibal Pinto",
+                    "RESO_CLIENTE_UNIFICADO": 499088
+                },
+                "tipo_reclamo": {
+                    "RETS_DESCRIPCION": "Técnico",
+                    "RETS_ID_SUBTIPO": 7
+                },
+                "tipo_solucion": null,
+                "tipo_registro": null,
+                "tipo_telefono": null,
+                "servicio": {
+                    "RESE_DESCRIPCION": "Servicio móvil",
+                    "RESE_ID_SERVICIO": 1
+                },
+                "tipo_servicio": {
+                    "RETE_DESCRIPCION": "Internet",
+                    "RETE_ID_TIPO_SERVICIO": 1
+                },
+                "motivo": {
+                    "REMO_DESCRIPCION": "Calidad servicio",
+                    "REMO_ID_MOTIVO": 1
+                },
+                "sub_motivo": null,
+                "macromotivo": null,
+                "conformidad": null,
+                "archivos": [],
+                "acoge_reclamo": [],
+                "sub_categoria_interna": null,
+                "comentarios": [],
+                "subtel": null,
+                "sernac": null,
+                "me_quiero_salir": null,
+                "usuario_crea": null,
+                "usuario_actualiza": null
             }
-        },
-        "codigo": 200
-	}
+        ],
+        "first_page_url": "...URL/informes/reclamo?IdReclamo=63&page=1",
+        "from": 1,
+        "last_page": 1,
+        "last_page_url": "...URL/informes/reclamo?IdReclamo=63&page=1",
+        "next_page_url": null,
+        "path": "...URL/informes/reclamo",
+        "per_page": 15,
+        "prev_page_url": null,
+        "to": 1,
+        "total": 1
+    }
 
 ## 1.11.- Estado de Reclamo
 Método que retorna lisa de estaos de reclamo.
