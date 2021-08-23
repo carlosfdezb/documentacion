@@ -356,22 +356,18 @@ Los parámetros que recibe son los siguientes:
 
 Ruta : GET `/api/reclamos/listado/tipo-reclamo`
 
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| CODIGO         | int          | ID del tipo de reclamo                           |
+| DESCRIPCION    | string       | Tipo de reclamo                                  |
 
 ### 1.1.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        ...
 	}
 
 ### 1.1.2.- Respuesta de salida
@@ -381,29 +377,35 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.1.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 1.1.2.2.- Respuesta de éxito
 
-	{
+    {
         "success": {
             "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
+            "descripcionRespuesta": [
+                {
+                    "CODIGO": 6,
+                    "DESCRIPCION": "Comercial"
+                },
+                {
+                    "CODIGO": 100,
+                    "DESCRIPCION": "Otros"
+                },
+                {
+                    "CODIGO": 76,
+                    "DESCRIPCION": "Queja"
+                },
+                {
+                    "CODIGO": 7,
+                    "DESCRIPCION": "Técnico"
+                }
+            ]
         },
         "codigo": 200
-	}
+    }
 
 ## 1.2.- Tipos de Soluciones
 Método que retorna lista de tipos de soluciones.
@@ -412,22 +414,18 @@ Los parámetros que recibe son los siguientes:
 
 Ruta : GET `/api/reclamos/listado/tipo-solucion`
 
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| CODIGO         | int          | ID del tipo de solución                          |
+| DESCRIPCION    | string       | Tipo de solución                                 |
 
 ### 1.2.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        ...
 	}
 
 ### 1.2.2.- Respuesta de salida
@@ -437,29 +435,31 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.2.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 1.2.2.2.- Respuesta de éxito
 
-	{
+    {
         "success": {
             "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
+            "descripcionRespuesta": [
+                {
+                    "CODIGO": 14,
+                    "DESCRIPCION": "Pendiente de solución"
+                },
+                {
+                    "CODIGO": 15,
+                    "DESCRIPCION": "Solución diferida"
+                },
+                {
+                    "CODIGO": 16,
+                    "DESCRIPCION": "Solución inmediata"
+                }
+            ]
         },
         "codigo": 200
-	}
+    }
 
 ## 1.3.- Tipos de Motivos de Reclamos
 Método que retorna lista de motivos por el que se acoge o no el reclamo.
@@ -468,22 +468,18 @@ Los parámetros que recibe son los siguientes:
 
 Ruta : GET `/api/reclamos/listado/motivo-acoge`
 
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| CODIGO         | int          | ID del tipo de motivos de reclamos               |
+| DESCRIPCION    | string       | Tipo de motivos de reclamos                      |
 
 ### 1.3.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        ...
 	}
 
 ### 1.3.2.- Respuesta de salida
@@ -493,29 +489,35 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.3.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 1.3.2.2.- Respuesta de éxito
 
-	{
+    {
         "success": {
             "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
+            "descripcionRespuesta": [
+                {
+                    "CODIGO": 28,
+                    "DESCRIPCION": "Acoge"
+                },
+                {
+                    "CODIGO": 30,
+                    "DESCRIPCION": "Acoge parcialmente"
+                },
+                {
+                    "CODIGO": 31,
+                    "DESCRIPCION": "No aplica"
+                },
+                {
+                    "CODIGO": 29,
+                    "DESCRIPCION": "Rechaza"
+                }
+            ]
         },
         "codigo": 200
-	}
+    }
 
 ## 1.4.- Tipos de Notificación
 Método que retorna los tipos de medios de notificación para el cliente.
@@ -524,22 +526,18 @@ Los parámetros que recibe son los siguientes:
 
 Ruta : GET `/api/reclamos/listado/tipo-notificacion`
 
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| CODIGO         | int          | ID del tipo de notificación                      |
+| DESCRIPCION    | string       | Tipo de notificación                             |
 
 ### 1.4.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        ...
 	}
 
 ### 1.4.2.- Respuesta de salida
@@ -549,29 +547,27 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.4.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 1.4.2.2.- Respuesta de éxito
 
-	{
+    {
         "success": {
             "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
+            "descripcionRespuesta": [
+                {
+                    "CODIGO": 3,
+                    "DESCRIPCION": "Correo electrónico"
+                },
+                {
+                    "CODIGO": 2,
+                    "DESCRIPCION": "Teléfono"
+                }
+            ]
         },
         "codigo": 200
-	}
+    }
 
 ## 1.5.- Tipos de Servicios
 Método que retorna lista de tipos de servicios.
@@ -583,19 +579,20 @@ Ruta : GET `/api/reclamos/listado/servicio`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Rut          | string       | 12345678-9                     |                                            | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| CODIGO         | int          | ID del tipo de servicio                          |
+| DESCRIPCION    | string       | Tipo de servicio                                 |
 
 ### 1.5.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "Rut":"96722400-6"
 	}
 
 ### 1.5.2.- Respuesta de salida
@@ -604,30 +601,33 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 1.5.2.1.- Respuesta de error
 
-	{
+    {
         "error": {
             "codigoRespuesta": 0,
             "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
+            "detalleRespuesta": "No se encontraron servicios contratados para el cliente, contacte al cliente para obtener mayor información del reclamo"
         },
-        "codigo": 404
-	} 
+        "codigo": 204
+    }
   
 #### 1.5.2.2.- Respuesta de éxito
 
-	{
+    {
         "success": {
             "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
+            "descripcionRespuesta": [
+                {
+                    "CODIGO": 1,
+                    "DESCRIPCION": "Servicio móvil"
+                },
+                {
+                    "CODIGO": 2,
+                    "DESCRIPCION": "Servicio fijo"
+                }
+            ]
         },
         "codigo": 200
-	}
+    }
 
 ## 1.6.- Tipos de Servicios 2
 Método que retorna lista de tipos de servicios.
@@ -639,19 +639,20 @@ Ruta : GET `/api/reclamos/listado/tiposervicio`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| idServicio   | int          |                                | No                                         | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| CODIGO         | int          | ID del tipo de solución                          |
+| DESCRIPCION    | string       | Tipo de solución                                 |
 
 ### 1.6.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "idServicio": 1
 	}
 
 ### 1.6.2.- Respuesta de salida
@@ -660,30 +661,29 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 1.6.2.1.- Respuesta de error
 
-	{
+    {
         "error": {
             "codigoRespuesta": 0,
             "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
+            "detalleRespuesta": "No hay datos para mostrar"
         },
-        "codigo": 404
-	} 
+        "codigo": 204
+    }
   
 #### 1.6.2.2.- Respuesta de éxito
 
-	{
+    {
         "success": {
             "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
+            "descripcionRespuesta": [
+                {
+                    "CODIGO": 2,
+                    "DESCRIPCION": "Telefonía móvil"
+                }
+            ]
         },
         "codigo": 200
-	}
+    }
 
 ## 1.7.- Motivos
 Método que retorna lista de motivos de reclamo.
@@ -693,21 +693,22 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/api/reclamos/listado/motivo`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo        |  Tipo        | Formato                        |     Requerido                 |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:-----------------------------:|----------------------------:|
+| idServicio   | int          |                                | No                            | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| CODIGO         | int          | ID del motivo del reclamo                        |
+| DESCRIPCION    | string       | Motivo del reclamo                               |
 
 ### 1.7.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "idServicio": 1
 	}
 
 ### 1.7.2.- Respuesta de salida
@@ -717,29 +718,29 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.7.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 1.7.2.2.- Respuesta de éxito
 
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
+    [
+        {
+            "CODIGO": 1,
+            "DESCRIPCION": "Calidad servicio"
         },
-        "codigo": 200
-	}
+        {
+            "CODIGO": 3,
+            "DESCRIPCION": "Facturación - cobros"
+        },
+        {
+            "CODIGO": 5,
+            "DESCRIPCION": "Servicio técnico"
+        },
+        {
+            "CODIGO": 2,
+            "DESCRIPCION": "Ventas - contratos"
+        }
+    ]
 
 ## 1.8.- Tipos de Registro
 Método que retorna lista de tipos de registro de reclamos.
@@ -748,22 +749,18 @@ Los parámetros que recibe son los siguientes:
 
 Ruta : GET `/api/reclamos/listado/tipo-registro`
 
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| CODIGO         | int          | ID del tipo de registro                          |
+| DESCRIPCION    | string       | Tipo de registro                                 |
 
 ### 1.8.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        ...
 	}
 
 ### 1.8.2.- Respuesta de salida
@@ -773,29 +770,43 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.8.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 1.8.2.2.- Respuesta de éxito
 
-	{
+    {
         "success": {
             "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
+            "descripcionRespuesta": [
+                {
+                    "CODIGO": 11,
+                    "DESCRIPCION": "Asistencia telefónica"
+                },
+                {
+                    "CODIGO": 102,
+                    "DESCRIPCION": "Me quiero salir"
+                },
+                {
+                    "CODIGO": 80,
+                    "DESCRIPCION": "Oficio Subtel"
+                },
+                {
+                    "CODIGO": 81,
+                    "DESCRIPCION": "Sernac"
+                },
+                {
+                    "CODIGO": 10,
+                    "DESCRIPCION": "Teléfono (IVR)"
+                },
+                {
+                    "CODIGO": 9,
+                    "DESCRIPCION": "Web"
+                }
+            ]
         },
         "codigo": 200
-	}
+    }
 
 ## 1.9.- Submotivos
 Método que retorna lista de submotivos de reclamos.
@@ -807,7 +818,7 @@ Ruta : GET `/api/reclamos/listado/submotivo`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| idMotivo     | int          |                                | Especificar si parámetro es requerido o no | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -819,7 +830,7 @@ Ruta : GET `/api/reclamos/listado/submotivo`
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "idMotivo": 1
 	}
 
 ### 1.9.2.- Respuesta de salida
@@ -828,29 +839,19 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 1.9.2.1.- Respuesta de error
 
-	{
+    {
         "error": {
             "codigoRespuesta": 0,
             "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
+            "detalleRespuesta": "No hay datos para mostrar"
         },
-        "codigo": 404
-	} 
+        "codigo": 204
+    }
   
 #### 1.9.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
 ## 1.10.- Reclamos
@@ -869,28 +870,28 @@ Ruta : GET `/api/reclamos/listado/reclamo`
 **Datos de salida:**
 | Campo                           |  Tipo        |                         Descripción              |
 |:--------------------------------|:------------:|-------------------------------------------------:| 
-| RERE_ID_RECLAMO                 | Tipo de dato | Breve descripción                                | 
+| RERE_ID_RECLAMO                 | int          | Breve descripción                                | 
 | RERE_ID_SUBCATEGORIA_INTERNA    | Tipo de dato | Breve descripción                                | 
-| RERE_NOMBRE_USUARIO             | Tipo de dato | Breve descripción                                | 
+| RERE_NOMBRE_USUARIO             | string       | Breve descripción                                | 
 | RERE_USUARIO_ACTUALIZA          | Tipo de dato | Breve descripción                                | 
-| RERE_ID_TIPO_TELEFONO           | Tipo de dato | Breve descripción                                | 
-| RERE_DIRECCION_CEL_RECLAMADO    | Tipo de dato | Breve descripción                                | 
+| RERE_ID_TIPO_TELEFONO           | int          | Breve descripción                                | 
+| RERE_DIRECCION_CEL_RECLAMADO    | string       | Breve descripción                                | 
 | RERE_FECHA_CIERRE               | Tipo de dato | Breve descripción                                | 
-| RERE_FECHA_NOTIFICACION         | Tipo de dato | Breve descripción                                | 
-| RERE_FOLIO                      | Tipo de dato | Breve descripción                                | 
-| RERE_TEXTO                      | Tipo de dato | Breve descripción                                | 
-| RERE_FECHA_REGISTRO             | Tipo de dato | Breve descripción                                | 
-| RERE_FECHA_RECLAMO              | Tipo de dato | Breve descripción                                | 
+| RERE_FECHA_NOTIFICACION         | timestamp    | Breve descripción                                | 
+| RERE_FOLIO                      | string       | Breve descripción                                | 
+| RERE_TEXTO                      | string       | Breve descripción                                | 
+| RERE_FECHA_REGISTRO             | timestamp    | Breve descripción                                | 
+| RERE_FECHA_RECLAMO              | timestamp    | Breve descripción                                | 
 | RERE_CALLER_ID                  | Tipo de dato | Breve descripción                                | 
-| RERE_ID_TIPO_NOTIFICACION       | Tipo de dato | Breve descripción                                | 
-| RERE_ID_ESTADO_RECLAMO          | Tipo de dato | Breve descripción                                | 
-| RERE_ID_SOLICITANTE             | Tipo de dato | Breve descripción                                | 
-| RERE_ID_TIPO_RECLAMO            | Tipo de dato | Breve descripción                                | 
-| RERE_ID_TIPO_SOLUCION           | Tipo de dato | Breve descripción                                | 
-| RERE_ID_TIPO_REGISTRO           | Tipo de dato | Breve descripción                                | 
-| RERE_ID_SERVICIO                | Tipo de dato | Breve descripción                                | 
-| RERE_ID_TIPO_SERVICIO           | Tipo de dato | Breve descripción                                | 
-| RERE_ID_MOTIVO                  | Tipo de dato | Breve descripción                                | 
+| RERE_ID_TIPO_NOTIFICACION       | int          | Breve descripción                                | 
+| RERE_ID_ESTADO_RECLAMO          | int          | Breve descripción                                | 
+| RERE_ID_SOLICITANTE             | int          | Breve descripción                                | 
+| RERE_ID_TIPO_RECLAMO            | int          | Breve descripción                                | 
+| RERE_ID_TIPO_SOLUCION           | int          | Breve descripción                                | 
+| RERE_ID_TIPO_REGISTRO           | int          | Breve descripción                                | 
+| RERE_ID_SERVICIO                | int          | Breve descripción                                | 
+| RERE_ID_TIPO_SERVICIO           | int          | Breve descripción                                | 
+| RERE_ID_MOTIVO                  | int          | Breve descripción                                | 
 | RERE_ID_SUB_MOTIVO              | Tipo de dato | Breve descripción                                | 
 | RERE_ID_MACROMOTIVO             | Tipo de dato | Breve descripción                                | 
 | RERE_ID_CONFORMIDAD             | Tipo de dato | Breve descripción                                | 
@@ -905,51 +906,111 @@ Ruta : GET `/api/reclamos/listado/reclamo`
 | RERE_MONTO_DESCUENTO            | Tipo de dato | Breve descripción                                | 
 | RERE_ID_RECLAMO_SUBTEL          | Tipo de dato | Breve descripción                                | 
 | RERE_ID_RECLAMO_SERNAC          | Tipo de dato | Breve descripción                                | 
-| RERE_ID_USUARIO                 | Tipo de dato | Breve descripción                                | 
+| RERE_ID_USUARIO                 | int          | Breve descripción                                | 
 | RERE_ID_USUARIO_ACTUALIZA       | Tipo de dato | Breve descripción                                | 
 | RERE_ID_ME_QUIERO_SALIR         | Tipo de dato | Breve descripción                                | 
 | ↓ tipo_notificacion             | array[object]| Breve descripción                                | 
-| RETS_DESCRIPCION                | Tipo de dato | Breve descripción                                | 
-| RETS_ID_SUBTIPO                 | Tipo de dato | Breve descripción                                | 
+| RETS_DESCRIPCION                | string       | Breve descripción                                | 
+| RETS_ID_SUBTIPO                 | int          | Breve descripción                                | 
 | ↓ estado                        | array[object]| Breve descripción                                | 
-| RETS_DESCRIPCION                | Tipo de dato | Breve descripción                                | 
-| RETS_ID_SUBTIPO                 | Tipo de dato | Breve descripción                                | 
+| RETS_DESCRIPCION                | string       | Breve descripción                                | 
+| RETS_ID_SUBTIPO                 | int          | Breve descripción                                | 
 | ↓ solicitante                   | array[object]| Breve descripción                                | 
-| RESO_RUT                        | Tipo de dato | Breve descripción                                | 
-| RESO_ES_TITULAR                 | Tipo de dato | Breve descripción                                | 
-| RESO_RUT_DV                     | Tipo de dato | Breve descripción                                | 
-| RESO_NUMERO_CALLE_REPRESENTANTE | Tipo de dato | Breve descripción                                | 
-| RESO_NOMBRE_RAZON               | Tipo de dato | Breve descripción                                | 
-| RESO_CODIGO_CLIENTE_BU          | Tipo de dato | Breve descripción                                | 
-| RESO_ID_SOLICITANTE             | Tipo de dato | Breve descripción                                | 
-| RESO_COMUNA                     | Tipo de dato | Breve descripción                                | 
-| RESO_ID_COMUNA                  | Tipo de dato | Breve descripción                                | 
-| RESO_REGION                     | Tipo de dato | Breve descripción                                | 
-| RESO_ID_REGION                  | Tipo de dato | Breve descripción                                | 
-| RESO_PLAN_PRINCIPAL             | Tipo de dato | Breve descripción                                | 
-| RESO_NODO                       | Tipo de dato | Breve descripción                                | 
-| RESO_RUT_REPRESENTANTE          | Tipo de dato | Breve descripción                                | 
-| RESO_RUT_DV_REPRESENTANTE       | Tipo de dato | Breve descripción                                | 
-| RESO_NOMBRE_REPRESENTANTE       | Tipo de dato | Breve descripción                                | 
-| RESO_APELLIDOS_REPRESENTANTE    | Tipo de dato | Breve descripción                                | 
-| RESO_TELEFONO_REPRESENTANTE     | Tipo de dato | Breve descripción                                | 
-| RESO_EMAIL_REPRESENTANTE        | Tipo de dato | Breve descripción                                | 
-| RESO_EMAIL                      | Tipo de dato | Breve descripción                                | 
-| RESO_COMUNA_REPRESENTANTE       | Tipo de dato | Breve descripción                                | 
-| RESO_ID_COMUNA_REPRESENTANTE    | Tipo de dato | Breve descripción                                | 
-| RESO_DIRECCION_REPRESENTANTE    | Tipo de dato | Breve descripción                                | 
-| RESO_ID_REGION_REPRESENTANTE    | Tipo de dato | Breve descripción                                | 
-| RESO_REGION_REPRESENTANTE       | Tipo de dato | Breve descripción                                | 
-| RESO_CALLE                      | Tipo de dato | Breve descripción                                | 
-| RESO_CLIENTE_UNIFICADO          | Tipo de dato | Breve descripción                                |  
-| ↓ tipo_reclamo                  | array[object]| Breve descripción                                |
+| RESO_RUT                        | int          | Breve descripción                                | 
+| RESO_ES_TITULAR                 | boolean      | Breve descripción                                | 
+| RESO_RUT_DV                     | string       | Breve descripción                                | 
+| RESO_NUMERO_CALLE_REPRESENTANTE | int          | Breve descripción                                | 
+| RESO_NOMBRE_RAZON               | string       | Breve descripción                                | 
+| RESO_CODIGO_CLIENTE_BU          | string       | Breve descripción                                | 
+| RESO_ID_SOLICITANTE             | int          | Breve descripción                                | 
+| RESO_COMUNA                     | string       | Breve descripción                                | 
+| RESO_ID_COMUNA                  | int          | Breve descripción                                | 
+| RESO_REGION                     | string       | Breve descripción                                | 
+| RESO_ID_REGION                  | int          | Breve descripción                                | 
+| RESO_PLAN_PRINCIPAL             | string       | Breve descripción                                | 
+| RESO_NODO                       | string       | Breve descripción                                | 
+| RESO_RUT_REPRESENTANTE          | int          | Breve descripción                                | 
+| RESO_RUT_DV_REPRESENTANTE       | string       | Breve descripción                                | 
+| RESO_NOMBRE_REPRESENTANTE       | string       | Breve descripción                                | 
+| RESO_APELLIDOS_REPRESENTANTE    | string       | Breve descripción                                | 
+| RESO_TELEFONO_REPRESENTANTE     | int          | Breve descripción                                | 
+| RESO_EMAIL_REPRESENTANTE        | string       | Breve descripción                                | 
+| RESO_EMAIL                      | string       | Breve descripción                                | 
+| RESO_COMUNA_REPRESENTANTE       | string       | Breve descripción                                | 
+| RESO_ID_COMUNA_REPRESENTANTE    | int          | Breve descripción                                | 
+| RESO_DIRECCION_REPRESENTANTE    | string       | Breve descripción                                | 
+| RESO_ID_REGION_REPRESENTANTE    | int          | Breve descripción                                | 
+| RESO_REGION_REPRESENTANTE       | string       | Breve descripción                                | 
+| RESO_CALLE                      | string       | Breve descripción                                | 
+| RESO_CLIENTE_UNIFICADO          | int          | Breve descripción                                |  
+| ↓ tipo_reclamo                  | array[object]| Breve descripción                                | 
+| RETS_DESCRIPCION                | string       | Breve descripción                                | 
+| RETS_ID_SUBTIPO                 | int          | Breve descripción                                | 
+| ↓ tipo_solucion                 | array[object]| Breve descripción                                | 
+| RETS_DESCRIPCION                | string       | Breve descripción                                | 
+| RETS_ID_SUBTIPO                 | int          | Breve descripción                                |
+| ↓ tipo_registro                 | array[object]| Breve descripción                                | 
+| RETS_DESCRIPCION                | string       | Breve descripción                                | 
+| RETS_ID_SUBTIPO                 | int          | Breve descripción                                |
+| ↓ tipo_telefono                 | array[object]| Breve descripción                                | 
+| RETS_DESCRIPCION                | string       | Breve descripción                                | 
+| RETS_ID_SUBTIPO                 | int          | Breve descripción                                |
+| ↓ servicio                      | array[object]| Breve descripción                                | 
+| RESE_DESCRIPCION                | string       | Breve descripción                                | 
+| RESE_ID_SERVICIO                | int          | Breve descripción                                |
+| ↓ tipo_servicio                 | array[object]| Breve descripción                                | 
+| RETE_DESCRIPCION                | string       | Breve descripción                                | 
+| RETE_ID_TIPO_SERVICIO           | int          | Breve descripción                                |
+| ↓ motivo                        | array[object]| Breve descripción                                | 
+| REMO_DESCRIPCION                | string       | Breve descripción                                | 
+| REMO_ID_MOTIVO                  | int          | Breve descripción                                |
+| ↓ sub_motivo                    | array[object]| Breve descripción                                | 
+| ?                               | Tipo de dato | Breve descripción                                |
+| ↓ macromotivo                   | array[object]| Breve descripción                                | 
+| ?                               | Tipo de dato | Breve descripción                                |
+| ↓ conformidad                   | array[object]| Breve descripción                                | 
+| ?                               | Tipo de dato | Breve descripción                                |
+| ↓ archivos                      | array[object]| Breve descripción                                | 
+| ?                               | Tipo de dato | Breve descripción                                |
+| ↓ acoge_reclamos                | array[object]| Breve descripción                                | 
+| REAR_ID_AGOGE_RECLAMO           | int          | Breve descripción                                |
+| REAR_FECHA_REGISTRO             | timestamp    | Breve descripción                                |
+| REAR_COMENTARIO                 | Tipo de dato | Breve descripción                                |
+| REAR_ID_RECLAMO                 | int          | Breve descripción                                |
+| REAR_ID_ACOGE                   | int          | Breve descripción                                |
+| REAR_ID_USUARIO                 | int          | Breve descripción                                |
+| REAR_USUARIO                    | string       | Breve descripción                                |
+| ↓↓ tipo_acoge                   | array[object]| Breve descripción                                | 
+| RETS_ID_SUBTIPO                 | int          | Breve descripción                                |
+| RETS_ID_ORIGEN                  | Tipo de dato | Breve descripción                                |
+| RETS_DESCRIPCION                | string       | Breve descripción                                |
+| RETS_CODIGO                     | string       | Breve descripción                                |
+| RETS_VIGENTE                    | boolean      | Breve descripción                                |
+| RETS_ID_REGISTRO_PADRE          | int          | Breve descripción                                |
+| ↓ sub_categoria_interna         | array[object]| Breve descripción                                | 
+| ?                               | Tipo de dato | Breve descripción                                |
+| ↓ comentarios                   | array[object]| Breve descripción                                | 
+| ?                               | Tipo de dato | Breve descripción                                |
+| ↓ subtel                        | array[object]| Breve descripción                                | 
+| ?                               | Tipo de dato | Breve descripción                                |
+| ↓ sernac                        | array[object]| Breve descripción                                | 
+| ?                               | Tipo de dato | Breve descripción                                |
+| ↓ me_quiero_salir               | array[object]| Breve descripción                                | 
+| ?                               | Tipo de dato | Breve descripción                                |
+| ↓ usuario_crea                  | array[object]| Breve descripción                                | 
+| RU_ID                           | int          | Breve descripción                                |
+| RU_EMAIL                        | string       | Breve descripción                                |
+| RU_NOMBRE                       | string       | Breve descripción                                |
+| ↓ usuario_actualiza             | array[object]| Breve descripción                                | 
+| ?                               | Tipo de dato | Breve descripción                                |
 
 ### 1.10.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "IdReclamo": 63,
+        "page": 1
 	}
 
 ### 1.10.2.- Respuesta de salida
@@ -959,12 +1020,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.10.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 1.10.2.2.- Respuesta de éxito
@@ -1158,22 +1214,105 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/api/reclamos/reclamo-ejecutivo-ingresar`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo                      |  Tipo        | Formato                        |     Requerido               |             Descripción     |
+|:--------------------------:|:------------:|:------------------------------:|:---------------------------:|----------------------------:|
+| rutCliente                 | string       |                                |                             | Breve descripción           |
+| dvCliente                  | int          |                                |                             | Breve descripción           |
+| clienteUnificado           | string       |                                |                             | Breve descripción           |
+| codigoClienteBu            | string       |                                |                             | Breve descripción           |
+| idConexion                 | ?            |                                |                             | Breve descripción           |
+| nombreRazon                | string       |                                |                             | Breve descripción           |
+| clienteNodo                | ?            |                                |                             | Breve descripción           |
+| apellidos                  | string       |                                |                             | Breve descripción           |
+| calle                      | string       |                                |                             | Breve descripción           |
+| numeroCalle                | string       |                                |                             | Breve descripción           |
+| email                      | string       |                                |                             | Breve descripción           |
+| planPrincipal              | ?            |                                |                             | Breve descripción           |
+| fechaReclamo               | string       |                                |                             | Breve descripción           |
+| tipoNotificacion           | int          |                                |                             | Breve descripción           |
+| servicio                   | int          |                                |                             | Breve descripción           |
+| tipoServicio               | int          |                                |                             | Breve descripción           |
+| motivo                     | int          |                                |                             | Breve descripción           |
+| idComuna                   | int          |                                |                             | Breve descripción           |
+| comuna                     | string       |                                |                             | Breve descripción           |
+| region                     | int          |                                |                             | Breve descripción           |
+| comentario                 | string       |                                |                             | Breve descripción           |
+| telefono                   | ?            |                                |                             | Breve descripción           |
+| tipoSolucion               | int          |                                |                             | Breve descripción           |
+| tipoReclamo                | int          |                                |                             | Breve descripción           |
+| numeroContingencia         | string       |                                |                             | Breve descripción           |
+| archivos                   | ?            |                                |                             | Breve descripción           |
+| idAcoge                    | int          |                                |                             | Breve descripción           |
+| tipoRegistro               | int          |                                |                             | Breve descripción           |
+| celularReclamado           | string       |                                |                             | Breve descripción           |
+| telefonoReclamado          | string       |                                |                             | Breve descripción           |
+| areaTelefonoReclamado      | string       |                                |                             | Breve descripción           |
+| direccionTelefonoReclamado | string       |                                |                             | Breve descripción           |
+| rutRepresentante           | string       |                                |                             | Breve descripción           |
+| dvRepresentante            | string       |                                |                             | Breve descripción           |
+| nombreRepresentante        | string       |                                |                             | Breve descripción           |
+| apellidosRepresentante     | string       |                                |                             | Breve descripción           |
+| telefonoRepresentante      | string       |                                |                             | Breve descripción           |
+| celularRepresentante       | string       |                                |                             | Breve descripción           |
+| emailRepresentante         | string       |                                |                             | Breve descripción           |
+| direccionRepresentante     | string       |                                |                             | Breve descripción           |
+| comunaRepresentante        | string       |                                |                             | Breve descripción           |
+| idComunaRepresentante      | int          |                                |                             | Breve descripción           |
+| totalReclamado             | string       |                                |                             | Breve descripción           |
+| horasSinServicio           | string       |                                |                             | Breve descripción           |
+| texto                      | string       |                                |                             | Breve descripción           |
 
 ### 1.12.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
+    {
+        "rutCliente": "11111111",
+        "dvCliente": 1,
+        "clienteUnificado": "284953",
+        "codigoClienteBu": "CC38860",
+        "idConexion": null,
+        "nombreRazon": "Empresa Limitada",
+        "clienteNodo": null,
+        "apellidos": "Sociedad Comercial",
+        "calle": "Mi domicilio de prueba",
+        "numeroCalle": "22",
+        "email": "oscar.roman@mundopacifico.cl",
+        "planPrincipal": null,
+        "fechaReclamo": "2021/01/12",
+        "tipoNotificacion": 3,
+        "servicio": 1,
+        "tipoServicio": 1,
+        "motivo": 1,
+        "idComuna": 8101,
+        "comuna": "Concepción",
+        "region": 8,
+        "comentario": "no aplica",
+        "telefono": null,
+        "tipoSolucion": 15,
+        "tipoReclamo": 76,
+        "numeroContingencia": "",
+        "archivos": [],
+        "idAcoge": 31,
+        "tipoRegistro": 9,
+        "celularReclamado": "999999999",
+        "telefonoReclamado": "",
+        "areaTelefonoReclamado": "",
+        "direccionTelefonoReclamado": "",
+        "rutRepresentante": "11111111",
+        "dvRepresentante": 1,
+        "nombreRepresentante": "Empresa Limitada",
+        "apellidosRepresentante": "Sociedad Comercial",
+        "telefonoRepresentante": "999999999",
+        "celularRepresentante": "999999999",
+        "emailRepresentante": "oscar.roman@mundopacifico.cl",
+        "direccionRepresentante": "Mi domicilio de prueba",
+        "comunaRepresentante": "Concepción",
+        "idComunaRepresentante": 8101,
+        "totalReclamado": "",
+        "horasSinServicio": "0",
+        "texto": ""
+    }
 
 ### 1.12.2.- Respuesta de salida
 
@@ -1192,19 +1331,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
   
 #### 1.12.2.2.- Respuesta de éxito
 
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
-	}
+`El reclamo ha sido ingresado con número de folio asociado: <b>2021875</b>`
 
 ## 1.13.- Total Reclamos Comunas
 Método que retorna los datos para el reporte gráfico de reclamos de todas las comunas.
@@ -1214,22 +1341,31 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/api/reclamos/grafico-reclamo-total-comuna`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo        |  Tipo        | Formato                        |     Requerido                |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:----------------------------:|----------------------------:|
+| fechaInicio  | string       | 2021-08-23                     | No                           | Breve descripción           |
+| fechaTermino | string       | 2021-08-23                     | Si                           | Breve descripción           |
+| idRegion     | int          |                                | Si                           | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| color          | string       | Breve descripción                                |
+| name           | string       | Breve descripción                                |
+| ↓ reclamos     | array[object]| Breve descripción                                |
+| name           | string       | Breve descripción                                |
+| Reclamos       | int          | Breve descripción                                |
 
 ### 1.13.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
-	}
+        "fechaInicio": "2020-12-11",
+        "fechaTermino": "2021-01-11",
+        "idRegion": 8
+    }
+
 
 ### 1.13.2.- Respuesta de salida
 
@@ -1238,29 +1374,46 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.13.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 1.13.2.2.- Respuesta de éxito
 
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
-	}
+    {
+        "color": "#64b5f6",
+        "name": "Reclamos",
+        "reclamos": [
+            {
+                "name": "Alto Biobío",
+                "Reclamos": 0
+            },
+            {
+                "name": "Antuco",
+                "Reclamos": 0
+            },
+            {
+                "name": "Arauco",
+                "Reclamos": 0
+            },
+            {
+                "name": "Cabrero",
+                "Reclamos": 0
+            },
+            {
+                "name": "Cañete",
+                "Reclamos": 0
+            },
+            {
+                "name": "Chiguayante",
+                "Reclamos": 1
+            },
+            {
+                "name": "Concepción",
+                "Reclamos": 12
+            },
+            ...
+        ]
+    }
 
 ## 1.14.- Reclamos por Comuna
 Método que retorna los datos para el reporte gráfico de reclamos por comuna.
@@ -1270,22 +1423,36 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/api/reclamos/grafico-reclamo-por-comuna`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo        |  Tipo        | Formato                        |     Requerido                |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:----------------------------:|----------------------------:|
+| fechaInicio  | string       | 2021-08-23                     | No                           | Breve descripción           |
+| fechaTermino | string       | 2021-08-23                     | Si                           | Breve descripción           |
+| comunas      | array        |                                | Si                           | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| ↓ estados      | array[object]| Breve descripción                                |
+| color          | string       | Breve descripción                                |
+| name           | string       | Breve descripción                                |
+| ↓ reclamos     | array[object]| Breve descripción                                |
+| name           | string       | Breve descripción                                |
+| Abierto        | int          | Breve descripción                                |
+| Cerrado        | int          | Breve descripción                                |
+| En             | int          | Breve descripción                                |
+| Registrado     | int          | Breve descripción                                |
+| Revisado       | int          | Breve descripción                                |
+| Términado      | int          | Breve descripción                                |
 
 ### 1.14.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
+    {
+        "fechaInicio": "2021-01-01",
+        "fechaTermino": "2021-02-15",
+        "comunas": [16101, 8112]
+    }
 
 ### 1.14.2.- Respuesta de salida
 
@@ -1294,29 +1461,78 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.14.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 1.14.2.2.- Respuesta de éxito
 
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
+    {
+        "estados": [
+            {
+                "color": "#0088FE",
+                "name": "Abierto"
+            },
+            {
+                "color": "#00C49F",
+                "name": "Cerrado"
+            },
+            {
+                "color": "#FFBB28",
+                "name": "En proceso"
+            },
+            {
+                "color": "#FF8042",
+                "name": "Registrado"
+            },
+            {
+                "color": "#e57373",
+                "name": "Revisado"
+            },
+            {
+                "color": "#ba68c8",
+                "name": "Términado"
             }
-        },
-        "codigo": 200
-	}
+        ],
+        "reclamos": [
+            {
+                "name": "Aisén",
+                "Abierto": 0,
+                "Cerrado": 0,
+                "En proceso": 0,
+                "Registrado": 0,
+                "Revisado": 0,
+                "Términado": 0
+            },
+            {
+                "name": "Algarrobo",
+                "Abierto": 0,
+                "Cerrado": 0,
+                "En proceso": 0,
+                "Registrado": 0,
+                "Revisado": 0,
+                "Términado": 0
+            },
+            {
+                "name": "Alhué",
+                "Abierto": 0,
+                "Cerrado": 0,
+                "En proceso": 0,
+                "Registrado": 0,
+                "Revisado": 0,
+                "Términado": 0
+            },
+            {
+                "name": "Alto Biobío",
+                "Abierto": 0,
+                "Cerrado": 0,
+                "En proceso": 0,
+                "Registrado": 1,
+                "Revisado": 0,
+                "Términado": 0
+            },
+           ...
+        ]
+    }
     
 ## 1.15.- Reclamos por Fecha
 Método que retorna los datos para el reporte gráfico de reclamos por rango de fecha.
@@ -1326,22 +1542,34 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/api/reclamos/grafico-reclamo-por-fecha`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo        |  Tipo        | Formato                        |     Requerido                |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:----------------------------:|----------------------------:|
+| fechaInicio  | string       | 2021-08-23                     | No                           | Breve descripción           |
+| fechaTermino | string       | 2021-08-23                     | Si                           | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| ↓ estados      | array[object]| Breve descripción                                |
+| color          | string       | Breve descripción                                |
+| name           | string       | Breve descripción                                |
+| ↓ reclamos     | array[object]| Breve descripción                                |
+| name           | string       | Breve descripción                                |
+| Abierto        | int          | Breve descripción                                |
+| Cerrado        | int          | Breve descripción                                |
+| En             | int          | Breve descripción                                |
+| Registrado     | int          | Breve descripción                                |
+| Revisado       | int          | Breve descripción                                |
+| Términado      | int          | Breve descripción                                |
 
 ### 1.15.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
+    {
+    "fechaInicio": "2021-01-01",
+    "fechaTermino": "2021-01-05"
+    }
 
 ### 1.15.2.- Respuesta de salida
 
@@ -1350,29 +1578,77 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.15.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 1.15.2.2.- Respuesta de éxito
 
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
+    {
+        "estados": [
+            {
+                "color": "#0088FE",
+                "name": "Abierto"
+            },
+            {
+                "color": "#00C49F",
+                "name": "Cerrado"
+            },
+            {
+                "color": "#FFBB28",
+                "name": "En proceso"
+            },
+            {
+                "color": "#FF8042",
+                "name": "Registrado"
+            },
+            {
+                "color": "#e57373",
+                "name": "Revisado"
+            },
+            {
+                "color": "#ba68c8",
+                "name": "Términado"
             }
-        },
-        "codigo": 200
-	}
+        ],
+        "reclamos": [
+            {
+                "name": "01-01-2021",
+                "Abierto": 0,
+                "Cerrado": 0,
+                "En proceso": 0,
+                "Registrado": 0,
+                "Revisado": 0,
+                "Términado": 0
+            },
+            {
+                "name": "02-01-2021",
+                "Abierto": 0,
+                "Cerrado": 0,
+                "En proceso": 0,
+                "Registrado": 0,
+                "Revisado": 0,
+                "Términado": 0
+            },
+            {
+                "name": "03-01-2021",
+                "Abierto": 0,
+                "Cerrado": 0,
+                "En proceso": 0,
+                "Registrado": 0,
+                "Revisado": 0,
+                "Términado": 0
+            },
+            {
+                "name": "04-01-2021",
+                "Abierto": 0,
+                "Cerrado": 0,
+                "En proceso": 0,
+                "Registrado": 3,
+                "Revisado": 0,
+                "Términado": 0
+            }
+        ]
+    }
 
 ## 1.16.- Reclamos por Motivo y Servicio
 Método que retorna los datos para el reporte gráfico de reclamos por motivos y servicios.
@@ -1382,22 +1658,31 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/api/reclamos/grafico-reclamo-por-servicio-motivo`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo        |  Tipo        | Formato                        |     Requerido                |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:----------------------------:|----------------------------:|
+| fechaInicio  | string       | 2021-08-23                     | No                           | Breve descripción           |
+| fechaTermino | string       | 2021-08-23                     | Si                           | Breve descripción           |
+| idServicio   | int          |                                | Si                           | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| ↓ motivos      | array[object]| Breve descripción                                |
+| color          | string       | Breve descripción                                |
+| name           | string       | Breve descripción                                |
+| ↓ reclamos     | array[object]| Breve descripción                                |
+| name           | string       | Breve descripción                                |
+| value          | int          | Breve descripción                                |
 
 ### 1.16.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
+    {
+        "fechaInicio": "2020-12-11",
+        "fechaTermino": "2021-01-11",
+        "idServicio": 1
+    }
 
 ### 1.16.2.- Respuesta de salida
 
@@ -1406,29 +1691,45 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.16.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 1.16.2.2.- Respuesta de éxito
 
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
+    {
+        "motivos": [
+            {
+                "color": "#0088FE",
+                "name": "Calidad servicio"
+            },
+            {
+                "color": "#00C49F",
+                "name": "Facturación - cobros"
+            },
+            {
+                "color": "#FFBB28",
+                "name": "Servicio técnico"
+            },
+            {
+                "color": "#FF8042",
+                "name": "Ventas - contratos"
             }
-        },
-        "codigo": 200
-	}
+        ],
+        "reclamos": [
+            {
+                "name": "Calidad servicio",
+                "value": 7
+            },
+            {
+                "name": "Facturación - cobros",
+                "value": 1
+            },
+            {
+                "name": "Servicio técnico",
+                "value": 3
+            }
+        ]
+    }
     
 ## 1.17.- Tipos de Conformidad
 Método que retorna el listado de tipos de conformidad del reclamo.
@@ -1661,22 +1962,18 @@ Los parámetros que recibe son los siguientes:
 
 Ruta : GET `/api/reclamos/listado/tipo-telefono`
 
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| CODIGO         | int          | ID del tipo de teléfono                          |
+| DESCRIPCION    | string       | Tipo de teléfono                                 |
 
 ### 1.21.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        ...
 	}
 
 ### 1.21.2.- Respuesta de salida
@@ -1686,29 +1983,27 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.21.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 1.21.2.2.- Respuesta de éxito
 
-	{
+    {
         "success": {
             "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
+            "descripcionRespuesta": [
+                {
+                    "CODIGO": 79,
+                    "DESCRIPCION": "Smartphone"
+                },
+                {
+                    "CODIGO": 78,
+                    "DESCRIPCION": "Teléfono básico"
+                }
+            ]
         },
         "codigo": 200
-	}
+    }
 
 ## 1.22.- Contingencias Cliente
 Método que retorna las contingencias que tiene el cliente.
@@ -1832,19 +2127,24 @@ Ruta : GET `/api/reclamos/consultaClienteIVR`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| RUTCliente   | string       | 123456789                      | Si                                         | Breve descripción           |
 
 **Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo              |  Tipo        |                         Descripción              |
+|:-------------------|:------------:|-------------------------------------------------:| 
+| estado             | string       | Breve descripción                                |
+| deudaPendiente     | string       | Breve descripción                                |
+| nodos              | string       | Breve descripción                                |
+| promocionActiva    | string       | Breve descripción                                |
+| tipoPromocion      | Tipo de dato | Breve descripción                                |
+| cantidadConexiones | int          | Breve descripción                                |
 
 ### 1.24.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "RUTCliente": "166101069"
 	}
 
 ### 1.24.2.- Respuesta de salida
@@ -1853,30 +2153,31 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 1.24.2.1.- Respuesta de error
 
-	{
+    {
         "error": {
             "codigoRespuesta": 0,
             "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
+            "detalleRespuesta": "RUT del cliente no ingresado."
         },
-        "codigo": 404
-	} 
+        "codigo": 422
+    }
   
 #### 1.24.2.2.- Respuesta de éxito
 
-	{
+    {
         "success": {
             "codigoRespuesta": 1,
             "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
+                "estado": "PENDIENTE",
+                "deudaPendiente": "CERO",
+                "nodos": "MOLI_01,MOLI_01,MOLI_01,MOLI_01,MOLI_01,LEBU_01a,MOLI_01,CONC_47,MOLI_01,CHIL_57,MOLI_02",
+                "promocionActiva": "no",
+                "tipoPromocion": null,
+                "cantidadConexiones": 11
             }
         },
         "codigo": 200
-	}
+    }
 
 ## 1.25.- Datos Domicilio de Cliente
 Método que retorna los datos del domicilio del cliente.
@@ -2168,19 +2469,22 @@ Ruta : GET `/api/reclamos/listado/subcategorias-internas`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| idServicio   | int          |                                | Si                                         | Breve descripción           |
+| idTipoReclamo| int          |                                | Si                                         | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| CODIGO         | int          | ID de la subcategoría interna                    |
+| DESCRIPCION    | string       | Subcategoría interna                             |
 
 ### 1.30.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "idServicio": 2,
+        "idTipoReclamo": 6
 	}
 
 ### 1.30.2.- Respuesta de salida
@@ -2190,29 +2494,26 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.30.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 1.30.2.2.- Respuesta de éxito
 
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
+    [
+        {
+            "CODIGO": 1,
+            "DESCRIPCION": "AMPLIFICADOR WIFI (CONTRATACIÓN)"
         },
-        "codigo": 200
-	}
+        {
+            "CODIGO": 2,
+            "DESCRIPCION": "CAMBIO DE PLAN"
+        },
+        {
+            "CODIGO": 3,
+            "DESCRIPCION": "CAMBIO DE TARIFA"
+        },
+        ...
+    ]
 
 ## 1.31.- Ingresar Oficio de Reclamo Subtel
 SOAP service para ingreso de oficios de reclamos de subtel.
@@ -2561,7 +2862,7 @@ Ruta : GET `/api/sucursalVirtual/listado/tiposervicio`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| ?            | int          |                                | No                                         | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -2582,30 +2883,15 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 2.5.2.1.- Respuesta de error
 
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
-	} 
+    {
+       ...
+    }
   
 #### 2.5.2.2.- Respuesta de éxito
 
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
-	}
+    {
+
+    }
 
 ## 2.6.- Lista de Motivos de Reclamo
 Método que retorna lista de motivos de reclamo - Sucursal virtual.
