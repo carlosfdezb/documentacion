@@ -201,13 +201,12 @@ Describir objetivo
 Especificar restricciones
 
 
-# 1.- MODULO
-## 1.1.- RUTA 1 MODULO
+## 1.- masivoDTE
 Breve descripción de ruta
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : TIPO `/RUTA/ruta`
+Ruta : GET `/masivoDTE`
 
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
@@ -219,41 +218,1469 @@ Ruta : TIPO `/RUTA/ruta`
 |:---------------|:------------:|-------------------------------------------------:| 
 | Nombre Campo   | Tipo de dato | Breve descripción                                |
 
-### 1.2.1.- Ejemplo de llamada
+### 1.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        ...
 	}
 
-### 1.2.2.- Respuesta de salida
+### 1.2.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
 
-#### 1.2.2.1.- Respuesta de error
+#### 1.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
-#### 1.2.2.2.- Respuesta de éxito
+#### 1.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
+	}
+
+
+## 2.- obtenerMasivosDTE
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/obtenerMasivosDTES`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 2.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 2.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 2.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 2.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 3.- consultaEnvioSII
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/consultaEnvioSII`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 3.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 3.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 3.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 3.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+
+## 4.- procesarEnvioSII
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/procesarEnvioSII`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 4.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 4.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 4.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 4.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 5.- integrarMasivo
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/integrarMasivo`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 5.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 5.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 5.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 5.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 6.- registrarDTE
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/registrarDTE`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 6.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 6.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 6.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 6.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 7.- obtenerPDF
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/obtenerPDF`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 7.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 7.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 7.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 7.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 8.- obtenerDTES
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/obtenerDTES`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 8.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 8.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 8.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 8.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 9.- publicPDF
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/publicPDF`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 9.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 9.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 9.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 9.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+
+## 10.- estadoDTE
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/estadoDTE`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 10.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 10.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 10.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 10.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 11.- urlPDF
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/urlPDF`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 11.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 11.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 11.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 11.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 12.- guiaDespachoRequest
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/guiaDespachoRequest`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 12.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 12.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 12.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 12.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+
+## 13.- obtenerPDFDespachoRequest
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/obtenerPDFDespachoRequest`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 13.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 13.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 13.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 13.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 14.- consultarBoletaRequest
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/consultarBoletaRequest`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 14.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 14.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 14.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 14.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 15.- consultarCAF
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/consultarCAF`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 15.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 15.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 15.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 15.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+
+## 16.- registrarCAF
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/registrarCAF`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 16.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 16.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 16.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 16.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 17.- eliminarCAF
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/eliminarCAF`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 17.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 17.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 17.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 17.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 18.- obtenerNextFolio
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/obtenerNextFolio`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 18.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 18.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 18.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 18.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+
+## 19.- obtenerTipoDocumentos
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/obtenerTipoDocumentos`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 19.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 19.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 19.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 19.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+
+## 20.- ObtenerClientes
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/ObtenerClientes`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 20.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 20.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 20.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 20.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 21.- obtenerContribuyente
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/obtenerContribuyente`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 21.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 21.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 21.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 21.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 22.- get contribuyentes
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/contribuyentes`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 22.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 22.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 22.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 22.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 23.- post contribuyentes
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/contribuyentes`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 23.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 23.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 23.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 23.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+
+## 24.- put contribuyentes
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : PUT `/contribuyentes`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 24.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 24.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 24.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 24.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 25.- consultarRecepcion
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/consultarRecepcion`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 25.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 25.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 25.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 25.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 26.- exportarRecepcion
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/exportarRecepcion`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 26.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 26.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 26.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 26.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 27.- rutas
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/rutas`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 27.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 27.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 27.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 27.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 28.- recepciones
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/recepciones`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 28.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 28.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 28.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 28.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 29.- actualizar-recepcion
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/actualizar-recepcion`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 29.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 29.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 29.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 29.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 30.- RecepcionPdf
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/RecepcionPdf`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 30.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 30.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 30.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 30.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 31.- consultarRecof
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/consultarRecof`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 31.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 31.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 31.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 31.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 32.- obtenerResumenRecof
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/obtenerResumenRecof`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 32.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 32.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 32.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 32.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 33.- obtenerCertificados
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/obtenerCertificados`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 33.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 33.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 33.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 33.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 34.- registrarCertificado
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/registrarCertificado`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 34.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 34.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 34.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 34.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 35.- eliminarCertificado
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/eliminarCertificado`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 35.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 35.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 35.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 35.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}
+
+## 36.- obtenerEmpresas
+Breve descripción de ruta
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/obtenerEmpresas`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 36.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+        ...
+	}
+
+### 36.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 36.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 36.2.2.- Respuesta de éxito
+
+	{
+        ...
 	}
