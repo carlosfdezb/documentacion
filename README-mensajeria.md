@@ -9,7 +9,7 @@
 - [Documentación Api´s para Mensajeria](#documentación-apis-para-mensajerial)
   - [Objetivo](#objetivo)
   - [Restricciones](#restricciones)
-  - [1.- FacebookValidate](#1--FacebookValidate)
+  - [1.- RecepcionFB](#1--RecepcionFB)
     - [1.1.- Ejemplo de llamada](#11--ejemplo-de-llamada)
     - [1.2.- Respuesta de Salida](#12--respuesta-de-salida)
         - [1.2.1- Respuesta de error](#121--respuesta-de-error)
@@ -19,181 +19,116 @@
     - [2.2.- Respuesta de Salida](#22--respuesta-de-salida)
         - [2.2.1- Respuesta de error](#221--respuesta-de-error)
         - [2.2.2- Respuesta de éxito](#222--respuesta-de-éxito)
-  - [3.- RecepcionFB](#3--RecepcionFB)
+  - [3.- deleteArchivo](#1--deleteArchivo)
     - [3.1.- Ejemplo de llamada](#31--ejemplo-de-llamada)
     - [3.2.- Respuesta de Salida](#32--respuesta-de-salida)
         - [3.2.1- Respuesta de error](#321--respuesta-de-error)
         - [3.2.2- Respuesta de éxito](#322--respuesta-de-éxito)
-  - [4.- deleteArchivo](#1--deleteArchivo)
+  - [4.- diaactual](#4--diaactual)
     - [4.1.- Ejemplo de llamada](#41--ejemplo-de-llamada)
     - [4.2.- Respuesta de Salida](#42--respuesta-de-salida)
         - [4.2.1- Respuesta de error](#421--respuesta-de-error)
         - [4.2.2- Respuesta de éxito](#422--respuesta-de-éxito)
-  - [5.- diaactual](#5--diaactual)
+  - [5.- enviarMensaje](#5--enviarMensaje)
     - [5.1.- Ejemplo de llamada](#51--ejemplo-de-llamada)
     - [5.2.- Respuesta de Salida](#52--respuesta-de-salida)
         - [5.2.1- Respuesta de error](#521--respuesta-de-error)
         - [5.2.2- Respuesta de éxito](#522--respuesta-de-éxito)
-  - [6.- enviarMensaje](#6--enviarMensaje)
+  - [6.- enviarMensajeDev](#6--enviarMensajeDev)
     - [6.1.- Ejemplo de llamada](#61--ejemplo-de-llamada)
     - [6.2.- Respuesta de Salida](#62--respuesta-de-salida)
         - [6.2.1- Respuesta de error](#621--respuesta-de-error)
         - [6.2.2- Respuesta de éxito](#622--respuesta-de-éxito)
-  - [7.- enviarMensajeDev](#7--enviarMensajeDev)
+  - [7.- feriados](#7--feriados)
     - [7.1.- Ejemplo de llamada](#71--ejemplo-de-llamada)
     - [7.2.- Respuesta de Salida](#72--respuesta-de-salida)
         - [7.2.1- Respuesta de error](#721--respuesta-de-error)
         - [7.2.2- Respuesta de éxito](#722--respuesta-de-éxito)
-  - [8.- enviarPublicacion](#8--enviarPublicacion)
+  - [8.- hubspot](#8--hubspot)
     - [8.1.- Ejemplo de llamada](#81--ejemplo-de-llamada)
     - [8.2.- Respuesta de Salida](#82--respuesta-de-salida)
         - [8.2.1- Respuesta de error](#821--respuesta-de-error)
         - [8.2.2- Respuesta de éxito](#822--respuesta-de-éxito)
-  - [9.- feriados](#9--feriados)
+  - [9.- informarContingencia](#9--informarContingencia)
     - [9.1.- Ejemplo de llamada](#91--ejemplo-de-llamada)
     - [9.2.- Respuesta de Salida](#92--respuesta-de-salida)
         - [9.2.1- Respuesta de error](#921--respuesta-de-error)
         - [9.2.2- Respuesta de éxito](#922--respuesta-de-éxito)
-  - [10.- guerdarReceptor](#10--guerdarReceptor)
+  - [10.- mjeOut](#10--mjeOut)
     - [10.1.- Ejemplo de llamada](#101--ejemplo-de-llamada)
     - [10.2.- Respuesta de Salida](#102--respuesta-de-salida)
         - [10.2.1- Respuesta de error](#1021--respuesta-de-error)
         - [10.2.2- Respuesta de éxito](#1022--respuesta-de-éxito)
-  - [11.- hubspot](#11--hubspot)
+  - [11.- mjein](#11--mjein)
     - [11.1.- Ejemplo de llamada](#111--ejemplo-de-llamada)
     - [11.2.- Respuesta de Salida](#112--respuesta-de-salida)
         - [11.2.1- Respuesta de error](#1121--respuesta-de-error)
         - [11.2.2- Respuesta de éxito](#1122--respuesta-de-éxito)
-  - [12.- informarContingencia](#12--informarContingencia)
+  - [12.- recibeMensajeWsp](#12--recibeMensajeWsp)
     - [12.1.- Ejemplo de llamada](#121--ejemplo-de-llamada)
     - [12.2.- Respuesta de Salida](#122--respuesta-de-salida)
         - [12.2.1- Respuesta de error](#1221--respuesta-de-error)
         - [12.2.2- Respuesta de éxito](#1222--respuesta-de-éxito)
-  - [13.- mjeOut](#13--mjeOut)
+  - [13.- recibeMensajeWspFail](#13--recibeMensajeWspFail)
     - [13.1.- Ejemplo de llamada](#131--ejemplo-de-llamada)
     - [13.2.- Respuesta de Salida](#132--respuesta-de-salida)
         - [13.2.1- Respuesta de error](#1321--respuesta-de-error)
         - [13.2.2- Respuesta de éxito](#1322--respuesta-de-éxito)
-  - [14.- mjein](#14--mjein)
+  - [14.- recibeMensajeWspStatus](#14--recibeMensajeWspStatus)
     - [14.1.- Ejemplo de llamada](#141--ejemplo-de-llamada)
     - [14.2.- Respuesta de Salida](#142--respuesta-de-salida)
         - [14.2.1- Respuesta de error](#1421--respuesta-de-error)
         - [14.2.2- Respuesta de éxito](#1422--respuesta-de-éxito)
-  - [15.- purgaMails](#15--purgaMails)
+  - [15.- recibeMjeTelegramConnect](#15--recibeMjeTelegramConnect)
     - [15.1.- Ejemplo de llamada](#151--ejemplo-de-llamada)
     - [15.2.- Respuesta de Salida](#152--respuesta-de-salida)
         - [15.2.1- Respuesta de error](#1521--respuesta-de-error)
         - [15.2.2- Respuesta de éxito](#1522--respuesta-de-éxito)
-  - [16.- recibeFacebook](#16--recibeFacebook)
+  - [16.- recibeMjeTelegramSoporte](#16--recibeMjeTelegramSoporte)
     - [16.1.- Ejemplo de llamada](#161--ejemplo-de-llamada)
     - [16.2.- Respuesta de Salida](#162--respuesta-de-salida)
         - [16.2.1- Respuesta de error](#1621--respuesta-de-error)
         - [16.2.2- Respuesta de éxito](#1622--respuesta-de-éxito)
-  - [17.- recibeMensajeFb](#17--recibeMensajeFb)
+  - [17.- recibeMjeTelegramSoporteEmpresa](#17--recibeMjeTelegramSoporteEmpresa)
     - [17.1.- Ejemplo de llamada](#171--ejemplo-de-llamada)
     - [17.2.- Respuesta de Salida](#172--respuesta-de-salida)
         - [17.2.1- Respuesta de error](#1721--respuesta-de-error)
         - [17.2.2- Respuesta de éxito](#1722--respuesta-de-éxito)
-  - [18.- recibeMensajeInst](#18--recibeMensajeInst)
+  - [18.- recibeMjeTelegramSoporteTecnico](#18--recibeMjeTelegramSoporteTecnico)
     - [18.1.- Ejemplo de llamada](#181--ejemplo-de-llamada)
     - [18.2.- Respuesta de Salida](#182--respuesta-de-salida)
         - [18.2.1- Respuesta de error](#1821--respuesta-de-error)
         - [18.2.2- Respuesta de éxito](#1822--respuesta-de-éxito)
-  - [19.- recibeMensajeWsp](#19--recibeMensajeWsp)
+  - [19.- recibeMjeTelegramTest](#19--recibeMjeTelegramTest)
     - [19.1.- Ejemplo de llamada](#191--ejemplo-de-llamada)
     - [19.2.- Respuesta de Salida](#192--respuesta-de-salida)
         - [19.2.1- Respuesta de error](#1921--respuesta-de-error)
         - [19.2.2- Respuesta de éxito](#1922--respuesta-de-éxito)
-  - [20.- recibeMensajeWspFail](#20--recibeMensajeWspFail)
+  - [20.- recibeMjeTelegramVentas](#20--recibeMjeTelegramVentas)
     - [20.1.- Ejemplo de llamada](#201--ejemplo-de-llamada)
     - [20.2.- Respuesta de Salida](#202--respuesta-de-salida)
         - [20.2.1- Respuesta de error](#2021--respuesta-de-error)
         - [20.2.2- Respuesta de éxito](#2022--respuesta-de-éxito)
-  - [21.- recibeMensajeWspStatus](#21--recibeMensajeWspStatus)
+  - [21.- recibeTwitter](#21--recibeTwitter)
     - [21.1.- Ejemplo de llamada](#211--ejemplo-de-llamada)
     - [21.2.- Respuesta de Salida](#212--respuesta-de-salida)
         - [21.2.1- Respuesta de error](#2121--respuesta-de-error)
         - [21.2.2- Respuesta de éxito](#2122--respuesta-de-éxito)
-  - [22.- recibeMjeMsn](#22--recibeMjeMsn)
+  - [22.- recibirMail](#22--recibirMail)
     - [22.1.- Ejemplo de llamada](#221--ejemplo-de-llamada)
     - [22.2.- Respuesta de Salida](#222--respuesta-de-salida)
         - [22.2.1- Respuesta de error](#2221--respuesta-de-error)
         - [22.2.2- Respuesta de éxito](#2222--respuesta-de-éxito)
-  - [23.- recibeMjeTelegram](#23--recibeMjeTelegram)
+  - [23.- storeArchivo](#23--storeArchivo)
     - [23.1.- Ejemplo de llamada](#231--ejemplo-de-llamada)
     - [23.2.- Respuesta de Salida](#232--respuesta-de-salida)
         - [23.2.1- Respuesta de error](#2321--respuesta-de-error)
         - [23.2.2- Respuesta de éxito](#2322--respuesta-de-éxito)
-  - [24.- recibeMjeTelegramConnect](#24--recibeMjeTelegramConnect)
+  - [24.- twitterfixer](#24--twitterfixer)
     - [24.1.- Ejemplo de llamada](#241--ejemplo-de-llamada)
     - [24.2.- Respuesta de Salida](#242--respuesta-de-salida)
         - [24.2.1- Respuesta de error](#2421--respuesta-de-error)
         - [24.2.2- Respuesta de éxito](#2422--respuesta-de-éxito)
-  - [25.- recibeMjeTelegramSoporte](#25--recibeMjeTelegramSoporte)
-    - [25.1.- Ejemplo de llamada](#251--ejemplo-de-llamada)
-    - [25.2.- Respuesta de Salida](#252--respuesta-de-salida)
-        - [25.2.1- Respuesta de error](#2521--respuesta-de-error)
-        - [25.2.2- Respuesta de éxito](#2522--respuesta-de-éxito)
-  - [26.- recibeMjeTelegramSoporteEmpresa](#26--recibeMjeTelegramSoporteEmpresa)
-    - [26.1.- Ejemplo de llamada](#261--ejemplo-de-llamada)
-    - [26.2.- Respuesta de Salida](#262--respuesta-de-salida)
-        - [26.2.1- Respuesta de error](#2621--respuesta-de-error)
-        - [26.2.2- Respuesta de éxito](#2622--respuesta-de-éxito)
-  - [27.- recibeMjeTelegramSoporteTecnico](#27--recibeMjeTelegramSoporteTecnico)
-    - [27.1.- Ejemplo de llamada](#271--ejemplo-de-llamada)
-    - [27.2.- Respuesta de Salida](#272--respuesta-de-salida)
-        - [27.2.1- Respuesta de error](#2721--respuesta-de-error)
-        - [27.2.2- Respuesta de éxito](#2722--respuesta-de-éxito)
-  - [28.- recibeMjeTelegramTest](#28--recibeMjeTelegramTest)
-    - [28.1.- Ejemplo de llamada](#281--ejemplo-de-llamada)
-    - [28.2.- Respuesta de Salida](#282--respuesta-de-salida)
-        - [28.2.1- Respuesta de error](#2821--respuesta-de-error)
-        - [28.2.2- Respuesta de éxito](#2822--respuesta-de-éxito)
-  - [29.- recibeMjeTelegramVentas](#29--recibeMjeTelegramVentas)
-    - [29.1.- Ejemplo de llamada](#291--ejemplo-de-llamada)
-    - [29.2.- Respuesta de Salida](#292--respuesta-de-salida)
-        - [29.2.1- Respuesta de error](#2921--respuesta-de-error)
-        - [29.2.2- Respuesta de éxito](#2922--respuesta-de-éxito)
-  - [30.- recibeTwitter](#30--recibeTwitter)
-    - [30.1.- Ejemplo de llamada](#301--ejemplo-de-llamada)
-    - [30.2.- Respuesta de Salida](#302--respuesta-de-salida)
-        - [30.2.1- Respuesta de error](#3021--respuesta-de-error)
-        - [30.2.2- Respuesta de éxito](#3022--respuesta-de-éxito)
-  - [31.- recibirComentariosFb](#31--recibirComentariosFb)
-    - [31.1.- Ejemplo de llamada](#311--ejemplo-de-llamada)
-    - [31.2.- Respuesta de Salida](#312--respuesta-de-salida)
-        - [31.2.1- Respuesta de error](#3121--respuesta-de-error)
-        - [31.2.2- Respuesta de éxito](#3122--respuesta-de-éxito)
-  - [32.- recibirConversaciones](#32--recibirConversaciones)
-    - [32.1.- Ejemplo de llamada](#321--ejemplo-de-llamada)
-    - [32.2.- Respuesta de Salida](#322--respuesta-de-salida)
-        - [32.2.1- Respuesta de error](#3221--respuesta-de-error)
-        - [32.2.2- Respuesta de éxito](#3222--respuesta-de-éxito)
-  - [33.- recibirMail](#33--recibirMail)
-    - [33.1.- Ejemplo de llamada](#331--ejemplo-de-llamada)
-    - [33.2.- Respuesta de Salida](#332--respuesta-de-salida)
-        - [33.2.1- Respuesta de error](#3321--respuesta-de-error)
-        - [33.2.2- Respuesta de éxito](#3322--respuesta-de-éxito)
-  - [34.- registraTelegram](#34--registraTelegram)
-    - [34.1.- Ejemplo de llamada](#341--ejemplo-de-llamada)
-    - [34.2.- Respuesta de Salida](#342--respuesta-de-salida)
-        - [34.2.1- Respuesta de error](#3421--respuesta-de-error)
-        - [34.2.2- Respuesta de éxito](#3422--respuesta-de-éxito)
-  - [35.- storeArchivo](#35--storeArchivo)
-    - [35.1.- Ejemplo de llamada](#351--ejemplo-de-llamada)
-    - [35.2.- Respuesta de Salida](#352--respuesta-de-salida)
-        - [35.2.1- Respuesta de error](#3521--respuesta-de-error)
-        - [35.2.2- Respuesta de éxito](#3522--respuesta-de-éxito)
-  - [36.- test](#36--test)
-    - [36.1.- Ejemplo de llamada](#361--ejemplo-de-llamada)
-    - [36.2.- Respuesta de Salida](#362--respuesta-de-salida)
-        - [36.2.1- Respuesta de error](#3621--respuesta-de-error)
-        - [36.2.2- Respuesta de éxito](#3622--respuesta-de-éxito)
-  - [37.- twitterfixer](#37--twitterfixer)
-    - [37.1.- Ejemplo de llamada](#371--ejemplo-de-llamada)
-    - [37.2.- Respuesta de Salida](#372--respuesta-de-salida)
-        - [37.2.1- Respuesta de error](#3721--respuesta-de-error)
-        - [37.2.2- Respuesta de éxito](#3722--respuesta-de-éxito)
 
 
 # Objetivo
@@ -205,17 +140,19 @@ Describir objetivo
 Especificar restricciones
 
 
-## 1.- FacebookValidate
-Breve descripción de ruta
+## 1.- RecepcionFb
+Método que permite validar conexión de servidor de facebook y mensajería.
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : GET `/api/FacebookValidate`
+Ruta : GET `/api/RecepcionFb`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo            |  Tipo        | Formato                        |     Requerido                       |             Descripción     |
+|:----------------:|:------------:|:------------------------------:|:-----------------------------------:|----------------------------:|
+| hub_mode         | string       |                                |                                     | Breve descripción           |
+| hub_challenge    | ?            |                                |                                     | Breve descripción           |
+| hub_verify_token | ?            |                                |                                     | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -227,7 +164,9 @@ Ruta : GET `/api/FacebookValidate`
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "hub_mode": "subscribe",
+        "hub_challenge": "",
+        "hub_verify_token": ""
 	}
 
 ### 1.2.- Respuesta de salida
@@ -237,42 +176,36 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 1.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
-
 ## 2.- RecepcionFb
-Breve descripción de ruta
+Método que permite recibir mensajes de messenger facebook.
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : GET `/api/RecepcionFb`
+Ruta : POST `/api/RecepcionFb`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo        |  Tipo        | Formato                        | Requerido     |             Descripción                 |
+|:------------:|:------------:|:------------------------------:|:-------------:|----------------------------------------:|
+| type         | string       |                                |               | Tipo que indica que son nuevos mensajes |
+| ↓ messages   | array[object]|                                |               |                                         |
+| type         | string       |                                |               | Tweet o private message, para facebook wall o messenger, dependiendo de si es público o privado|
+| id           | string       |                                |               | Identificador del mensaje               |
+| contentType  | string       |                                |               | Indica si el mensaje corresponde a texto, imagen o multimedia |
+| text         | string       |                                |               | ?                                       |
+| ↓↓ user      | array[object]|                                |               |                                         |
+| id           | string       |                                |               | Id del usuario                          |
+| avatar       | string       |                                |               | Url de la imagen de perfil del usuario  |
+| ↓↓ mediaUrl  | array[object]|                                |               |                                         |
+| url          | string       |                                |               | Indica que contiene una imagen o multimedia |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -283,8 +216,19 @@ Ruta : GET `/api/RecepcionFb`
 
 Ejemplo: JSON 
 
-	{
-        "NOMBRE_CAMPO":"valor"
+    {
+        "type": "messages",
+        "messages": [
+            {
+                "user": {
+                    "id":"@jmzavala_olv", 
+                    "avatar":"https://twitter.com/JM_Zavala/photo"
+                    },
+                "type": "tweet",
+                "id": "sxlsd93mdf",
+                "text": "Buenos días" 
+            }
+        ]
 	}
 
 ### 2.2.- Respuesta de salida
@@ -294,41 +238,27 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 2.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
-	} 
+        "status":"error",
+        "detail": ""
+    }
   
 #### 2.2.2.- Respuesta de éxito
 
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
-	}
+    {
+        "status":"success"
+    }
 
-## 3.- RecepcionFb
-Breve descripción de ruta
+## 3.- deleteArchivo
+Método que permite eliminar archivos del storage. 
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/api/RecepcionFb`
+Ruta : POST `/api/deleteArchivo`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo        |  Tipo        | Formato                        |     Requerido                   |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:-------------------------------:|----------------------------:|
+| id           | int          |                                | Si                              | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -350,36 +280,21 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 3.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 3.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
-## 4.- deleteArchivo
-Breve descripción de ruta
+## 4.- diaactual
+Método que responde si el día corresponde o no a un día feriado, y si es o no irrenunciable.
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/api/deleteArchivo`
+Ruta : GET `/api/diaactual`
 
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
@@ -406,41 +321,31 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 4.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 4.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
-## 5.- diaactual
-Método que responde si el día corresponde o no a un día feriado, y si es o no irrenunciable.
+## 5.- enviarMensaje
+Método que envía mensaje a cliente mediante cualquier canal.
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : GET `/api/diaactual`
+Ruta : POST `/api/enviarMensaje`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo        |  Tipo        | Formato                        |     Requerido                   |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:-------------------------------:|----------------------------:|
+| destinatario | ?            |                                |                                 | ?          |
+| remitente    | ?            |                                |                                 | ?          |
+| asunto       | ?            |                                |                                 | ?          |
+| mensaje      | ?            |                                |                                 | ?          |
+| sigla_sistema| ?            |                                |                                 | ?          |
+| canal_id     | ?            |                                |                                 | ?          |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -452,7 +357,12 @@ Ruta : GET `/api/diaactual`
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "destinatario": "",
+        "remitente": "",
+        "asunto": "",
+        "mensaje": "",
+        "sigla_sistema": "",
+        "canal_id": "",
 	}
 
 ### 5.2.- Respuesta de salida
@@ -462,41 +372,31 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 5.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 5.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
-## 6.- enviarMensaje
-Breve descripción de ruta
+## 6.- enviarMensajeDev
+Método envía mensaje a cliente mediante canales de prueba.
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/api/enviarMensaje`
+Ruta : POST `/api/enviarMensajeDev`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo        |  Tipo        | Formato                        |     Requerido                   |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:-------------------------------:|----------------------------:|
+| destinatario | ?            |                                |                                 | ?          |
+| remitente    | ?            |                                |                                 | ?          |
+| asunto       | ?            |                                |                                 | ?          |
+| mensaje      | ?            |                                |                                 | ?          |
+| sigla_sistema| ?            |                                |                                 | ?          |
+| canal_id     | ?            |                                |                                 | ?          |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -505,10 +405,15 @@ Ruta : POST `/api/enviarMensaje`
 
 ### 6.1.- Ejemplo de llamada
 
-Ejemplo: JSON 
+Ejemplo: JSON
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "destinatario": "",
+        "remitente": "",
+        "asunto": "",
+        "mensaje": "",
+        "sigla_sistema": "",
+        "canal_id": "",
 	}
 
 ### 6.2.- Respuesta de salida
@@ -518,53 +423,36 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 6.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+       ...
 	} 
   
 #### 6.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
-## 7.- enviarMensajeDev
-Breve descripción de ruta
+
+## 7.- feriados
+Método que permite descargar la base de datos de feriados nacionales. 
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/api/enviarMensajeDev`
-
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+Ruta : GET `/api/feriados`
 
 **Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo             |  Tipo        |                         Descripción              |
+|:------------------|:------------:|-------------------------------------------------:| 
+| feri_dia          | string       | Día feriado                                      |
+| feri_motivo       | string       | Motivo del feriado                               |
+| feri_irrenunciable| boolean      | Especifica si es feriado irrenunciable o no      |
 
 ### 7.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        ...
 	}
 
 ### 7.2.- Respuesta de salida
@@ -574,36 +462,38 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 7.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 7.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
+        {
+            "feri_dia":"2021-01-03",
+            "feri_motivo":"Domingo",
+            "feri_irrenunciable":false
         },
-        "codigo": 200
+        {
+            "feri_dia":"2021-01-10",
+            "feri_motivo":"Domingo",
+            "feri_irrenunciable":false
+        },
+        {
+            "feri_dia":"2021-01-17",
+            "feri_motivo":"Domingo",
+            "feri_irrenunciable":false
+        },
+        ...
 	}
 
-## 8.- enviarPublicacion
-Breve descripción de ruta
+
+
+## 8.- hubspot
+Método que recibe mensaje de hubspot e interactua como puente hacia MundoSocial.
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/api/enviarPublicacion`
+Ruta : POST `/api/hubspot`
 
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
@@ -630,41 +520,28 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 8.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 8.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+       ...
 	}
 
-## 9.- feriados
-Breve descripción de ruta
+## 9.- informarContingencia
+Método que recibe mensaje de contingencia en servidores y alerta a los usuarios registrados en sistema asociados a servidor.
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : GET `/api/feriados`
+Ruta : POST `/api/informarContingencia`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo        |  Tipo        | Formato                        |     Requerido             |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:-------------------------:|----------------------------:|
+| token        | ?            |                                |                           | Breve descripción           |
+| mensaje      | ?            |                                |                           | Breve descripción           |
+| sistema      | ?            |                                |                           | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -686,36 +563,21 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 9.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 9.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
-## 10.- guardarReceptor
-Breve descripción de ruta
+## 10.- mjeOut
+Método que recibe mensaje desde atec y envía a cliente.
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/api/guardarReceptor`
+Ruta : POST `/api/mjeOut`
 
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
@@ -742,36 +604,21 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 10.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 10.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
-## 11.- hubspot
-Breve descripción de ruta
+## 11.- mjein
+Método que recibe mensaje de cliente y reenvía hacia atec.
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/api/hubspot`
+Ruta : POST `/api/mjein`
 
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
@@ -798,36 +645,29 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 11.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 11.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
-## 12.- informarContingencia
-Breve descripción de ruta
+
+
+
+
+
+
+
+
+## 12.- recibeMensajeWsp
+Método que recibe mensaje de servidores de Twilio y reenvia hacia MS.
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/api/informarContingencia`
+Ruta : POST `/api/recibeMensajeWsp`
 
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
@@ -854,36 +694,21 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 12.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 12.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
-## 13.- mjeOut
-Breve descripción de ruta
+## 13.- recibeMensajeWspFail
+Método que recibe mensaje de servidores de Twilio y reenvia hacia MS (backup).
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/api/mjeOut`
+Ruta : POST `/api/recibeMensajeWspFail`
 
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
@@ -905,41 +730,26 @@ Ejemplo: JSON
 
 ### 13.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 130 éxito mensaje: descripcion del mensaje
 
 #### 13.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 13.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
-## 14.- mjein
-Breve descripción de ruta
+## 14.- recibeMensajeWspStatus
+Método que recibe mensaje de servidores de Twilio en caso de fallo y alerta status de sistema.
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/api/mjein`
+Ruta : POST `/api/recibeMensajeWspStatus`
 
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
@@ -966,36 +776,23 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 14.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+       ...
 	} 
   
 #### 14.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
-## 15.- purgaMails
-Breve descripción de ruta
+
+
+## 15.- recibeMjeTelegramConnect
+Método que recibe mensajes de telegram y reenvia a MS. (solo cambia cuenta)
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/api/purgaMails`
+Ruta : POST `/api/recibeMjeTelegramConnect`
 
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
@@ -1022,36 +819,21 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 15.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 15.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+       ...
 	}
 
-## 16.- recibeFacebook
-Breve descripción de ruta
+## 16.- recibeMjeTelegramSoporte
+Método que recibe mensajes de telegram y reenvia a MS. (solo cambia cuenta).
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/api/recibeFacebook`
+Ruta : POST `/api/recibeMjeTelegramSoporte`
 
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
@@ -1078,36 +860,21 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 16.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 16.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
-## 17.- recibeMensajeFb
-Breve descripción de ruta
+## 17.- recibeMjeTelegramSoporteEmpresa
+Método que recibe mensajes de telegram y reenvia a MS. (solo cambia cuenta).
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/api/recibeMensajeFb`
+Ruta : POST `/api/recibeMjeTelegramSoporteEmpresa`
 
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
@@ -1134,36 +901,21 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 17.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 17.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+       ...
 	}
 
-## 18.- recibeMensajeInst
-Breve descripción de ruta
+## 18.- recibeMjeTelegramSoporteTecnico
+Método que recibe mensajes de telegram y reenvia a MS. (solo cambia cuenta).
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/api/recibeMensajeInst`
+Ruta : POST `/api/recibeMjeTelegramSoporteTecnico`
 
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
@@ -1190,36 +942,21 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 18.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 18.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
-## 19.- recibeMensajeWsp
-Breve descripción de ruta
+## 19.- recibeMjeTelegramTest
+Método que recibe mensajes de telegram y reenvia a MS. (solo cambia cuenta).
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/api/recibeMensajeWsp`
+Ruta : POST `/api/recibeMjeTelegramTest`
 
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
@@ -1246,36 +983,21 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 19.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 19.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
-## 20.- recibeMensajeWspFail
-Breve descripción de ruta
+## 20.- recibeMjeTelegramVentas
+Método que recibe mensajes de telegram y reenvia a MS. (solo cambia cuenta).
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/api/recibeMensajeWspFail`
+Ruta : POST `/api/recibeMjeTelegramVentas`
 
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
@@ -1302,36 +1024,21 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 20.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 20.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
-## 21.- recibeMensajeWspStatus
-Breve descripción de ruta
+## 21.- recibeTwitter
+Método que recibe Mensajes de Twitter y facebook desde Api de OneMarketer.
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/api/recibeMensajeWspStatus`
+Ruta : POST `/api/recibeTwitter`
 
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
@@ -1358,36 +1065,23 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 21.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 21.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
-## 22.- recibeMjeMsn
-Breve descripción de ruta
+
+
+## 22.- recibirMail
+Método que permite la recepción de mails sin esperar al cron.
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : GET `/api/recibeMjeMsn`
+Ruta : GET `/api/recibirMail`
 
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
@@ -1414,41 +1108,29 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 22.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 22.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
-## 23.- recibeMjeTelegram
-Breve descripción de ruta
+
+
+## 23.- storeArchivo
+Método que permite guardar archivos en el servidor.
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/api/recibeMjeTelegram`
+Ruta : POST `/api/storeArchivo`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo        |  Tipo        | Formato                        |     Requerido               |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:---------------------------:|----------------------------:|
+| adjunto      | archive      |                                |                             | Breve descripción           |
+| token        | string       |                                |                             | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -1460,7 +1142,8 @@ Ruta : POST `/api/recibeMjeTelegram`
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "adjunto":,
+        "token": "":
 	}
 
 ### 23.2.- Respuesta de salida
@@ -1470,36 +1153,22 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 23.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 23.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
-## 24.- recibeMjeTelegramConnect
-Breve descripción de ruta
+
+## 24.- twitterfixer
+Método que permite reenviar todos los mensajes de twitter que en su momento no fueron entregados. (Debe revisarse BD antes de usar) 
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/api/recibeMjeTelegramConnect`
+Ruta : POST `/api/twitterfixer`
 
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
@@ -1526,754 +1195,11 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 24.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 24.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
-	}
-
-## 25.- recibeMjeTelegramSoporte
-Breve descripción de ruta
-
-Los parámetros que recibe son los siguientes:
-
-Ruta : POST `/api/recibeMjeTelegramSoporte`
-
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
-
-### 25.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
-
-### 25.2.- Respuesta de salida
-
-codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 25.2.1.- Respuesta de error
-
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
-	} 
-  
-#### 25.2.2.- Respuesta de éxito
-
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
-	}
-
-## 26.- recibeMjeTelegramSoporteEmpresa
-Breve descripción de ruta
-
-Los parámetros que recibe son los siguientes:
-
-Ruta : POST `/api/recibeMjeTelegramSoporteEmpresa`
-
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
-
-### 26.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
-
-### 26.2.- Respuesta de salida
-
-codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 26.2.1.- Respuesta de error
-
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
-	} 
-  
-#### 26.2.2.- Respuesta de éxito
-
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
-	}
-
-## 27.- recibeMjeTelegramSoporteTecnico
-Breve descripción de ruta
-
-Los parámetros que recibe son los siguientes:
-
-Ruta : POST `/api/recibeMjeTelegramSoporteTecnico`
-
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
-
-### 27.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
-
-### 27.2.- Respuesta de salida
-
-codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 27.2.1.- Respuesta de error
-
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
-	} 
-  
-#### 27.2.2.- Respuesta de éxito
-
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
-	}
-
-## 28.- recibeMjeTelegramTest
-Breve descripción de ruta
-
-Los parámetros que recibe son los siguientes:
-
-Ruta : POST `/api/recibeMjeTelegramTest`
-
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
-
-### 28.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
-
-### 28.2.- Respuesta de salida
-
-codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 28.2.1.- Respuesta de error
-
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
-	} 
-  
-#### 28.2.2.- Respuesta de éxito
-
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
-	}
-
-## 29.- recibeMjeTelegramVentas
-Breve descripción de ruta
-
-Los parámetros que recibe son los siguientes:
-
-Ruta : POST `/api/recibeMjeTelegramVentas`
-
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
-
-### 29.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
-
-### 29.2.- Respuesta de salida
-
-codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 29.2.1.- Respuesta de error
-
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
-	} 
-  
-#### 29.2.2.- Respuesta de éxito
-
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
-	}
-
-## 30.- recibeTwitter
-Breve descripción de ruta
-
-Los parámetros que recibe son los siguientes:
-
-Ruta : POST `/api/recibeTwitter`
-
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
-
-### 30.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
-
-### 30.2.- Respuesta de salida
-
-codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 30.2.1.- Respuesta de error
-
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
-	} 
-  
-#### 30.2.2.- Respuesta de éxito
-
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
-	}
-
-## 31.- recibirComentariosFb
-Breve descripción de ruta
-
-Los parámetros que recibe son los siguientes:
-
-Ruta : GET `/api/recibirComentariosFb`
-
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
-
-### 31.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
-
-### 31.2.- Respuesta de salida
-
-codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 31.2.1.- Respuesta de error
-
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
-	} 
-  
-#### 31.2.2.- Respuesta de éxito
-
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
-	}
-
-## 32.- recibirConversaciones
-Breve descripción de ruta
-
-Los parámetros que recibe son los siguientes:
-
-Ruta : GET `/api/recibirConversaciones`
-
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
-
-### 32.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
-
-### 32.2.- Respuesta de salida
-
-codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 32.2.1.- Respuesta de error
-
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
-	} 
-  
-#### 32.2.2.- Respuesta de éxito
-
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
-	}
-
-## 33.- recibirMail
-Método que permite la recepción de mails sin esperar al cron.
-
-Los parámetros que recibe son los siguientes:
-
-Ruta : GET `/api/recibirMail`
-
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
-
-### 33.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
-
-### 33.2.- Respuesta de salida
-
-codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 33.2.1.- Respuesta de error
-
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
-	} 
-  
-#### 33.2.2.- Respuesta de éxito
-
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
-	}
-
-## 34.- registraTelegram
-Breve descripción de ruta
-
-Los parámetros que recibe son los siguientes:
-
-Ruta : POST `/api/registraTelegram`
-
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
-
-### 34.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
-
-### 34.2.- Respuesta de salida
-
-codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 34.2.1.- Respuesta de error
-
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
-	} 
-  
-#### 34.2.2.- Respuesta de éxito
-
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
-	}
-
-## 35.- storeArchivo
-Método que permite guardar archivos en el servidor.
-
-Los parámetros que recibe son los siguientes:
-
-Ruta : POST `/api/storeArchivo`
-
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
-
-### 35.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
-
-### 35.2.- Respuesta de salida
-
-codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 35.2.1.- Respuesta de error
-
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
-	} 
-  
-#### 35.2.2.- Respuesta de éxito
-
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
-	}
-
-## 36.- test
-Breve descripción de ruta
-
-Los parámetros que recibe son los siguientes:
-
-Ruta : POST `/api/test`
-
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
-
-### 36.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
-
-### 36.2.- Respuesta de salida
-
-codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 36.2.1.- Respuesta de error
-
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
-	} 
-  
-#### 36.2.2.- Respuesta de éxito
-
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
-	}
-
-## 37.- twitterfixer
-Método que permite reenviar todos los mensajes de twitter que en su momento no fueron entregados. (Debe revisarse BD antes de usar) 
-
-Los parámetros que recibe son los siguientes:
-
-Ruta : POST `/api/twitterfixer`
-
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
-
-### 37.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
-
-### 37.2.- Respuesta de salida
-
-codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 37.2.1.- Respuesta de error
-
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
-	} 
-  
-#### 37.2.2.- Respuesta de éxito
-
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}

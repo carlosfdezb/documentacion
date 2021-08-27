@@ -1614,7 +1614,7 @@ Ruta : POST `/api/reclamos/reclamo-editar`
 | tipoServicio           | int          |                                |                        | Breve descripción           |
 | motivo                 | int          |                                |                        | Breve descripción           |
 | subMotivo              | string       |                                |                        | Breve descripción           |
-| rutRepresentante       | string       |                                |                        | Breve descripción           |
+| rutRepresentante       | string       | NNNNNNNNC                      |                        | Breve descripción           |
 | dvRepresentante        | int          |                                |                        | Breve descripción           |
 | nombreRepresentante    | string       |                                |                        | Breve descripción           |
 | apellidosRepresentante | string       |                                |                        | Breve descripción           |
@@ -1916,7 +1916,7 @@ Ruta : GET `/api/reclamos/consultaClienteIVR`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| RUTCliente   | string       | 123456789                      | Si                                         | Breve descripción           |
+| RUTCliente   | string       | NNNNNNNNC                      | Si                                         | Breve descripción           |
 
 **Datos de salida:**
 | Campo              |  Tipo        |                         Descripción              |
@@ -4097,7 +4097,7 @@ Ruta : POST `/ivr/update-celular-reclamado`
 |:----------------:|:------------:|:------------------------------:|:---------------------------:|----------------------------:|
 | idReclamo        | int          |                                | Si                          | Breve descripción           |
 | celularReclamado | int          |                                | Si                          | Breve descripción           |
-| rutCliente       | string       | 123456789                      | Si                          | Breve descripción           |
+| rutCliente       | string       | NNNNNNNNC                      | Si                          | Breve descripción           |
 
 ### 3.18.1.- Ejemplo de llamada
 
@@ -4201,7 +4201,7 @@ Ruta : POST `/ivr/update-telefono-reclamado`
 |:----------------:|:------------:|:------------------------------:|:---------------------------:|----------------------------:|
 | idReclamo        | int          |                                | Si                          | Breve descripción           |
 | telefonoReclamado| int          |                                | Si                          | Breve descripción           |
-| rutCliente       | string       | 123456789                      | Si                          | Breve descripción           |
+| rutCliente       | string       | NNNNNNNNC                      | Si                          | Breve descripción           |
 
 ### 3.20.1.- Ejemplo de llamada
 

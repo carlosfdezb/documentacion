@@ -948,7 +948,7 @@ Ruta : GET `/api/mundosocial/cliente`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| rut          | string       | 123456789                      | Si                                         | Rut del cliente a buscar    |
+| rut          | string       | NNNNNNNNC                      | Si                                         | Rut del cliente a buscar    |
 
 **Datos de salida:**
 | Campo                 |  Tipo        |                         Descripción              |
@@ -1023,7 +1023,7 @@ Ruta : POST `/api/mundosocial/cliente`
 **Parámetros de entrada:**
 | Campo                 |  Tipo        | Formato               |     Requerido           |             Descripción          |
 |:---------------------:|:------------:|:---------------------:|:-----------------------:|---------------------------------:|
-| clie_rut              | string       |                       |  Si                     | Rut del cliente                  |
+| clie_rut              | string       | NNNNNNNNC             |  Si                     | Rut del cliente                  |
 | clie_nombre           | string       |                       |  Si                     | Nombres del cliente              |
 | clie_apellido1        | string       |                       |  Si                     | Apellido paterno del cliente     |
 | clie_apellido2        | string       |                       |  Si                     | Apellido materno del cliente     |
@@ -2491,7 +2491,7 @@ Ruta : POST `/api/mundosocial/crearCliente`
 **Parámetros de entrada:**
 | Campo             |  Tipo        | Formato                        |     Requerido           |             Descripción         |
 |:-----------------:|:------------:|:------------------------------:|:-----------------------:|--------------------------------:|
-| numDocumentacion  | string       | 123456789                      | Si                      | Rut del cliente                 |
+| numDocumentacion  | string       | NNNNNNNNC                      | Si                      | Rut del cliente                 |
 | nombre            | string       |                                | Si                      | Nombre del cliente              |
 | apellido1         | string       |                                | Si                      | Apellido paterno del cliente    |
 | apellido2         | string       |                                | Si                      | Apellido materno del cliente    |
@@ -2674,7 +2674,7 @@ Ruta : POST `/api/mundosocial/crearClienteEmpresa`
 | puerta            | int          |                                |                         | Número de puerta del domicilio de la empresa|
 | bloque            | int          |                                |                         | Número de bloque del domicilio de la empresa|
 | acceso            | int          |                                |                         | Número de acceso del domicilio de la empresa|
-| numDocumentacion  | string       |                                |                         | Rut de la empresa|
+| numDocumentacion  | string       | NNNNNNNNC                      |                         | Rut de la empresa|
 | actividad         | int          |                                |                         | Rubro de la empresa|
 | esEmprendedor     | int          | 1 = si, 0 = no                 |                         | Si la empresa corresponde o no a un emprendimiento|
 
@@ -4173,7 +4173,7 @@ Ruta : POST `/api/mundosocial/sucursalvirtual`
 | canal_id          | int          |                                |  Si                     | ?                   |
 | tipo              | string       | txt o html                     |  Si                     | ?                   |
 | url               | string       |                                |  Si                     | ?                   |
-| rut               | string       |                                |  Si                     | ?                   |
+| rut               | string       | NNNNNNNNC                      |  Si                     | ?                   |
 | nombre            | string       |                                |  Si                     | ?                   |
 | apellido1         | string       |                                |  Si                     | ?                   |
 | apellido2         | string       |                                |  Si                     | ?                   |

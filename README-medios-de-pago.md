@@ -247,9 +247,9 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/empresas/existecliente`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo        |  Tipo        | Formato                        |     Requerido                   | Descripción                 |
+|:------------:|:------------:|:------------------------------:|:-------------------------------:|----------------------------:|
+| Rut          | string       | NNNNNNNNC                      | Si                              | Rut del cliente a buscar    |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -261,7 +261,7 @@ Ruta : GET `/empresas/existecliente`
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+                "NOMBRE_CAMPO":"166101069"
 	}
 
 ### 1.1.2.- Respuesta de salida
@@ -270,9 +270,14 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 1.1.2.1.- Respuesta de error
 
-	{
-        ...
-	} 
+        {
+                "error": {
+                        "codigoRespuesta": 0,
+                        "descripcionRespuesta": "Error",
+                        "detalleRespuesta": "El rut  es invalido o no tiene formato correcto. El formato es NNNNNNNNC"
+                },
+                "codigo": 422
+        }
   
 #### 1.1.2.2.- Respuesta de éxito
 
@@ -289,9 +294,9 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/empresas/obtenerdeuda`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo        |  Tipo        | Formato                        |     Requerido                   | Descripción                 |
+|:------------:|:------------:|:------------------------------:|:-------------------------------:|----------------------------:|
+| Rut          | string       | NNNNNNNNC                      | Si                              | Rut del cliente a buscar deudas|
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -312,10 +317,14 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 1.2.2.1.- Respuesta de error
 
-	{
-        ...
-	} 
-  
+        {
+                "error": {
+                        "codigoRespuesta": 0,
+                        "descripcionRespuesta": "Error",
+                        "detalleRespuesta": "No hay datos de Deuda"
+                },
+                "codigo": 204
+        }
 #### 1.2.2.2.- Respuesta de éxito
 
 	{
