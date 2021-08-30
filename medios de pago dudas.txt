@@ -1,0 +1,39 @@
+getFacturasEmpresa -> respuesta de exito
+
+getFacturasFilter -> todo
+
+postFacturasEmpresa -> todo
+
+Suscripciones -> respuesta de exito
+
+
+informes/archivos/procesados -> respuesta error
+
+
+/informes/pagos/resumennoconfirmadosonline -> todo
+
+informes/rendicion/registrosinvalidos -> data, error
+
+
+rendicion/resumenmontomesanterioactual -> respuesta error
+
+informes/rendicion/resumentrxmesanterioactual -> respuesta error
+
+informes/rendicion/trxanuladas -> respuestas
+
+/informes/resumenpagos -> respuesta error
+
+informes/resumenpagosporcanal -> respuesta error
+
+/informes/resumenrecaudacion -> respuesta error
+
+/informes/resumenrecaudacioncanal -> respuesta error
+
+informes/resumentrxmesanterioactual -> respuesta error
+
+
+informes/pagosenproceso -> respuesta error
+
+informes/resumenpagosenproceso -> respuesta error
+
+/ivr/consultapago -> respuesta exito
