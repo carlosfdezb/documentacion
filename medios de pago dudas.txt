@@ -1,3 +1,14 @@
+
+empresas/existecliente -> respuesta de exito
+
+empresas/obtenerdeuda -> respuesta de exito
+
+pagos/consolidadeuda -> todo
+
+/pagos/procesapago -> todo
+
+getEliminaregistro -> respuesta de error
+
 getFacturasEmpresa -> respuesta de exito
 
 getFacturasFilter -> todo
@@ -7,17 +18,16 @@ postFacturasEmpresa -> todo
 Suscripciones -> respuesta de exito
 
 
-informes/archivos/procesados -> respuesta error
+informes/archivos/procesados -> respuesta error -> descripcion
 
 
 /informes/pagos/resumennoconfirmadosonline -> todo
 
 informes/rendicion/registrosinvalidos -> data, error
 
+rendicion/resumenmontomesanterioactual -> descripcion
 
-rendicion/resumenmontomesanterioactual -> respuesta error
-
-informes/rendicion/resumentrxmesanterioactual -> respuesta error
+informes/rendicion/resumentrxmesanterioactual -> descripcion
 
 informes/rendicion/trxanuladas -> respuestas
 

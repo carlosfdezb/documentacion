@@ -594,7 +594,7 @@ Ruta : POST `/api/mjeOut`
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+                "NOMBRE_CAMPO":"valor"
 	}
 
 ### 10.2.- Respuesta de salida
@@ -621,9 +621,11 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/api/mjein`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo             |  Tipo        | Formato                                 |     Requerido                  |             Descripción     |
+|:-----------------:|:------------:|:---------------------------------------:|:------------------------------:|----------------------------:|
+| reme_respuesta    | int          | 1: Aceptado, 2: Postergado, 3: Rechazado| Si                             | Respuesta del cliente       |
+| env_num_referencia| int          |                                         | Si                             | Identificador del cliente   |
+| type              | string       | 'sms' o 'wsp'                           | Si                             | Tipo de canal               |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -1041,9 +1043,19 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/api/recibeTwitter`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo        |  Tipo        | Formato                        | Requerido     |             Descripción                 |
+|:------------:|:------------:|:------------------------------:|:-------------:|----------------------------------------:|
+| type         | string       |                                |               | Tipo que indica que son nuevos mensajes |
+| ↓ messages   | array[object]|                                |               |                                         |
+| type         | string       |                                |               | Tweet o private message, para facebook wall o messenger, dependiendo de si es público o privado|
+| id           | string       |                                |               | Identificador del mensaje               |
+| contentType  | string       |                                |               | Indica si el mensaje corresponde a texto, imagen o multimedia |
+| text         | string       |                                |               | ?                                       |
+| ↓↓ user      | array[object]|                                |               |                                         |
+| id           | string       |                                |               | Id del usuario                          |
+| avatar       | string       |                                |               | Url de la imagen de perfil del usuario  |
+| ↓↓ mediaUrl  | array[object]|                                |               |                                         |
+| url          | string       |                                |               | Indica que contiene una imagen o multimedia |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -1083,35 +1095,22 @@ Los parámetros que recibe son los siguientes:
 
 Ruta : GET `/api/recibirMail`
 
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | Nombre Campo   | Tipo de dato | Breve descripción                                |
 
-### 22.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
-
-### 22.2.- Respuesta de salida
+### 22.1.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
 
-#### 22.2.1.- Respuesta de error
+#### 22.1.1.- Respuesta de error
 
 	{
         ...
 	} 
   
-#### 22.2.2.- Respuesta de éxito
+#### 22.1.2.- Respuesta de éxito
 
 	{
         ...
@@ -1170,35 +1169,22 @@ Los parámetros que recibe son los siguientes:
 
 Ruta : POST `/api/twitterfixer`
 
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | Nombre Campo   | Tipo de dato | Breve descripción                                |
 
-### 24.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
-
-### 24.2.- Respuesta de salida
+### 24.1.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
 
-#### 24.2.1.- Respuesta de error
+#### 24.1.1.- Respuesta de error
 
 	{
         ...
 	} 
   
-#### 24.2.2.- Respuesta de éxito
+#### 24.1.2.- Respuesta de éxito
 
 	{
         ...
