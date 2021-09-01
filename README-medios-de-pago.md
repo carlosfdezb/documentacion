@@ -366,6 +366,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 2.1.2.1.- Respuesta de error
 
+```xml
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
    <soap:Body>
       <ns2:ProcesaPagoResponse xmlns:ns2="http://ws.mundo.accolm.com/">
@@ -379,9 +380,11 @@ codigo: 200 éxito mensaje: descripcion del mensaje
       </ns2:ProcesaPagoResponse>
    </soap:Body>
 </soap:Envelope>
+```
   
 #### 2.1.2.2.- Respuesta de éxito
 
+```xml
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
    <soap:Body>
       <ns2:ProcesaPagoResponse xmlns:ns2="http://ws.mundo.accolm.com/">
@@ -395,6 +398,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
       </ns2:ProcesaPagoResponse>
    </soap:Body>
 </soap:Envelope>
+```
 
 # 3.- Rendiciones
 ## 3.1.- Rendiciones
