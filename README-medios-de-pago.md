@@ -218,9 +218,9 @@ Ruta : GET `/empresas/existecliente`
 | Rut          | string       | NNNNNNNNC                      | Si                              | Rut del cliente a buscar    |
 
 **Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+|          Descripción                             |
+|-------------------------------------------------:| 
+| 0 : si no existe cliente, 1 : si existe cliente  |
 
 ### 1.1.1.- Ejemplo de llamada
 
@@ -247,9 +247,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
   
 #### 1.1.2.2.- Respuesta de éxito
 
-	{
-        ...
-	}
+`1`
 
 
 ## 1.2.- Obtener Deuda
@@ -300,50 +298,8 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 
 # 2.- Pago
-## 2.1.- Consolidar Deuda
-Breve descripción de ruta
-
-Los parámetros que recibe son los siguientes:
-
-Ruta : POST `/pagos/consolidadeuda`
-
-**Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
-
-### 2.1.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
-
-### 2.1.2.- Respuesta de salida
-
-codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 2.1.2.1.- Respuesta de error
-
-	{
-        ...
-	} 
-  
-#### 2.1.2.2.- Respuesta de éxito
-
-	{
-        ...
-	}
-
-
-## 2.2.- Procesar Pago
-Breve descripción de ruta
+## 2.1.- Procesar Pago
+Método que permite procesar pago de un cliente.
 
 Los parámetros que recibe son los siguientes:
 
@@ -352,37 +308,91 @@ Ruta : POST `/pagos/procesapago`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+|  | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | Nombre Campo   | Tipo de dato | Breve descripción                                |
 
-### 2.2.1.- Ejemplo de llamada
+### 2.1.1.- Ejemplo de llamada
 
-Ejemplo: JSON 
+Ejemplo: XML 
 
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mundo.accolm.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:ProcesaPago>
+         <!--Optional:-->
+         <Canal>BS</Canal>
+         <IdTransaccion>b9e0ee94-1cdf-45f7-9c82-61c0a4d53ff5</IdTransaccion>
+         <IdCliente>135982547</IdCliente>
+         <Monto>12572</Monto>
+         <Fecha>20201105085801000</Fecha>
+         <!--Optional:-->
+         <UnidadNegocio>MPH</UnidadNegocio>
+         <!--Optional:-->
+         <CodigoRespuesta></CodigoRespuesta>
+         <!--Optional:-->
+         <Token></Token>
+         <!--Optional:-->
+         <OrdenCompra></OrdenCompra>
+         <!--Optional:-->
+         <CodAutorizacion></CodAutorizacion>
+         <!--Optional:-->
+         <TipoPago></TipoPago>
+         <!--Optional:-->
+         <NumTarjeta></NumTarjeta>
+         <!--Optional:-->
+         <NumeroCuotas></NumeroCuotas>
+         <!--Optional:-->
+         <VCI>?</VCI>
+         <!--Optional:-->
+         <FechaContable>?</FechaContable>
+         <!--Optional:-->
+         <FechaTransaccion>?</FechaTransaccion>
+         <!--Optional:-->
+         <TipoCliente>0</TipoCliente>
 
-### 2.2.2.- Respuesta de salida
+      </ws:ProcesaPago>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+### 2.1.2.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
 
-#### 2.2.2.1.- Respuesta de error
+#### 2.1.2.1.- Respuesta de error
 
-	{
-        ...
-	} 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:ProcesaPagoResponse xmlns:ns2="http://ws.mundo.accolm.com/">
+         <Resultados>
+            <EstadoResultado>
+               <Codigo>3100</Codigo>
+               <Descripcion>Numero de Transacci�n Incorrecta</Descripcion>
+               <Observaciones>El n�mero de transacci�n informado al procesar un pago es incorrecto</Observaciones>
+            </EstadoResultado>
+         </Resultados>
+      </ns2:ProcesaPagoResponse>
+   </soap:Body>
+</soap:Envelope>
   
-#### 2.2.2.2.- Respuesta de éxito
+#### 2.1.2.2.- Respuesta de éxito
 
-	{
-        ...
-	}
-
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:ProcesaPagoResponse xmlns:ns2="http://ws.mundo.accolm.com/">
+         <Resultados>
+            <EstadoResultado>
+               <Codigo>0</Codigo>
+               <Descripcion>Respuesta de existo</Descripcion>
+               <Observaciones>Respuesta de exito</Observaciones>
+            </EstadoResultado>
+         </Resultados>
+      </ns2:ProcesaPagoResponse>
+   </soap:Body>
+</soap:Envelope>
 
 # 3.- Rendiciones
 ## 3.1.- Rendiciones
@@ -461,7 +471,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	}
 
 
-## 3.2.- Rendiciones Filtro
+## 3.2.- Rendiciones Filtro ****
 Método que permite buscar rendiciones asociadas al rut del cliente de forma paginada.
 
 Los parámetros que recibe son los siguientes:
@@ -542,7 +552,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         }
 
 ## 3.3.- Rendiciones Filtro Exportar
-Breve descripción de ruta
+Breve descripción de ruta excel
 
 Los parámetros que recibe son los siguientes:
 
@@ -633,10 +643,10 @@ Ruta : GET `/rendicionesresumenFilter`
 |:-------------------|:------------:|-------------------------------------------------:| 
 | FECHA              | date         | Fecha del pago                                   |
 | DESC_CANAL         | string       | Medio de pago                                    |
-| CTD                | string       | ?                                |
+| CTD                | string       | Cantidad de transacciones                        |
 | MONTO              | string       | Monto del pago                                   |
 | MONTO_TOTAL        | string       | Monto total del pago                             |
-| CTD_TOTAL          | string       | ?                                |
+| CTD_TOTAL          | string       | Cantidad de transacciones totales                |
 
 ### 3.4.1.- Ejemplo de llamada
 
@@ -881,7 +891,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	}
 
 ## 4.5.- Pago Factura
-Breve descripción de ruta
+Método que permite obtener facturas pagadas.
 
 Los parámetros que recibe son los siguientes:
 
@@ -954,10 +964,10 @@ Ruta : GET `/getFacturasEmpresa`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                   |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:-------------------------------:|----------------------------:|
-| idarchivo    | int          |                                |                                 | Breve descripción           |
-| rutfact      | string       | NNNNNNNNC                      |                                 | Breve descripción           |
-| numfact      | int          |                                |                                 | Breve descripción           |
-| estadofact   | int          |                                |                                 | Breve descripción           |
+| idarchivo    | int          |                                |                                 | ID del archivo              |
+| rutfact      | string       | NNNNNNNNC                      |                                 | Rut                         |
+| numfact      | int          |                                |                                 | Número de factura           |
+| estadofact   | int          |                                |                                 | Estado de factura           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -1034,7 +1044,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	}
 
 ## 4.8.- Pagos 24 horas
-Breve descripción de ruta
+Método que permite obtener los pagos realizados en las últimas 24 horas.
 
 Los parámetros que recibe son los siguientes:
 
@@ -1046,9 +1056,9 @@ Ruta : GET `/ivr/pagos24horas`
 | Rut          | string       | NNNNNNNNC                      | Si                              | Rut del cliente a buscar    |
 
 **Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo              |  Tipo        |                         Descripción              |
+|:-------------------|:------------:|-------------------------------------------------:| 
+| MPRE_ID_TRANSACCION| string       | ID de la transacción                             |
 
 ### 4.8.1.- Ejemplo de llamada
 
@@ -1075,10 +1085,19 @@ codigo: 200 éxito mensaje: descripcion del mensaje
   
 #### 4.8.2.2.- Respuesta de éxito
 
-	{
-        ...
-	}
-
+        {
+                "success": {
+                        "codigoRespuesta": 1,
+                        "descripcionRespuesta": {
+                        "data": [
+                                {
+                                        "MPRE_ID_TRANSACCION": "9dad30f4-1d2a-493c-9d4d-1686ec73a7b5"
+                                }
+                        ]
+                        }
+                },
+                "codigo": 200
+        }
 
 ## 4.9.- Medios de Pago
 Método que permite obtener lista de medios de pago.
@@ -1117,7 +1136,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 
 ## 4.10.- Facturas Empresa
-Breve descripción de ruta
+Método que permite subir una planilla excel de la factura y la carga en el sistema.
 
 Los parámetros que recibe son los siguientes:
 
@@ -1177,7 +1196,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 
 ## 4.11.- Suscripciones
-Breve descripción de ruta
+Método que permite obtener listado con los clientes suscritos a PAC o PAT.
 
 Los parámetros que recibe son los siguientes:
 
@@ -1225,7 +1244,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 # 5.- Informes
 ## 5.1.- Procesados
-Método que permite
+Método que permite obtener y buscar los archivos de empresas cargados en el sistema.
 
 Los parámetros que recibe son los siguientes:
 
@@ -1262,14 +1281,8 @@ Ejemplo: JSON
 ### 5.1.2.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 5.1.2.1.- Respuesta de error
-
-	{
-        ...
-	} 
   
-#### 5.1.2.2.- Respuesta de éxito
+#### 5.1.2.1.- Respuesta de éxito
 
 	{
                 "current_page": 1,
@@ -1380,7 +1393,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         }
 
 ## 5.3.- Pagos
-Breve descripción de ruta
+Método que permite obtener los pagos realizados por un cliente.
 
 Los parámetros que recibe son los siguientes:
 
@@ -1399,7 +1412,7 @@ Ruta : GET `/informes/pagos`
 | idTransaccion  | string       | ID de la transacción                             |
 | fechaPago      | timestamp    | Fecha de pago                                    |
 | montoPagado    | string       | Monto pagado                                     |
-| confimadoOnLine| string       | ?                           |
+| confimadoOnLine| string       | Confirmación de pago                             |
 | medioPago      | string       | Medio de pago                                    |
 | estadoPago     | string       | Estado del pago                                  |
 
@@ -1415,14 +1428,8 @@ Ejemplo: JSON
 ### 5.3.2.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 5.3.2.1.- Respuesta de error
-
-	{
-        ...
-	} 
   
-#### 5.3.2.2.- Respuesta de éxito
+#### 5.3.2.1.- Respuesta de éxito
 
 	{
                 "current_page": 1,
@@ -1450,7 +1457,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
                 "total": 46
         }
 
-## 5.4.- Resumen No Confirmados Online
+## 5.4.- Resumen No Confirmados Online -> borrar
 Breve descripción de ruta
 
 Los parámetros que recibe son los siguientes:
@@ -1492,7 +1499,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	}
 
 ## 5.5.- Recaudación
-Breve descripción de ruta
+Método que permite obtener una sumatoria de los montos recaudados.
 
 Los parámetros que recibe son los siguientes:
 
@@ -1530,14 +1537,8 @@ Ejemplo: JSON
 ### 5.5.2.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 5.5.2.1.- Respuesta de error
-
-	{
-        ...
-	} 
   
-#### 5.5.2.2.- Respuesta de éxito
+#### 5.5.2.1.- Respuesta de éxito
 
 	{
                 "success": {
@@ -1560,7 +1561,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	}
 
 ## 5.6.- Registros Inválidos
-Breve descripción de ruta
+Método que permite obtener los registros de rendiciones con error.
 
 Los parámetros que recibe son los siguientes:
 
@@ -1589,14 +1590,8 @@ Ejemplo: JSON
 ### 5.6.2.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 5.6.2.1.- Respuesta de error
-
-	{
-        ...
-	} 
   
-#### 5.6.2.2.- Respuesta de éxito
+#### 5.6.2.1.- Respuesta de éxito
 
 	{
                 "current_page": 1,
@@ -1617,7 +1612,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 
 ## 5.7.- Resumen Monto Mes Anterior Actual
-Breve descripción de ruta
+Método que permite obtener la recaudación del mes anterior y el actual en base a la rendición.
 
 Los parámetros que recibe son los siguientes:
 
@@ -1652,7 +1647,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	}
 
 ## 5.8.- Resumen Trx Mes Anterior Actual
-Breve descripción de ruta
+Método que permite obtener las transacciones del mes anterior y el actual en base a la rendición.
 
 Los parámetros que recibe son los siguientes:
 
@@ -1688,7 +1683,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 
 ## 5.9.- Trx Anuladas
-Breve descripción de ruta
+Métodos que permite obtener las transacciones anuladas por los bancos.
 
 Los parámetros que recibe son los siguientes:
 
@@ -1738,7 +1733,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 
 ## 5.10.- Resumen Acumulado Día
-Breve descripción de ruta
+Método que permite tener los montos del día.
 
 Los parámetros que recibe son los siguientes:
 
@@ -1774,7 +1769,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 
 ## 5.11.- Resumen Monto Mes Anterior Actual
-Breve descripción de ruta
+Método que permite obtener los montos del mes anterior y el actual en base a los pagos recibidos.
 
 Los parámetros que recibe son los siguientes:
 
@@ -1907,7 +1902,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	}
 
 ## 5.14.- Resumen Recaudación
-Breve descripción de ruta
+Método que permite obtener el resumen de la recaudación.
 
 Los parámetros que recibe son los siguientes:
 
@@ -1916,14 +1911,14 @@ Ruta : GET `/informes/resumenrecaudacion`
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| id             | string       | ID de ?                                          |
+| id             | string       | Hora del día                                     |
 | horario        | string       | Rango horario                                    |
 | dia            | string       | Número de día                                    |
-| exito          | string       | ?                                |
+| exito          | string       | Estado en el crm                                 |
 | cargadocrm     | string       | Cargados al crm                                  |
-| rendido        | string       | ?                                |
-| error          | string       | ?                                |
-| reversado      | string       | ?                                |
+| rendido        | string       | Rendido por la entidad de pago                   |
+| error          | string       | Error al cargar al crm                           |
+| reversado      | string       | Indica la cantidad de pagos reversados           |
 
 
 ### 5.14.1.- Respuesta de salida
@@ -1955,7 +1950,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	}
 
 ## 5.15.- Resumen Recaudación Canal
-Breve descripción de ruta
+Método que permite obtener el resumen de la recaudación por canales.
 
 Los parámetros que recibe son los siguientes:
 
@@ -1998,7 +1993,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	}
 
 ## 5.16.- Resumen Trx Mes Anterior Actual
-Breve descripción de ruta
+Método que permite obtener el resumen de las transacciones en base a los montos.
 
 Los parámetros que recibe son los siguientes:
 
@@ -2315,8 +2310,8 @@ Ruta : POST `/pagos/actualizaproceso`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido             |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:-------------------------:|----------------------------:|
-| IdCliente    | string       | NNNNNNNNC                      | Si                        | Breve descripción           |
-| idTransaccion| int          |                                | Si                        | Breve descripción           |
+| IdCliente    | string       | NNNNNNNNC                      | Si                        | ID del cliente              |
+| idTransaccion| int          |                                | Si                        | ID de la transacción       |
 
 ### 6.7.1.- Ejemplo de llamada
 
@@ -2340,3 +2335,45 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 6.7.2.2.- Respuesta de éxito
 
 `OK`
+
+
+## 6.8.- Consolidar Deuda
+Método que permite consolidar deuda de un cliente.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : POST `/pagos/consolidadeuda`
+
+**Parámetros de entrada:**
+| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
+| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+
+**Datos de salida:**
+| Campo          |  Tipo        |                         Descripción              |
+|:---------------|:------------:|-------------------------------------------------:| 
+| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+### 6.8.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+	{
+                "NOMBRE_CAMPO":"valor"
+	}
+
+### 6.8.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+
+#### 6.8.2.1.- Respuesta de error
+
+	{
+        ...
+	} 
+  
+#### 6.8.2.2.- Respuesta de éxito
+
+	{
+        ...
+	}

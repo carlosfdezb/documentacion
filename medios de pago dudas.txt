@@ -7,18 +7,16 @@ pagos/consolidadeuda -> todo
 
 /pagos/procesapago -> todo
 
-getEliminaregistro -> respuesta de error
+getEliminaregistro -> respuesta de error -> no tiene
 
-getFacturasEmpresa -> respuesta de exito
+getFacturasEmpresa -> respuesta de exito -> comentario sobre funcionamiento
 
-getFacturasFilter -> todo
+getFacturasFilter -> todo -> comentario sobre funcionamiento
 
 postFacturasEmpresa -> todo
 
-Suscripciones -> respuesta de exito
 
-
-informes/archivos/procesados -> respuesta error -> descripcion
+informes/archivos/procesados -> descripcion
 
 
 /informes/pagos/resumennoconfirmadosonline -> todo
@@ -30,20 +28,3 @@ rendicion/resumenmontomesanterioactual -> descripcion
 informes/rendicion/resumentrxmesanterioactual -> descripcion
 
 informes/rendicion/trxanuladas -> respuestas
-
-/informes/resumenpagos -> respuesta error
-
-informes/resumenpagosporcanal -> respuesta error
-
-/informes/resumenrecaudacion -> respuesta error
-
-/informes/resumenrecaudacioncanal -> respuesta error
-
-informes/resumentrxmesanterioactual -> respuesta error
-
-
-informes/pagosenproceso -> respuesta error
-
-informes/resumenpagosenproceso -> respuesta error
-
-/ivr/consultapago -> respuesta exito
