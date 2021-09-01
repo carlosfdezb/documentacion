@@ -319,6 +319,7 @@ Ruta : POST `/pagos/procesapago`
 
 Ejemplo: XML 
 
+```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mundo.accolm.com/">
    <soapenv:Header/>
    <soapenv:Body>
@@ -357,6 +358,7 @@ Ejemplo: XML
       </ws:ProcesaPago>
    </soapenv:Body>
 </soapenv:Envelope>
+.```
 
 ### 2.1.2.- Respuesta de salida
 
