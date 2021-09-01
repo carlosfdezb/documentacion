@@ -1,6 +1,6 @@
 | Tipo de seguridad|
 |:----------------:|
-|                  |
+| Ninguna          |
 
 <!-- Título -->
 # Documentación Api´s para Medios de Pago
@@ -10,188 +10,187 @@
   - [Objetivo](#objetivo)
   - [Restricciones](#restricciones)
   - [1.- Empresas](#1--empresas)
-    - [1.1.- Existe Cliente](#11--existe-cliente)
-        - [1.1.1.- Ejemplo de llamada](#111--ejemplo-de-llamada)
-        - [1.1.2.- Respuesta de Salida](#112--respuesta-de-salida)
-            - [1.1.2.1- Respuesta de error](#1121--respuesta-de-error)
-            - [1.1.2.2- Respuesta de éxito](#1122--respuesta-de-éxito)
-    - [1.2.- Obtener Deuda](#12--obtener-deuda)
-        - [1.2.1.- Ejemplo de llamada](#121--ejemplo-de-llamada)
-        - [1.2.2.- Respuesta de Salida](#122--respuesta-de-salida)
-            - [1.2.2.1- Respuesta de error](#1221--respuesta-de-error)
-            - [1.2.2.2- Respuesta de éxito](#1222--respuesta-de-éxito)
+        - [1.1.- Existe Cliente](#11--existe-cliente)
+            - [1.1.1.- Ejemplo de llamada](#111--ejemplo-de-llamada)
+            - [1.1.2.- Respuesta de Salida](#112--respuesta-de-salida)
+                  - [1.1.2.1- Respuesta de error](#1121--respuesta-de-error)
+                  - [1.1.2.2- Respuesta de éxito](#1122--respuesta-de-éxito)
+        - [1.2.- Obtener Deuda](#12--obtener-deuda)
+            - [1.2.1.- Ejemplo de llamada](#121--ejemplo-de-llamada)
+            - [1.2.2.- Respuesta de Salida](#122--respuesta-de-salida)
+                  - [1.2.2.1- Respuesta de error](#1221--respuesta-de-error)
+                  - [1.2.2.2- Respuesta de éxito](#1222--respuesta-de-éxito)
   - [2.- Pago](#2--pago)
-    - [2.1.- Procesar Pago](#21--procesar-pago)
-        - [2.1.1.- Ejemplo de llamada](#211--ejemplo-de-llamada)
-        - [2.1.2.- Respuesta de Salida](#212--respuesta-de-salida)
-            - [2.1.2.1- Respuesta de error](#2121--respuesta-de-error)
-            - [2.1.2.2- Respuesta de éxito](#2122--respuesta-de-éxito)
+        - [2.1.- Procesar Pago](#21--procesar-pago)
+            - [2.1.1.- Ejemplo de llamada](#211--ejemplo-de-llamada)
+            - [2.1.2.- Respuesta de Salida](#212--respuesta-de-salida)
+                  - [2.1.2.1- Respuesta de error](#2121--respuesta-de-error)
+                  - [2.1.2.2- Respuesta de éxito](#2122--respuesta-de-éxito)
   - [3.- Rendiciones](#3--rendiciones)
-    - [3.1.- Rendiciones](#31--rendiciones)
-        - [3.1.1.- Ejemplo de llamada](#311--ejemplo-de-llamada)
-        - [3.1.2.- Respuesta de Salida](#312--respuesta-de-salida)
-            - [3.1.2.1- Respuesta de error](#3121--respuesta-de-error)
-            - [3.1.2.2- Respuesta de éxito](#3122--respuesta-de-éxito)
-    - [3.2.- Rendiciones Filtro](#32--rendiciones-filtro)
-        - [3.2.1.- Ejemplo de llamada](#321--ejemplo-de-llamada)
-        - [3.2.2.- Respuesta de Salida](#322--respuesta-de-salida)
-            - [3.2.2.1- Respuesta de error](#3221--respuesta-de-error)
-            - [3.2.2.2- Respuesta de éxito](#3222--respuesta-de-éxito)
-    - [3.3.- Rendiciones Filtro Exportar](#33--rendiciones-filtro-exportar)
-        - [3.3.1.- Ejemplo de llamada](#331--ejemplo-de-llamada)
-        - [3.3.2.- Respuesta de Salida](#332--respuesta-de-salida)
-            - [3.3.2.1- Respuesta de error](#3321--respuesta-de-error)
-            - [3.3.2.2- Respuesta de éxito](#3322--respuesta-de-éxito)
-    - [3.4.- Rendiciones Resumen Filtro](#34--rendiciones-resumen-filtro)
-        - [3.4.1.- Ejemplo de llamada](#341--ejemplo-de-llamada)
-        - [3.4.2.- Respuesta de Salida](#342--respuesta-de-salida)
-            - [3.4.2.1- Respuesta de error](#3421--respuesta-de-error)
-            - [3.4.2.2- Respuesta de éxito](#3422--respuesta-de-éxito)
+        - [3.1.- Rendiciones](#31--rendiciones)
+            - [3.1.1.- Ejemplo de llamada](#311--ejemplo-de-llamada)
+            - [3.1.2.- Respuesta de Salida](#312--respuesta-de-salida)
+                  - [3.1.2.1- Respuesta de error](#3121--respuesta-de-error)
+                  - [3.1.2.2- Respuesta de éxito](#3122--respuesta-de-éxito)
+        - [3.2.- Rendiciones Filtro](#32--rendiciones-filtro)
+            - [3.2.1.- Ejemplo de llamada](#321--ejemplo-de-llamada)
+            - [3.2.2.- Respuesta de Salida](#322--respuesta-de-salida)
+                  - [3.2.2.1- Respuesta de error](#3221--respuesta-de-error)
+                  - [3.2.2.2- Respuesta de éxito](#3222--respuesta-de-éxito)
+        - [3.3.- Rendiciones Filtro Exportar](#33--rendiciones-filtro-exportar)
+            - [3.3.1.- Ejemplo de llamada](#331--ejemplo-de-llamada)
+            - [3.3.2.- Respuesta de Salida](#332--respuesta-de-salida)
+                  - [3.3.2.1- Respuesta de error](#3321--respuesta-de-error)
+                  - [3.3.2.2- Respuesta de éxito](#3322--respuesta-de-éxito)
+        - [3.4.- Rendiciones Resumen Filtro](#34--rendiciones-resumen-filtro)
+            - [3.4.1.- Ejemplo de llamada](#341--ejemplo-de-llamada)
+            - [3.4.2.- Respuesta de Salida](#342--respuesta-de-salida)
+                  - [3.4.2.1- Respuesta de error](#3421--respuesta-de-error)
+                  - [3.4.2.2- Respuesta de éxito](#3422--respuesta-de-éxito)
   - [4.- Medios de Pago](#4--medios-de-pago)
-    - [4.1.- Canales de Pago](#41--canales-de-pago)
-        - [4.1.1.- Respuesta de Salida](#411--respuesta-de-salida)
-            - [4.1.1.1- Respuesta de éxito](#4111--respuesta-de-éxito)
-    - [4.2.- Clientes Suscritos](#42--clientes-suscritos)
-        - [4.2.1.- Respuesta de Salida](#421--respuesta-de-salida)
-            - [4.2.1.1- Respuesta de éxito](#4211--respuesta-de-éxito)
-    - [4.3.- Eliminar Registro](#43--eliminar-registro)
-        - [4.3.1.- Ejemplo de llamada](#431--ejemplo-de-llamada)
-        - [4.3.2.- Respuesta de Salida](#432--respuesta-de-salida)
-            - [4.3.2.1- Respuesta de éxito](#4321--respuesta-de-éxito)
-    - [4.4.- Exportar Factura](#44--exportar-factura)
-        - [4.4.1.- Respuesta de Salida](#441--respuesta-de-salida)
-            - [4.4.1.1- Respuesta de éxito](#4411--respuesta-de-éxito)
-    - [4.5.- Pago Factura](#45--pago-factura)
-        - [4.5.1.- Respuesta de Salida](#451--respuesta-de-salida)
-            - [4.5.1.1- Respuesta de éxito](#4511--respuesta-de-éxito)
-    - [4.6.- Empresa Factura](#46--empresa-factura)
-    - [4.7.- Filtros Factura](#47--filtros-factura)
-    - [4.8.- Pagos en 24 horas](#48--pagos-en-24-horas)
-        - [4.8.1.- Ejemplo de llamada](#481--ejemplo-de-llamada)
-        - [4.8.2.- Respuesta de Salida](#482--respuesta-de-salida)
-            - [4.8.2.1- Respuesta de error](#4821--respuesta-de-error)
-            - [4.8.2.2- Respuesta de éxito](#4822--respuesta-de-éxito)
-    - [4.9.- Medios de Pago](#49--medios-de-pago)
-        - [4.9.1.- Respuesta de Salida](#491--respuesta-de-salida)
-            - [4.9.1.1- Respuesta de éxito](#4911--respuesta-de-éxito)
-    - [4.10.- Facturas Empresa](#410--facturas-empresa)
-        - [4.10.1.- Ejemplo de llamada](#4101--ejemplo-de-llamada)
-        - [4.10.2.- Respuesta de Salida](#4102--respuesta-de-salida)
-            - [4.10.2.1- Respuesta de éxito](#41021--respuesta-de-éxito)
-    - [4.11.- Suscripciones](#411--suscripciones)
-        - [4.11.1.- Ejemplo de llamada](#4111--ejemplo-de-llamada)
-        - [4.11.2.- Respuesta de Salida](#4112--respuesta-de-salida)
-            - [4.11.2.1- Respuesta de error](#41121--respuesta-de-error)
-            - [4.11.2.2- Respuesta de éxito](#41122--respuesta-de-éxito)
+        - [4.1.- Canales de Pago](#41--canales-de-pago)
+            - [4.1.1.- Respuesta de Salida](#411--respuesta-de-salida)
+                  - [4.1.1.1- Respuesta de éxito](#4111--respuesta-de-éxito)
+        - [4.2.- Clientes Suscritos](#42--clientes-suscritos)
+            - [4.2.1.- Respuesta de Salida](#421--respuesta-de-salida)
+                  - [4.2.1.1- Respuesta de éxito](#4211--respuesta-de-éxito)
+        - [4.3.- Eliminar Registro](#43--eliminar-registro)
+            - [4.3.1.- Ejemplo de llamada](#431--ejemplo-de-llamada)
+            - [4.3.2.- Respuesta de Salida](#432--respuesta-de-salida)
+                  - [4.3.2.1- Respuesta de éxito](#4321--respuesta-de-éxito)
+        - [4.4.- Exportar Factura](#44--exportar-factura)
+            - [4.4.1.- Respuesta de Salida](#441--respuesta-de-salida)
+                  - [4.4.1.1- Respuesta de éxito](#4411--respuesta-de-éxito)
+        - [4.5.- Pago Factura](#45--pago-factura)
+            - [4.5.1.- Respuesta de Salida](#451--respuesta-de-salida)
+                  - [4.5.1.1- Respuesta de éxito](#4511--respuesta-de-éxito)
+        - [4.6.- Empresa Factura](#46--empresa-factura)
+        - [4.7.- Filtros Factura](#47--filtros-factura)
+        - [4.8.- Pagos en 24 horas](#48--pagos-en-24-horas)
+            - [4.8.1.- Ejemplo de llamada](#481--ejemplo-de-llamada)
+            - [4.8.2.- Respuesta de Salida](#482--respuesta-de-salida)
+                - [4.8.2.1- Respuesta de error](#4821--respuesta-de-error)
+                - [4.8.2.2- Respuesta de éxito](#4822--respuesta-de-éxito)
+        - [4.9.- Medios de Pago](#49--medios-de-pago)
+            - [4.9.1.- Respuesta de Salida](#491--respuesta-de-salida)
+                  - [4.9.1.1- Respuesta de éxito](#4911--respuesta-de-éxito)
+        - [4.10.- Facturas Empresa](#410--facturas-empresa)
+            - [4.10.1.- Ejemplo de llamada](#4101--ejemplo-de-llamada)
+            - [4.10.2.- Respuesta de Salida](#4102--respuesta-de-salida)
+                  - [4.10.2.1- Respuesta de éxito](#41021--respuesta-de-éxito)
+        - [4.11.- Suscripciones](#411--suscripciones)
+            - [4.11.1.- Ejemplo de llamada](#4111--ejemplo-de-llamada)
+            - [4.11.2.- Respuesta de Salida](#4112--respuesta-de-salida)
+                  - [4.11.2.1- Respuesta de error](#41121--respuesta-de-error)
+                  - [4.11.2.2- Respuesta de éxito](#41122--respuesta-de-éxito)
   - [5.- Informes](#5--informes)
-    - [5.1.- Procesados](#51--procesados)
-        - [5.1.1.- Ejemplo de llamada](#511--ejemplo-de-llamada)
-        - [5.1.2.- Respuesta de Salida](#512--respuesta-de-salida)
-            - [5.1.2.1- Respuesta de error](#5121--respuesta-de-error)
-            - [5.1.2.2- Respuesta de éxito](#5122--respuesta-de-éxito)
-    - [5.2.- Log Pagos](#52--log-pagos)
-        - [5.2.1.- Ejemplo de llamada](#521--ejemplo-de-llamada)
-        - [5.2.2.- Respuesta de Salida](#522--respuesta-de-salida)
-            - [5.2.2.1- Respuesta de error](#5221--respuesta-de-error)
-            - [5.2.2.2- Respuesta de éxito](#5222--respuesta-de-éxito)
-    - [5.3.- Pagos](#52--pagos)
-        - [5.3.1.- Ejemplo de llamada](#531--ejemplo-de-llamada)
-        - [5.3.2.- Respuesta de Salida](#532--respuesta-de-salida)
-            - [5.3.2.1- Respuesta de error](#5321--respuesta-de-error)
-            - [5.3.2.2- Respuesta de éxito](#5322--respuesta-de-éxito)
-    - [5.4.- Recaudación](#54--recaudación)
-        - [5.4.1.- Ejemplo de llamada](#541--ejemplo-de-llamada)
-        - [5.4.2.- Respuesta de Salida](#542--respuesta-de-salida)
-            - [5.4.2.1- Respuesta de error](#5421--respuesta-de-error)
-            - [5.4.2.2- Respuesta de éxito](#5422--respuesta-de-éxito)
-    - [5.5.- Registros Inválidos](#55--registros-inválidos)
-        - [5.5.1.- Ejemplo de llamada](#551--ejemplo-de-llamada)
-        - [5.5.2.- Respuesta de Salida](#552--respuesta-de-salida)
-            - [5.5.2.1- Respuesta de error](#5521--respuesta-de-error)
-            - [5.5.2.2- Respuesta de éxito](#5522--respuesta-de-éxito)
-    - [5.6.- Resumen de Montos del mes anterior y actual](#56--resumen-de-montos-del-mes-anterior-y-actual)
-        - [5.6.1.- Respuesta de Salida](#561--respuesta-de-salida)
-            - [5.6.1.1- Respuesta de éxito](#5611--respuesta-de-éxito)
-    - [5.7.- Resumen de Transacciones del mes anterior y actual](#57--resumen-de-transacciones-del-mes-anterior-y-actual)
-        - [5.7.1.- Respuesta de Salida](#571--respuesta-de-salida)
-            - [5.7.1.1- Respuesta de éxito](#5711--respuesta-de-éxito)
-    - [5.8.- Transacciones anuladas](#58--transacciones-anuladas)
-        - [5.8.1.- Respuesta de Salida](#581--respuesta-de-salida)
-            - [5.8.1.1- Respuesta de éxito](#5811--respuesta-de-éxito)
-    - [5.9.- Resumen Acumulado del Día](#59--resumen-acumulado-del-día)
-        - [5.9.1.- Respuesta de Salida](#591--respuesta-de-salida))
-            - [5.9.1.1- Respuesta de éxito](#5911--respuesta-de-éxito)
-    - [5.10.- Resumen de Montos del mes anterior y actual](#510--resumen-de-montos-del-mes-anterior-y-actual)
-        - [5.10.1.- Respuesta de Salida](#5101--respuesta-de-salida)
-            - [5.10.1.1- Respuesta de éxito](#51011--respuesta-de-éxito)
-    - [5.11.- Resumen de Pagos](#511--resumen-de-pagos)
-        - [5.11.1.- Respuesta de Salida](#5111--respuesta-de-salida)
-            - [5.11.1.1- Respuesta de éxito](#51111--respuesta-de-éxito)
-    - [5.12.- Resumen de Pagos por Canal](#512--resumen-de-pagos-por-canal)
-        - [5.12.1.- Respuesta de Salida](#5121--respuesta-de-salida)
-            - [5.12.1.1- Respuesta de éxito](#51211--respuesta-de-éxito)
-    - [5.13.- Resumen de Recaudación](#513--resumen-de-recaudación)
-        - [5.13.1.- Respuesta de Salida](#5131--respuesta-de-salida)
-            - [5.13.1.1- Respuesta de éxito](#51311--respuesta-de-éxito)
-    - [5.14.- Resumen de Recaudación por Canal](#514--resumen-de-recaudación-por-canal)
-        - [5.14.1.- Respuesta de Salida](#5141--respuesta-de-salida)
-            - [5.14.1.1- Respuesta de éxito](#51411--respuesta-de-éxito)
-    - [5.15.- Resumen de Transacciones del mes anterior y actual](#515--resumen-de-transacciones-del-mes-anterior-y-actual)
-        - [5.15.1.- Respuesta de Salida](#5151--respuesta-de-salida)
-            - [5.15.1.1- Respuesta de éxito](#51511--respuesta-de-éxito)
+        - [5.1.- Procesados](#51--procesados)
+            - [5.1.1.- Ejemplo de llamada](#511--ejemplo-de-llamada)
+            - [5.1.2.- Respuesta de Salida](#512--respuesta-de-salida)
+              - [5.1.2.1- Respuesta de error](#5121--respuesta-de-error)
+              - [5.1.2.2- Respuesta de éxito](#5122--respuesta-de-éxito)
+        - [5.2.- Log de Pagos](#52--log-de-pagos)
+            - [5.2.1.- Ejemplo de llamada](#521--ejemplo-de-llamada)
+            - [5.2.2.- Respuesta de Salida](#522--respuesta-de-salida)
+                  - [5.2.2.1- Respuesta de éxito](#5221--respuesta-de-éxito)
+        - [5.3.- Pagos](#52--pagos)
+            - [5.3.1.- Ejemplo de llamada](#531--ejemplo-de-llamada)
+            - [5.3.2.- Respuesta de Salida](#532--respuesta-de-salida)
+                  - [5.3.2.1- Respuesta de error](#5321--respuesta-de-error)
+                  - [5.3.2.2- Respuesta de éxito](#5322--respuesta-de-éxito)
+        - [5.4.- Recaudación](#54--recaudación)
+            - [5.4.1.- Ejemplo de llamada](#541--ejemplo-de-llamada)
+            - [5.4.2.- Respuesta de Salida](#542--respuesta-de-salida)
+                  - [5.4.2.1- Respuesta de error](#5421--respuesta-de-error)
+                  - [5.4.2.2- Respuesta de éxito](#5422--respuesta-de-éxito)
+        - [5.5.- Registros Inválidos](#55--registros-inválidos)
+            - [5.5.1.- Ejemplo de llamada](#551--ejemplo-de-llamada)
+            - [5.5.2.- Respuesta de Salida](#552--respuesta-de-salida)
+                  - [5.5.2.1- Respuesta de error](#5521--respuesta-de-error)
+                  - [5.5.2.2- Respuesta de éxito](#5522--respuesta-de-éxito)
+        - [5.6.- Resumen de Montos del mes anterior y actual](#56--resumen-de-montos-del-mes-anterior-y-actual)
+            - [5.6.1.- Respuesta de Salida](#561--respuesta-de-salida)
+                  - [5.6.1.1- Respuesta de éxito](#5611--respuesta-de-éxito)
+        - [5.7.- Resumen de Transacciones del mes anterior y actual](#57--resumen-de-transacciones-del-mes-anterior-y-actual)
+            - [5.7.1.- Respuesta de Salida](#571--respuesta-de-salida)
+                  - [5.7.1.1- Respuesta de éxito](#5711--respuesta-de-éxito)
+        - [5.8.- Transacciones anuladas](#58--transacciones-anuladas)
+            - [5.8.1.- Respuesta de Salida](#581--respuesta-de-salida)
+                  - [5.8.1.1- Respuesta de éxito](#5811--respuesta-de-éxito)
+        - [5.9.- Resumen Acumulado del Día](#59--resumen-acumulado-del-día)
+            - [5.9.1.- Respuesta de Salida](#591--respuesta-de-salida))
+                  - [5.9.1.1- Respuesta de éxito](#5911--respuesta-de-éxito)
+        - [5.10.- Resumen de Montos del mes anterior y actual](#510--resumen-de-montos-del-mes-anterior-y-actual)
+            - [5.10.1.- Respuesta de Salida](#5101--respuesta-de-salida)
+                  - [5.10.1.1- Respuesta de éxito](#51011--respuesta-de-éxito)
+        - [5.11.- Resumen de Pagos](#511--resumen-de-pagos)
+            - [5.11.1.- Respuesta de Salida](#5111--respuesta-de-salida)
+                  - [5.11.1.1- Respuesta de éxito](#51111--respuesta-de-éxito)
+        - [5.12.- Resumen de Pagos por Canal](#512--resumen-de-pagos-por-canal)
+            - [5.12.1.- Respuesta de Salida](#5121--respuesta-de-salida)
+                  - [5.12.1.1- Respuesta de éxito](#51211--respuesta-de-éxito)
+        - [5.13.- Resumen de Recaudación](#513--resumen-de-recaudación)
+            - [5.13.1.- Respuesta de Salida](#5131--respuesta-de-salida)
+                  - [5.13.1.1- Respuesta de éxito](#51311--respuesta-de-éxito)
+        - [5.14.- Resumen de Recaudación por Canal](#514--resumen-de-recaudación-por-canal)
+            - [5.14.1.- Respuesta de Salida](#5141--respuesta-de-salida)
+                  - [5.14.1.1- Respuesta de éxito](#51411--respuesta-de-éxito)
+        - [5.15.- Resumen de Transacciones del mes anterior y actual](#515--resumen-de-transacciones-del-mes-anterior-y-actual)
+            - [5.15.1.- Respuesta de Salida](#5151--respuesta-de-salida)
+                  - [5.15.1.1- Respuesta de éxito](#51511--respuesta-de-éxito)
   - [6.- Servicio de Pago](#6--servicio-de-pago)
-    - [6.1.- Base64 a Guid](#61--base64-a-guid)
-        - [6.1.1.- Ejemplo de llamada](#611--ejemplo-de-llamada)
-        - [6.1.2.- Respuesta de Salida](#612--respuesta-de-salida)
-            - [6.1.2.1- Respuesta de error](#6121--respuesta-de-error)
-            - [6.1.2.2- Respuesta de éxito](#6122--respuesta-de-éxito)
-    - [6.2.- Guid a Base64](#62--guid-a-base64)
-        - [6.2.1.- Ejemplo de llamada](#621--ejemplo-de-llamada)
-        - [6.2.2.- Respuesta de Salida](#622--respuesta-de-salida)
-            - [6.2.2.1- Respuesta de error](#6221--respuesta-de-error)
-            - [6.2.2.2- Respuesta de éxito](#6222--respuesta-de-éxito)
-    - [6.3.- Pagos en Proceso](#63--pagos-en-proceso)
-        - [6.3.1.- Respuesta de Salida](#631--respuesta-de-salida)
-            - [6.3.1.1- Respuesta de éxito](#6311--respuesta-de-éxito)
-    - [6.4.- Pagos en Proceso Cliente](#64--pagos-en-proceso-cliente)
-        - [6.4.1.- Ejemplo de llamada](#641--ejemplo-de-llamada)
-        - [6.4.2.- Respuesta de Salida](#642--respuesta-de-salida)
-            - [6.4.2.1- Respuesta de error](#6421--respuesta-de-error)
-            - [6.4.2.2- Respuesta de éxito](#6422--respuesta-de-éxito)
-    - [6.5.- Resumen Pagos en Proceso](#65--resumen-pagos-en-proceso)
-        - [6.5.1.- Respuesta de Salida](#651--respuesta-de-salida)
-            - [6.5.1.1- Respuesta de éxito](#6511--respuesta-de-éxito)
-    - [6.6.- Consulta Pagos](#66--consulta-pagos)
-        - [6.6.1.- Ejemplo de llamada](#661--ejemplo-de-llamada)
-        - [6.6.2.- Respuesta de Salida](#662--respuesta-de-salida)
-            - [6.6.2.1- Respuesta de error](#6621--respuesta-de-error)
-            - [6.6.2.2- Respuesta de éxito](#6622--respuesta-de-éxito)
-    - [6.7.- Actualizar Proceso](#67--actualizar-proceso)
-        - [6.7.1.- Ejemplo de llamada](#671--ejemplo-de-llamada)
-        - [6.7.2.- Respuesta de Salida](#672--respuesta-de-salida)
-            - [6.7.2.1- Respuesta de error](#6721--respuesta-de-error)
-            - [6.7.2.2- Respuesta de éxito](#6722--respuesta-de-éxito)
-    - [6.8.- Consolidar Deuda](#68--consolidar-deuda)
-        - [6.8.1.- Ejemplo de llamada](#681--ejemplo-de-llamada)
-        - [6.8.2.- Respuesta de Salida](#682--respuesta-de-salida)
-            - [6.8.2.1- Respuesta de error](#6821--respuesta-de-error)
-            - [6.8.2.2- Respuesta de éxito](#6822--respuesta-de-éxito)
-    - [6.9.- Procesar Pago](#69--procesar-pago)
-        - [6.9.1.- Ejemplo de llamada](#691--ejemplo-de-llamada)
-        - [6.9.2.- Respuesta de Salida](#692--respuesta-de-salida)
-            - [6.9.2.1- Respuesta de error](#6921--respuesta-de-error)
-            - [6.9.2.2- Respuesta de éxito](#6922--respuesta-de-éxito)
+        - [6.1.- Base64 a Guid](#61--base64-a-guid)
+            - [6.1.1.- Ejemplo de llamada](#611--ejemplo-de-llamada)
+            - [6.1.2.- Respuesta de Salida](#612--respuesta-de-salida)
+                  - [6.1.2.1- Respuesta de error](#6121--respuesta-de-error)
+                  - [6.1.2.2- Respuesta de éxito](#6122--respuesta-de-éxito)
+        - [6.2.- Guid a Base64](#62--guid-a-base64)
+            - [6.2.1.- Ejemplo de llamada](#621--ejemplo-de-llamada)
+            - [6.2.2.- Respuesta de Salida](#622--respuesta-de-salida)
+                  - [6.2.2.1- Respuesta de error](#6221--respuesta-de-error)
+                  - [6.2.2.2- Respuesta de éxito](#6222--respuesta-de-éxito)
+        - [6.3.- Pagos en Proceso](#63--pagos-en-proceso)
+            - [6.3.1.- Respuesta de Salida](#631--respuesta-de-salida)
+                  - [6.3.1.1- Respuesta de éxito](#6311--respuesta-de-éxito)
+        - [6.4.- Pagos en Proceso Cliente](#64--pagos-en-proceso-cliente)
+            - [6.4.1.- Ejemplo de llamada](#641--ejemplo-de-llamada)
+            - [6.4.2.- Respuesta de Salida](#642--respuesta-de-salida)
+                  - [6.4.2.1- Respuesta de error](#6421--respuesta-de-error)
+                  - [6.4.2.2- Respuesta de éxito](#6422--respuesta-de-éxito)
+        - [6.5.- Resumen Pagos en Proceso](#65--resumen-pagos-en-proceso)
+            - [6.5.1.- Respuesta de Salida](#651--respuesta-de-salida)
+                  - [6.5.1.1- Respuesta de éxito](#6511--respuesta-de-éxito)
+        - [6.6.- Consulta Pagos](#66--consulta-pagos)
+            - [6.6.1.- Ejemplo de llamada](#661--ejemplo-de-llamada)
+            - [6.6.2.- Respuesta de Salida](#662--respuesta-de-salida)
+                  - [6.6.2.1- Respuesta de error](#6621--respuesta-de-error)
+                  - [6.6.2.2- Respuesta de éxito](#6622--respuesta-de-éxito)
+        - [6.7.- Actualizar Proceso](#67--actualizar-proceso)
+            - [6.7.1.- Ejemplo de llamada](#671--ejemplo-de-llamada)
+            - [6.7.2.- Respuesta de Salida](#672--respuesta-de-salida)
+                  - [6.7.2.1- Respuesta de error](#6721--respuesta-de-error)
+                  - [6.7.2.2- Respuesta de éxito](#6722--respuesta-de-éxito)
+        - [6.8.- Consolidar Deuda](#68--consolidar-deuda)
+            - [6.8.1.- Ejemplo de llamada](#681--ejemplo-de-llamada)
+            - [6.8.2.- Respuesta de Salida](#682--respuesta-de-salida)
+                  - [6.8.2.1- Respuesta de error](#6821--respuesta-de-error)
+                  - [6.8.2.2- Respuesta de éxito](#6822--respuesta-de-éxito)
+        - [6.9.- Procesar Pago](#69--procesar-pago)
+            - [6.9.1.- Ejemplo de llamada](#691--ejemplo-de-llamada)
+            - [6.9.2.- Respuesta de Salida](#692--respuesta-de-salida)
+                  - [6.9.2.1- Respuesta de error](#6921--respuesta-de-error)
+                  - [6.9.2.2- Respuesta de éxito](#6922--respuesta-de-éxito)
 
 
 
 
 # Objetivo
 
-Describir objetivo
+Disponer Api's para realizar la gestión de los distintos medios de pago de Mundo.
 
 # Restricciones
 
-Especificar restricciones
+En este documento solo se describen Api's propias del sistema, no externas a este.
 
 
 # 1.- Empresas
@@ -203,11 +202,13 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/empresas/existecliente`
 
 **Parámetros de entrada:**
+
 | Campo        |  Tipo        | Formato                        |     Requerido                   | Descripción                 |
 |:------------:|:------------:|:------------------------------:|:-------------------------------:|----------------------------:|
 | Rut          | string       | NNNNNNNNC                      | Si                              | Rut del cliente a buscar    |
 
 **Datos de salida:**
+
 |          Descripción                             |
 |-------------------------------------------------:| 
 | 0 : si no existe cliente, 1 : si existe cliente  |
@@ -248,11 +249,13 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/empresas/obtenerdeuda`
 
 **Parámetros de entrada:**
+
 | Campo        |  Tipo        | Formato                        |     Requerido                   | Descripción                 |
 |:------------:|:------------:|:------------------------------:|:-------------------------------:|----------------------------:|
 | Rut          | string       | NNNNNNNNC                      | Si                              | Rut del cliente a buscar deudas|
 
 **Datos de salida:**
+
 | Campo             |  Tipo        |                         Descripción              |
 |:------------------|:------------:|-------------------------------------------------:| 
 | identificador     | string       | ID de la deuda                                   | 
@@ -326,6 +329,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/pagos/procesapago`
 
 **Parámetros de entrada:**
+
 | Campo          | Formato        |     Requerido    |          Descripción      |
 |:--------------:|:--------------:|:----------------:|--------------------------:|
 | Canal          |                |                  | Tipo de canal             |
@@ -440,11 +444,13 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/rendiciones`
 
 **Parámetros de entrada:**
+
 | Campo        |  Tipo        | Formato                        |     Requerido                   | Descripción                 |
 |:------------:|:------------:|:------------------------------:|:-------------------------------:|----------------------------:|
 | Rut          | string       | NNNNNNNNC                      | Si                              | Rut del cliente             |
 
 **Datos de salida:**
+
 | Campo           |  Tipo        |                         Descripción              |
 |:----------------|:------------:|-------------------------------------------------:| 
 | fechaPago       | date         | Fecha de pago                                    |
@@ -516,6 +522,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/rendicionesFilter`
 
 **Parámetros de entrada:**
+
 | Campo        |  Tipo        | Formato                        |     Requerido                   | Descripción                 |
 |:------------:|:------------:|:------------------------------:|:-------------------------------:|----------------------------:|
 | per_page     | int          |                                |                                 | Cantidad de resultados por página|
@@ -524,6 +531,7 @@ Ruta : GET `/rendicionesFilter`
 
 
 **Datos de salida:**
+
 | Campo              |  Tipo        |                         Descripción              |
 |:-------------------|:------------:|-------------------------------------------------:| 
 | MPRE_ID_REGISTRO   | int          | ID del registro                                  | 
@@ -598,6 +606,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/rendicionesFilterExportar`
 
 **Parámetros de entrada:**
+
 | Campo        |  Tipo        | Formato                        |     Requerido                   | Descripción                 |
 |:------------:|:------------:|:------------------------------:|:-------------------------------:|----------------------------:|
 | per_page     | int          |                                |                                 | Cantidad de resultados por página|
@@ -605,6 +614,7 @@ Ruta : GET `/rendicionesFilterExportar`
 | medioPago    | int          |                                | Si                              | Tipo de medio de pago       |
 
 **Datos de salida:**
+
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | idTrx          | string       | ID de la transacción                             |
@@ -673,6 +683,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/rendicionesresumenFilter`
 
 **Parámetros de entrada:**
+
 | Campo         |  Tipo        | Formato                        |     Requerido                   | Descripción                 |
 |:-------------:|:------------:|:------------------------------:|:-------------------------------:|----------------------------:|
 | medioPago     | int          |                                | Si                              | ID del medio de pago        |
@@ -680,6 +691,7 @@ Ruta : GET `/rendicionesresumenFilter`
 | fechaPagoHasta| date         | yyyy/mm/dd                     |                                 | Fecha final                 |
 
 **Datos de salida:**
+
 | Campo              |  Tipo        |                         Descripción              |
 |:-------------------|:------------:|-------------------------------------------------:| 
 | FECHA              | date         | Fecha del pago                                   |
@@ -745,6 +757,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/canalespago`
 
 **Datos de salida:**
+
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | IdUnidad       | string       | ID de unidad                                     |
@@ -794,6 +807,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/clientessuscritos`
 
 **Datos de salida:**
+
 | Campo           |  Tipo        |                         Descripción              |
 |:----------------|:------------:|-------------------------------------------------:| 
 | identificador   | string       | Identificador del cliente                        |
@@ -839,6 +853,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/getEliminaregistro`
 
 **Parámetros de entrada:**
+
 | Campo        |  Tipo        | Formato                        |     Requerido            |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:------------------------:|----------------------------:|
 | idregistro   | int          |                                | si                       | ID del registro             |
@@ -874,6 +889,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/getFacturaExportar`
 
 **Datos de salida:**
+
 | Campo                 |  Tipo        |                         Descripción              |
 |:----------------------|:------------:|-------------------------------------------------:| 
 | MPDC_ID_DETALLE_CARGA | int          | Breve descripción                                |
@@ -933,6 +949,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/getFacturaPago`
 
 **Datos de salida:**
+
 | Campo                 |  Tipo        |                         Descripción              |
 |:----------------------|:------------:|-------------------------------------------------:| 
 | MPDC_ID_DETALLE_CARGA | int          | Breve descripción                                |
@@ -990,14 +1007,14 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	}
 
 ## 4.6.- Empresa Factura
-**Método sin uso, desactualizado y/o mantenimiento**
+**Método sin uso, desactualizado y/o en mantenimiento**
 
 Ruta : GET `/getFacturasEmpresa`
 
 
 
 ## 4.7.- Filtros Factura
-**Método sin uso, desactualizado y/o mantenimiento**
+**Método sin uso, desactualizado y/o en mantenimiento**
 
 Ruta : GET `/getFacturasFilter`
 
@@ -1011,11 +1028,13 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/ivr/pagos24horas`
 
 **Parámetros de entrada:**
+
 | Campo        |  Tipo        | Formato                        |     Requerido                   | Descripción                 |
 |:------------:|:------------:|:------------------------------:|:-------------------------------:|----------------------------:|
 | Rut          | string       | NNNNNNNNC                      | Si                              | Rut del cliente a buscar    |
 
 **Datos de salida:**
+
 | Campo              |  Tipo        |                         Descripción              |
 |:-------------------|:------------:|-------------------------------------------------:| 
 | MPRE_ID_TRANSACCION| string       | ID de la transacción                             |
@@ -1067,6 +1086,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/mediosPago`
 
 **Datos de salida:**
+
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | id             | string       | ID del medio de pago                             |
@@ -1103,8 +1123,9 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/postFacturasEmpresa`
 
 **Parámetros de entrada:**
+
 | Campo           |  Tipo        | Formato                        |     Requerido                |             Descripción     |
-|:---------------:|:------------:|:------------------------------:|:------------- --------------:|----------------------------:|
+|:---------------:|:------------:|:------------------------------:|:----------------------------:|----------------------------:|
 | tiporegistro    | int          |                                | Si                           | Tipo de registro            |
 | ctdfilas        | int          |                                | Si                           | Cantidad de filas           |
 | nombrearchivo   | string       |                                | Si                           | Nombre del archivo          |
@@ -1117,6 +1138,7 @@ Ruta : GET `/postFacturasEmpresa`
 | fechavencimiento| date         | YYYY/mm/dd                     | Si                           | Fecha vencimiento           |
 
 **Datos de salida:**
+
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | Id_Archivo     | string       | Id del archivo                                   |
@@ -1161,11 +1183,13 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/suscripciones`
 
 **Parámetros de entrada:**
+
 | Campo        |  Tipo        | Formato                        |     Requerido                   | Descripción                 |
 |:------------:|:------------:|:------------------------------:|:-------------------------------:|----------------------------:|
 | Rut          | string       | NNNNNNNNC                      | Si                              | Rut del cliente a buscar    |
 
 **Datos de salida:**
+
 | Campo           |  Tipo        |                         Descripción              |
 |:----------------|:------------:|-------------------------------------------------:| 
 | identificador   | string       | Identificador                                    |
@@ -1225,12 +1249,14 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/informes/archivos/procesados`
 
 **Parámetros de entrada:**
+
 | Campo            |  Tipo        | Formato                        |     Requerido            |             Descripción     |
 |:----------------:|:------------:|:------------------------------:|:------------------------:|----------------------------:|
 | fechaProceso     | date         | dd/mm/yyyy                     |                          | Fecha                       |
 | per_page         | int          |                                |                          | Cantidad de resultados por página|
 
 **Datos de salida:**
+
 | Campo             |  Tipo        |                         Descripción              |
 |:------------------|:------------:|-------------------------------------------------:| 
 |  idArchivo        | string       | ID del archivo                                   |
@@ -1295,12 +1321,14 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/informes/logpagos`
 
 **Parámetros de entrada:**
+
 | Campo            |  Tipo        | Formato                        |     Requerido            |             Descripción     |
 |:----------------:|:------------:|:------------------------------:|:------------------------:|----------------------------:|
 | Rut              | string       | NNNNNNNNC                      |                          | Rut del cliente             |
 | per_page         | int          |                                |                          | Cantidad de resultados por página|
 
 **Datos de salida:**
+
 | Campo               |  Tipo        |                         Descripción              |
 |:--------------------|:------------:|-------------------------------------------------:| 
 | identificador       | string       | ID del pago                                      |
@@ -1327,14 +1355,8 @@ Ejemplo: JSON
 ### 5.2.2.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 5.2.2.1.- Respuesta de error
-
-	{
-        ...
-	} 
   
-#### 5.2.2.2.- Respuesta de éxito
+#### 5.2.2.1.- Respuesta de éxito
 
 	{
                 "current_page": 1,
@@ -1374,12 +1396,14 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/informes/pagos`
 
 **Parámetros de entrada:**
+
 | Campo            |  Tipo        | Formato                        |     Requerido            |             Descripción     |
 |:----------------:|:------------:|:------------------------------:|:------------------------:|----------------------------:|
 | Rut              | string       | NNNNNNNNC                      |                          | Rut del cliente             |
 | per_page         | int          |                                |                          | Cantidad de resultados por página|
 
 **Datos de salida:**
+
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | identificador  | string       | Identificador del pago                           |
@@ -1441,6 +1465,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/informes/recaudacion`
 
 **Parámetros de entrada:**
+
 | Campo        |  Tipo        | Formato                        |     Requerido           |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:-----------------------:|----------------------------:|
 | Anio         | int          |                                |                         | Año                         |
@@ -1449,6 +1474,7 @@ Ruta : GET `/informes/recaudacion`
 | TipoReporte  | int          |                                |                         | ID del tipo de reporte      |
 
 **Datos de salida:**
+
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | Dia            | int          | Día                                              |
@@ -1503,12 +1529,14 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/informes/rendicion/registrosinvalidos`
 
 **Parámetros de entrada:**
+
 | Campo            |  Tipo        | Formato                        |     Requerido            |             Descripción     |
 |:----------------:|:------------:|:------------------------------:|:------------------------:|----------------------------:|
 | fechaProceso     | date         | YYYY/mm/dd                     |                          | Fecha del proceso           |
 | per_page         | int          |                                |                          | Cantidad de resultados por página|
 
 **Datos de salida:**
+
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | identificador  | string       | Identificador                                    |
@@ -1568,6 +1596,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/informes/rendicion/resumenmontomesanterioactual`
 
 **Datos de salida:**
+
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | mes            | string       | Nombre del mes                                   |
@@ -1603,6 +1632,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/informes/rendicion/resumentrxmesanterioactual`
 
 **Datos de salida:**
+
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | mes            | string       | Nombre del mes                                   |
@@ -1670,6 +1700,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/informes/resumenacumuladodia`
 
 **Datos de salida:**
+
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | mes            | string       | Nombre del mes                                   |
@@ -1706,6 +1737,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/informes/resumenmontomesanterioactual`
 
 **Datos de salida:**
+
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | unidad         | string       | Nombre de la unidad                              |
@@ -1743,6 +1775,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/informes/resumenpagos`
 
 **Datos de salida:**
+
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | id             | string       | Hora del día                                     |
@@ -1790,6 +1823,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/informes/resumenpagosporcanal`
 
 **Datos de salida:**
+
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | id             | string       | Hora del día                                     |
@@ -1840,6 +1874,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/informes/resumenrecaudacion`
 
 **Datos de salida:**
+
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | id             | string       | Hora del día                                     |
@@ -1888,6 +1923,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/informes/resumenrecaudacioncanal`
 
 **Datos de salida:**
+
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | id             | string       | Hora del día                                     |
@@ -1933,6 +1969,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/informes/resumentrxmesanterioactual`
 
 **Datos de salida:**
+
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | unidad         | string       | Nombre de la unidad                              |
@@ -1972,6 +2009,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/funciones/base64toguid`
 
 **Parámetros de entrada:**
+
 | Campo        |  Tipo        | Formato                        |     Requerido           |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:-----------------------:|----------------------------:|
 | idTrx        | string       | base64                         | Si                      | Breve descripción           |
@@ -2005,6 +2043,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/funciones/guidtobase64`
 
 **Parámetros de entrada:**
+
 | Campo        |  Tipo        | Formato                        |     Requerido           |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:-----------------------:|----------------------------:|
 | idTrx        | string       | Guid                           | Si                      | Breve descripción           |
@@ -2023,9 +2062,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 6.2.2.1.- Respuesta de error
 
-	{
-        ...
-	} 
+`----` 
   
 #### 6.2.2.2.- Respuesta de éxito
 
@@ -2039,6 +2076,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/informes/pagosenproceso`
 
 **Datos de salida:**
+
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | idTransaccion  | string       | Identificador de la transacción                  |
@@ -2086,11 +2124,13 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/informes/pagosenprocesocliente`
 
 **Parámetros de entrada:**
+
 | Campo        |  Tipo        | Formato                        |     Requerido                   | Descripción                 |
 |:------------:|:------------:|:------------------------------:|:-------------------------------:|----------------------------:|
 | Rut          | string       | NNNNNNNNC                      | Si                              | Rut del cliente a buscar    |
 
 **Datos de salida:**
+
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | idTransaccion  | string       | Identificador de la transacción                  |
@@ -2156,6 +2196,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/informes/resumenpagosenproceso`
 
 **Datos de salida:**
+
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | procesado      | int          | Breve descripción                                |
@@ -2194,11 +2235,13 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/ivr/consultapago`
 
 **Parámetros de entrada:**
+
 | Campo        |  Tipo        | Formato                        |     Requerido                   | Descripción                 |
 |:------------:|:------------:|:------------------------------:|:-------------------------------:|----------------------------:|
 | Rut          | string       | NNNNNNNNC                      | Si                              | Rut del cliente a buscar    |
 
 **Datos de salida:**
+
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
 | Nombre Campo   | Tipo de dato | Breve descripción                                |
@@ -2241,6 +2284,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/pagos/actualizaproceso`
 
 **Parámetros de entrada:**
+
 | Campo        |  Tipo        | Formato                        |     Requerido             |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:-------------------------:|----------------------------:|
 | IdCliente    | string       | NNNNNNNNC                      | Si                        | ID del cliente              |
@@ -2275,9 +2319,10 @@ Método que permite consolidar deuda de un cliente.
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `/pagos/consolidadeuda`
+Ruta : POST `/MundoWebpay/services/servicioDeuda`
 
 **Parámetros de entrada:**
+
 | Campo        | Formato                        |     Requerido        |             Descripción     |
 |:------------:|:------------------------------:|:--------------------:|----------------------------:|
 | RutCliente   | NNNNNNNNC                      |  Si                  | Rut del cliente             |
@@ -2285,9 +2330,20 @@ Ruta : POST `/pagos/consolidadeuda`
 | UnidadNegocio|                                |                      | Unidad de negocio           |
 
 **Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+
+| Campo          |                          Descripción              |
+|:---------------|:-------------------------------------------------:| 
+| IDTransaccion  |  ID de la transacción                             |
+| IDCliente      |  ID del cliente                                   |
+| NombreCliente  |  Nombre del cliente                               |
+| DeudaVencida   |  Monto deuda vencida                              |
+| FechaVencida   |  Fecha de deuda vencida                           |
+| DeudaPorVencer |  Monto deuda por vencer                           |
+| FechaPorVencer |  Fecha de deudar por vencer                       |
+|DocumentoPorVencer|Documento de deuda por vencer                    |
+| DeudaTotal     |  Deuda total                                      |
+| TimeStamp      |  Fecha y hora                                     |
+
 
 ### 6.8.1.- Ejemplo de llamada
 
@@ -2298,7 +2354,7 @@ Ejemplo: XML
    <soapenv:Header/>
    <soapenv:Body>
       <ws:ConsolidaDeudaRut>
-         <RutCliente>154489770</RutCliente>
+         <RutCliente>189503253</RutCliente>
          <Canal>bs</Canal>
          <!--Optional: MPH = DEUDA HOGAR MPM= DEUDA MOVIL-->
          <UnidadNegocio>MPH</UnidadNegocio>
@@ -2334,10 +2390,34 @@ codigo: 200 éxito mensaje: descripcion del mensaje
   
 #### 6.8.2.2.- Respuesta de éxito
 
-	{
-        ...
-	}
-
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://ws.mundo.accolm.com/">
+    <SOAP-ENV:Body>
+        <ns1:ConsolidaDeudaRutResponse>
+            <Resultados>
+                <EstadoResultado>
+                    <Codigo>0</Codigo>
+                    <Descripcion>Exito</Descripcion>
+                    <Observaciones>Codigo devuelto en el caso de Exito</Observaciones>
+                </EstadoResultado>
+                <DatosResultado>
+                    <IDTransaccion>3f98c1cf-3933-4ec5-b295-ba06849b9d73</IDTransaccion>
+                    <IDCliente>189503253</IDCliente>
+                    <NombreCliente>Zapata Castellon Guillermo Antonio</NombreCliente>
+                    <DeudaVencida>0</DeudaVencida>
+                    <FechaVencida></FechaVencida>
+                    <DeudaPorVencer>1934</DeudaPorVencer>
+                    <FechaPorVencer>10/09/2021</FechaPorVencer>
+                    <DocumentoPorVencer>18479344</DocumentoPorVencer>
+                    <DeudaTotal>1934</DeudaTotal>
+                    <TimeStamp>20210901181223955</TimeStamp>
+                </DatosResultado>
+            </Resultados>
+        </ns1:ConsolidaDeudaRutResponse>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+```
 
 ## 6.9.- Procesar Pago
 Método que permite procesar pago de un cliente.
@@ -2347,6 +2427,7 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/MundoWebpay/services/servicioDeuda`
 
 **Parámetros de entrada:**
+
 | Campo          | Formato        |     Requerido    |          Descripción      |
 |:--------------:|:--------------:|:----------------:|--------------------------:|
 | Canal          |                |                  | Tipo de canal             |
