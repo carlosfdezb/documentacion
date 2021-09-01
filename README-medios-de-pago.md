@@ -358,7 +358,7 @@ Ejemplo: XML
       </ws:ProcesaPago>
    </soapenv:Body>
 </soapenv:Envelope>
-.```
+```
 
 ### 2.1.2.- Respuesta de salida
 
