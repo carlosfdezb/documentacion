@@ -790,7 +790,7 @@ Ruta : POST `/api/recibeMjeTelegramConnect`
 
 **Parámetros de entrada:**
 | Campo              |  Tipo                      | Formato          | Requerido           | Descripción                 |
-|:------------------:|:--------------------------:|:----------------:|:-------------------:|----------------------------:|
+|:-------------------|:--------------------------:|:----------------:|:-------------------:|----------------------------:|
 | update_id          | int                        |                  | Si                  | Identificador del update    |
 | ↓ message          | array[object]              |                  | Si                  | Nuevo mensaje de cualquier tipo|
 | → message_id       | int                        |                  | Si                  | Identificador del mensaje    |
