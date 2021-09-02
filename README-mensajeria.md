@@ -792,7 +792,7 @@ Ruta : POST `/api/recibeMjeTelegramConnect`
 | Campo              |  Tipo                                          | Formato          | Requerido           | Descripción                 |
 |:-------------------|:----------------------------------------------:|:----------------:|:-------------------:|----------------------------:|
 | update_id          | int                                            |                  | Si                  | Identificador del update    |
-| ↓ message ↓        | array[object]                                  |                  | Si                  |                             |
+| ▼ message          | array[object]                                  |                  | Si                  |                             |
 | ⤷ message_id       | int                                            |                  | Si                  | Identificador del mensaje   |
 | ⤷ from             | [User](https://core.telegram.org/bots/api#user)|                  |                     | Remitente del mensaje       |
 | ⤷ sender_chat      | [Chat](https://core.telegram.org/bots/api#chat)|                  |                     | Remitente del mensaje enviado en nombre de un chat|
