@@ -803,22 +803,20 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/api/recibeMjeTelegramConnect`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato          | Requerido           | Descripción                 |
-|:------------:|:------------:|:----------------:|:-------------------:|----------------------------:|
-| update_id    | int          |                  |                     | Identificador del update    |
-| message      | [Message](https://core.telegram.org/bots/api#message)|                  |                     | Identificador del update    |
-| edited_message|Message      |                  |                     | Identificador del update    |
-| channel_post  |Message          |                  |                     | Identificador del update    |
-| update_id    | int          |                  |                     | Identificador del update    |
-| update_id    | int          |                  |                     | Identificador del update    |
-| update_id    | int          |                  |                     | Identificador del update    |
-| update_id    | int          |                  |                     | Identificador del update    |
-| update_id    | int          |                  |                     | Identificador del update    |
-| update_id    | int          |                  |                     | Identificador del update    |
-| update_id    | int          |                  |                     | Identificador del update    |
-| update_id    | int          |                  |                     | Identificador del update    |
-| update_id    | int          |                  |                     | Identificador del update    |
-| update_id    | int          |                  |                     | Identificador del update    |
+| Campo              |  Tipo                                                | Formato          | Requerido           | Descripción                 |
+|:------------------:|:----------------------------------------------------:|:----------------:|:-------------------:|----------------------------:|
+| update_id          | int                                                  |                  | Si                  | Identificador del update    |
+| message            | [Message](https://core.telegram.org/bots/api#message)|                  |                     | Nuevo mensaje de cualquier tipo|
+| edited_message     | [Message](https://core.telegram.org/bots/api#message)|                  |                     | Nueva versión editada del mensaje|
+| channel_post       | [Message](https://core.telegram.org/bots/api#message)|                  |                     | Nuevo canal de cualquier tipo|
+| edited_channel_post| [Message](https://core.telegram.org/bots/api#message)|                  |                     | Nueva versión del canal     |
+| inline_query       | [InlineQuery](https://core.telegram.org/bots/api#inlinequery)|          |                     | Nuevo Inline query           |
+|chosen_inline_result| [ChosenInlineResult](https://core.telegram.org/bots/api#choseninlineresult)||                 | Resultado de la Inline query|
+| callback_query     | [CallbackQuery](https://core.telegram.org/bots/api#callbackquery)|      |                     | Nueva Callback query         |
+| shipping_query     | [ShippingQuery](https://core.telegram.org/bots/api#shippingquery)|      |                     | Nueva Shipping query         |
+| pre_checkout_query | [PreCheckoutQuery](https://core.telegram.org/bots/api#precheckoutquery)||                     | Nueva pre-checkout query     |
+| poll               | [Poll](https://core.telegram.org/bots/api#poll)      |                  |                     | Nueva estado de Poll         |
+| poll_answer        | [PollAnswer](https://core.telegram.org/bots/api#pollanswer)|            |                     | Nueva estado de Poll         |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
