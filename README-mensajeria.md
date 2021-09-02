@@ -793,15 +793,15 @@ Ruta : POST `/api/recibeMjeTelegramConnect`
 |:-------------------|:----------------------------------------------:|:----------------:|:-------------------:|----------------------------:|
 | update_id          | int                                            |                  | Si                  | Identificador del update    |
 | ↓ message          | array[object]                                  |                  | Si                  |                             |
-| → message_id       | int                                            |                  | Si                  | Identificador del mensaje   |
-| → from             | [User](https://core.telegram.org/bots/api#user)|                  |                     | Remitente del mensaje       |
-| → sender_chat      | [Chat](https://core.telegram.org/bots/api#chat)|                  |                     | Remitente del mensaje enviado en nombre de un chat|
-| → date             | date                                           | Unix             | Si                  | Fecha del mensaje           |
-| → chat             | [Chat](https://core.telegram.org/bots/api#chat)|                  | Si                  | Conversación a la que pertenece el mensaje|
-| → forward_from     | [User](https://core.telegram.org/bots/api#user)|                  |                     | Para mensajes reenviados, remitente del mensaje original|
-| → forward_from_chat| [Chat](https://core.telegram.org/bots/api#chat)|                  |                     | Para mensajes reenviados desde chats, remitente del mensaje original|
-| → forward_from_message_id| int                                      |                  |                     | Para mensajes reenviados desde chats, identificador del mensaje original|
-| → forward_signature| string                                         |                  |                     | Para mensajes reenviados desde chats, firma del autor de la publicación|
+| ↪ message_id       | int                                            |                  | Si                  | Identificador del mensaje   |
+| ↪ from             | [User](https://core.telegram.org/bots/api#user)|                  |                     | Remitente del mensaje       |
+| ↪ sender_chat      | [Chat](https://core.telegram.org/bots/api#chat)|                  |                     | Remitente del mensaje enviado en nombre de un chat|
+| ↪ date             | date                                           | Unix             | Si                  | Fecha del mensaje           |
+| ↪ chat             | [Chat](https://core.telegram.org/bots/api#chat)|                  | Si                  | Conversación a la que pertenece el mensaje|
+| ↪ forward_from     | [User](https://core.telegram.org/bots/api#user)|                  |                     | Para mensajes reenviados, remitente del mensaje original|
+| ↪ forward_from_chat| [Chat](https://core.telegram.org/bots/api#chat)|                  |                     | Para mensajes reenviados desde chats, remitente del mensaje original|
+| ↪ forward_from_message_id| int                                      |                  |                     | Para mensajes reenviados desde chats, identificador del mensaje original|
+| ↪ forward_signature| string                                         |                  |                     | Para mensajes reenviados desde chats, firma del autor de la publicación|
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
