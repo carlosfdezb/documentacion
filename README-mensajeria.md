@@ -796,37 +796,38 @@ Ruta : POST `/api/recibeMjeTelegramConnect`
 | ⤷ message_id       | int                                            |                  | Si                  | Identificador del mensaje   |
 | ⤷ from             | [User](https://core.telegram.org/bots/api#user)|                  |                     | Remitente del mensaje       |
 | ⤷ sender_chat      | [Chat](https://core.telegram.org/bots/api#chat)|                  |                     | Remitente del mensaje enviado en nombre de un chat|
-| ⤷ date             | date                                           | Unix             | Si                  | Fecha del mensaje           |
+| ⤷ date             | int                                            | Unix             | Si                  | Fecha del mensaje           |
 | ⤷ chat             | [Chat](https://core.telegram.org/bots/api#chat)|                  | Si                  | Conversación a la que pertenece el mensaje|
 | ⤷ forward_from     | [User](https://core.telegram.org/bots/api#user)|                  |                     | Para mensajes reenviados, remitente del mensaje original|
 | ⤷ forward_from_chat| [Chat](https://core.telegram.org/bots/api#chat)|                  |                     | Para mensajes reenviados desde chats, remitente del mensaje original|
 | ⤷ forward_from_message_id| int                                      |                  |                     | Para mensajes reenviados desde chats, identificador del mensaje original|
 | ⤷ forward_signature| string                                         |                  |                     | Para mensajes reenviados desde chats, firma del autor de la publicación|
+| ⤷ forward_sender_name| string                                       |                  |                     | Nombre del remitente para los mensajes reenviado|
+| ⤷ forward_date     | int                                            | Unix             |                     | Para mensajes reenviados, fecha del mensaje original|
+| ⤷ reply_to_message | [Message](https://core.telegram.org/bots/api#message)|            |                     | Para respuestas, el mensaje original|
+| ⤷ via_bot          | [User](https://core.telegram.org/bots/api#user)|                  |                     | Bot a través del cual se envió el mensaje|
+| ⤷ edit_date        | int                                            | Unix             |                     | Fecha de la última edición del mensaje |
+| ⤷ media_group_id   | string                                         |                  |                     | Identificador de un grupo de mensajes multimedia |
+| ⤷ author_signature | string                                         |                  |                     | Firma del autor de la publicación |
+| ⤷ text             | string                                         |                  |                     | Texto del mensaje, hasta 4096 caracteres |
+| ⤷ entities         | [MessageEntity](https://core.telegram.org/bots/api#messageentity)||                     | Para mensajes de texto, entidades especiales como url, comandos de bot, etc|
+| ⤷ animation        | [Animation](https://core.telegram.org/bots/api#animation)|        |                     | El mensaje es una animación |
+| ⤷ audio            | [Audio](https://core.telegram.org/bots/api#audio)|                |                     | El mensaje es un archivo de audio|
+| ⤷ document         | [Document](https://core.telegram.org/bots/api#document)|          |                     | El mensaje es un archivo    |
+| ⤷ photo            | [PhotoSize](https://core.telegram.org/bots/api#photosize)|        |                     | El mensaje es un foto       |
 
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
 
-### 15.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
-
-### 15.2.- Respuesta de salida
+### 15.1.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
 
-#### 15.2.1.- Respuesta de error
+#### 15.1.1.- Respuesta de error
 
 	{
         ...
 	} 
   
-#### 15.2.2.- Respuesta de éxito
+#### 15.1.2.- Respuesta de éxito
 
 	{
        ...
