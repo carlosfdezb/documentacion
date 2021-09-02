@@ -810,21 +810,33 @@ Ruta : POST `/api/recibeMjeTelegramConnect`
 | ⤷ media_group_id   | string                                         |                  |            | Identificador de un grupo de mensajes multimedia |
 | ⤷ author_signature | string                                         |                  |            | Firma del autor de la publicación |
 | ⤷ text             | string                                         |                  |            | Texto del mensaje, hasta 4096 caracteres |
-| ⤷ entities         | [MessageEntity](https://core.telegram.org/bots/api#messageentity)||            | Para mensajes de texto, entidades especiales como url, comandos de bot, etc|
+| ⤷ entities         | Array de [MessageEntity](https://core.telegram.org/bots/api#messageentity)||   | Para mensajes de texto, entidades especiales como url, comandos de bot, etc|
 | ⤷ animation        | [Animation](https://core.telegram.org/bots/api#animation)|        |            | El mensaje es una animación |
 | ⤷ audio            | [Audio](https://core.telegram.org/bots/api#audio)|                |            | El mensaje es un archivo de audio|
 | ⤷ document         | [Document](https://core.telegram.org/bots/api#document)|          |            | El mensaje es un archivo    |
-| ⤷ photo            | [PhotoSize](https://core.telegram.org/bots/api#photosize)|        |            | El mensaje es un foto       |
+| ⤷ photo            | Array de [PhotoSize](https://core.telegram.org/bots/api#photosize)||           | El mensaje es un foto       |
 | ⤷ sticker          | [Sticker](https://core.telegram.org/bots/api#sticker)|            |            | El mensaje es un sticker    |
 | ⤷ video            | [Video](https://core.telegram.org/bots/api#video)|                |            | El mensaje es un video      |
 | ⤷ video_note       | [VideoNote](https://core.telegram.org/bots/api#videonote)|        |            | El mensaje es una nota de video|
 | ⤷ voice            | [Voice](https://core.telegram.org/bots/api#voice)|                |            | El mensaje es de voz        |
 | ⤷ caption          | string                                           |                |            | Pie de foto para animación, audio, documento, etc. Hasta 1024 caracteres|
-| ⤷ caption_entities | [MessageEntity](https://core.telegram.org/bots/api#messageentity)||            | Para mensajes con un título, entidades especiales como url, comandos de bot, etc|
+| ⤷ caption_entities | Array de [MessageEntity](https://core.telegram.org/bots/api#messageentity)||   | Para mensajes con un título, entidades especiales como url, comandos de bot, etc|
 | ⤷ contact          | [Contact](https://core.telegram.org/bots/api#contact)|            |            | El mensaje es un contacto compartido|
 | ⤷ dice             | [Dice](https://core.telegram.org/bots/api#dice)|                  |            | El mensaje es un dado con valor aleatorio|
 | ⤷ game             | [Game](https://core.telegram.org/bots/api#game)|                  |            | El mensaje es un juego      |
 | ⤷ poll             | [Poll](https://core.telegram.org/bots/api#poll)|                  |            | El mensaje es una encuesta  |
+| ⤷ venue            | [Venue](https://core.telegram.org/bots/api#venue)|                |            | El mensaje es un lugar      |
+| ⤷ location         | [Location](https://core.telegram.org/bots/api#location)|          |            | El mensaje es una locación compartida|
+| ⤷ new_chat_members | Array de [User](https://core.telegram.org/bots/api#user)|         |            | Nuevos miembros que se agregaron al grupo|
+| ⤷ left_chat_member | [User](https://core.telegram.org/bots/api#user)|                  |            | Miembro removidos del grupo |
+| ⤷ new_chat_title   | string                                         |                  |            | Nuevo título de chat        |
+| ⤷ new_chat_photo   | Array de [PhotoSize](https://core.telegram.org/bots/api#photosize)||           | Nueva foto de chat          |
+| ⤷ delete_chat_photo| boolean                                        |                  |            | Mensaje de servicio: se eliminó la foto del chat|
+| ⤷ group_chat_created| boolean                                       |                  |            | Mensaje de servicio: se ha creado el grupo|
+| ⤷ supergroup_chat_created| boolean                                  |                  |            | Mensaje de servicio: se ha creado el supergrupo|
+| ⤷ channel_chat_created| boolean                                     |                  |            | Mensaje de servicio: se ha creado el canal|
+| ⤷ message_auto_delete_timer_changed|[MessageAutoDeleteTimerChanged](https://core.telegram.org/bots/api#messageautodeletetimerchanged)|||Mensaje de servicio: la configuración del temporizador de eliminación automática cambió en el chat|
+| ⤷ migrate_to_chat_id| int                                           |                  |            | El grupo se ha migrado a un supergrupo con el identificador especificado|
 
 
 ### 15.1.- Respuesta de salida
