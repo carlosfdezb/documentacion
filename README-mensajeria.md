@@ -837,6 +837,18 @@ Ruta : POST `/api/recibeMjeTelegramConnect`
 | ⤷ channel_chat_created| boolean                                     |                  |            | Mensaje de servicio: se ha creado el canal|
 | ⤷ message_auto_delete_timer_changed|[MessageAutoDeleteTimerChanged](https://core.telegram.org/bots/api#messageautodeletetimerchanged)|||Mensaje de servicio: la configuración del temporizador de eliminación automática cambió en el chat|
 | ⤷ migrate_to_chat_id| int                                           |                  |            | El grupo se ha migrado a un supergrupo con el identificador especificado|
+| ⤷ migrate_from_chat_id| int                                         |                  |            | El supergrupo se ha migrado a un grupo con el identificador especificado|
+| ⤷ pinned_message   | [Message](https://core.telegram.org/bots/api#message)|            |            | Se fijó el mensaje especificado|
+| ⤷ invoice          | [Invoice](https://core.telegram.org/bots/api#invoice)|            |            | El mensaje es una factura para un pago|
+| ⤷ successful_payment| [SuccessfulPayment](https://core.telegram.org/bots/api#successfulpayment)||   | El mensaje es un mensaje de servicio sobre un pago exitoso|
+| ⤷ connected_website| string                                         |                  |            | El nombre de dominio del sitio web en el que el usuario ha iniciado sesión|
+| ⤷ passport_data    | [PassportData](https://core.telegram.org/bots/api#passportdata)|  |            | Datos de Telegram Passport|
+| ⤷ proximity_alert_triggered| [ProximityAlertTriggered](https://core.telegram.org/bots/api#proximityalerttriggered)||| Un usuario en el chat activó la alerta de proximidad de otro usuario mientras compartía la ubicación en vivo|
+| ⤷ voice_chat_scheduled| [VoiceChatScheduled](https://core.telegram.org/bots/api#voicechatscheduled)||| Mensaje de servicio: chat de voz programado|
+| ⤷ voice_chat_started| [VoiceChatStarted](https://core.telegram.org/bots/api#voicechatstarted)||      | Mensaje de servicio: chat de voz iniciado|
+| ⤷ voice_chat_ended  | [VoiceChatEnded](https://core.telegram.org/bots/api#voicechatended)||          | Mensaje de servicio: chat de voz finalizado|
+| ⤷ voice_chat_participants_invited| [VoiceChatParticipantsInvited](https://core.telegram.org/bots/api#voicechatparticipantsinvited)||| Mensaje de servicio: nuevos participantes invitados a un chat de voz|
+| ⤷ reply_markup    | [InlineKeyboardMarkup](https://core.telegram.org/bots/api#inlinekeyboardmarkup)||| Teclado en línea adjunto al mensaje|
 
 
 ### 15.1.- Respuesta de salida
