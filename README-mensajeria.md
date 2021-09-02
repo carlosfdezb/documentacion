@@ -789,11 +789,12 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/api/recibeMjeTelegramConnect`
 
 **Parámetros de entrada:**
-| Campo              |  Tipo                      | Formato          | Requerido           | Descripción                 |
-|:-------------------|:--------------------------:|:----------------:|:-------------------:|----------------------------:|
-| update_id          | int                        |                  | Si                  | Identificador del update    |
-| ↓ message          | array[object]              |                  | Si                  | Nuevo mensaje de cualquier tipo|
-| → message_id       | int                        |                  | Si                  | Identificador del mensaje    |
+| Campo              |  Tipo                                          | Formato          | Requerido           | Descripción                 |
+|:-------------------|:----------------------------------------------:|:----------------:|:-------------------:|----------------------------:|
+| update_id          | int                                            |                  | Si                  | Identificador del update    |
+| ↓ message          | array[object]                                  |                  | Si                  |                             |
+| → message_id       | int                                            |                  | Si                  | Identificador del mensaje   |
+| → from             | [User](https://core.telegram.org/bots/api#user)|                  | Si                  | Identificador del mensaje   |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
