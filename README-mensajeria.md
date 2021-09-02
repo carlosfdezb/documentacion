@@ -197,7 +197,7 @@ Ruta : POST `/api/RecepcionFb`
 |:------------:|:------------:|:------------------------------:|:-------------:|----------------------------------------:|
 | type         | string       |                                |               | Tipo que indica que son nuevos mensajes |
 | ↓ messages   | array[object]|                                |               |                                         |
-| type         | string       |                                |               | Tweet o private message, para facebook wall o messenger, dependiendo de si es público o privado|
+| type         | string       |                                |               | private message, para facebook wall o messenger, dependiendo de si es público o privado|
 | id           | string       |                                |               | Identificador del mensaje               |
 | contentType  | string       |                                |               | Indica si el mensaje corresponde a texto, imagen o multimedia |
 | text         | string       |                                |               | ?                                       |
@@ -580,38 +580,31 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/api/mjeOut`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo        |  Tipo        | Formato                        |     Requerido           |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:-----------------------:|----------------------------:|
+| horario      | string       |                                | Si                      | Puede ser mañana o tarde    |
+| fecha        | date         | dd-mm-yyyy                     | Si                      | Fecha                       |
+| num_cliente  | int          |                                | Si                      | Número al que se le enviará el mensaje|
+| nombre       | string       |                                | Si                      | Nombre del cliente          |
 
 ### 10.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-                "NOMBRE_CAMPO":"valor"
+                "horario": "mañana",
+                "fecha": "02-09-2021",
+                "num_cliente": "99885463",
+                "nombre": "Carlos"
 	}
 
 ### 10.2.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 10.2.1.- Respuesta de error
-
-	{
-        ...
-	} 
   
-#### 10.2.2.- Respuesta de éxito
+#### 10.2.1.- Respuesta de éxito
 
-	{
-        ...
-	}
+`enviado`
 
 ## 11.- mjein
 Método que recibe mensaje de cliente y reenvía hacia atec.
@@ -672,9 +665,16 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/api/recibeMensajeWsp`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo              |  Tipo        | Formato               | Requerido        |             Descripción     |
+|:------------------:|:------------:|:---------------------:|:----------------:|----------------------------:|
+| MessageSid         | string       |                       | Si               | Identificador del mensaje   |
+| SmsSid             | string       |                       | Si               | Misma valor que MessageSid, deprecado|
+| AccountSid         | string       |                       | Si               | Identificador de la cuenta  |
+| MessagingServiceSid| string       |                       | Si               | Identificador del servicio de mensajes|
+| From               | string       |                       | Si               | Número telefónico que envía el mensaje|
+| To                 | string       |                       | Si               | Número telefónico que recibe el mensaje|
+| Body               | string       |                       | Si               | Texto del mensaje, de hasta 1600 caracteres|
+| NumMedia           | int          |                       | Si               | Número de ítems multimedia asociados al mensaje|
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -713,9 +713,16 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/api/recibeMensajeWspFail`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo              |  Tipo        | Formato               | Requerido        |             Descripción     |
+|:------------------:|:------------:|:---------------------:|:----------------:|----------------------------:|
+| MessageSid         | string       |                       | Si               | Identificador del mensaje   |
+| SmsSid             | string       |                       | Si               | Misma valor que MessageSid, deprecado|
+| AccountSid         | string       |                       | Si               | Identificador de la cuenta  |
+| MessagingServiceSid| string       |                       | Si               | Identificador del servicio de mensajes|
+| From               | string       |                       | Si               | Número telefónico que envía el mensaje|
+| To                 | string       |                       | Si               | Número telefónico que recibe el mensaje|
+| Body               | string       |                       | Si               | Texto del mensaje, de hasta 1600 caracteres|
+| NumMedia           | int          |                       | Si               | Número de ítems multimedia asociados al mensaje|
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -754,9 +761,10 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/api/recibeMensajeWspStatus`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo        |  Tipo        | Formato                 |     Requerido          |             Descripción     |
+|:------------:|:------------:|:-----------------------:|:----------------------:|----------------------------:|
+| MessageStatus| string       |                         |                        | Estado del mensaje          |
+| SmsStatus    | string       |                         |                        | Mismo que MessageStatus, deprecado|
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -777,9 +785,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 14.2.1.- Respuesta de error
 
-	{
-       ...
-	} 
+`error`
   
 #### 14.2.2.- Respuesta de éxito
 
@@ -797,9 +803,22 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/api/recibeMjeTelegramConnect`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo        |  Tipo        | Formato          | Requerido           | Descripción                 |
+|:------------:|:------------:|:----------------:|:-------------------:|----------------------------:|
+| update_id    | int          |                  |                     | Identificador del update    |
+| message      | [Message](https://core.telegram.org/bots/api#message)|                  |                     | Identificador del update    |
+| edited_message|Message      |                  |                     | Identificador del update    |
+| channel_post  |Message          |                  |                     | Identificador del update    |
+| update_id    | int          |                  |                     | Identificador del update    |
+| update_id    | int          |                  |                     | Identificador del update    |
+| update_id    | int          |                  |                     | Identificador del update    |
+| update_id    | int          |                  |                     | Identificador del update    |
+| update_id    | int          |                  |                     | Identificador del update    |
+| update_id    | int          |                  |                     | Identificador del update    |
+| update_id    | int          |                  |                     | Identificador del update    |
+| update_id    | int          |                  |                     | Identificador del update    |
+| update_id    | int          |                  |                     | Identificador del update    |
+| update_id    | int          |                  |                     | Identificador del update    |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -1047,7 +1066,7 @@ Ruta : POST `/api/recibeTwitter`
 |:------------:|:------------:|:------------------------------:|:-------------:|----------------------------------------:|
 | type         | string       |                                |               | Tipo que indica que son nuevos mensajes |
 | ↓ messages   | array[object]|                                |               |                                         |
-| type         | string       |                                |               | Tweet o private message, para facebook wall o messenger, dependiendo de si es público o privado|
+| type         | string       |                                |               | Tweet                                   |
 | id           | string       |                                |               | Identificador del mensaje               |
 | contentType  | string       |                                |               | Indica si el mensaje corresponde a texto, imagen o multimedia |
 | text         | string       |                                |               | ?                                       |
