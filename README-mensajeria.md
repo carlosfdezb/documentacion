@@ -133,9 +133,9 @@ Ruta : GET `/api/RecepcionFb`
 **Parámetros de entrada:**
 | Campo            |  Tipo        | Formato                        |     Requerido               |             Descripción     |
 |:----------------:|:------------:|:------------------------------:|:---------------------------:|----------------------------:|
-| hub_mode         | string       |                                |                             | Breve descripción           |
-| hub_challenge    | string       |                                |                             | Breve descripción           |
-| hub_verify_token | string       |                                | Si                          | Breve descripción           |
+| hub_mode         | string       |                                | Si                          | Este valor siempre estará configurado como subscribe|
+| hub_challenge    | int          |                                | Si                          | Número que se debe volver a transmitir|
+| hub_verify_token | string       |                                | Si                          | Token de verificación       |
 
 ### 1.1.- Ejemplo de llamada
 
@@ -143,8 +143,8 @@ Ejemplo: JSON
 
 	{
                 "hub_mode": "subscribe",
-                "hub_challenge": "",
-                "hub_verify_token": ""
+                "hub_challenge": 1158201444,
+                "hub_verify_token": "meatyhamhock"
 	}
 
 ### 1.2.- Respuesta de salida
@@ -180,7 +180,7 @@ Ruta : POST `/api/RecepcionFb`
 | type         | string       |                                |               | private message, para facebook wall o messenger, dependiendo de si es público o privado|
 | id           | string       |                                |               | Identificador del mensaje               |
 | contentType  | string       |                                |               | Indica si el mensaje corresponde a texto, imagen o multimedia |
-| text         | string       |                                |               | ?                                       |
+| text         | string       |                                |               | Texto                                   |
 | ↓↓ user      | array[object]|                                |               |                                         |
 | id           | string       |                                |               | Id del usuario                          |
 | avatar       | string       |                                |               | Url de la imagen de perfil del usuario  |
@@ -438,9 +438,9 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/api/hubspot`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo        |  Tipo        | Formato                        | Requerido   |             Descripción     |
+|:------------:|:------------:|:------------------------------:|:-----------:|----------------------------:|
+|              |              |                                |             |                             |
 
 ### 8.1.- Ejemplo de llamada
 
@@ -485,9 +485,9 @@ Ruta : POST `/api/informarContingencia`
 Ejemplo: JSON 
 
 	{
-                "token":"",
-                "mensaje":"",
-                "sistema":""
+                "token": "token_example",
+                "mensaje": "Nueva Contingencia",
+                "sistema": "MS"
 	}
 
 ### 9.2.- Respuesta de salida
@@ -694,7 +694,7 @@ Ruta : POST `/api/recibeMjeTelegramConnect`
 | Campo              |  Tipo                                          | Formato          | Requerido  | Descripción                 |
 |:-------------------|:----------------------------------------------:|:----------------:|:----------:|----------------------------:|
 | update_id          | int                                            |                  | Si         | Identificador del update    |
-| ↓ message          | array[object]                                  |                  | Si         |                             |
+| ↓ message o edited_message| array[object]                           |                  | Si         |                             |
 | ⤷ message_id       | int                                            |                  | Si         | Identificador del mensaje   |
 | ⤷ from             | [User](https://core.telegram.org/bots/api#user)|                  |            | Remitente del mensaje       |
 | ⤷ sender_chat      | [Chat](https://core.telegram.org/bots/api#chat)|                  |            | Remitente del mensaje enviado en nombre de un chat|
@@ -776,7 +776,7 @@ Ruta : POST `/api/recibeMjeTelegramSoporte`
 | Campo              |  Tipo                                          | Formato          | Requerido  | Descripción                 |
 |:-------------------|:----------------------------------------------:|:----------------:|:----------:|----------------------------:|
 | update_id          | int                                            |                  | Si         | Identificador del update    |
-| ↓ message          | array[object]                                  |                  | Si         |                             |
+| ↓ message o edited_message| array[object]                           |                  | Si         |                             |
 | ⤷ message_id       | int                                            |                  | Si         | Identificador del mensaje   |
 | ⤷ from             | [User](https://core.telegram.org/bots/api#user)|                  |            | Remitente del mensaje       |
 | ⤷ sender_chat      | [Chat](https://core.telegram.org/bots/api#chat)|                  |            | Remitente del mensaje enviado en nombre de un chat|
@@ -857,7 +857,7 @@ Ruta : POST `/api/recibeMjeTelegramSoporteEmpresa`
 | Campo              |  Tipo                                          | Formato          | Requerido  | Descripción                 |
 |:-------------------|:----------------------------------------------:|:----------------:|:----------:|----------------------------:|
 | update_id          | int                                            |                  | Si         | Identificador del update    |
-| ↓ message          | array[object]                                  |                  | Si         |                             |
+| ↓ message o edited_message| array[object]                           |                  | Si         |                             |
 | ⤷ message_id       | int                                            |                  | Si         | Identificador del mensaje   |
 | ⤷ from             | [User](https://core.telegram.org/bots/api#user)|                  |            | Remitente del mensaje       |
 | ⤷ sender_chat      | [Chat](https://core.telegram.org/bots/api#chat)|                  |            | Remitente del mensaje enviado en nombre de un chat|
@@ -938,7 +938,7 @@ Ruta : POST `/api/recibeMjeTelegramSoporteTecnico`
 | Campo              |  Tipo                                          | Formato          | Requerido  | Descripción                 |
 |:-------------------|:----------------------------------------------:|:----------------:|:----------:|----------------------------:|
 | update_id          | int                                            |                  | Si         | Identificador del update    |
-| ↓ message          | array[object]                                  |                  | Si         |                             |
+| ↓ message o edited_message| array[object]                           |                  | Si         |                             |
 | ⤷ message_id       | int                                            |                  | Si         | Identificador del mensaje   |
 | ⤷ from             | [User](https://core.telegram.org/bots/api#user)|                  |            | Remitente del mensaje       |
 | ⤷ sender_chat      | [Chat](https://core.telegram.org/bots/api#chat)|                  |            | Remitente del mensaje enviado en nombre de un chat|
@@ -1019,7 +1019,7 @@ Ruta : POST `/api/recibeMjeTelegramTest`
 | Campo              |  Tipo                                          | Formato          | Requerido  | Descripción                 |
 |:-------------------|:----------------------------------------------:|:----------------:|:----------:|----------------------------:|
 | update_id          | int                                            |                  | Si         | Identificador del update    |
-| ↓ message          | array[object]                                  |                  | Si         |                             |
+| ↓ message o edited_message| array[object]                           |                  | Si         |                             |
 | ⤷ message_id       | int                                            |                  | Si         | Identificador del mensaje   |
 | ⤷ from             | [User](https://core.telegram.org/bots/api#user)|                  |            | Remitente del mensaje       |
 | ⤷ sender_chat      | [Chat](https://core.telegram.org/bots/api#chat)|                  |            | Remitente del mensaje enviado en nombre de un chat|
@@ -1100,7 +1100,7 @@ Ruta : POST `/api/recibeMjeTelegramVentas`
 | Campo              |  Tipo                                          | Formato          | Requerido  | Descripción                 |
 |:-------------------|:----------------------------------------------:|:----------------:|:----------:|----------------------------:|
 | update_id          | int                                            |                  | Si         | Identificador del update    |
-| ↓ message          | array[object]                                  |                  | Si         |                             |
+| ↓ message o edited_message| array[object]                           |                  | Si         |                             |
 | ⤷ message_id       | int                                            |                  | Si         | Identificador del mensaje   |
 | ⤷ from             | [User](https://core.telegram.org/bots/api#user)|                  |            | Remitente del mensaje       |
 | ⤷ sender_chat      | [Chat](https://core.telegram.org/bots/api#chat)|                  |            | Remitente del mensaje enviado en nombre de un chat|
@@ -1182,15 +1182,15 @@ Ruta : POST `/api/recibeTwitter`
 |:------------:|:------------:|:------------------------------:|:-------------:|----------------------------------------:|
 | type         | string       |                                |               | Tipo que indica que son nuevos mensajes |
 | ↓ messages   | array[object]|                                |               |                                         |
-| type         | string       |                                |               | Tweet                                   |
-| id           | string       |                                |               | Identificador del mensaje               |
-| contentType  | string       |                                |               | Indica si el mensaje corresponde a texto, imagen o multimedia |
-| text         | string       |                                |               | ?                                       |
+| ⤷ type       | string       |                                |               | Tweet                                   |
+| ⤷ id         | string       |                                |               | Identificador del mensaje               |
+| ⤷ contentType| string       |                                |               | Indica si el mensaje corresponde a texto, imagen o multimedia |
+| ⤷ text       | string       |                                |               | Texto                                   |
 | ↓↓ user      | array[object]|                                |               |                                         |
-| id           | string       |                                |               | Id del usuario                          |
-| avatar       | string       |                                |               | Url de la imagen de perfil del usuario  |
+| ⤷ id         | string       |                                |               | Id del usuario                          |
+| ⤷ avatar     | string       |                                |               | Url de la imagen de perfil del usuario  |
 | ↓↓ mediaUrl  | array[object]|                                |               |                                         |
-| url          | string       |                                |               | Indica que contiene una imagen o multimedia |
+| ⤷ url        | string       |                                |               | Indica que contiene una imagen o multimedia |
 
 ### 21.1.- Ejemplo de llamada
 
@@ -1276,7 +1276,7 @@ Ejemplo: JSON
 
 	{
                 "adjunto": "archivo.xls",
-                "token": "":
+                "token": "token_example":
 	}
 
 ### 23.2.- Respuesta de salida
