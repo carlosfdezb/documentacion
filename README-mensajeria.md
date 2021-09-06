@@ -41,10 +41,9 @@
     - [7.1.- Respuesta de Salida](#71--respuesta-de-salida)
         - [7.1.1- Respuesta de éxito](#711--respuesta-de-éxito)
   - [8.- Recibir Mensajes de Hubspot](#8--recibir-mensajes-de-hubspot)
-    - [8.1.- Ejemplo de llamada](#81--ejemplo-de-llamada)
-    - [8.2.- Respuesta de Salida](#82--respuesta-de-salida)
-        - [8.2.1- Respuesta de error](#821--respuesta-de-error)
-        - [8.2.2- Respuesta de éxito](#822--respuesta-de-éxito)
+    - [8.1.- Respuesta de Salida](#81--respuesta-de-salida)
+        - [8.1.1- Respuesta de error](#811--respuesta-de-error)
+        - [8.1.2- Respuesta de éxito](#812--respuesta-de-éxito)
   - [9.- Informar de Contingencia](#9--informar-de-contingencia)
     - [9.1.- Ejemplo de llamada](#91--ejemplo-de-llamada)
     - [9.2.- Respuesta de Salida](#92--respuesta-de-salida)
@@ -438,17 +437,24 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/api/hubspot`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        | Requerido   |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:-----------:|----------------------------:|
-|              |              |                                |             |                             |
-
-### 8.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-                "NOMBRE_CAMPO":"valor"
-	}
+| Campo             |  Tipo        | Formato                        | Requerido   |             Descripción     |
+|:-----------------:|:------------:|:------------------------------:|:-----------:|----------------------------:|
+| value             | string       |                                |             | Valor                       |
+| source-type       | string       |                                |             | Tipo de la fuente           |
+| source-id         | string       |                                |             | ID de la fuente             |
+| source-label      | string       |                                |             | Etiqueta de la fuente       |
+| updated-by-user-id| string       |                                |             | ID del último usuario en actualizar|
+| conversion-id     | string       |                                |             | ID de la conversión         |
+| portal-id         | string       |                                |             | ID del portal               |
+| page-url          | string       |                                |             | Url de la página            |
+| canonical-url     | string       |                                |             | Url canónica                |
+| page-title        | string       |                                |             | Título de la página         |
+| page-id           | string       |                                |             | ID de la página             |
+| form-type         | string       |                                |             | Tipo de formulario          |
+| static-list-id    | string       |                                |             | ID de la lisa estática      |
+| internal-list-id  | string       |                                |             | ID de la lista interna      |
+| canal             | string       |                                |             | Tipo de canal               |
+| destino           | string       |                                |             | Tipo de destino             |
 
 ### 8.2.- Respuesta de salida
 
@@ -457,14 +463,16 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 8.2.1.- Respuesta de error
 
 	{
-        ...
+                "status": "error",
+                "codigo": 401
 	} 
   
 #### 8.2.2.- Respuesta de éxito
 
-	{
-       ...
-	}
+        {
+                "status": "ok",
+                "codigo": 200
+	} 
 
 ## 9.- Informar de Contingencia
 Método que recibe mensaje de contingencia en servidores y alerta a los usuarios registrados en sistema asociados a servidor.
