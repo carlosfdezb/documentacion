@@ -218,7 +218,7 @@ Ruta : GET `/empresas/existecliente`
 Ejemplo: JSON 
 
 	{
-                "NOMBRE_CAMPO":"166101069"
+                "Rut":"166101069"
 	}
 
 ### 1.1.2.- Respuesta de salida
