@@ -505,15 +505,15 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 9.2.1.- Respuesta de error
 
 	{
-                "status": "error",
-                "codigo": 401
+            "status": "error",
+            "codigo": 401
 	} 
   
 #### 9.2.2.- Respuesta de éxito
 
         {
-                "status": "success",
-                "codigo": 200
+            "status": "success",
+            "codigo": 200
 	} 
 
 
