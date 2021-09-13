@@ -1410,14 +1410,14 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 6.3.2.1- Respuesta de error
 
-	{
+    {
         "error": {
             "codigoRespuesta": 0,
             "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados "
+            "detalleRespuesta": "Ingrese un valor para codigo infraestructura"
         },
         "codigo": 404
-	} 
+    }
   
 #### 6.3.2.2- Respuesta de éxito
 
