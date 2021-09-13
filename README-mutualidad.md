@@ -1447,8 +1447,8 @@ codigo: 200 éxito mensaje: descripcion del mensaje
                         "ponEdfa": "16",
                         "puertaPon": "15",
                         "splitter": "1X2"
-                    }
-                
+                    },
+                    ...
                 ]
             }
         },
