@@ -163,9 +163,20 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/alta`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo              |  Tipo        | Formato        | Requerido       |             Descripción     |
+|:------------------:|:------------:|:--------------:|:---------------:|----------------------------:|
+| idEmpresa          | int          |                |                 | Breve descripción           |
+| operacion          | int          |                |                 | Breve descripción           |
+| ↓ detalleServicios | array[object]|                |                 | Breve descripción           |
+| ⤷ servicio         | int          |                |                 | Breve descripción           |
+| ↓↓ datosServicios  | array[object]|                |                 | Breve descripción           |
+| ⤷ idPackage        | string       |                |                 | Breve descripción           |
+| ⤷ cicloFacturacion | string       |                |                 | Breve descripción           |
+| ↓↓↓ suscriptores   | array[object]|                |                 | Breve descripción           |
+| ⤷ numeroTelefono   | string       |                |                 | Breve descripción           |
+| ⤷ iccid            | string       |                |                 | Breve descripción           |
+| ⤷ codigoExterno    | string       |                |                 | Breve descripción           |
+| ⤷ portabilidad     | int          |                |                 | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -176,9 +187,29 @@ Ruta : POST `/alta`
 
 Ejemplo: JSON 
 
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
+    {
+        "idEmpresa": 1,
+        "operacion": 1001,
+        "detalleServicios": [
+            {
+                "servicio": 400,
+                "datosServicios": [
+                    {
+                        "idPackage": "581",
+                        "cicloFacturacion": "25",
+                        "suscriptores": [
+                            {
+                                "numeroTelefono": "56923609315",
+                                "iccid": "8956072200000000673F",
+                                "codigoExterno": "CC49915956923609315",
+                                "portabilidad": 0
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
 
 ### 1.1.2.- Respuesta de salida
 
@@ -186,29 +217,24 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 1.1.2.1.- Respuesta de error
 
-	{
+    {
         "error": {
             "codigoRespuesta": 0,
             "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
+            "detalleRespuesta": [
+                {
+                    "codigoError": 0,
+                    "descripcionError": "SIM activa con otra linea"
+                }
+            ]
         },
-        "codigo": 404
-	} 
+        "codigo": 422
+    }
   
 #### 1.1.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
 ## 1.2.- Alta Adicional
@@ -275,22 +301,28 @@ Los parámetros que recibe son los siguientes:
 Ruta : DELETE `/baja`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
+|:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
+| idEmpresa         | string       |            |                | Breve descripción           |
+| operacion         | string       |            |                | Breve descripción           |
+| codigoExterno     | string       |            |                | Breve descripción           |
+| ↓ detalleServicios| array[object]|            |                | Breve descripción           |
+| ⤷ servicio        | string       |            |                | Breve descripción           |
 
 ### 1.3.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
+    {
+        "idEmpresa":"1",
+        "operacion":"3001",
+        "codigoExterno": "CC49915956923609315",
+        "detalleServicios":[
+            {
+                "servicio":"400"
+            }
+        ] 
+    }
 
 ### 1.3.2.- Respuesta de salida
 
@@ -299,29 +331,19 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.3.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 1.3.2.2.- Respuesta de éxito
 
-	{
+    {
         "success": {
             "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
+            "idSolicitud": 38473,
+            "descripcionRespuesta": "Petición enviada correctamente"
         },
         "codigo": 200
-	}
+    }
 
 ## 1.4.- Habilitación
 Método que permite sacar del estado de suspensión a una línea.
@@ -331,22 +353,28 @@ Los parámetros que recibe son los siguientes:
 Ruta : PATCH `/habilitacion`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
+|:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
+| idEmpresa         | string       |            |                | Breve descripción           |
+| operacion         | string       |            |                | Breve descripción           |
+| codigoExterno     | string       |            |                | Breve descripción           |
+| ↓ detalleServicios| array[object]|            |                | Breve descripción           |
+| ⤷ servicio        | string       |            |                | Breve descripción           |
 
 ### 1.4.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
+    {
+        "idEmpresa":1,
+        "operacion":2001,
+        "codigoExterno": "CC63056936000014",
+        "detalleServicios":[
+            {
+                "servicio":400
+            }
+        ]
+    }
 
 ### 1.4.2.- Respuesta de salida
 
@@ -355,29 +383,19 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.4.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 1.4.2.2.- Respuesta de éxito
 
-	{
+    {
         "success": {
             "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
+            "idSolicitud": 38477,
+            "descripcionRespuesta": "Petición enviada correctamente"
         },
         "codigo": 200
-	}
+    }
 
 
 ## 1.5.- Informar Portabilidad Móvil
@@ -445,22 +463,37 @@ Los parámetros que recibe son los siguientes:
 Ruta : PATCH `/modificarPlan`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
+|:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
+| idEmpresa         | string       |            |                | Breve descripción           |
+| operacion         | string       |            |                | Breve descripción           |
+| codigoExterno     | string       |            |                | Breve descripción           |
+| ↓ detalleServicios| array[object]|            |                | Breve descripción           |
+| ⤷ servicio        | int          |            |                | Breve descripción           |
+| ↓↓ datosServicios |array[object] |            |                | Breve descripción           |
+| ⤷ cicloFacturacion| int          |            |                | Breve descripción           |
+| ⤷ idPackage       | string       |            |                | Breve descripción           |
 
 ### 1.6.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
+    {
+        "idEmpresa":1,
+        "operacion":4002,
+        "codigoExterno": "mundo56936000129",
+        "detalleServicios":[
+            {
+                "servicio":400,
+                "datosServicios":[
+                    {
+                        "cicloFacturacion":1,
+                        "idPackage": "503"
+                    }
+                ]
+            }
+        ]
+    }
 
 ### 1.6.2.- Respuesta de salida
 
@@ -469,29 +502,19 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.6.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 1.6.2.2.- Respuesta de éxito
 
-	{
+    {
         "success": {
             "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
+            "idSolicitud": 38479,
+            "descripcionRespuesta": "Petición enviada correctamente"
         },
         "codigo": 200
-	}
+    }
 
 ## 1.7.- Modificar Suscriptor
 Método que permite cambiar código externo, sim o línea de una suscripción.
@@ -501,22 +524,40 @@ Los parámetros que recibe son los siguientes:
 Ruta : PUT `/modificarSuscriptor`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
+|:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
+| idEmpresa         | string       |            |                | Breve descripción           |
+| operacion         | string       |            |                | Breve descripción           |
+| codigoExterno     | string       |            |                | Breve descripción           |
+| ↓ detalleServicios| array[object]|            |                | Breve descripción           |
+| ⤷ servicio        | int          |            |                | Breve descripción           |
+| ↓↓ datosServicios |array[object] |            |                | Breve descripción           |
+| ↓↓↓ cicloFacturacion|array[object]|           |                | Breve descripción           |
+| ⤷ iccid           | string       |            |                | Breve descripción           |
 
 ### 1.7.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
+    {
+        "idEmpresa": "1",
+        "operacion": "4001",
+        "codigoExterno": "CC156966586186",
+        "detalleServicios": [
+            {
+                "servicio": "400",
+                "datosServicios": [
+                    {
+                        "suscriptores": [
+                            {
+                                "iccid": "8956072200000053227F"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
 
 ### 1.7.2.- Respuesta de salida
 
@@ -525,29 +566,19 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.7.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 1.7.2.2.- Respuesta de éxito
 
-	{
+    {
         "success": {
             "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
+            "idSolicitud": 38482,
+            "descripcionRespuesta": "Petición enviada correctamente"
         },
         "codigo": 200
-	}
+    }
 
 ## 1.8.- Suspensión
 Método que permite suspender una línea.
@@ -557,22 +588,28 @@ Los parámetros que recibe son los siguientes:
 Ruta : PATCH `/suspension`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
+|:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
+| idEmpresa         | string       |            |                | Breve descripción           |
+| operacion         | string       |            |                | Breve descripción           |
+| codigoExterno     | string       |            |                | Breve descripción           |
+| ↓ detalleServicios| array[object]|            |                | Breve descripción           |
+| ⤷ servicio        | string       |            |                | Breve descripción           |
 
 ### 1.8.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
+    {
+        "idEmpresa":1,
+        "operacion":2002,
+        "codigoExterno": "CC63056936000014",
+        "detalleServicios":[
+            {
+                "servicio":400
+            }
+        ]
+    }
 
 ### 1.8.2.- Respuesta de salida
 
@@ -580,29 +617,24 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 1.8.2.1.- Respuesta de error
 
-	{
+    {
         "error": {
             "codigoRespuesta": 0,
             "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
+            "detalleRespuesta": [
+                {
+                    "codigoError": 0,
+                    "descripcionError": "Undefined index: datosServicios"
+                }
+            ]
         },
-        "codigo": 404
-	} 
+        "codigo": 0
+    }
   
 #### 1.8.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
 
@@ -615,9 +647,10 @@ Los parámetros que recibe son los siguientes:
 Ruta : PATCH `/blockSim`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
+|:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
+| numeroTelefono    | string       |            |                | Breve descripción           |
+| simStatus         | string       |            |                | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -629,7 +662,8 @@ Ruta : PATCH `/blockSim`
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "numeroTelefono": "",
+        "simStatus": ""
 	}
 
 ### 2.1.2.- Respuesta de salida
@@ -638,29 +672,24 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 2.1.2.1.- Respuesta de error
 
-	{
+    {
         "error": {
             "codigoRespuesta": 0,
             "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
+            "detalleRespuesta": [
+                {
+                    "codigoError": 0,
+                    "descripcionError": "Suscriptor no encontrado"
+                }
+            ]
         },
         "codigo": 404
-	} 
+    }
   
 #### 2.1.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
 ## 2.2.- CheckBuzon
@@ -671,9 +700,9 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/checkBuzon`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
+|:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
+| numeroTelefono    | string       |            |                | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -685,7 +714,7 @@ Ruta : GET `/checkBuzon`
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "numeroTelefono": "56936000016"
 	}
 
 ### 2.2.2.- Respuesta de salida
@@ -695,28 +724,13 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 2.2.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 2.2.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
 ## 2.3.- CheckNum
@@ -727,21 +741,31 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/checkNum`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
+|:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
+| numeroTelefono    | string       |            |                | Breve descripción           |
 
 **Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo                 |  Tipo        |                         Descripción              |
+|:----------------------|:------------:|-------------------------------------------------:| 
+| ↓ getMsisdnInfoResult | array[object]| Breve descripción                                |
+| ⤷ wsSessionId         | string       | Breve descripción                                |
+| ⤷ callID              | string       | Breve descripción                                |
+| ⤷ callCode            | int          | Breve descripción                                |
+| ⤷ resultCode          | string       | Breve descripción                                |
+| ⤷ callMsg             | string       | Breve descripción                                |
+| ⤷ subscriptionID      | string       | Breve descripción                                |
+| ↓↓ item               | array[object]| Breve descripción                                |
+| ⤷ packageInstanceID   | string       | Breve descripción                                |
+| ⤷ status              | int          | Breve descripción                                |
+| ⤷ msisdn              | string       | Breve descripción                                |
 
 ### 2.3.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "numeroTelefono": "936000014"
 	}
 
 ### 2.3.2.- Respuesta de salida
@@ -750,30 +774,45 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 2.3.2.1.- Respuesta de error
 
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
-	} 
-  
-#### 2.3.2.2.- Respuesta de éxito
-
-	{
+    {
         "success": {
             "codigoRespuesta": 1,
             "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
+                "getMsisdnInfoResult": {
+                    "wsSessionId": "EWSab6b9a90429578",
+                    "callID": "EWSab6b9a90429578COR2288dc7f2672ff",
+                    "callCode": 105,
+                    "resultCode": "ENTITY_NOT_FOUND",
+                    "callMsg": "MSISDN[numeroTelefono] not found"
+                }
             }
         },
         "codigo": 200
-	}
+    }
+  
+#### 2.3.2.2.- Respuesta de éxito
+
+    {
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "getMsisdnInfoResult": {
+                    "wsSessionId": "EWSab6b9a90429578",
+                    "callID": "EWSab6b9a90429578CORab6ffc72f5df5e",
+                    "callCode": 0,
+                    "resultCode": "OK",
+                    "callMsg": "ok",
+                    "item": {
+                        "packageInstanceID": "PKGID234273_TS1625491811353",
+                        "status": 0,
+                        "msisdn": "936000014"
+                    },
+                    "subscriptionID": "SID115397_TS1625491811294_0"
+                }
+            }
+        },
+        "codigo": 200
+    }
 
 ## 2.4.- CheckPort
 Método que permite obtener el estado de una portabilidad.
