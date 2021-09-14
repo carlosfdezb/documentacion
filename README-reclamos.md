@@ -252,7 +252,7 @@ Ruta : GET `/api/reclamos/listado/tipo-reclamo`
 
 ### 1.1.1.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 1.1.1.1.- Respuesta de éxito
 
@@ -296,7 +296,7 @@ Ruta : GET `/api/reclamos/listado/tipo-solucion`
 
 ### 1.2.1.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 1.2.1.1.- Respuesta de éxito
 
@@ -336,7 +336,7 @@ Ruta : GET `/api/reclamos/listado/motivo-acoge`
 
 ### 1.3.1.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 1.3.1.1.- Respuesta de éxito
 
@@ -380,7 +380,7 @@ Ruta : GET `/api/reclamos/listado/tipo-notificacion`
 
 ### 1.4.1.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 1.4.1.1.- Respuesta de éxito
 
@@ -429,7 +429,7 @@ Ejemplo: JSON
 
 ### 1.5.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 1.5.2.1.- Respuesta de error
 
@@ -489,7 +489,7 @@ Ejemplo: JSON
 
 ### 1.6.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 1.6.2.1.- Respuesta de error
 
@@ -545,7 +545,7 @@ Ejemplo: JSON
 
 ### 1.7.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 1.7.2.1.- Respuesta de éxito
 
@@ -583,7 +583,7 @@ Ruta : GET `/api/reclamos/listado/tipo-registro`
 
 ### 1.8.1.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 1.8.1.1.- Respuesta de éxito
 
@@ -789,7 +789,7 @@ Ejemplo: JSON
 
 ### 1.9.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 1.9.2.1.- Respuesta de éxito
 
@@ -986,7 +986,7 @@ Ruta : GET `/api/reclamos/listado/estado-reclamos`
 
 ### 1.10.1.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 1.10.1.1.- Respuesta de éxito
 
@@ -1131,7 +1131,7 @@ Ejemplo: JSON
 
 ### 1.11.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 1.11.2.1.- Respuesta de error
 
@@ -1186,7 +1186,7 @@ Ejemplo: JSON
 
 ### 1.12.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 1.12.2.1.- Respuesta de éxito
 
@@ -1267,7 +1267,7 @@ Ejemplo: JSON
 
 ### 1.13.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 1.13.2.1.- Respuesta de éxito
 
@@ -1378,7 +1378,7 @@ Ejemplo: JSON
 
 ### 1.14.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 1.14.2.1.- Respuesta de éxito
 
@@ -1485,7 +1485,7 @@ Ejemplo: JSON
 
 ### 1.15.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 1.15.2.1.- Respuesta de éxito
 
@@ -1539,7 +1539,7 @@ Ruta : GET `/api/reclamos/listado/tipo-conformidad`
 
 ### 1.16.1.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 1.16.1.1.- Respuesta de éxito
 
@@ -1575,7 +1575,7 @@ Ruta : GET `/api/reclamos/listado/macromotivo`
 
 ### 1.17.1.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 1.17.1.1.- Respuesta de éxito
 
@@ -1809,7 +1809,7 @@ Ejemplo: JSON
 
 ### 1.18.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 1.18.2.1.- Respuesta de error
 
@@ -1960,7 +1960,7 @@ Ejemplo: JSON
 
 ### 1.19.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 1.19.2.1.- Respuesta de éxito
 
@@ -2073,7 +2073,7 @@ Ruta : GET `/api/reclamos/listado/tipo-telefono`
 
 ### 1.20.1.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 1.20.1.1.- Respuesta de éxito
 
@@ -2127,7 +2127,7 @@ Ejemplo: JSON
 
 ### 1.21.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 1.21.2.1.- Respuesta de error
 
@@ -2176,7 +2176,7 @@ Ruta : GET `/api/reclamos/comunas`
 
 ### 1.22.1.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 1.22.1.1.- Respuesta de éxito
 
@@ -2220,7 +2220,7 @@ Ruta : GET `/api/reclamos/regiones`
 
 ### 1.23.1.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 1.23.1.1.- Respuesta de éxito
 
@@ -2301,7 +2301,7 @@ Ejemplo: JSON
 
 ### 1.24.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 1.24.2.1.- Respuesta de error
 
@@ -2341,7 +2341,7 @@ Ejemplo: JSON
 
 ### 1.25.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 1.25.2.1.- Respuesta de éxito
 
@@ -2469,7 +2469,7 @@ Ejemplo: JSON
 
 ### 2.1.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 2.1.2.1.- Respuesta de error
 
@@ -2494,7 +2494,7 @@ Ruta : GET `/api/sucursalVirtual/listado/tipo-reclamo`
 
 ### 2.2.1.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 2.2.1.1.- Respuesta de éxito
 
@@ -2538,7 +2538,7 @@ Ruta : GET `/api/sucursalVirtual/listado/tipo-notificacion`
 
 ### 2.3.1.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 2.3.1.1.- Respuesta de éxito
 
@@ -2587,7 +2587,7 @@ Ejemplo: JSON
 
 ### 2.4.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 2.4.2.1.- Respuesta de error
 
@@ -2647,7 +2647,7 @@ Ejemplo: JSON
 
 ### 2.5.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 2.5.2.1.- Respuesta de error
 
@@ -2702,7 +2702,7 @@ Ejemplo: JSON
 	}
 ### 2.6.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 2.6.2.1.- Respuesta de éxito
 
@@ -2752,7 +2752,7 @@ Ejemplo: JSON
 
 ### 2.7.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 2.7.2.1.- Respuesta de error
 
@@ -2847,7 +2847,7 @@ Ejemplo: JSON
 
 ### 2.8.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 2.8.2.1.- Respuesta de error
 
@@ -2950,7 +2950,7 @@ Ruta : GET `/api/sucursalVirtual/listado/tipo-telefono`
 
 ### 2.9.1.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
   
 #### 2.9.1.1.- Respuesta de éxito
 
@@ -2987,7 +2987,7 @@ Ruta : GET `/api/sucursalVirtual/datos-cliente-tipo-servicio`
 
 ### 2.10.1.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 2.10.1.1.- Respuesta de error
 
@@ -3112,7 +3112,7 @@ Ejemplo: JSON
 
 ### 3.1.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 3.1.2.1.- Respuesta de error
 
@@ -3256,7 +3256,7 @@ Ejemplo: JSON
 
 ### 3.2.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 3.2.2.1.- Respuesta de error
 
@@ -3327,7 +3327,7 @@ Ejemplo: JSON
 
 ### 3.3.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 3.3.2.1.- Respuesta de error
 
@@ -3387,7 +3387,7 @@ Ejemplo: JSON
 
 ### 3.4.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 3.4.2.1.- Respuesta de error
 
@@ -3426,7 +3426,7 @@ Ejemplo: JSON
 
 ### 3.5.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 3.5.2.1.- Respuesta de error
 
@@ -3475,7 +3475,7 @@ Ejemplo: JSON
 
 ### 3.6.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 3.6.2.1.- Respuesta de error
 
@@ -3521,7 +3521,7 @@ Ejemplo: JSON
 
 ### 3.7.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 3.7.2.1.- Respuesta de error
 
@@ -3569,7 +3569,7 @@ Ejemplo: JSON
 
 ### 3.8.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 3.8.2.1.- Respuesta de error
 
@@ -3615,7 +3615,7 @@ Ejemplo: JSON
 
 ### 3.9.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 3.9.2.1.- Respuesta de error
 
@@ -3662,7 +3662,7 @@ Ejemplo: JSON
 
 ### 3.10.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 3.10.2.1.- Respuesta de error
 
@@ -3708,7 +3708,7 @@ Ejemplo: JSON
 
 ### 3.11.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 3.11.2.1.- Respuesta de error
 
@@ -3754,7 +3754,7 @@ Ejemplo: JSON
 
 ### 3.12.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 3.12.2.1.- Respuesta de error
 
@@ -3802,7 +3802,7 @@ Ejemplo: JSON
 
 ### 3.13.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 3.13.2.1.- Respuesta de error
 
@@ -3848,7 +3848,7 @@ Ejemplo: JSON
 
 ### 3.14.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 3.14.2.1.- Respuesta de error
 
@@ -3896,7 +3896,7 @@ Ejemplo: JSON
 
 ### 3.15.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
+codigo: 200 éxito mensaje: descripción del mensaje
 
 #### 3.15.2.1.- Respuesta de error
 
