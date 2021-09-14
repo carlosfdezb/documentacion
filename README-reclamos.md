@@ -22,12 +22,12 @@
     - [1.4.- Tipos de Notificación](#14--tipos-de-notificación)
         - [1.4.1.- Respuesta de Salida](#141--respuesta-de-salida)
             - [1.4.1.1- Respuesta de éxito](#1411--respuesta-de-éxito)
-    - [1.5.- Tipos de Servicios](#15--tipos-de-servicios)
+    - [1.5.- Servicios](#15--servicios)
         - [1.5.1.- Ejemplo de llamada](#151--ejemplo-de-llamada)
         - [1.5.2.- Respuesta de Salida](#152--respuesta-de-salida)
             - [1.5.2.1- Respuesta de error](#1521--respuesta-de-error)
             - [1.5.2.2- Respuesta de éxito](#1522--respuesta-de-éxito)
-    - [1.6.- Tipos de Servicios 2](#16--tipos-de-servicios-2)
+    - [1.6.- Tipos de Servicios](#16--tipos-de-servicios)
         - [1.6.1.- Ejemplo de llamada](#161--ejemplo-de-llamada)
         - [1.6.2.- Respuesta de Salida](#162--respuesta-de-salida)
             - [1.6.2.1- Respuesta de error](#1621--respuesta-de-error)
@@ -160,7 +160,7 @@
         - [3.2.2.- Respuesta de Salida](#322--respuesta-de-salida)
             - [3.2.2.1- Respuesta de error](#3221--respuesta-de-error)
             - [3.2.2.2- Respuesta de éxito](#3222--respuesta-de-éxito)
-    - [3.3.- Ingresar](#33--ingresar)
+    - [3.3.- Ingresar Reclamo](#33--ingresar-reclamo)
         - [3.3.1.- Ejemplo de llamada](#331--ejemplo-de-llamada)
         - [3.3.2.- Respuesta de Salida](#332--respuesta-de-salida)
             - [3.3.2.1- Respuesta de error](#3321--respuesta-de-error)
@@ -401,8 +401,8 @@ codigo: 200 éxito mensaje: descripción del mensaje
         "codigo": 200
     }
 
-## 1.5.- Tipos de Servicios
-Método que retorna lista de tipos de servicios.
+## 1.5.- Servicios
+Método que retorna lista de servicios.
 
 Los parámetros que recibe son los siguientes:
 
@@ -461,7 +461,7 @@ codigo: 200 éxito mensaje: descripción del mensaje
         "codigo": 200
     }
 
-## 1.6.- Tipos de Servicios 2
+## 1.6.- Tipos de Servicios
 Método que retorna lista de tipos de servicios.
 
 Los parámetros que recibe son los siguientes:
@@ -3278,7 +3278,7 @@ codigo: 200 éxito mensaje: descripción del mensaje
         "codigo": 200
     }
 
-## 3.3.- Ingresar
+## 3.3.- Ingresar Reclamo
 Método que permite ingresar temporalmente el reclamo.
 
 Los parámetros que recibe son los siguientes:
