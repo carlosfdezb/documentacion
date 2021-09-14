@@ -734,7 +734,7 @@ Ruta : GET `/api/reclamos/informes/reclamo`
 | ↓ sub_motivo                    | array[object]|                                                  | 
 | ⤷ RESM_DESCRIPCION              | string       | Descripción del submotivo                        | 
 | ⤷ RESM_ID_SUB_MOTIVO            | int          | ID del submotivo                                 |
-|   macromotivo                   | array[object]| Array con los macromotivos (Sin uso en esta ruta)|
+|   macromotivo                   | array[object]| Array con el macromotivo (Sin uso en esta ruta)  |
 |   conformidad                   | array[object]| Array con la conformidad (Sin uso en esta ruta)  | 
 |   archivos                      | array[object]| Array con los archivos (Sin uso en esta ruta)    | 
 | ↓ acoge_reclamos                | array[object]|                                                  | 
@@ -1605,98 +1605,102 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/api/reclamos/reclamo-editar`
 
 **Parámetros de entrada:**
-| Campo                  |  Tipo        | Formato                        |     Requerido          |             Descripción     |
-|:----------------------:|:------------:|:------------------------------:|:----------------------:|----------------------------:|
-| idReclamo              | int          |                                | Si                     | Breve descripción           |
-| estado                 | int          |                                |                        | Breve descripción           |
-| texto                  | string       |                                |                        | Breve descripción           |
-| fechaReclamo           | timestamp    |                                |                        | Breve descripción           |
-| horaReclamo            | string       |                                |                        | Breve descripción           |
-| montoDescuento         | string       |                                |                        | Breve descripción           |
-| montoIndeminizacion    | string       |                                |                        | Breve descripción           |
-| totalDescuento         | string       |                                |                        | Breve descripción           |
-| macromotivo            | string       |                                |                        | Breve descripción           |
-| conformidad            | string       |                                |                        | Breve descripción           |
-| servicio               | int          |                                |                        | Breve descripción           |
-| tipoServicio           | int          |                                |                        | Breve descripción           |
-| motivo                 | int          |                                |                        | Breve descripción           |
-| subMotivo              | string       |                                |                        | Breve descripción           |
-| codigoClienteBu        | string       |                                |                        | Breve descripción           |
-| idConexion             | string       |                                |                        | Breve descripción           |
-| rutCliente             | string       |                                |                        | Breve descripción           |
-| dvCliente              | string       |                                |                        | Breve descripción           |
-| clienteNodo            | string       |                                |                        | Breve descripción           |
-| apellidos              | string       |                                |                        | Breve descripción           |
-| calle                  | string       |                                |                        | Breve descripción           |
-| numeroCalle            | string       |                                |                        | Breve descripción           |
-| idComuna               | int          |                                |                        | Breve descripción           |
-| comuna                 | string       |                                |                        | Breve descripción           |
-| region                 | string       |                                |                        | Breve descripción           |
-| idRegion               | int          |                                |                        | Breve descripción           |
-| telefono               | string       |                                |                        | Breve descripción           |
-| email                  | string       |                                |                        | Breve descripción           |
-| planPrincipal          | string       |                                |                        | Breve descripción           |
-| esTitular              | string       |                                |                        | Breve descripción           |
-| celular                | string       |                                |                        | Breve descripción           |
-| rutRepresentante       | string       | NNNNNNNN                       |                        | Breve descripción           |
-| dvRepresentante        | int          |                                |                        | Breve descripción           |
-| nombreRepresentante    | string       |                                |                        | Breve descripción           |
-| apellidosRepresentante | string       |                                |                        | Breve descripción           |
-| telefonoRepresentante  | string       |                                |                        | Breve descripción           |
-| celularRepresentante   | string       |                                |                        | Breve descripción           |
-| emailRepresentante     | string       |                                |                        | Breve descripción           |
-| direccionRepresentante | string       |                                |                        | Breve descripción           |
-| numeroCalleRepresentante|string       |                                |                        | Breve descripción           |
-| comunaRepresentante    | string       |                                |                        | Breve descripción           |
-| idComunaRepresentante  | string       |                                |                        | Breve descripción           |
-| idRegionRepresentante  | string       |                                |                        | Breve descripción           |
-| regionRepresentante    | string       |                                |                        | Breve descripción           |
-| tipoReclamo            | int          |                                |                        | Breve descripción           |
-| tipoSolucion           | int          |                                |                        | Breve descripción           |
-| idAcoge                | int          |                                |                        | Breve descripción           |
-| clienteUnificado       | string       |                                |                        | Breve descripción           |
-| nombreRazon            | string       |                                |                        | Breve descripción           |
-| celularReclamado       | string       |                                |                        | Breve descripción           |
-| direccionCelularReclamado|string      |                                |                        | Breve descripción           |
-| areaTelefonoReclamado  | string       |                                |                        | Breve descripción           |
-| telefonoReclamado      | string       |                                |                        | Breve descripción           |
-| direccionTelefonoReclamado|string     |                                |                        | Breve descripción           |
-| tipoNotificacion       | string       |                                |                        | Breve descripción           |
-| idTipoTelefono         | string       |                                |                        | Breve descripción           |
-| tipoRegistro           | int          |                                |                        | Breve descripción           |
-| totalReclamado         | string       |                                |                        | Breve descripción           |
-| horasSinServicio       | string       |                                |                        | Breve descripción           |
-| archivos               | string       |                                |                        | Breve descripción           |
-| comentario             | string       |                                |                        | Breve descripción           |
-| comentarioReclamo      | string       |                                |                        | Breve descripción           |
-| notificarClienteComentario|string     |                                |                        | Breve descripción           |
-| nombreUsuario          | string       |                                |                        | Breve descripción           |
-| emailTitular           | string       |                                |                        | Breve descripción           |
-| idUsuarioGateway       | int          |                                |                        | Breve descripción           |
-| ↓ usuario              | array[object]|                                |                        | Breve descripción           |
-| ⤷ id                   | string       |                                |                        | Breve descripción           |
-| ⤷ nombre               | string       |                                |                        | Breve descripción           |
-| ⤷ area                 | string       |                                |                        | Breve descripción           |
-| ⤷ estatus              | string       |                                |                        | Breve descripción           |
-| ⤷ email                | string       |                                |                        | Breve descripción           |
-| ↓↓ rolePermiso         | array[object]|                                |                        | Breve descripción           |
-| ⤷ role                 | string       |                                |                        | Breve descripción           |
-| ⤷ permiso              | array[string]|                                |                        | Breve descripción           |
-| idSubcategoriaInterna  | string       |                                |                        | Breve descripción           |
-| archivoInformeCumplimiento|string     |                                |                        | Breve descripción           |
-| ↓ archivoCartaRespuesta| array[object]|                                |                        | Breve descripción           |
-| ⤷ nombre               | string       |                                |                        | Breve descripción           |
-| ⤷ base64               | string       |                                |                        | Breve descripción           |
-| ⤷ peso                 | int          |                                |                        | Breve descripción           |
-| ⤷ tipoArchivo          | string       |                                |                        | Breve descripción           |
-| codigoServicioTecnico  | string       |                                |                        | Breve descripción           |
-| codigoTraspasoSernac   | string       |                                |                        | Breve descripción           |
-| sernac                 | string       |                                |                        | Breve descripción           |
-| ↓ meQuieroSalir        | array[object]|                                |                        | Breve descripción           |
-| ⤷ idSolicitud          | int          |                                |                        | Breve descripción           |
-| ⤷ idLlamada            | string       |                                |                        | Breve descripción           |
-| ⤷ horaLlamada          | int          |                                |                        | Breve descripción           |
-| ⤷ horaLlamadaCompleta  | string       |                                |                        | Breve descripción           |
+| Campo                  |  Tipo        | Formato    | Requerido   |             Descripción     |
+|:----------------------:|:------------:|:----------:|:------------|----------------------------:|
+| idReclamo              | int          |            | Si          | ID del reclamo              |
+| estado                 | int          |            |             | Estado del reclamo          |
+| texto                  | string       |            |             | Explicación del reclamo     |
+| fechaReclamo           | timestamp    |            |             | Fecha del reclamo           |
+| horaReclamo            | string       |            |             | Hora de reclamo             |
+| montoDescuento         | string       |            |             | Monto de descuento          |
+| montoIndeminizacion    | string       |            |             | Monto de indemnización      |
+| totalDescuento         | string       |            |             | Total de descuento          |
+| macromotivo            | string       |            |             | ID de macromotivo           |
+| conformidad            | string       |            |             | ID de conformidad           |
+| servicio               | int          |            |             | ID de servicio              |
+| tipoServicio           | int          |            | Si          | ID del tipo de servicio     |
+| motivo                 | int          |            | Si          | ID del motivo               |
+| subMotivo              | string       |            |             | ID del submotivo            |
+| codigoClienteBu        | string       |            |             | Código del cliente BU       |
+| idConexion             | string       |            |             | ID de la conexión           |
+| rutCliente             | string       | NNNNNNNN   | Si          | Rut del cliente             |
+| dvCliente              | string       |            | Si          | Dígito verficador del rut del cliente|
+| clienteNodo            | string       |            |             | Nodo del cliente            |
+| apellidos              | string       |            |             | Apellidos del cliente       |
+| calle                  | string       |            |             | Calle del cliente           |
+| numeroCalle            | string       |            |             | Número de calle del cliente |
+| idComuna               | int          |            |             | ID de la comuna             |
+| comuna                 | string       |            |             | Comuna del cliente          |
+| region                 | string       |            |             | Región del cliente          |
+| idRegion               | int          |            |             | ID de la región del cliente |
+| telefono               | string       |            |             | Teléfono del cliente        |
+| email                  | string       |            | Si          | Correo electrónico del cliente|
+| planPrincipal          | string       |            |             | Plan contratado             |
+| esTitular              | string       |            |             | Si el cliente es titular o no|
+| celular                | string       |            |             | Celular del cliente         |
+| rutRepresentante       | string       | NNNNNNNN   |             | Rut del representante       |
+| dvRepresentante        | int          |            |             | Dígito verificador del rut del representante|
+| nombreRepresentante    | string       |            |             | Nombre del representante    |
+| apellidosRepresentante | string       |            |             | Apellidos del representante |
+| telefonoRepresentante  | string       |            |             | Teléfono del representante  |
+| celularRepresentante   | string       |            |             | Celular del representante   |
+| emailRepresentante     | string       |            |             | Correo electrónico del representante |
+| direccionRepresentante | string       |            |             | Dirección del representante |
+| numeroCalleRepresentante|string       |            |             | Número de calle del representante|
+| comunaRepresentante    | string       |            |             | Comuna del representante    |
+| idComunaRepresentante  | string       |            |             | ID de la comuna del representante|
+| idRegionRepresentante  | string       |            |             | ID de la región del representante|
+| regionRepresentante    | string       |            |             | Región del representante    |
+| tipoReclamo            | int          |            |             | ID del tipo de reclamo      |
+| tipoSolucion           | int          |            |             | ID del tipo de solución     |
+| idAcoge                | int          |            |             | ID Acoge                    |
+| clienteUnificado       | string       |            |             | Código de cliente unificado |
+| nombreRazon            | string       |            | Si          | Nombre o razón social del cliente|
+| celularReclamado       | string       |            |             | Número de celular reclamado |
+| direccionCelularReclamado|string      |            |             | Dirección del teléfono reclamado|
+| areaTelefonoReclamado  | string       |            |             | Área del teléfono reclamado |
+| telefonoReclamado      | string       |            |             | Número de teléfono reclamado|
+| direccionTelefonoReclamado| string    |            |             | Dirección del teléfono reclamado|
+| tipoNotificacion       | int          |            | Si          | ID del tipo de notificación |
+| idTipoTelefono         | string       |            |             | ID del tipo de teléfono     |
+| tipoRegistro           | int          |            |             | ID del tipo de registro     |
+| totalReclamado         | string       |            |             | Monto total reclamado       |
+| horasSinServicio       | string       |            |             | Cantidad de horas sin servicio|
+| archivos               | array[object]|            |             | Array con archivos          |
+| comentario             | string       |            |             | Comentario                  |
+| comentarioReclamo      | string       |            |             | Comentario del reclamo      |
+| notificarClienteComentario|boolean    |            |             | Si se notificó al cliente   |
+| nombreUsuario          | string       |            |             | Nombre usuario              |
+| emailTitular           | string       |            |             | Correo electrónico del titular|
+| idUsuarioGateway       | int          |            |             | ID del gateway usuario      |
+| ↓ usuario              | array[object]|            |             |                             |
+| ⤷ id                   | string       |            |             | ID del usuario              |
+| ⤷ nombre               | string       |            |             | Nombre usuario              |
+| ⤷ area                 | string       |            |             | Área del usuario            |
+| ⤷ estatus              | string       |            |             | Estatus del usuario         |
+| ⤷ email                | string       |            |             | Correo electrónico del usuario|
+| ↓↓ rolePermiso         | array[object]|            |             |                             |
+| ⤷ role                 | string       |            |             | Rol del usuario             |
+| ⤷ permiso              | array[string]|            |             | Array con permisos          |
+| idSubcategoriaInterna  | string       |            |             | ID de la subcategoría interna|
+| ↓ archivoInformeCumplimiento|array[object]|        |             |                             |
+| ⤷ nombre               | string       |            |             | Nombre del archivo          |
+| ⤷ base64               | string       |            |             | Archivo en base64           |
+| ⤷ peso                 | int          |            |             | Peso del archivo            |
+| ⤷ tipoArchivo          | string       |            |             | Tipo de archivo             |
+| ↓ archivoCartaRespuesta| array[object]|            |             |                             |
+| ⤷ nombre               | string       |            |             | Nombre del archivo          |
+| ⤷ base64               | string       |            |             | Archivo en base64           |
+| ⤷ peso                 | int          |            |             | Peso del archivo            |
+| ⤷ tipoArchivo          | string       |            |             | Tipo de archivo             |
+| codigoServicioTecnico  | string       |            |             | Código servicio técnico     |
+| codigoTraspasoSernac   | string       |            |             | Código traspaso Sernac      |
+| sernac                 | array[object]|            |             | Array con los datos de Sernac|
+| ↓ meQuieroSalir        | array[object]|            |             |                             |
+| ⤷ idSolicitud          | int          |            |             | ID de la solicitud          |
+| ⤷ idLlamada            | string       |            |             | ID de la llamada            |
+| ⤷ horaLlamada          | int          |            |             | Hora de llamada             |
+| ⤷ horaLlamadaCompleta  | string       |            |             | Hora de la llamada completada|
 
 ### 1.18.1.- Ejemplo de llamada
 
@@ -1813,9 +1817,8 @@ codigo: 200 éxito mensaje: descripcion del mensaje
   
 #### 1.18.2.2.- Respuesta de éxito
 
-	{
-        ...
-	}
+`Los datos del reclamo con número de folio asociado: <b>20214961</b> fueron actualizados`
+`y se ha creado una tarea en BU con identificador asociado: TAR21/2981526`
 
 ## 1.19.- Exportar Reclamos
 Método que permite generar un reporte de datos de reclamos para exportar a excel.
@@ -1827,109 +1830,109 @@ Ruta : GET `/api/reclamos/informes/reclamo-export`
 **Parámetros de entrada:**
 | Campo              |  Tipo        | Formato            | Requerido |             Descripción     |
 |:------------------:|:------------:|:------------------:|:---------:|----------------------------:|
-| folio              | int          |                    |           | Breve descripción           |
-| codigoCliente      | string       |                    |           | Breve descripción           |
-| rutReclamante      | string       |                    |           | Breve descripción           |
-| nombreReclamante   | string       |                    |           | Breve descripción           |
-| conformidad        | string       |                    |           | Breve descripción           |
-| fechaRegistroDesde | date         |                    |           | Breve descripción           |
-| fechaRegistroHasta | date         |                    |           | Breve descripción           |
-| tipoReclamo        | int          |                    |           | Breve descripción           |
-| estado             | string       |                    |           | Breve descripción           |
-| macromotivo        | string       |                    |           | Breve descripción           |
-| idComuna           | int          |                    |           | Breve descripción           |
-| servicio           | string       |                    |           | Breve descripción           |
-| tipoServicio       | int          |                    |           | Breve descripción           |
-| tipoRegistro       | int          |                    |           | Breve descripción           |
-| NroSolSubtel       | string       |                    |           | Breve descripción           |
-| NroCasoSernac      | string       |                    |           | Breve descripción           |
-| NroSolMeQuieroSalir| string       |                    |           | Breve descripción           |
+| folio              | int          |                    |           | Número de folio             |
+| codigoCliente      | string       |                    |           | Código de cliente           |
+| rutReclamante      | string       |                    |           | Rut del reclamante          |
+| nombreReclamante   | string       |                    |           | Nombre del reclamante       |
+| conformidad        | string       |                    |           | Conformidad                 |
+| fechaRegistroDesde | date         |                    |           | Fecha de registro, desde    |
+| fechaRegistroHasta | date         |                    |           | Fecha de registro, hasta    |
+| tipoReclamo        | int          |                    |           | ID del tipo de reclamo      |
+| estado             | string       |                    |           | ID del estado               |
+| macromotivo        | string       |                    |           | ID del macromotivo          |
+| idComuna           | int          |                    |           | ID de la comuna             |
+| servicio           | string       |                    |           | ID del servicio             |
+| tipoServicio       | int          |                    |           | ID del tipo de servicio     |
+| tipoRegistro       | int          |                    |           | ID del tipo de registro     |
+| NroSolSubtel       | string       |                    |           | Número de solicitud de Subtel|
+| NroCasoSernac      | string       |                    |           | Número de caso de Sernac    |
+| NroSolMeQuieroSalir| string       |                    |           | Número de 'Me quiero salir' |
 
 **Datos de salida:**
 | Campo                           |  Tipo        |                         Descripción              |
 |:--------------------------------|:------------:|-------------------------------------------------:| 
-| RERE_ID_RECLAMO                 | int          | Breve descripción                                | 
-| RERE_ID_SUBCATEGORIA_INTERNA    | Tipo de dato | Breve descripción                                | 
-| RERE_NOMBRE_USUARIO             | string       | Breve descripción                                | 
-| RERE_USUARIO_ACTUALIZA          | Tipo de dato | Breve descripción                                | 
-| RERE_ID_TIPO_TELEFONO           | int          | Breve descripción                                | 
-| RERE_DIRECCION_CEL_RECLAMADO    | string       | Breve descripción                                | 
-| RERE_FECHA_CIERRE               | Tipo de dato | Breve descripción                                | 
-| RERE_FECHA_NOTIFICACION         | timestamp    | Breve descripción                                | 
-| RERE_FOLIO                      | string       | Breve descripción                                | 
-| RERE_TEXTO                      | string       | Breve descripción                                | 
-| RERE_FECHA_REGISTRO             | timestamp    | Breve descripción                                | 
-| RERE_FECHA_RECLAMO              | timestamp    | Breve descripción                                | 
-| RERE_CALLER_ID                  | int          | Breve descripción                                | 
-| RERE_ID_TIPO_NOTIFICACION       | int          | Breve descripción                                | 
-| RERE_ID_ESTADO_RECLAMO          | int          | Breve descripción                                | 
-| RERE_ID_SOLICITANTE             | int          | Breve descripción                                | 
-| RERE_ID_TIPO_RECLAMO            | int          | Breve descripción                                | 
-| RERE_ID_TIPO_SOLUCION           | int          | Breve descripción                                | 
-| RERE_ID_TIPO_REGISTRO           | int          | Breve descripción                                | 
-| RERE_ID_SERVICIO                | int          | Breve descripción                                | 
-| RERE_ID_TIPO_SERVICIO           | int          | Breve descripción                                | 
-| RERE_ID_MOTIVO                  | int          | Breve descripción                                | 
-| RERE_ID_SUB_MOTIVO              | int          | Breve descripción                                | 
-| RERE_ID_MACROMOTIVO             | int          | Breve descripción                                | 
-| RERE_ID_CONFORMIDAD             | int          | Breve descripción                                | 
-| RERE_HORAS_SIN_SERVICIO         | string       | Breve descripción                                | 
-| RERE_MONTO_TOTAL_RECLAMADO      | string       | Breve descripción                                | 
-| RERE_CELULAR_RECLAMADO          | string       | Breve descripción                                | 
-| RERE_AREA_TELEFONO_RECLAMADO    | string       | Breve descripción                                | 
-| RERE_TELEFONO_RECLAMADO         | string       | Breve descripción                                | 
-| RERE_DIRECCION_TEL_RECLAMADO    | string       | Breve descripción                                | 
-| RERE_TOTAL_DESCUENTO            | string       | Breve descripción                                | 
-| RERE_MONTO_INDEMNIZACION        | string       | Breve descripción                                | 
-| RERE_MONTO_DESCUENTO            | string       | Breve descripción                                | 
-| RERE_ID_RECLAMO_SUBTEL          | int          | Breve descripción                                | 
-| RERE_ID_RECLAMO_SERNAC          | int          | Breve descripción                                | 
-| RERE_ID_USUARIO                 | int          | Breve descripción                                | 
-| RERE_ID_USUARIO_ACTUALIZA       | int          | Breve descripción                                | 
-| RERE_ID_ME_QUIERO_SALIR         | int          | Breve descripción                                | 
-| tipo_notificacion               | array[object]| Breve descripción                                |
-| ↓ estado                        | array[object]| Breve descripción                                | 
-| ⤷ RETS_DESCRIPCION              | string       | Breve descripción                                | 
-| ⤷ RETS_ID_SUBTIPO               | int          | Breve descripción                                | 
-| solicitante                     | array[object]| Breve descripción                                | 
-| tipo_reclamo                    | array[object]| Breve descripción                                | 
-| tipo_solucion                   | array[object]| Breve descripción                                | 
-| ↓ tipo_registro                 | array[object]| Breve descripción                                | 
-| ⤷ RETS_DESCRIPCION              | string       | Breve descripción                                | 
-| ⤷ RETS_ID_SUBTIPO               | int          | Breve descripción                                | 
-| ⤷ RETS_CODIGO                   | int          | Breve descripción                                |
-| tipo_telefono                   | array[object]| Breve descripción                                |
-| servicio                        | array[object]| Breve descripción                                | 
-| tipo_servicio                   | array[object]| Breve descripción                                |
-| motivo                          | array[object]| Breve descripción                                | 
-| sub_motivo                      | array[object]| Breve descripción                                | 
-| macromotivo                     | array[object]| Breve descripción                                | 
-| conformidad                     | array[object]| Breve descripción                                | 
-| archivos                        | array[object]| Breve descripción                                | 
-| acoge_reclamos                  | array[object]| Breve descripción                                |
-| sub_categoria_interna           | array[object]| Breve descripción                                |
-| subtel                          | array[object]| Breve descripción                                |
-| ↓ sernac                        | array[object]| Breve descripción                                | 
-| ⤷ RRSER_NRO_CASO                | string       | Breve descripción                                |
-| ⤷ RRSER_ID_ESTADO               | int          | Breve descripción                                |
-| ⤷ RRSER_FECHA_TRASLADO          | date         | Breve descripción                                |
-| ⤷ RRSER_FECHA_RESP              | date         | Breve descripción                                |
-| ⤷ RRSER_FECHA_PLAZO_MAX         | date         | Breve descripción                                |
-| ⤷ RRSER_COD_OFERTA              | string       | Breve descripción                                |
-| ⤷ RRSER_DESC_PLAN_CONTRATADO    | string       | Breve descripción                                |
-| ⤷ RRSER_VALOR_PLAN              | string       | Breve descripción                                |
-| ⤷ RRSER_ID_MACRO                | int          | Breve descripción                                |
-| ⤷ RRSER_CICLO_FACTURACION       | string       | Breve descripción                                |
-| ⤷ RRSER_COMUNA_SUCURSAL         | string       | Breve descripción                                |
-| ⤷ RRSER_FECHA_INSISTENCIA       | string       | Breve descripción                                |
-| ⤷ RRSER_ID_RECLAMO_SERNAC       | int          | Breve descripción                                |
-| ⤷ RRSER_FECHA_RESP_ESCALA       | string       | Breve descripción                                |
-| ⤷ RRSER_FECHA_CREACION          | timestamp    | Breve descripción                                |
-| ⤷ RRSER_NOMBRE_USUARIO_FIN_GESTION| string     | Breve descripción                                |
-| ⤷ RRSER_ID_USUARIO_CREA         | int          | Breve descripción                                |
-| me_quiero_salir                 | array[object]| Breve descripción                                | 
-| usuario_crea                    | array[object]| Breve descripción                                | 
-| usuario_actualiza               | array[object]| Breve descripción                                | 
+| RERE_ID_RECLAMO                 | int          | ID del reclamo                                   | 
+| RERE_ID_SUBCATEGORIA_INTERNA    | int          | ID de la subcategoría interna                    | 
+| RERE_NOMBRE_USUARIO             | string       | Nombre del usuario                               | 
+| RERE_USUARIO_ACTUALIZA          | string       | Nombre del usuario que actualiza                 | 
+| RERE_ID_TIPO_TELEFONO           | int          | ID del tipo de teléfono                          | 
+| RERE_DIRECCION_CEL_RECLAMADO    | string       | Dirección del celular reclamado                  | 
+| RERE_FECHA_CIERRE               | timestamp    | Fecha de cierre                                  | 
+| RERE_FECHA_NOTIFICACION         | timestamp    | Fecha de notificación                            | 
+| RERE_FOLIO                      | string       | Número de folio                                  | 
+| RERE_TEXTO                      | string       | Detalle del reclamo                              | 
+| RERE_FECHA_REGISTRO             | timestamp    | Fecha de registro                                | 
+| RERE_FECHA_RECLAMO              | timestamp    | Fecha de reclamo                                 | 
+| RERE_CALLER_ID                  | int          | ID caller                                        | 
+| RERE_ID_TIPO_NOTIFICACION       | int          | ID del tipo de notificación                      | 
+| RERE_ID_ESTADO_RECLAMO          | int          | ID del estado del reclamo                        | 
+| RERE_ID_SOLICITANTE             | int          | ID del solicitante                               | 
+| RERE_ID_TIPO_RECLAMO            | int          | ID del tipo de reclamo                           | 
+| RERE_ID_TIPO_SOLUCION           | int          | ID del tipo de solución                          | 
+| RERE_ID_TIPO_REGISTRO           | int          | ID del tipo de registro                          | 
+| RERE_ID_SERVICIO                | int          | ID del servicio                                  | 
+| RERE_ID_TIPO_SERVICIO           | int          | ID del tipo de servicio                          | 
+| RERE_ID_MOTIVO                  | int          | ID del motivo                                    | 
+| RERE_ID_SUB_MOTIVO              | int          | ID del submotivo                                 | 
+| RERE_ID_MACROMOTIVO             | int          | ID del macromotivo                               | 
+| RERE_ID_CONFORMIDAD             | int          | ID de la conformidad                             | 
+| RERE_HORAS_SIN_SERVICIO         | int          | Cantidad de horas sin servicio                   | 
+| RERE_MONTO_TOTAL_RECLAMADO      | int          | Monto total reclamado                            | 
+| RERE_CELULAR_RECLAMADO          | int          | Número de celular reclamado                      | 
+| RERE_AREA_TELEFONO_RECLAMADO    | int          | Área del teléfono reclamado                      | 
+| RERE_TELEFONO_RECLAMADO         | int          | Teléfono reclamado                               | 
+| RERE_DIRECCION_TEL_RECLAMADO    | string       | Dirección del teléfono reclamado                 | 
+| RERE_TOTAL_DESCUENTO            | int          | Total del descuento                              | 
+| RERE_MONTO_INDEMNIZACION        | int          | Monto de indemnización                           | 
+| RERE_MONTO_DESCUENTO            | int          | Monto de descuento                               | 
+| RERE_ID_RECLAMO_SUBTEL          | int          | ID del reclamo Subtel                            | 
+| RERE_ID_RECLAMO_SERNAC          | int          | ID del reclamo Sernac                            | 
+| RERE_ID_USUARIO                 | int          | ID del usuario                                   | 
+| RERE_ID_USUARIO_ACTUALIZA       | int          | ID del usuario que actualiza                     | 
+| RERE_ID_ME_QUIERO_SALIR         | int          | ID me quiero salir                               | 
+| tipo_notificacion               | array[object]| Array con tipos de notificación (Sin uso en esta ruta)|
+| ↓ estado                        | array[object]|                                                  | 
+| ⤷ RETS_DESCRIPCION              | string       | Descripción del estado                           | 
+| ⤷ RETS_ID_SUBTIPO               | int          | ID del estado                                    | 
+| solicitante                     | array[object]| Array con solicitante (Sin uso en esta ruta)     | 
+| tipo_reclamo                    | array[object]| Array con tipos de reclamo (Sin uso en esta ruta)| 
+| tipo_solucion                   | array[object]| Array con tipos de solución (Sin uso en esta ruta)|
+| ↓ tipo_registro                 | array[object]|                                                  | 
+| ⤷ RETS_DESCRIPCION              | string       | Descripción del tipo de registro                 | 
+| ⤷ RETS_ID_SUBTIPO               | int          | ID del tipo de registro                          |
+| ⤷ RETS_CODIGO                   | int          | Código de tipo de registro                       |
+| tipo_telefono                   | array[object]| Array con tipos de teléfono (Sin uso en esta ruta)|
+| servicio                        | array[object]| Array con servicio (Sin uso en esta ruta)        | 
+| tipo_servicio                   | array[object]| Array con tipos de servicio (Sin uso en esta ruta)|
+| motivo                          | array[object]| Array con motivos (Sin uso en esta ruta)         | 
+| sub_motivo                      | array[object]| Array con submotivos (Sin uso en esta ruta)      | 
+| macromotivo                     | array[object]| Array con macromotivos (Sin uso en esta ruta)    | 
+| conformidad                     | array[object]| Array con conformidad (Sin uso en esta ruta)     | 
+| archivos                        | array[object]| Array con archivos (Sin uso en esta ruta)        | 
+| acoge_reclamos                  | array[object]| Array con reclamos acogidos (Sin uso en esta ruta)|
+| sub_categoria_interna           | array[object]| Array con subcategorías internas (Sin uso en esta ruta)|
+| subtel                          | array[object]| Array con info de Subtel (Sin uso en esta ruta)  |
+| ↓ sernac                        | array[object]|                                                  | 
+| ⤷ RRSER_NRO_CASO                | string       | Número de caso                                   |
+| ⤷ RRSER_ID_ESTADO               | int          | ID del estado                                    |
+| ⤷ RRSER_FECHA_TRASLADO          | date         | Fecha de traslado                                |
+| ⤷ RRSER_FECHA_RESP              | date         | Fecha de respuesta                               |
+| ⤷ RRSER_FECHA_PLAZO_MAX         | date         | Fecha de plazo máximo                            |
+| ⤷ RRSER_COD_OFERTA              | string       | Código de oferta                                 |
+| ⤷ RRSER_DESC_PLAN_CONTRATADO    | string       | Descuento plan contratado                        |
+| ⤷ RRSER_VALOR_PLAN              | string       | Valor del plan                                   |
+| ⤷ RRSER_ID_MACRO                | int          | ID macro                                         |
+| ⤷ RRSER_CICLO_FACTURACION       | string       | Ciclo de facturación                             |
+| ⤷ RRSER_COMUNA_SUCURSAL         | string       | Comuna de la sucursal                            |
+| ⤷ RRSER_FECHA_INSISTENCIA       | string       | Fecha de insistencia                             |
+| ⤷ RRSER_ID_RECLAMO_SERNAC       | int          | ID del reclamo Sernac                            |
+| ⤷ RRSER_FECHA_RESP_ESCALA       | string       | Fecha de respuesta de escala                     |
+| ⤷ RRSER_FECHA_CREACION          | timestamp    | Fecha de creación                                |
+| ⤷ RRSER_NOMBRE_USUARIO_FIN_GESTION| string     | Nombre de usuario                                |
+| ⤷ RRSER_ID_USUARIO_CREA         | int          | ID del usuario                                   |
+| me_quiero_salir                 | array[object]| Array con 'Me quiero salir' (Sin uso en esta ruta)| 
+| usuario_crea                    | array[object]| Array con usuario que crea (Sin uso en esta ruta)| 
+| usuario_actualiza               | array[object]| Array con usuario que actualiza (Sin uso en esta ruta)| 
 
 ### 1.19.1.- Ejemplo de llamada
 
@@ -1941,15 +1944,15 @@ Ejemplo: JSON
         "rutReclamante": "",
         "nombreReclamante": "",
         "conformidad": "",
-        "fechaRegistroDesde": "",
-        "fechaRegistroHasta": "",
+        "fechaRegistroDesde": "2021/07/26",
+        "fechaRegistroHasta": "2021/08/26",
         "tipoReclamo": "",
         "estado": "",
         "macromotivo": "",
         "idComuna": "",
         "servicio": "",
         "tipoServicio": "",
-        "tipoRegistro": "",
+        "tipoRegistro": 81,
         "NroSolSubtel": "",
         "NroCasoSernac": "",
         "NroSolMeQuieroSalir": ""
@@ -2102,17 +2105,17 @@ Ruta : GET `/api/reclamos/consultaClienteIVR`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| RUTCliente   | string       | NNNNNNNNC                      | Si                                         | Breve descripción           |
+| RUTCliente   | string       | NNNNNNNNC                      | Si                                         | Rut del cliente             |
 
 **Datos de salida:**
 | Campo              |  Tipo        |                         Descripción              |
 |:-------------------|:------------:|-------------------------------------------------:| 
-| estado             | string       | Breve descripción                                |
-| deudaPendiente     | string       | Breve descripción                                |
-| nodos              | string       | Breve descripción                                |
-| promocionActiva    | string       | Breve descripción                                |
-| tipoPromocion      | Tipo de dato | Breve descripción                                |
-| cantidadConexiones | int          | Breve descripción                                |
+| estado             | string       | Estado                                           |
+| deudaPendiente     | string       | Deuda pendiente                                  |
+| nodos              | string       | Nodo                                             |
+| promocionActiva    | string       | Promoción activa                                 |
+| tipoPromocion      | string       | Tipo de promoción                                |
+| cantidadConexiones | int          | Cantidad de conexiones                           |
 
 ### 1.21.1.- Ejemplo de llamada
 
@@ -2165,11 +2168,11 @@ Ruta : GET `/api/reclamos/comunas`
 **Datos de salida:**
 | Campo                |  Tipo        |                         Descripción              |
 |:---------------------|:------------:|-------------------------------------------------:| 
-| codigo               | int          | Breve descripción                                |
-| descripcion          | string       | Breve descripción                                |
-| codRegion            | int          | Breve descripción                                |
-| periodoInicioVigencia| int          | Breve descripción                                |
-| periodoFinVigencia   | int          | Breve descripción                                |
+| codigo               | int          | Código de la comuna                              |
+| descripcion          | string       | Nombre de la comuna                              |
+| codRegion            | int          | Código de la región                              |
+| periodoInicioVigencia| int          | Inicio de periodo de vigencia                    |
+| periodoFinVigencia   | int          | Fin de periodod de vigencia                      |
 
 ### 1.22.1.- Respuesta de salida
 
@@ -2212,8 +2215,8 @@ Ruta : GET `/api/reclamos/regiones`
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| codigo         | int          | Breve descripción                                |
-| descripcion    | string       | Breve descripción                                |
+| codigo         | int          | Código de la región                              |
+| descripcion    | string       | Nombre de la región                              |
 
 ### 1.23.1.- Respuesta de salida
 
@@ -2254,20 +2257,20 @@ Ruta : POST `/api/reclamos/ingresar-comentario-reclamo`
 **Parámetros de entrada:**
 | Campo          |  Tipo        | Formato          | Requerido     |             Descripción     |
 |:--------------:|:------------:|:----------------:|:-------------:|----------------------------:|
-| idReclamo      | int          |                  | Si            |                             |
-| comentario     | string       |                  |               |                             |
-| nombreUsuario  | string       |                  |               |                             |
-| notificaCliente| boolean      |                  |               |                             |
-| archivos       | array[object]|                  |               |                             |
+| idReclamo      | int          |                  | Si            | ID del reclamo              |
+| comentario     | string       |                  |               | Comentario del reclamo      |
+| nombreUsuario  | string       |                  |               | Nombre usuario              |
+| notificaCliente| boolean      |                  |               | Si se le notificó a cliente o no|
+| archivos       | array[object]|                  |               | Array con archivos          |
 | ↓ usuario      | array[object]|                  |               |                             |
-| ⤷ id           | int          |                  |               |                             |
-| ⤷ nombre       | string       |                  |               |                             |
-| ⤷ area         | string       |                  |               |                             |
-| ⤷ estatus      | string       |                  |               |                             |
-| ⤷ email        | string       |                  |               |                             |
+| ⤷ id           | int          |                  |               | ID del usuario              |
+| ⤷ nombre       | string       |                  |               | Nombre del usuario          |
+| ⤷ area         | string       |                  |               | Área del usuario            |
+| ⤷ estatus      | string       |                  |               | Estatus                     |
+| ⤷ email        | string       |                  |               | Correo electrónico de usuario|
 | ↓↓ rolePermiso | array[object]|                  |               |                             |
-| ⤷ role         | string       |                  |               |                             |
-| ⤷ permiso      | array[string]|                  |               |                             |
+| ⤷ role         | string       |                  |               | Rol del usuario             |
+| ⤷ permiso      | array[string]|                  |               | Permisos del usuario        |
 
 ### 1.24.1.- Ejemplo de llamada
 
@@ -2318,8 +2321,8 @@ Ruta : GET `/api/reclamos/listado/subcategorias-internas`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
 |:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| idServicio   | int          |                                | Si                                         | Breve descripción           |
-| idTipoReclamo| int          |                                | Si                                         | Breve descripción           |
+| idServicio   | int          |                                | Si                                         | ID del servicio             |
+| idTipoReclamo| int          |                                | Si                                         | ID del tipo de reclamo      |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -2371,47 +2374,51 @@ Ruta : POST `/api/sucursalVirtual/reclamo-ingresar?Rut={RUT}`
 **Parámetros de entrada:**
 | Campo                     |  Tipo        | Formato        |     Requerido      |             Descripción     |
 |:-------------------------:|:------------:|:--------------:|:------------------:|----------------------------:|
-| RUT                       | string       | NNNNNNNN-C     | Si                 | Breve descripción           |
-| clienteUnificado          | string       |                |                    | Breve descripción           |
-| clienteNodo               | string       |                |                    | Breve descripción           |
-| codigoClienteBu           | string       |                |                    | Breve descripción           |
-| idConexion                | string       |                |                    | Breve descripción           |
-| nombreRazon               | string       |                |                    | Breve descripción           |
-| apellidos                 | string       |                |                    | Breve descripción           |
-| calle                     | string       |                |                    | Breve descripción           |
-| numeroCalle               | string       |                |                    | Breve descripción           |
-| email                     | string       |                |                    | Breve descripción           |
-| planPrincipal             | string       |                |                    | Breve descripción           |
-| fechaReclamo              | string       |                |                    | Breve descripción           |
-| texto                     | string       |                |                    | Breve descripción           |
-| tipoNotificacion          | int          |                |                    | Breve descripción           |
-| servicio                  | int          |                |                    | Breve descripción           |
-| tipoServicio              | int          |                |                    | Breve descripción           |
-| motivo                    | int          |                |                    | Breve descripción           |
-| subMotivo                 | string       |                |                    | Breve descripción           |
-| idComuna                  | int          |                |                    | Breve descripción           |
-| comuna                    | string       |                |                    | Breve descripción           |
-| idRegion                  | int          |                |                    | Breve descripción           |
-| region                    | string       |                |                    | Breve descripción           |
-| telefono                  | string       |                |                    | Breve descripción           |
-| nombreRepresentante       | string       |                |                    | Breve descripción           |
-| apellidosRepresentante    | string       |                |                    | Breve descripción           |
-| telefonoRepresentante     | string       |                |                    | Breve descripción           |
-| celularRepresentante      | string       |                |                    | Breve descripción           |
-| emailRepresentante        | string       |                |                    | Breve descripción           |
-| direccionRepresentante    | string       |                |                    | Breve descripción           |
-| areaTelefonoReclamado     | string       |                |                    | Breve descripción           |
-| telefonoReclamado         | string       |                |                    | Breve descripción           |
-| direccionTelefonoReclamado| string       |                |                    | Breve descripción           |
-| celularReclamado          | string       |                |                    | Breve descripción           |
-| direccionCelularReclamado | string       |                |                    | Breve descripción           |
-| totalReclamado            | string       |                |                    | Breve descripción           |
-| horasSinServicio          | string       |                |                    | Breve descripción           |
-| numeroContingencia        | string       |                |                    | Breve descripción           |
-| tipoTelefono              | string       |                |                    | Breve descripción           |
-| archivos                  | array[object]|                |                    | Breve descripción           |
-| esTitular                 | boolean      |                |                    | Breve descripción           |
-| esCliente                 | boolean      |                |                    | Breve descripción           |
+| RUT                       | string       | NNNNNNNN-C     | Si                 | Rut del cliente             |
+| clienteUnificado          | string       |                |                    | Código de cliente unificado |
+| clienteNodo               | string       |                |                    | Nodo                        |
+| codigoClienteBu           | string       |                |                    | Código de cliente BU        |
+| idConexion                | string       |                |                    | ID de conexión              |
+| nombreRazon               | string       |                |                    | Nombre o razón social       |
+| apellidos                 | string       |                |                    | Apellidos del cliente       |
+| calle                     | string       |                |                    | Calle del cliente           |
+| numeroCalle               | string       |                |                    | Número de calle del cliente |
+| email                     | string       |                |                    | Correo electrónico del cliente|
+| planPrincipal             | string       |                |                    | Plan principal              |
+| fechaReclamo              | string       |                |                    | Fecha de reclamo            |
+| texto                     | string       |                |                    | Comentario del reclamo      |
+| tipoNotificacion          | int          |                |                    | ID del tipo de notificación |
+| servicio                  | int          |                |                    | ID del servicio             |
+| tipoServicio              | int          |                |                    | ID del tipo de servicio     |
+| motivo                    | int          |                |                    | ID del motivo               |
+| subMotivo                 | int          |                |                    | ID del submotivo            |
+| idComuna                  | int          |                |                    | ID de la comuna             |
+| comuna                    | string       |                |                    | Nombre de comuna            |
+| idRegion                  | int          |                |                    | ID de la región             |
+| region                    | string       |                |                    | Nombre de la región         |
+| telefono                  | string       |                |                    | Número de teléfono del cliente|
+| nombreRepresentante       | string       |                |                    | Nombre del representante    |
+| apellidosRepresentante    | string       |                |                    | Apellidos del representante |
+| telefonoRepresentante     | string       |                |                    | Número de teléfono del representante|
+| celularRepresentante      | string       |                |                    | Número de celular del representante|
+| emailRepresentante        | string       |                |                    | Correo electrónico del representante|
+| direccionRepresentante    | string       |                |                    | Dirección del representante |
+| areaTelefonoReclamado     | string       |                |                    | Área del teléfono reclamado |
+| telefonoReclamado         | string       |                |                    | Número de teléfono reclamado|
+| direccionTelefonoReclamado| string       |                |                    | Dirección del teléfono reclamado|
+| celularReclamado          | string       |                |                    | Número de celular reclamado |
+| direccionCelularReclamado | string       |                |                    | Dirección del celular reclamado|
+| totalReclamado            | string       |                |                    | Monto total reclamado       |
+| horasSinServicio          | string       |                |                    | Cantidad de horas sin servicio|
+| numeroContingencia        | string       |                |                    | Número de contingencia      |
+| tipoTelefono              | string       |                |                    | ID del tipo de teléfono     |
+| ↓ archivos                | array[object]|                |                    |                             |
+| ⤷ nombre                  | string       |                |                    | Nombre del archivo          |
+| ⤷ base64                  | string       |                |                    | Archivo en formato base64   |
+| ⤷ peso                    | int          |                |                    | Peso del archivo            |
+| ⤷ tipoarchivo             | string       |                |                    | Tipo de archivo             |
+| esTitular                 | boolean      |                |                    | Si el cliente es titular o no|
+| esCliente                 | boolean      |                |                    | Si es cliente o no          |
 
 ### 2.1.1.- Ejemplo de llamada
 
@@ -2728,7 +2735,7 @@ Ruta : GET `/api/sucursalVirtual/listado/submotivo`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato          | Requerido         |             Descripción     |
 |:------------:|:------------:|:----------------:|:-----------------:|----------------------------:|
-| idMotivo     | int          |                  | Si                | Breve descripción           |
+| idMotivo     | int          |                  | Si                | ID del motivo               |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -2774,59 +2781,59 @@ Ruta : GET `/api/sucursalVirtual/informes/reclamo-cliente`
 **Parámetros de entrada:**
 | Campo        |  Tipo        | Formato             | Requerido     |             Descripción     |
 |:------------:|:------------:|:-------------------:|:-------------:|----------------------------:|
-| Rut          | string       | NNNNNNNNC           | Si            | Breve descripción           |
-| page         | int          |                     |               | Breve descripción           |
-| per_page     | int          |                     |               | Breve descripción           |
+| Rut          | string       | NNNNNNNNC           | Si            | Rut de cliente              |
+| page         | int          |                     |               | Número de página            |
+| per_page     | int          |                     |               | Cantidad de resultados por página|
 
 **Datos de salida:**
 | Campo                       |  Tipo        |                         Descripción              |
 |:----------------------------|:------------:|-------------------------------------------------:| 
-| RERE_ID_RECLAMO             | int          | Breve descripción                                |
-| RERE_FECHA_CIERRE           | date         | Breve descripción                                |
-| RERE_FOLIO                  | string       | Breve descripción                                |
-| RERE_TEXTO                  | string       | Breve descripción                                |
-| RERE_FECHA_RECLAMO          | timestamp    | Breve descripción                                |
-| RERE_ID_ESTADO_RECLAMO      | int          | Breve descripción                                |
-| RERE_ID_SOLICITANTE         | int          | Breve descripción                                |
-| RERE_ID_TIPO_RECLAMO        | int          | Breve descripción                                |
-| RERE_ID_SERVICIO            | int          | Breve descripción                                |
-| RERE_ID_TIPO_SERVICIO       | int          | Breve descripción                                |
-| RERE_DIRECCION_TEL_RECLAMADO| string       | Breve descripción                                |
-| RERE_DIRECCION_CEL_RECLAMADO| string       | Breve descripción                                |
-| tipo_notificacion           | array[object]| Breve descripción                                |
-| ↓ estado                    | array[object]| Breve descripción                                |
-| ⤷ RETS_DESCRIPCION          | string       | Breve descripción                                |
-| ⤷ RETS_ID_SUBTIPO           | int          | Breve descripción                                |
-| ↓ tipo_reclamo              | array[object]| Breve descripción                                |
-| ⤷ RETS_DESCRIPCION          | string       | Breve descripción                                |
-| ⤷ RETS_ID_SUBTIPO           | int          | Breve descripción                                |
-| solicitante                 | array[object]| Breve descripción                                |
-| ↓ servicio                  | array[object]| Breve descripción                                |
-| ⤷ RESE_DESCRIPCION          | string       | Breve descripción                                |
-| ⤷ RESE_ID_SERVICIO          | int          | Breve descripción                                |
-| ↓ tipo_servicio             | array[object]| Breve descripción                                |
-| ⤷ RETE_DESCRIPCION          | string       | Breve descripción                                |
-| ⤷ RETE_ID_TIPO_SERVICIO     | int          | Breve descripción                                |
-| ↓ respuesta_al_cliente      | array[object]| Breve descripción                                |
-| ⤷ REC_ID_COMENTARIO         | int          | Breve descripción                                |
-| ⤷ REC_ID_RECLAMO            | int          | Breve descripción                                |
-| ⤷ REC_DESC                  | string       | Breve descripción                                |
-| ⤷ REC_DESC_USUARIO          | string       | Breve descripción                                |
-| ⤷ REC_FECHA_REGISTRO        | timestamp    | Breve descripción                                |
-| ⤷ REC_ACTUALIZADO           | timestamp    | Breve descripción                                |
-| ⤷ REC_VIGENTE               | boolean      | Breve descripción                                |
-| ⤷ REC_NOTIFICA_CLIENTE      | boolean      | Breve descripción                                |
-| ↓↓ archivos                 | array[object]| Breve descripción                                |
-| ⤷ REARC_ID_ARCHIVO          | int          | Breve descripción                                |
-| ⤷ REARC_ID_COMENTARIO       | int          | Breve descripción                                |
-| ⤷ REARC_NOMBRE              | string       | Breve descripción                                |
-| ⤷ REARC_TAMANO              | int          | Breve descripción                                |
-| ⤷ REARC_RUTA                | string       | Breve descripción                                |
-| ⤷ REARC_ID_EXTENSION        | int          | Breve descripción                                |
-| ⤷ REARC_NOMBRE_REF          | string       | Breve descripción                                |
-| ⤷ REARC_VIGENTE             | boolean      | Breve descripción                                |
-| ⤷ REARC_ID_USUARIO_CREA     | int          | Breve descripción                                |
-| ⤷ REARC_MIME_TYPE           | string       | Breve descripción                                |
+| RERE_ID_RECLAMO             | int          | ID del reclamo                                   | 
+| RERE_FECHA_CIERRE           | date         | Fecha de cierre                                  |
+| RERE_FOLIO                  | string       | Número de folio                                  | 
+| RERE_TEXTO                  | string       | Detalle del reclamo                              | 
+| RERE_FECHA_RECLAMO          | timestamp    | Fecha de reclamo                                 | 
+| RERE_ID_ESTADO_RECLAMO      | int          | ID del estado del reclamo                        | 
+| RERE_ID_SOLICITANTE         | int          | ID del solicitante                               | 
+| RERE_ID_TIPO_RECLAMO        | int          | ID del tipo de reclamo                           |
+| RERE_ID_SERVICIO            | int          | ID del servicio                                  | 
+| RERE_ID_TIPO_SERVICIO       | int          | ID del tipo de servicio                          | 
+| RERE_DIRECCION_TEL_RECLAMADO| string       | Dirección del teléfono reclamado                 |
+| RERE_DIRECCION_CEL_RECLAMADO| string       | Dirección del celular reclamado                  |
+| tipo_notificacion           | array[object]| Array con el tipo de notificación (Sin uso en esta ruta)|
+| ↓ estado                    | array[object]|                                                  | 
+| ⤷ RETS_DESCRIPCION          | string       | Descripción del estado                           | 
+| ⤷ RETS_ID_SUBTIPO           | int          | ID del estado                                    |  
+| ↓ tipo_reclamo              | array[object]|                                                  | 
+| ⤷ RETS_DESCRIPCION          | string       | Descripción del tipo de reclamo                  | 
+| ⤷ RETS_ID_SUBTIPO           | int          | ID del tipo de reclamo                           | 
+| solicitante                 | array[object]| Array con el solicitante (Sin uso en esta ruta)  |
+| ↓ servicio                  | array[object]|                                                  | 
+| ⤷ RESE_DESCRIPCION          | string       | Descripción del servicio                         | 
+| ⤷ RESE_ID_SERVICIO          | int          | ID del servicio                                  |
+| ↓ tipo_servicio             | array[object]|                                                  | 
+| ⤷ RETE_DESCRIPCION          | string       | Descripción del tipo de servicio                 | 
+| ⤷ RETE_ID_TIPO_SERVICIO     | int          | ID del tipo de servicio                          |
+| ↓ respuesta_al_cliente      | array[object]|                                                  |
+| ⤷ REC_ID_COMENTARIO         | int          | ID del comentario                                |
+| ⤷ REC_ID_RECLAMO            | int          | ID del reclamo                                   |
+| ⤷ REC_DESC                  | string       | Descripción                                      |
+| ⤷ REC_DESC_USUARIO          | string       | Nombre usuario                                   |
+| ⤷ REC_FECHA_REGISTRO        | timestamp    | Fecha de registro                                |
+| ⤷ REC_ACTUALIZADO           | timestamp    | Fecha de actualización                           |
+| ⤷ REC_VIGENTE               | boolean      | Si está vigente o no                             |
+| ⤷ REC_NOTIFICA_CLIENTE      | boolean      | Si se le notificó a cliente o no                 |
+| ↓↓ archivos                 | array[object]|                                                  |
+| ⤷ REARC_ID_ARCHIVO          | int          | ID del archivo                                   |
+| ⤷ REARC_ID_COMENTARIO       | int          | ID del comentario                                |
+| ⤷ REARC_NOMBRE              | string       | Nombre del archivo                               |
+| ⤷ REARC_TAMANO              | int          | Tamaño del archivo                               |
+| ⤷ REARC_RUTA                | string       | Ruta del archivo                                 |
+| ⤷ REARC_ID_EXTENSION        | int          | ID de la extensión                               |
+| ⤷ REARC_NOMBRE_REF          | string       | Nombre de referencia del archivo                 |
+| ⤷ REARC_VIGENTE             | boolean      | Si está vigente o no                             |
+| ⤷ REARC_ID_USUARIO_CREA     | int          | ID del usuario que crea                          |
+| ⤷ REARC_MIME_TYPE           | string       | Mime tipo                                        |
 
 ### 2.8.1.- Ejemplo de llamada
 
@@ -3007,93 +3014,93 @@ Ruta : GET `/ivr/MundoSocial/informe-reclamos`
 | rutCliente   | string       | NNNNNNNNC        | Si                | Rut del cliente             |
 
 **Datos de salida:**
-| Campo                         |  Tipo        |                         Descripción              |
-|:------------------------------|:------------:|-------------------------------------------------:| 
-| RERE_ID_RECLAMO               | int          | Breve descripción                                |
-| RERE_DIRECCION_CEL_RECLAMADO  | string       | Breve descripción                                |
-| RERE_FECHA_CIERRE             | timestamp    | Breve descripción                                |
-| RERE_ID_TIPO_TELEFONO         | int          | Breve descripción                                |
-| RERE_FECHA_NOTIFICACION       | timestamp    | Breve descripción                                |
-| RERE_FOLIO                    | string       | Breve descripción                                |
-| RERE_TEXTO                    | string       | Breve descripción                                |
-| RERE_FECHA_REGISTRO           | timestamp    | Breve descripción                                |
-| RERE_FECHA_RECLAMO            | timestamp    | Breve descripción                                |
-| RERE_CALLER_ID                | int          | Breve descripción                                |
-| RERE_ID_TIPO_NOTIFICACION     | int          | Breve descripción                                |
-| RERE_ID_ESTADO_RECLAMO        | int          | Breve descripción                                |
-| RERE_ID_SOLICITANTE           | int          | Breve descripción                                |
-| RERE_ID_TIPO_RECLAMO          | int          | Breve descripción                                |
-| RERE_ID_TIPO_SOLUCION         | int          | Breve descripción                                |
-| RERE_ID_TIPO_REGISTRO         | int          | Breve descripción                                |
-| RERE_ID_SERVICIO              | int          | Breve descripción                                |
-| RERE_ID_TIPO_SERVICIO         | int          | Breve descripción                                |
-| RERE_ID_MOTIVO                | int          | Breve descripción                                |
-| RERE_ID_SUB_MOTIVO            | int          | Breve descripción                                |
-| RERE_ID_MACROMOTIVO           | int          | Breve descripción                                |
-| RERE_ID_CONFORMIDAD           | int          | Breve descripción                                |
-| RERE_HORAS_SIN_SERVICIO       | int          | Breve descripción                                |
-| RERE_MONTO_TOTAL_RECLAMADO    | int          | Breve descripción                                |
-| RERE_CELULAR_RECLAMADO        | int          | Breve descripción                                |
-| RERE_AREA_TELEFONO_RECLAMADO  | int          | Breve descripción                                |
-| RERE_TELEFONO_RECLAMADO       | int          | Breve descripción                                |
-| RERE_DIRECCION_TEL_RECLAMADO  | string       | Breve descripción                                |
-| RERE_TOTAL_DESCUENTO          | string       | Breve descripción                                |
-| RERE_MONTO_INDEMNIZACION      | string       | Breve descripción                                |
-| RERE_MONTO_DESCUENTO          | string       | Breve descripción                                |
-| ↓ tipo_notificacion           | string       | Breve descripción                                |
-| RETS_DESCRIPCION              | string       | Breve descripción                                |
-| RETS_ID_SUBTIPO               | int          | Breve descripción                                |
-| ↓ estado                      | string       | Breve descripción                                |
-| ⤷ RETS_DESCRIPCION            | string       | Breve descripción                                |
-| ⤷ RETS_ID_SUBTIPO             | string       | Breve descripción                                |
-| ↓ solicitante                 | string       | Breve descripción                                |
-| ⤷ RESO_RUT                    | string       | Breve descripción                                |
-| ⤷ RESO_RUT_DV                 | string       | Breve descripción                                |
-| ⤷ RESO_NOMBRE_RAZON           | string       | Breve descripción                                |
-| ⤷ RESO_APELLIDOS              | string       | Breve descripción                                |
-| ⤷ RESO_CODIGO_CLIENTE_BU      | string       | Breve descripción                                |
-| ⤷ RESO_ID_SOLICITANTE         | int          | Breve descripción                                |
-| ⤷ RESO_COMUNA                 | string       | Breve descripción                                |
-| ⤷ RESO_ID_COMUNA              | int          | Breve descripción                                |
-| ⤷ RESO_REGION                 | string       | Breve descripción                                |
-| ⤷ RESO_PLAN_PRINCIPAL         | string       | Breve descripción                                |
-| ⤷ RESO_NODO                   | string       | Breve descripción                                |
-| ⤷ RESO_RUT_REPRESENTANTE      | string       | Breve descripción                                |
-| ⤷ RESO_RUT_DV_REPRESENTANTE   | string       | Breve descripción                                |
-| ⤷ RESO_NOMBRE_REPRESENTANTE   | string       | Breve descripción                                |
-| ⤷ RESO_APELLIDOS_REPRESENTANTE| string       | Breve descripción                                |
-| ⤷ RESO_TELEFONO_REPRESENTANTE | string       | Breve descripción                                |
-| ⤷ RESO_EMAIL_REPRESENTANTE    | string       | Breve descripción                                |
-| ⤷ RESO_COMUNA_REPRESENTANTE   | string       | Breve descripción                                |
-| ⤷ RESO_ID_COMUNA_REPRESENTANTE| int          | Breve descripción                                |
-| ⤷ RESO_DIRECCION_REPRESENTANTE| string       | Breve descripción                                |
-| ⤷ RESO_ID_REGION_REPRESENTANTE| int          | Breve descripción                                |
-| ⤷ RESO_REGION_REPRESENTANTE   | string       | Breve descripción                                |
-| ⤷ RESO_CALLE                  | string       | Breve descripción                                |
-| ⤷ RESO_CLIENTE_UNIFICADO      | string       | Breve descripción                                |
-| ↓ tipo_reclamo                | string       | Breve descripción                                |
-| ⤷ RETS_DESCRIPCION            | string       | Breve descripción                                |
-| ⤷ RETS_ID_SUBTIPO             | int          | Breve descripción                                |
-| ↓ tipo_solucion               | string       | Breve descripción                                |
-| ⤷ RETS_DESCRIPCION            | string       | Breve descripción                                |
-| ⤷ RETS_ID_SUBTIPO             | int          | Breve descripción                                |
-| ↓ tipo_registro               | string       | Breve descripción                                |
-| ⤷ RETS_DESCRIPCION            | string       | Breve descripción                                |
-| ⤷ RETS_ID_SUBTIPO             | int          | Breve descripción                                |
-| servicio                      | string       | Breve descripción                                |
-| tipo_servicio                 | string       | Breve descripción                                |
-| motivo                        | string       | Breve descripción                                |
-| sub_motivo                    | string       | Breve descripción                                |
-| macromotivo                   | string       | Breve descripción                                |
-| conformidad                   | string       | Breve descripción                                |
-| ↓ archivos                    | string       | Breve descripción                                |
-| ⤷ REAR_ID_ARCHIVO             | int          | Breve descripción                                |
-| ⤷ REAR_ID_RECLAMO             | int          | Breve descripción                                |
-| ⤷ REAR_NOMBRE                 | string       | Breve descripción                                |
-| ⤷ REAR_RUTA                   | string       | Breve descripción                                |
-| ⤷ REAR_ID_EXTENSION           | int          | Breve descripción                                |
-| usuario                       | string       | Breve descripción                                |
-| acoge_reclamo                 | string       | Breve descripción                                |
+| Campo                           |  Tipo        |                         Descripción              |
+|:--------------------------------|:------------:|-------------------------------------------------:| 
+| RERE_ID_RECLAMO                 | int          | ID del reclamo                                   | 
+| RERE_DIRECCION_CEL_RECLAMADO    | string       | Dirección del celular reclamado                  | 
+| RERE_FECHA_CIERRE               | timestamp    | Fecha de cierre                                  | 
+| RERE_ID_TIPO_TELEFONO           | int          | ID del tipo de teléfono                          |
+| RERE_FECHA_NOTIFICACION         | timestamp    | Fecha de notificación                            |  
+| RERE_FOLIO                      | string       | Número de folio                                  | 
+| RERE_TEXTO                      | string       | Detalle del reclamo                              | 
+| RERE_FECHA_REGISTRO             | timestamp    | Fecha de registro                                | 
+| RERE_FECHA_RECLAMO              | timestamp    | Fecha de reclamo                                 | 
+| RERE_CALLER_ID                  | int          | ID caller                                        | 
+| RERE_ID_TIPO_NOTIFICACION       | int          | ID del tipo de notificación                      | 
+| RERE_ID_ESTADO_RECLAMO          | int          | ID del estado del reclamo                        | 
+| RERE_ID_SOLICITANTE             | int          | ID del solicitante                               | 
+| RERE_ID_TIPO_RECLAMO            | int          | ID del tipo de reclamo                           | 
+| RERE_ID_TIPO_SOLUCION           | int          | ID del tipo de solución                          | 
+| RERE_ID_TIPO_REGISTRO           | int          | ID del tipo de registro                          | 
+| RERE_ID_SERVICIO                | int          | ID del servicio                                  | 
+| RERE_ID_TIPO_SERVICIO           | int          | ID del tipo de servicio                          | 
+| RERE_ID_MOTIVO                  | int          | ID del motivo                                    | 
+| RERE_ID_SUB_MOTIVO              | int          | ID del submotivo                                 | 
+| RERE_ID_MACROMOTIVO             | int          | ID del macromotivo                               | 
+| RERE_ID_CONFORMIDAD             | int          | ID de la conformidad                             | 
+| RERE_HORAS_SIN_SERVICIO         | int          | Cantidad de horas sin servicio                   | 
+| RERE_MONTO_TOTAL_RECLAMADO      | int          | Monto total reclamado                            | 
+| RERE_CELULAR_RECLAMADO          | int          | Número de celular reclamado                      | 
+| RERE_AREA_TELEFONO_RECLAMADO    | int          | Área del teléfono reclamado                      | 
+| RERE_TELEFONO_RECLAMADO         | int          | Teléfono reclamado                               | 
+| RERE_DIRECCION_TEL_RECLAMADO    | string       | Dirección del teléfono reclamado                 | 
+| RERE_TOTAL_DESCUENTO            | int          | Total del descuento                              | 
+| RERE_MONTO_INDEMNIZACION        | int          | Monto de indemnización                           | 
+| RERE_MONTO_DESCUENTO            | int          | Monto de descuento                               |
+| ↓ tipo_notificacion             | array[object]|                                                  | 
+| ⤷ RETS_DESCRIPCION              | string       | Descripción de la notificación                   | 
+| ⤷ RETS_ID_SUBTIPO               | int          | ID del tipo de notificación                      | 
+| ↓ estado                        | array[object]|                                                  | 
+| ⤷ RETS_DESCRIPCION              | string       | Descripción del estado                           | 
+| ⤷ RETS_ID_SUBTIPO               | int          | ID del estado                                    |
+| ↓ solicitante                   | array[object]|                                                  | 
+| ⤷ RESO_RUT                      | int          | Rut del solicitante                              | 
+| ⤷ RESO_RUT_DV                   | string       | Dígito verficador del rut del solicitante        | 
+| ⤷ RESO_NOMBRE_RAZON             | string       | Nombre o razón social del solicitante            | 
+| ⤷ RESO_APELLIDOS                | string       | Apellidos del solicitante                        |
+| ⤷ RESO_CODIGO_CLIENTE_BU        | string       | Código de cliente BU                             | 
+| ⤷ RESO_ID_SOLICITANTE           | int          | ID del solicitante                               | 
+| ⤷ RESO_COMUNA                   | string       | Nombre de comuna                                 | 
+| ⤷ RESO_ID_COMUNA                | int          | ID de la comuna                                  | 
+| ⤷ RESO_REGION                   | string       | Nombre de la región                              |  
+| ⤷ RESO_PLAN_PRINCIPAL           | string       | Plan contratado                                  |
+| ⤷ RESO_NODO                     | string       | Nodo                                             | 
+| ⤷ RESO_RUT_REPRESENTANTE        | int          | Rut del representante                            | 
+| ⤷ RESO_RUT_DV_REPRESENTANTE     | string       | Dígito verficador del rut del representante      | 
+| ⤷ RESO_NOMBRE_REPRESENTANTE     | string       | Nombre del representante                         | 
+| ⤷ RESO_APELLIDOS_REPRESENTANTE  | string       | Apellidos del representante                      | 
+| ⤷ RESO_TELEFONO_REPRESENTANTE   | int          | Teléfono del representante                       |
+| ⤷ RESO_EMAIL_REPRESENTANTE      | string       | Correo electrónico del representante             | 
+| ⤷ RESO_COMUNA_REPRESENTANTE     | string       | Nombre de la comuna del representante            | 
+| ⤷ RESO_ID_COMUNA_REPRESENTANTE  | int          | ID de la comuna del representante                | 
+| ⤷ RESO_DIRECCION_REPRESENTANTE  | string       | Dirección del representante                      | 
+| ⤷ RESO_ID_REGION_REPRESENTANTE  | int          | ID de la región del representante                | 
+| ⤷ RESO_REGION_REPRESENTANTE     | string       | Región del representante                         | 
+| ⤷ RESO_CALLE                    | string       | Calle del solicitante                            | 
+| ⤷ RESO_CLIENTE_UNIFICADO        | int          | Código del cliente unificado                     |  
+| ↓ tipo_reclamo                  | array[object]|                                                  | 
+| ⤷ RETS_DESCRIPCION              | string       | Descripción del tipo de reclamo                  | 
+| ⤷ RETS_ID_SUBTIPO               | int          | ID del tipo de reclamo                           | 
+| ↓ tipo_solucion                 | array[object]|                                                  | 
+| ⤷ RETS_DESCRIPCION              | string       | Descripción del tipo de solución                 | 
+| ⤷ RETS_ID_SUBTIPO               | int          | ID del tipo de solución                          |
+| ↓ tipo_registro                 | array[object]|                                                  | 
+| ⤷ RETS_DESCRIPCION              | string       | Descripción del tipo de registro                 | 
+| ⤷ RETS_ID_SUBTIPO               | int          | ID del tipo de registro                          |
+| servicio                        | array[object]| Array con el servicio (Sin uso en esta ruta)     |
+| tipo_servicio                   | array[object]| Array con el tipo de servicio (Sin uso en esta ruta)|
+| motivo                          | array[object]| Array con el motivo (Sin uso en esta ruta)       |
+| sub_motivo                      | array[object]| Array con el submotivo (Sin uso en esta ruta)    |
+| macromotivo                     | array[object]| Array con el macromotivo (Sin uso en esta ruta)  |
+| conformidad                     | array[object]| Array con la conformidad (Sin uso en esta ruta)  |
+| ↓ archivos                      | array[object]|                                                  |
+| ⤷ REAR_ID_ARCHIVO               | int          | ID del archivo                                   |
+| ⤷ REAR_ID_RECLAMO               | int          | ID del reclamo                                   |
+| ⤷ REAR_NOMBRE                   | string       | Nombre del archivo                               |
+| ⤷ REAR_RUTA                     | string       | Ruta del archivo                                 |
+| ⤷ REAR_ID_EXTENSION             | int          | Extensión del archivo                            |
+| ⤷ usuario                       | int          | Usuario                                          |
+| acoge_reclamo                   | array[object]| Array con los archivos (Sin uso en esta ruta)    |
 
 ### 3.1.1.- Ejemplo de llamada
 
@@ -3779,9 +3786,9 @@ Ruta : POST `/ivr/update-celular-reclamado`
 **Parámetros de entrada:**
 | Campo            |  Tipo        | Formato                        |     Requerido               |             Descripción     |
 |:----------------:|:------------:|:------------------------------:|:---------------------------:|----------------------------:|
-| idReclamo        | int          |                                | Si                          | Breve descripción           |
-| celularReclamado | int          |                                | Si                          | Breve descripción           |
-| rutCliente       | string       | NNNNNNNNC                      | Si                          | Breve descripción           |
+| idReclamo        | int          |                                | Si                          | ID del reclamo              |
+| celularReclamado | int          |                                | Si                          | Número de celular reclamado |
+| rutCliente       | string       | NNNNNNNNC                      | Si                          | Rut del cliente             |
 
 ### 3.13.1.- Ejemplo de llamada
 
