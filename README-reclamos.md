@@ -229,11 +229,11 @@
 
 # Objetivo
 
-Describir objetivo
+Disponer Api's para realizar la gestión de la plataforma de Reclamos de Mundo.
 
 # Restricciones
 
-Especificar restricciones
+En este documento solo se describen Api's propias del sistema, no externas a este.
 
 
 # 1.- Reclamos
