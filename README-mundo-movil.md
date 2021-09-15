@@ -822,9 +822,9 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/checkPort`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
+|:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
+| numeroTelefono    | string       |            |                | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -935,21 +935,34 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/checkSim`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
+|:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
+| icc               | int          |            |                | Breve descripción           |
 
 **Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo              |  Tipo        |                         Descripción              |
+|:-------------------|:------------:|-------------------------------------------------:| 
+| ↓ getSimInfoResult | array[object]|                                                  |
+| ⤷ wsSessionId      | string       |                                                  |
+| ⤷ callID           | string       |                                                  |
+| ⤷ callCode         | int          |                                                  |
+| ⤷ resultCode       | string       |                                                  |
+| ⤷ callMsg          | string       |                                                  | 
+| ⤷ subscriptionID   | string       |                                                  | 
+| ↓↓ item            | array[object]|                                                  |
+| ⤷ packageInstanceID| string       |                                                  | 
+| ⤷ icc              | string       |                                                  | 
+| ⤷ puk              | string       |                                                  | 
+| ⤷ status           | int          |                                                  | 
+| ⤷ imsiID           | string       |                                                  | 
+| ⤷ additionalImsi   | string       |                                                  | 
 
 ### 2.6.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "icc": 8956072200000000673
 	}
 
 ### 2.6.2.- Respuesta de salida
@@ -958,30 +971,36 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 2.6.2.1.- Respuesta de error
 
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
-	} 
+    {
+        "getSimInfoResult": {
+            "wsSessionId": "EWSaba2d3b8399d84",
+            "callID": "EWSaba2d3b8399d84COR22c1750fec4b6f",
+            "callCode": 105,
+            "resultCode": "ENTITY_NOT_FOUND",
+            "callMsg": "SIM[ICC] not found"
+        }
+    }
   
 #### 2.6.2.2.- Respuesta de éxito
 
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
-	}
+    {
+        "getSimInfoResult": {
+            "wsSessionId": "EWSaba2d3b8399d84",
+            "callID": "EWSaba2d3b8399d84CORaba8716c618d26",
+            "callCode": 0,
+            "resultCode": "OK",
+            "callMsg": "ok",
+            "item": {
+                "packageInstanceID": "PKGID269653_TS1627321662016"
+                "icc": "8956072200000000673"
+                "puk": "66505235"
+                "status": 3
+                "imsiID": "730072200000067"
+                "additionalImsi": "730072200000067"
+            },
+            "subscriptionID": "SID131753_TS1627321661965_0"
+        }
+    }
 
 ## 2.7.- CheckSubscription
 Método que permite obtener datos de una suscripción (más completa, incluye consumo).
@@ -991,21 +1010,113 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/checkSubscription`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
+|:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
+| subscriptionID    | string       |            |                | Breve descripción           |
 
 **Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo                   |  Tipo        |                         Descripción              |
+|:------------------------|:------------:|-------------------------------------------------:| 
+| wsSessionId             | Tipo de dato | Breve descripción                                |
+| callID                  | Tipo de dato | Breve descripción                                |
+| callCode                | Tipo de dato | Breve descripción                                |
+| resultCode              | Tipo de dato | Breve descripción                                |
+| callMsg                 | Tipo de dato | Breve descripción                                |
+| item                    | Tipo de dato | Breve descripción                                |
+| subscriptionBasic       | Tipo de dato | Breve descripción                                |
+| subscriptionID          | Tipo de dato | Breve descripción                                |
+| idSubscriber            | Tipo de dato | Breve descripción                                |
+| msisdn                  | Tipo de dato | Breve descripción                                |
+| icc                     | Tipo de dato | Breve descripción                                |
+| imsi                    | Tipo de dato | Breve descripción                                |
+| status                  | Tipo de dato | Breve descripción                                |
+| computedStatus          | Tipo de dato | Breve descripción                                |
+| networkStatus           | Tipo de dato | Breve descripción                                |
+| type                    | Tipo de dato | Breve descripción                                |
+| portabilityStatus       | Tipo de dato | Breve descripción                                |
+| itemBalance             | Tipo de dato | Breve descripción                                |
+| balance                 | Tipo de dato | Breve descripción                                |
+| expirationDate          | Tipo de dato | Breve descripción                                |
+| service                 | Tipo de dato | Breve descripción                                |
+| active                  | Tipo de dato | Breve descripción                                |
+| extBool                 | Tipo de dato | Breve descripción                                |
+| extNumber               | Tipo de dato | Breve descripción                                |
+| extString               | Tipo de dato | Breve descripción                                |
+| userModifiable          | Tipo de dato | Breve descripción                                |
+| userVisible             | Tipo de dato | Breve descripción                                |
+| featureName             | Tipo de dato | Breve descripción                                |
+| featureID               | Tipo de dato | Breve descripción                                |
+| featureModel            | Tipo de dato | Breve descripción                                |
+| featureOnlyAdmin        | Tipo de dato | Breve descripción                                |
+| bonus                   | Tipo de dato | Breve descripción                                |
+| packageInstanceID       | Tipo de dato | Breve descripción                                |
+| bssRefID                | Tipo de dato | Breve descripción                                |
+| status                  | Tipo de dato | Breve descripción                                |
+| scope                   | Tipo de dato | Breve descripción                                |
+| renewable               | Tipo de dato | Breve descripción                                |
+| renewalCount            | Tipo de dato | Breve descripción                                |
+| promotion               | Tipo de dato | Breve descripción                                |
+| startDate               | Tipo de dato | Breve descripción                                |
+| origStartDate           | Tipo de dato | Breve descripción                                |
+| terminationDate         | Tipo de dato | Breve descripción                                |
+| trafficLimitValueOrig   | Tipo de dato | Breve descripción                                |
+| trafficLimitValue       | Tipo de dato | Breve descripción                                |
+| trafficLimitValueRenewal| Tipo de dato | Breve descripción                                |
+| name                    | Tipo de dato | Breve descripción                                |
+| deltaPriceplanID        | Tipo de dato | Breve descripción                                |
+| type                    | Tipo de dato | Breve descripción                                |
+| category                | Tipo de dato | Breve descripción                                |
+| mpp                     | Tipo de dato | Breve descripción                                |
+| packageInstanceID       | Tipo de dato | Breve descripción                                |
+| bssRefID                | Tipo de dato | Breve descripción                                |
+| status                  | Tipo de dato | Breve descripción                                |
+| scope                   | Tipo de dato | Breve descripción                                |
+| renewable               | Tipo de dato | Breve descripción                                |
+| renewalCount            | Tipo de dato | Breve descripción                                |
+| promotion               | Tipo de dato | Breve descripción                                |
+| startDate               | Tipo de dato | Breve descripción                                |
+| origStartDate           | Tipo de dato | Breve descripción                                |
+| name                    | Tipo de dato | Breve descripción                                |
+| deltaPriceplanID        | Tipo de dato | Breve descripción                                |
+| type                    | Tipo de dato | Breve descripción                                |
+| category                | Tipo de dato | Breve descripción                                |
+| pack                    | Tipo de dato | Breve descripción                                |
+| packageInstanceID       | Tipo de dato | Breve descripción                                |
+| bssRefID                | Tipo de dato | Breve descripción                                |
+| status                  | Tipo de dato | Breve descripción                                |
+| scope                   | Tipo de dato | Breve descripción                                |
+| renewable               | Tipo de dato | Breve descripción                                |
+| renewalCount            | Tipo de dato | Breve descripción                                |
+| promotion               | Tipo de dato | Breve descripción                                |
+| startDate               | Tipo de dato | Breve descripción                                |
+| origStartDate           | Tipo de dato | Breve descripción                                |
+| terminationDate         | Tipo de dato | Breve descripción                                |
+| chargingLimitValueOrig  | Tipo de dato | Breve descripción                                |
+| chargingLimitValue      | Tipo de dato | Breve descripción                                |
+| chargingLimitValueRenewal|Tipo de dato | Breve descripción                                |
+| name                    | Tipo de dato | Breve descripción                                |
+| deltaPriceplanID        | Tipo de dato | Breve descripción                                |
+| type                    | Tipo de dato | Breve descripción                                |
+| category                | Tipo de dato | Breve descripción                                |
+| child                   | Tipo de dato | Breve descripción                                |
+| bssRefID                | Tipo de dato | Breve descripción                                |
+| status                  | Tipo de dato | Breve descripción                                |
+| scope                   | Tipo de dato | Breve descripción                                |
+| renewalCount            | Tipo de dato | Breve descripción                                |
+| promotion               | Tipo de dato | Breve descripción                                |
+| startDate               | Tipo de dato | Breve descripción                                |
+| origStartDate           | Tipo de dato | Breve descripción                                |
+| name                    | Tipo de dato | Breve descripción                                |
+| deltaPriceplanID        | Tipo de dato | Breve descripción                                |
+| type                    | Tipo de dato | Breve descripción                                |
+| category                | Tipo de dato | Breve descripción                                |
 
 ### 2.7.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "subscriptionID": "SID21356_TS1608234799559_0"
 	}
 
 ### 2.7.2.- Respuesta de salida
@@ -1014,30 +1125,132 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 2.7.2.1.- Respuesta de error
 
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
-	} 
+    {
+        "subscriptionProfileResult": {
+            "wsSessionId": "EWSabb7ea00fe977d"
+            "callID": "EWSabb7ea00fe977dCOR22d0c52a3a0420"
+            "callCode": 115
+            "resultCode": "INVALID_SUBSCRIPTION"
+            "callMsg": "Invalid SID[subscriptionID]"
+        }
+    }
   
 #### 2.7.2.2.- Respuesta de éxito
 
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
+    {
+        "subscriptionProfileResult": {
+            "wsSessionId": "EWSaba2d3b8399d84",
+            "callID": "EWSaba2d3b8399d84COR22c311eaafb34f",
+            "callCode": 0,
+            "resultCode": "OK",
+            "callMsg": "ok",
+            "item": {
+                "subscriptionBasic": {
+                    "subscriptionID": "SID21356_TS1608234799559_0",
+                    "idSubscriber": 25924,
+                    "msisdn": "936003595",
+                    "icc": "8956072200000046544",
+                    "imsi": "730072200004654",
+                    "status": 18,
+                    "computedStatus": 18,
+                    "networkStatus": 11,
+                    "type": 0,
+                    "portabilityStatus": 0
+                },
+                "itemBalance": {
+                    "balance": "0",
+                    "expirationDate": "2021-03-17T18:53:20-03:00"
+                },
+                "service": [
                     {
-                     DATA
+                        "active": false,
+                        "extBool": false,
+                        "extNumber": -1,
+                        "extString": "",
+                        "userModifiable": false,
+                        "userVisible": false,
+                        "featureName": "Incoming Calls Blocked",
+                        "featureID": "Baic",
+                        "featureModel": "SupplementaryService.xsd",
+                        "featureOnlyAdmin": false
                     },
-                ]
+                    ...
+                ],
+                "bonus": [
+                    {
+                        "packageInstanceID": "PKGID37592_TS1608234799613",
+                        "bssRefID": "MM_Mimundo_L|PKGID37592_TS1608234799613|RP_MiMundo_L_Minutos|165552",
+                        "status": 0,
+                        "scope": 0,
+                        "renewable": true,
+                        "renewalCount": 9,
+                        "promotion": false,
+                        "startDate": "2021-08-25T00:00:00-04:00",
+                        "origStartDate": "2020-12-17T18:53:20-03:00",
+                        "terminationDate": "2021-09-25T00:00:00-03:00",
+                        "trafficLimitValueOrig": "30000.000000",
+                        "trafficLimitValue": "60000.000000",
+                        "trafficLimitValueRenewal": "60000.000000",
+                        "name": "RP_MiMundo_L_Minutos",
+                        "deltaPriceplanID": "RP_MiMundo_L_Minutos",
+                        "type": 0,
+                        "category": "voice"
+                    },
+                    ...
+                ],
+                "mpp": [
+                    {
+                        "packageInstanceID": "PKGID37592_TS1608234799613",
+                        "bssRefID": "MM_Mimundo_L|PKGID37592_TS1608234799613|MiniPP_ServiciosOperador|165544",
+                        "status": 0,
+                        "scope": 0,
+                        "renewable": false,
+                        "renewalCount": 0,
+                        "promotion": false,
+                        "startDate": "2020-12-17T18:53:20-03:00",
+                        "origStartDate": "2020-12-17T18:53:20-03:00",
+                        "name": "MiniPP_ServiciosOperador",
+                        "deltaPriceplanID": "MiniPP_ServiciosOperador",
+                        "type": 1,
+                        "category": "generic"
+                    },
+                    ...
+                ],
+                "pack": {
+                    "packageInstanceID": "PKGID37592_TS1608234799613",
+                    "bssRefID": "MM_Mimundo_L|PKGID37592_TS1608234799613|RP_MiMundo_L|165560",
+                    "status": 0,
+                    "scope": 0,
+                    "renewable": true,
+                    "renewalCount": 9,
+                    "promotion": false,
+                    "startDate": "2021-08-25T00:00:00-04:00",
+                    "origStartDate": "2020-12-17T18:53:20-03:00",
+                    "terminationDate": "2021-09-25T00:00:00-03:00",
+                    "chargingLimitValueOrig": "30720.000000",
+                    "chargingLimitValue": "40960.000000",
+                    "chargingLimitValueRenewal": "40960.000000",
+                    "name": "RP_MiMundo_L",
+                    "deltaPriceplanID": "RP_MiMundo_L",
+                    "type": 2,
+                    "category": "combo",
+                    "child": {
+                        "bssRefID": "MM_Mimundo_L|PKGID37592_TS1608234799613|MiniPP_RRSS|165564",
+                        "status": 0,
+                        "scope": 0,
+                        "renewalCount": 0,
+                        "promotion": false,
+                        "startDate": "2020-12-17T18:53:20-03:00",
+                        "origStartDate": "2020-12-17T18:53:20-03:00",
+                        "name": "MiniPP_RRSS",
+                        "deltaPriceplanID": "MiniPP_RRSS",
+                        "type": 1,
+                        "category": "data"
+                    }
+                }
             }
-        },
-        "codigo": 200
-	}
+        }
+    }
 
 ## 2.8.- getBolsas
 Método que permite obtener el historial de bolsas adquiridas por una línea.
@@ -1103,21 +1316,26 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/getConsumo`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
+|:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
+| numeroTelefono    | string       |            |                | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| datos          | int          | Breve descripción                                |
+| voz            | int          | Breve descripción                                |
+| sms            | int          | Breve descripción                                |
+| fechaRenovacion| date         | Breve descripción                                |
+| fechaInicial   | date         | Breve descripción                                |
+| sim            | string       | Breve descripción                                |
 
 ### 2.9.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "numeroTelefono": 56936000052
 	}
 
 ### 2.9.2.- Respuesta de salida
@@ -1126,30 +1344,30 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 2.9.2.1.- Respuesta de error
 
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
+    {
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": null
         },
-        "codigo": 404
-	} 
+        "codigo": 200
+    }
   
 #### 2.9.2.2.- Respuesta de éxito
 
-	{
+    {
         "success": {
             "codigoRespuesta": 1,
             "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
+                "datos": 10194,
+                "voz": 1390,
+                "sms": 300,
+                "fechaRenovacion": "25-09-2021",
+                "fechaInicial": "13-08-2020",
+                "sim": "8956072200000014419F"
             }
         },
         "codigo": 200
-	}
+    }
 
 ## 2.10.- getConsumoIVR
 Método que permite obtener el consumo de una línea con respuesta en formato especial para IVR.
@@ -1271,9 +1489,10 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/getESim`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
+|:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
+| sid               |              |            |                | Breve descripción           |
+| icc               |              |            |                | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -1285,7 +1504,8 @@ Ruta : GET `/getESim`
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "sid": ,
+        "icc":
 	}
 
 ### 2.12.2.- Respuesta de salida
@@ -1295,28 +1515,13 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 2.12.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 2.12.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
 ## 2.13.- getPlan
@@ -1327,21 +1532,31 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/getPlan`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
+|:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
+| numeroTelefono    | int          |            |                | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| nombre         | string       | Breve descripción                                |
+| traficoDatos   | int          | Breve descripción                                |
+| traficoVoz     | int          | Breve descripción                                |
+| traficoSms     | int          | Breve descripción                                |
+| imsi           | string       | Breve descripción                                |
+| dispositivos   | array[object]| Breve descripción                                |
+| msisdn         | int          | Breve descripción                                |
+| imsi           | string       | Breve descripción                                |
+| imei           | string       | Breve descripción                                |
+| modelo         | string       | Breve descripción                                |
+| marca          | string       | Breve descripción                                |
 
 ### 2.13.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "numeroTelefono": 936000012
 	}
 
 ### 2.13.2.- Respuesta de salida
@@ -1350,30 +1565,38 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 2.13.2.1.- Respuesta de error
 
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
+    {
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": null
         },
-        "codigo": 404
-	} 
+        "codigo": 200
+    }
   
 #### 2.13.2.2.- Respuesta de éxito
 
-	{
+    {
         "success": {
             "codigoRespuesta": 1,
             "descripcionRespuesta": {
-                "data": [
+                "nombre": "Movil 36 GB",
+                "traficoDatos": 30720,
+                "traficoVoz": 500,
+                "traficoSms": 50,
+                "imsi": "730072200000012",
+                "dispositivos": [
                     {
-                     DATA
-                    },
+                        "msisdn": 936000012,
+                        "imsi": "730072200000012",
+                        "imei": "353642093977934",
+                        "modelo": "J2 Prime DS (Latam)",
+                        "marca": "SAMSUNG"
+                    }
                 ]
             }
         },
         "codigo": 200
-	}
+    }
 
 ## 2.14.- getSimInfo
 Método que devuelve los datos de una SIM a partir de una línea.
@@ -1439,21 +1662,25 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/liberarNumero`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
+|:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
+| numeroTelefono    | int          |            |                | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| wsSessionId    | Tipo de dato | Breve descripción                                |
+| callID         | Tipo de dato | Breve descripción                                |
+| callCode       | Tipo de dato | Breve descripción                                |
+| resultCode     | Tipo de dato | Breve descripción                                |
+| callMsg        | Tipo de dato | Breve descripción                                |
 
 ### 2.15.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "numeroTelefono": 940158996
 	}
 
 ### 2.15.2.- Respuesta de salida
@@ -1462,30 +1689,27 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 2.15.2.1.- Respuesta de error
 
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
-	} 
+    {
+        "callResult": {
+            "wsSessionId": "EWSabb7ea00fe977d",
+            "callID": "EWSabb7ea00fe977dCOR22d5416cf681a3",
+            "callCode": 105,
+            "resultCode": "ENTITY_NOT_FOUND",
+            "callMsg": "Msisdn not found [numeroTelefono]"
+        }
+    }
   
 #### 2.15.2.2.- Respuesta de éxito
 
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
-	}
+    {
+        "callResult": {
+            "wsSessionId": "EWSabb7ea00fe977d",
+            "callID": "EWSabb7ea00fe977dCOR22d4dc031f6f74",
+            "callCode": 113,
+            "resultCode": "MSISDN_PORTED",
+            "callMsg": "MSISDN ported"
+        }
+    }
 
 ## 2.16.- Login
 Método que permite obtener una sesión en la api de SUMA.
@@ -1607,9 +1831,13 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/updatePlan`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
+|:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
+| sid               | string       |            |                | Breve descripción           |
+| bssRefID          | string       |            |                | Breve descripción           |
+| renewalValue      | int          |            |                | Breve descripción           |
+| value             | int          |            |                | Breve descripción           |
+| tipo              | string       |            |                | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -1621,7 +1849,11 @@ Ruta : GET `/updatePlan`
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "sid": "SID69033_TS1618975474995_0",
+        "bssRefID": "MM_Mimundo_M|PKGID130033_TS1619120874243|RP_MiMundo_M|567521",
+        "renewalValue": 25600,
+        "value": 25600,
+        "tipo": "internet"
 	}
 
 ### 2.18.2.- Respuesta de salida
@@ -1630,27 +1862,18 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 2.18.2.1.- Respuesta de error
 
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
-	} 
+    {
+        "callResult": {
+            "wsSessionId": "EWSabb7ea00fe977d",
+            "callID": "EWSabb7ea00fe977dCOR22d628b46e0a08",
+            "callCode": 105,
+            "resultCode": "ENTITY_NOT_FOUND",
+            "callMsg": "bssRef[bssRefID] not found"
+        }
+    }
   
 #### 2.18.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
