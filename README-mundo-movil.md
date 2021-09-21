@@ -836,7 +836,7 @@ Ruta : GET `/checkPort`
 Ejemplo: JSON 
 
 	{
-        "NOMBRE_CAMPO":"valor"
+        "numeroTelefono":"valor"
 	}
 
 ### 2.4.2.- Respuesta de salida
@@ -845,30 +845,21 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 2.4.2.1.- Respuesta de error
 
-	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
-	} 
+    {
+        "getPortabilityResult": {
+            "wsSessionId": "EWSad2e3b816c39e5",
+            "callID": "EWSad2e3b816c39e5COR2447a850858294",
+            "callCode": 101,
+            "resultCode": "VALIDATION",
+            "callMsg": "At least one parameter is mandatory"
+        }
+    }
   
 #### 2.4.2.2.- Respuesta de éxito
 
-	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
-	}
+    {
+        ...
+    }
 
 
 ## 2.5.- CheckSessions
@@ -1742,29 +1733,19 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 2.16.2.1.- Respuesta de error
 
-	{
+    {
         "error": {
             "codigoRespuesta": 0,
             "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
+            "detalleRespuesta": "El servidor de autorización denegó la solicitud"
         },
-        "codigo": 404
-	} 
+        "codigo": 401
+    }
   
 #### 2.16.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
 ## 2.17.- Logout
