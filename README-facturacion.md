@@ -182,7 +182,7 @@ Ruta : POST `/registrarDTE`
 
 **Parámetros de entrada:**
 | Campo           |  Tipo        | Formato     | Requerido   | Descripción                 |
-|:---------------:|:------------:|:-----------:|:-----------:|----------------------------:|
+|:----------------|:------------:|:-----------:|:-----------:|----------------------------:|
 | ↓ data          | array[object]|             |             | Breve descripción           |
 | ⤷ RUTEmisor     | string       | NNNNNNNN-C  |             | Breve descripción           |
 | ⤷ periodo       | int          |             |             | Breve descripción           |
