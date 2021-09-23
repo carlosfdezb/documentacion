@@ -251,38 +251,66 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/obtenerMasivosDTES`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo           |  Tipo        | Formato     | Requerido   | Descripción                 |
+|:---------------:|:------------:|:-----------:|:-----------:|----------------------------:|
+| page            | int          |             |             | Breve descripción           |
+| per_page        | int          |             |             | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| id             | int          | Breve descripción                                |
+| cantidad_dtes  | int          | Breve descripción                                |
+| created_at     | timestamp    | Breve descripción                                |
+| peticiones     | string       | Breve descripción                                |
+| estado         | string       | Breve descripción                                |
 
 ### 2.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        ...
+        "page": 1,
+        "per_page": 10
 	}
 
 ### 2.2.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 2.2.1.- Respuesta de error
-
-	{
-        ...
-	} 
   
-#### 2.2.2.- Respuesta de éxito
+#### 2.2.1.- Respuesta de éxito
 
-	{
-        ...
-	}
+    {
+        "current_page": 1,
+        "data": [
+            {
+                "id": 2,
+                "cantidad_dtes": 968,
+                "created_at": "2021-08-31T19:54:58.000000Z",
+                "peticiones": "349542,349541",
+                "estado": "Finalizado"
+            },
+            ...
+        ],
+        "first_page_url": "...URL/obtenerMasivosDTES?page=1",
+        "from": 1,
+        "last_page": 1,
+        "last_page_url": "...URL/obtenerMasivosDTES?page=1",
+        "links": [
+            {
+                "url": "...URL/obtenerMasivosDTES?page=1",
+                "label": 1,
+                "active": true
+            },
+            ...
+        ],
+        "next_page_url": null,
+        "path": "...URL/obtenerMasivosDTES",
+        "per_page": "10",
+        "prev_page_url": null,
+        "to": 2,
+        "total": 2
+    }
 
 ## 3.- consultaEnvioSII
 Breve descripción de ruta
@@ -416,22 +444,66 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/registrarDTE`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo           |  Tipo        | Formato     | Requerido   | Descripción                 |
+|:----------------|:------------:|:-----------:|:-----------:|----------------------------:|
+| ↓ data          | array[object]|             |             | Breve descripción           |
+| ⤷ RUTEmisor     | string       | NNNNNNNN-C  |             | Breve descripción           |
+| ⤷ periodo       | int          |             |             | Breve descripción           |
+| ⤷ TipoDTE       | string       |             |             | Breve descripción           |
+| ↓↓ Dte          | array[object]|             |             | Breve descripción           |
+| ⤷ RUTRecep      | string       | NNNNNNNN-C  |             | Breve descripción           |
+| ⤷ RznSocRecep   | string       |             |             | Breve descripción           |
+| ⤷ Folio         | string       |             |             | Breve descripción           |
+| ⤷ FchEmis       | date         | yyyy-mm-dd  |             | Breve descripción           |
+| ⤷ DirRecep      | string       |             |             | Breve descripción           |
+| ⤷ CmnaRecep     | string       |             |             | Breve descripción           |
+| ⤷ IndServicio   | string       |             |             | Breve descripción           |
+| ⤷ PeriodoDesde  | date         | yyyy-mm-dd  |             | Breve descripción           |
+| ⤷ PeriodoHasta  | date         | yyyy-mm-dd  |             | Breve descripción           |
+| ↓↓↓ Detalle     | array[object]|             |             | Breve descripción           |
+| ⤷ NmbItem       | string       |             |             | Breve descripción           |
+| ⤷ QtyItem       | string       |             |             | Breve descripción           |
+| ⤷ PrcItem       | string       |             |             | Breve descripción           |
+| ↓↓↓ DscRcgGlobal| array[object]|             |             | Breve descripción           |
+| ↓↓↓ ImptoReten  | array[object]|             |             | Breve descripción           |
+| ↓↓↓ Referencia  | array[object]|             |             | Breve descripción           |
+| plataforma      | int          |             |             | Breve descripción           |
 
 ### 6.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
-	{
-        ...
-	}
+    {
+        "data": {
+            "RUTEmisor": "96722400-6",
+            "periodo": 201902,
+            "TipoDTE": "39",
+            "Dte": [
+                {
+                    "RUTRecep": "19801500-8",
+                    "RznSocRecep": "Nunez Escalona, Matias Antonio",
+                    "Folio": "311146",
+                    "FchEmis": "2019-05-14",
+                    "DirRecep": "Santa Luisa 6088",
+                    "CmnaRecep": "Lo Prado",
+                    "IndServicio": "2",
+                    "PeriodoDesde": "2019-03-01",
+                    "PeriodoHasta": "2019-04-01",
+                    "Detalle": [
+                        {
+                            "NmbItem": "PLAN EMPRENDEDOR 200 MBPS + WIFI + TV DIGITAL",
+                            "QtyItem": "1",
+                            "PrcItem": "26725"
+                        }
+                    ],
+                    "DscRcgGlobal": [],
+                    "ImptoReten": [],
+                    "Referencia": []
+                }
+            ]
+        },
+        "plataforma": 2
+    }
 
 ### 6.2.- Respuesta de salida
 
@@ -439,15 +511,25 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 6.2.1.- Respuesta de error
 
-	{
-        ...
-	} 
+    {
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "RUT del Emisor no ingresado."
+        },
+        "codigo": 422
+    }
   
 #### 6.2.2.- Respuesta de éxito
 
-	{
-        ...
-	}
+    {
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": "Recibido correctamente."
+        },
+        "codigo": 200
+    }
+
 
 ## 7.- obtenerPDF
 Breve descripción de ruta
@@ -457,21 +539,29 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/obtenerPDF`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo           |  Tipo        | Formato     | Requerido   | Descripción                 |
+|:---------------:|:------------:|:-----------:|:-----------:|----------------------------:|
+| rutEmisor       | string       | NNNNNNNN-C  |             | Breve descripción           |
+| folio           | int          |             |             | Breve descripción           |
+| tipoDocumento   | int          |             |             | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| rutEmisor      | string       | Breve descripción                                |
+| rutReceptor    | string       | Breve descripción                                |
+| Folio          | string       | Breve descripción                                |
+| TipoDTE        | string       | Breve descripción                                |
+| documentoPdf   | archive      | Breve descripción                                |
 
 ### 7.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        ...
+        "rutEmisor": "96722400-6",
+        "folio": 7881654,
+        "tipoDocumento": 39
 	}
 
 ### 7.2.- Respuesta de salida
@@ -480,15 +570,31 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 7.2.1.- Respuesta de error
 
-	{
-        ...
-	} 
+    {
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No se encuentra Folio registrado con los datos suministrados"
+        },
+        "codigo": 404
+    }
   
 #### 7.2.2.- Respuesta de éxito
 
-	{
-        ...
-	}
+    {
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "rutEmisor": "96722400-6",
+                "rutReceptor": null,
+                "Folio": "7881654",
+                "TipoDTE": "39",
+                "documentoPdf": "JVBERi0xLjcKJeLjz9MK..."
+            }
+        },
+        "codigo": 200
+    }
+
 
 ## 8.- obtenerDTES
 Breve descripción de ruta
@@ -498,38 +604,101 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/obtenerDTES`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo          |  Tipo        | Formato     | Requerido   | Descripción                 |
+|:--------------:|:------------:|:-----------:|:-----------:|----------------------------:|
+| sort           | Tipo de dato |             |             | Breve descripción           |
+| page           | Tipo de dato |             |             | Breve descripción           |
+| per_page       | Tipo de dato |             |             | Breve descripción           |
+| fechaEmisionDte| Tipo de dato |             |             | Breve descripción           |
+| fechaHasta     | Tipo de dato |             |             | Breve descripción           |
+| rutReceptor    | Tipo de dato |             |             | Breve descripción           |
+| respTec        | Tipo de dato |             |             | Breve descripción           |
+| respCom        | Tipo de dato |             |             | Breve descripción           |
+| tipoDctosId    | Tipo de dato |             |             | Breve descripción           |
+| folioDte       | Tipo de dato |             |             | Breve descripción           |
+| usuario        | Tipo de dato |             |             | Breve descripción           |
 
 **Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo            |  Tipo        |                         Descripción              |
+|:-----------------|:------------:|-------------------------------------------------:| 
+| id               | int          | Breve descripción                                |
+| folio_dte        | int          | Breve descripción                                |
+| monto_dte        | int          | Breve descripción                                |
+| rut_receptor     | string       | Breve descripción                                |
+| dv_receptor      | string       | Breve descripción                                |
+| fecha_emision_dte| date         | Breve descripción                                |
+| envio_dtes_id    | int          | Breve descripción                                |
+| cliente_api_id   | int          | Breve descripción                                |
+| estado           | string       | Breve descripción                                |
+| documento        | int          | Breve descripción                                |
+| envio_dte        | array[object]| Breve descripción                                |
+| id               | int          | Breve descripción                                |
+| track_id         | int          | Breve descripción                                |
 
 ### 8.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        ...
+        "sort": "",
+        "page": 1,
+        "per_page": 10,
+        "fechaEmisionDte": "",
+        "fechaHasta": "",
+        "rutReceptor": "",
+        "respTec": "",
+        "respCom": "",
+        "tipoDctosId": "",
+        "folioDte": "",
+        "usuario": ""
 	}
 
 ### 8.2.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 8.2.1.- Respuesta de error
-
-	{
-        ...
-	} 
   
-#### 8.2.2.- Respuesta de éxito
+#### 8.2.1.- Respuesta de éxito
 
-	{
-        ...
-	}
+    {
+        "current_page": 1,
+        "data": [
+            {
+                "id": 33164231,
+                "folio_dte": 251377,
+                "monto_dte": 173126,
+                "rut_receptor": "77046984-8",
+                "dv_receptor": "8",
+                "fecha_emision_dte": "13-09-2021",
+                "envio_dtes_id": 163033,
+                "cliente_api_id": 2,
+                "estado": "DOK",
+                "documento": 33,
+                "envio_dte": {
+                    "id": 163033,
+                    "track_id": 6174896436
+                }
+            },
+            ...
+        ],
+        "first_page_url": "...URL/obtenerDTES?per_page=10&page=1",
+        "from": 1,
+        "last_page": 4,
+        "last_page_url": "...URL/obtenerDTES?per_page=10&page=4",
+        "links": [
+            {
+                "url": "...URL/obtenerDTES?per_page=10&page=1",
+                "label": 1,
+                "active": true
+            },
+            ...
+        ],
+        "next_page_url": "...URL/obtenerDTES?per_page=10&page=2",
+        "path": "...URL/obtenerDTES",
+        "per_page": "10",
+        "prev_page_url": null,
+        "to": 10,
+        "total": 37
+    }
 
 ## 9.- publicPDF
 Breve descripción de ruta
@@ -539,38 +708,47 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/publicPDF`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo           |  Tipo        | Formato     | Requerido   | Descripción                 |
+|:---------------:|:------------:|:-----------:|:-----------:|----------------------------:|
+| dkey            | string       |             |             | Breve descripción           |
+| expires         | int          |             |             | Breve descripción           |
+| signature       | string       |             |             | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| rutEmisor      | string       | Breve descripción                                |
+| rutReceptor    | string       | Breve descripción                                |
+| Folio          | string       | Breve descripción                                |
+| TipoDTE        | string       | Breve descripción                                |
+| documentoPdf   | archive      | Breve descripción                                |
 
 ### 9.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        ...
+        "dkey": "eyJpdiI6ImtRb...",
+        "expires": 1643700808,
+        "signature": "ece7f734..."
 	}
 
 ### 9.2.- Respuesta de salida
 
-codigo: 200 éxito mensaje: descripcion del mensaje
-
 #### 9.2.1.- Respuesta de error
 
-	{
-        ...
-	} 
+    {
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "Ruta invalida"
+        },
+        "codigo": 403
+    }
   
 #### 9.2.2.- Respuesta de éxito
 
-	{
-        ...
-	}
+`Archivo PDF con factura electrónica`
 
 
 ## 10.- estadoDTE
@@ -581,22 +759,21 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/estadoDTE`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo           |  Tipo        | Formato     | Requerido   | Descripción                 |
+|:---------------:|:------------:|:-----------:|:-----------:|----------------------------:|
+| rutEmisor       | string       | NNNNNNNN-C  |             | Breve descripción           |
+| folio           | int          |             |             | Breve descripción           |
+| tipoDocumento   | int          |             |             | Breve descripción           |
 
 ### 10.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
-	{
-        ...
-	}
+    {
+        "rutEmisor": "96722400-6",
+        "folio": 7881654,
+        "tipoDocumento": 39
+    }
 
 ### 10.2.- Respuesta de salida
 
@@ -604,15 +781,24 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 10.2.1.- Respuesta de error
 
-	{
-        ...
-	} 
+    {
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No se encuentra Folio registrado con los datos suministrados"
+        },
+        "codigo": 404
+    }
   
 #### 10.2.2.- Respuesta de éxito
 
-	{
-        ...
-	}
+    {
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": "DTE Integrado SII"
+        },
+        "codigo": 200
+    }
 
 ## 11.- urlPDF
 Breve descripción de ruta
@@ -622,21 +808,29 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/urlPDF`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo           |  Tipo        | Formato     | Requerido   | Descripción                 |
+|:---------------:|:------------:|:-----------:|:-----------:|----------------------------:|
+| rutEmisor       | string       | NNNNNNNN-C  |             | Breve descripción           |
+| folio           | int          |             |             | Breve descripción           |
+| tipoDocumento   | int          |             |             | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| rutEmisor      | string       | Breve descripción                                |
+| rutReceptor    | string       | Breve descripción                                |
+| Folio          | string       | Breve descripción                                |
+| TipoDTE        | string       | Breve descripción                                |
+| urlPdf         | string       | Breve descripción                                |
 
 ### 11.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        ...
+        "rutEmisor": "96722400-6",
+        "folio": 7881654,
+        "tipoDocumento": 39
 	}
 
 ### 11.2.- Respuesta de salida
@@ -645,15 +839,31 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 11.2.1.- Respuesta de error
 
-	{
-        ...
-	} 
+    {
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "No se encuentra Folio registrado con los datos suministrados"
+        },
+        "codigo": 404
+    }
   
 #### 11.2.2.- Respuesta de éxito
 
-	{
-        ...
-	}
+    {
+        "success": {
+            "codigoRespuesta": 1,
+            "descripcionRespuesta": {
+                "rutEmisor": "96722400-6",
+                "rutReceptor": null,
+                "Folio": "7881654",
+                "TipoDTE": "39",
+                "urlPdf": "https://www.tumundo.cl/facturacion/ver-pdf/..."
+            }
+        },
+        "codigo": 200
+    }
+
 
 ## 12.- guiaDespachoRequest
 Breve descripción de ruta
@@ -787,38 +997,102 @@ Los parámetros que recibe son los siguientes:
 Ruta : GET `/consultarCAF`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo           |  Tipo        | Formato     | Requerido   | Descripción                 |
+|:---------------:|:------------:|:-----------:|:-----------:|----------------------------:|
+| sort            | int          |             |             | Breve descripción           |
+| page            | int          |             |             | Breve descripción           |
+| per_page        | int          |             |             | Breve descripción           |
+| fecha_emision   | int          |             |             | Breve descripción           |
+| tipo_dctos_id   | int          |             |             | Breve descripción           |
+| clientes_api_id | int          |             |             | Breve descripción           |
 
 **Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo              |  Tipo        |                         Descripción              |
+|:-------------------|:------------:|-------------------------------------------------:| 
+| id                 | int          | Breve descripción                                |
+| fecha_emision      | date         | Breve descripción                                |
+| rango_desde        | int          | Breve descripción                                |
+| rando_hasta        | int          | Breve descripción                                |
+| cantidad_disponible| int          | Breve descripción                                |
+| cafs_xml_id        | int          | Breve descripción                                |
+| empresas_id        | int          | Breve descripción                                |
+| clientes_api_id    | int          | Breve descripción                                |
+| tipo_dctos_id      | int          | Breve descripción                                |
+| created_at         | timestamp    | Breve descripción                                |
+| updated_at         | timestamp    | Breve descripción                                |
+| vence              | int          | Breve descripción                                |
+| tipo_dcto          | array[object]| Breve descripción                                |
+| id                 | int          | Breve descripción                                |
+| documentos         | string       | Breve descripción                                |
+| clientes           | array[object]| Breve descripción                                |
+| id                 | int          | Breve descripción                                |
+| nombre             | string       | Breve descripción                                |
 
 ### 15.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        ...
+        "sort": "",
+        "page": 1,
+        "per_page": 10,
+        "fecha_emision": "",
+        "tipo_dctos_id": "",
+        "clientes_api_id": ""
 	}
 
 ### 15.2.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 15.2.1.- Respuesta de error
-
-	{
-        ...
-	} 
   
-#### 15.2.2.- Respuesta de éxito
+#### 15.2.1.- Respuesta de éxito
 
-	{
-        ...
-	}
+    {
+        "current_page": 1,
+        "data": [
+            {
+                "id": 242,
+                "fecha_emision": "2021-08-25",
+                "rango_desde": 19037712,
+                "rando_hasta": 19637711,
+                "cantidad_disponible": 436996,
+                "cafs_xml_id": 242,
+                "empresas_id": 1,
+                "clientes_api_id": 5,
+                "tipo_dctos_id": 3,
+                "created_at": null,
+                "updated_at": null,
+                "vence": -153,
+                "tipo_dcto": {
+                    "id": 3,
+                    "documentos": "Boleta Electrónica"
+                },
+                "clientes": {
+                    "id": 5,
+                    "nombre": "beyond up"
+                }
+            },
+            ...
+        ],
+        "first_page_url": "...URL/consultarCAF?page=1",
+        "from": 1,
+        "last_page": 21,
+        "last_page_url": "...URL/consultarCAF?page=21",
+        "links": [
+            {
+                "url": "...URL/consultarCAF?page=1",
+                "label": 1,
+                "active": true
+            },
+            ...
+        ],
+        "next_page_url": "...URL/consultarCAF?page=2",
+        "path": "...URL/consultarCAF",
+        "per_page": "10",
+        "prev_page_url": null,
+        "to": 10,
+        "total": 210
+    }
 
 
 ## 16.- registrarCAF
@@ -829,21 +1103,33 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/registrarCAF`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo              |  Tipo        | Formato     | Requerido   | Descripción                 |
+|:------------------:|:------------:|:-----------:|:-----------:|----------------------------:|
+| xml                | file         |             |             | Breve descripción           |
+| fecha_emision      | date         |             |             | Breve descripción           |
+| rango_desde        | int          |             |             | Breve descripción           |
+| rango_hasta        | int          |             |             | Breve descripción           |
+| cantidad_disponible| int          |             |             | Breve descripción           |
+| tipo_dctos_id      | int          |             |             | Breve descripción           |
+| cliente_api        | int          |             |             | Breve descripción           |
 
 **Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo            |  Tipo        |                         Descripción              |
+|:-----------------|:------------:|-------------------------------------------------:| 
+|                  |              | Breve descripción                                |
 
 ### 16.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        ...
+        "xml": FILE.xml,
+        "fecha_emision": "2021-02-09",
+        "rango_desde": 1930301,
+        "rango_hasta": 2030300,
+        "cantidad_disponible": 100000,
+        "tipo_dctos_id": 9,
+        "cliente_api": 6
 	}
 
 ### 16.2.- Respuesta de salida
@@ -852,15 +1138,20 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 16.2.1.- Respuesta de error
 
-	{
-        ...
-	} 
+    {
+        "error": {
+            "codigoRespuesta": 0,
+            "descripcionRespuesta": "Error",
+            "detalleRespuesta": "Ocurrio un error al intentar registrar el Cafs"
+        },
+        "codigo": 422
+    }
   
 #### 16.2.2.- Respuesta de éxito
 
-	{
+    {
         ...
-	}
+    }
 
 ## 17.- eliminarCAF
 Breve descripción de ruta
@@ -870,21 +1161,21 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/eliminarCAF`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo           |  Tipo        | Formato     | Requerido   | Descripción                 |
+|:---------------:|:------------:|:-----------:|:-----------:|----------------------------:|
+| id              | int          |             |             | Breve descripción           |
 
 **Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo            |  Tipo        |                         Descripción              |
+|:-----------------|:------------:|-------------------------------------------------:| 
+|                  |              | Breve descripción                                |
 
 ### 17.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
 	{
-        ...
+        "id": 140
 	}
 
 ### 17.2.- Respuesta de salida
@@ -893,15 +1184,15 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 17.2.1.- Respuesta de error
 
-	{
+    {
         ...
-	} 
+    }
   
 #### 17.2.2.- Respuesta de éxito
 
-	{
+    {
         ...
-	}
+    }
 
 ## 18.- obtenerNextFolio
 Breve descripción de ruta
