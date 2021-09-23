@@ -864,28 +864,13 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 2.5.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 2.5.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
 ## 2.6.- Obtener Datos de SIM
