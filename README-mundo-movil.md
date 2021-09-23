@@ -30,7 +30,7 @@
         - [1.4.2.- Respuesta de Salida](#142--respuesta-de-salida)
             - [1.4.2.1- Respuesta de error](#1421--respuesta-de-error)
             - [1.4.2.2- Respuesta de éxito](#1422--respuesta-de-éxito)
-    - [1.5.- Informar Portabilidad Móvil](#15--informar-portabilidad-movil)
+    - [1.5.- Informar Portabilidad Móvil](#15--informar-portabilidad-móvil)
         - [1.5.1.- Ejemplo de llamada](#151--ejemplo-de-llamada)
         - [1.5.2.- Respuesta de Salida](#152--respuesta-de-salida)
             - [1.5.2.1- Respuesta de error](#1521--respuesta-de-error)
