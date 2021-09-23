@@ -155,7 +155,7 @@ Especificar restricciones
 
 
 # 1.- Provisión
-## 1.1.- Alta
+## 1.1.- Dar de Alta
 Método que permite dar de alta una línea.
 
 Los parámetros que recibe son los siguientes:
@@ -164,19 +164,19 @@ Ruta : POST `/alta`
 
 **Parámetros de entrada:**
 | Campo              |  Tipo        | Formato        | Requerido       |             Descripción     |
-|:------------------:|:------------:|:--------------:|:---------------:|----------------------------:|
-| idEmpresa          | int          |                |                 | Breve descripción           |
-| operacion          | int          |                |                 | Breve descripción           |
-| ↓ detalleServicios | array[object]|                |                 | Breve descripción           |
-| ⤷ servicio         | int          |                |                 | Breve descripción           |
-| ↓↓ datosServicios  | array[object]|                |                 | Breve descripción           |
-| ⤷ idPackage        | string       |                |                 | Breve descripción           |
-| ⤷ cicloFacturacion | string       |                |                 | Breve descripción           |
-| ↓↓↓ suscriptores   | array[object]|                |                 | Breve descripción           |
-| ⤷ numeroTelefono   | string       |                |                 | Breve descripción           |
-| ⤷ iccid            | string       |                |                 | Breve descripción           |
-| ⤷ codigoExterno    | string       |                |                 | Breve descripción           |
-| ⤷ portabilidad     | int          |                |                 | Breve descripción           |
+|:-------------------|:------------:|:--------------:|:---------------:|----------------------------:|
+| idEmpresa          | int          |                |                 | ID de la empresa            |
+| operacion          | int          |                |                 | Código de operación         |
+| ↓ detalleServicios | array[object]|                |                 |                             |
+| ⤷ servicio         | int          |                |                 | ID del servicio             |
+| ↓↓ datosServicios  | array[object]|                |                 |                             |
+| ⤷ idPackage        | string       |                |                 | ID del package              |
+| ⤷ cicloFacturacion | string       |                |                 | Ciclo de facturación        |
+| ↓↓↓ suscriptores   | array[object]|                |                 |                             |
+| ⤷ numeroTelefono   | string       |                |                 | Número de teléfono          |
+| ⤷ iccid            | string       |                |                 | ID ICC                      |
+| ⤷ codigoExterno    | string       |                |                 | Código externo              |
+| ⤷ portabilidad     | int          |                |                 | ID de portabilidad          |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -237,7 +237,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         ...
 	}
 
-## 1.2.- Alta Adicional
+## 1.2.- Agregar Línea a Suscripción Familiar
 Método que permite agregar una línea a una suscripción familiar.
 
 Los parámetros que recibe son los siguientes:
@@ -269,31 +269,16 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.2.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 1.2.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
-## 1.3.- Baja
+## 1.3.- Dar de Baja
 Método que permite dar de baja una línea.
 
 Los parámetros que recibe son los siguientes:
@@ -302,12 +287,12 @@ Ruta : DELETE `/baja`
 
 **Parámetros de entrada:**
 | Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
-|:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
-| idEmpresa         | string       |            |                | Breve descripción           |
-| operacion         | string       |            |                | Breve descripción           |
-| codigoExterno     | string       |            |                | Breve descripción           |
-| ↓ detalleServicios| array[object]|            |                | Breve descripción           |
-| ⤷ servicio        | string       |            |                | Breve descripción           |
+|:------------------|:------------:|:----------:|:--------------:|----------------------------:|
+| idEmpresa         | string       |            |                | ID de la empresa            |
+| operacion         | string       |            |                | Código de operación         |
+| codigoExterno     | string       |            |                | Código externo              |
+| ↓ detalleServicios| array[object]|            |                |                             |
+| ⤷ servicio        | string       |            |                | ID del servicio             |
 
 ### 1.3.1.- Ejemplo de llamada
 
@@ -345,7 +330,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "codigo": 200
     }
 
-## 1.4.- Habilitación
+## 1.4.- Habilitar Línea
 Método que permite sacar del estado de suspensión a una línea.
 
 Los parámetros que recibe son los siguientes:
@@ -354,12 +339,12 @@ Ruta : PATCH `/habilitacion`
 
 **Parámetros de entrada:**
 | Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
-|:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
-| idEmpresa         | string       |            |                | Breve descripción           |
-| operacion         | string       |            |                | Breve descripción           |
-| codigoExterno     | string       |            |                | Breve descripción           |
-| ↓ detalleServicios| array[object]|            |                | Breve descripción           |
-| ⤷ servicio        | string       |            |                | Breve descripción           |
+|:------------------|:------------:|:----------:|:--------------:|----------------------------:|
+| idEmpresa         | string       |            |                | ID de la empresa            |
+| operacion         | string       |            |                | Código de operación         |
+| codigoExterno     | string       |            |                | Código externo              |
+| ↓ detalleServicios| array[object]|            |                |                             |
+| ⤷ servicio        | string       |            |                | ID de servicio              |
 
 ### 1.4.1.- Ejemplo de llamada
 
@@ -430,28 +415,13 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 #### 1.5.2.1.- Respuesta de error
 
 	{
-        "error": {
-            "codigoRespuesta": 0,
-            "descripcionRespuesta": "Error",
-            "detalleRespuesta": "No hay datos relacionados"
-        },
-        "codigo": 404
+        ...
 	} 
   
 #### 1.5.2.2.- Respuesta de éxito
 
 	{
-        "success": {
-            "codigoRespuesta": 1,
-            "descripcionRespuesta": {
-                "data": [
-                    {
-                     DATA
-                    },
-                ]
-            }
-        },
-        "codigo": 200
+        ...
 	}
 
 
@@ -464,15 +434,15 @@ Ruta : PATCH `/modificarPlan`
 
 **Parámetros de entrada:**
 | Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
-|:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
-| idEmpresa         | string       |            |                | Breve descripción           |
-| operacion         | string       |            |                | Breve descripción           |
-| codigoExterno     | string       |            |                | Breve descripción           |
-| ↓ detalleServicios| array[object]|            |                | Breve descripción           |
-| ⤷ servicio        | int          |            |                | Breve descripción           |
-| ↓↓ datosServicios |array[object] |            |                | Breve descripción           |
-| ⤷ cicloFacturacion| int          |            |                | Breve descripción           |
-| ⤷ idPackage       | string       |            |                | Breve descripción           |
+|:------------------|:------------:|:----------:|:--------------:|----------------------------:|
+| idEmpresa         | string       |            |                | ID de la empresa            |
+| operacion         | string       |            |                | Código de operación         |
+| codigoExterno     | string       |            |                | Código externo              |
+| ↓ detalleServicios| array[object]|            |                |                             |
+| ⤷ servicio        | int          |            |                | ID de servicio              |
+| ↓↓ datosServicios |array[object] |            |                |                             |
+| ⤷ cicloFacturacion| int          |            |                | Ciclo de facturación        |
+| ⤷ idPackage       | string       |            |                | ID de package               |
 
 ### 1.6.1.- Ejemplo de llamada
 
@@ -516,7 +486,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "codigo": 200
     }
 
-## 1.7.- Modificar Suscriptor
+## 1.7.- Modificar Suscripción
 Método que permite cambiar código externo, sim o línea de una suscripción.
 
 Los parámetros que recibe son los siguientes:
@@ -525,15 +495,15 @@ Ruta : PUT `/modificarSuscriptor`
 
 **Parámetros de entrada:**
 | Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
-|:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
-| idEmpresa         | string       |            |                | Breve descripción           |
-| operacion         | string       |            |                | Breve descripción           |
-| codigoExterno     | string       |            |                | Breve descripción           |
-| ↓ detalleServicios| array[object]|            |                | Breve descripción           |
-| ⤷ servicio        | int          |            |                | Breve descripción           |
-| ↓↓ datosServicios |array[object] |            |                | Breve descripción           |
-| ↓↓↓ cicloFacturacion|array[object]|           |                | Breve descripción           |
-| ⤷ iccid           | string       |            |                | Breve descripción           |
+|:------------------|:------------:|:----------:|:--------------:|----------------------------:|
+| idEmpresa         | string       |            |                | ID de empresa               |
+| operacion         | string       |            |                | Código de operación         |
+| codigoExterno     | string       |            |                | Código externo              |
+| ↓ detalleServicios| array[object]|            |                |                             |
+| ⤷ servicio        | int          |            |                | ID de servicio              |
+| ↓↓ datosServicios |array[object] |            |                |                             |
+| ↓↓↓ suscriptores  |array[object] |            |                |                             |
+| ⤷ iccid           | string       |            |                | ID de ICC                   |
 
 ### 1.7.1.- Ejemplo de llamada
 
@@ -580,7 +550,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "codigo": 200
     }
 
-## 1.8.- Suspensión
+## 1.8.- Suspender una Línea
 Método que permite suspender una línea.
 
 Los parámetros que recibe son los siguientes:
@@ -590,11 +560,11 @@ Ruta : PATCH `/suspension`
 **Parámetros de entrada:**
 | Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
 |:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
-| idEmpresa         | string       |            |                | Breve descripción           |
-| operacion         | string       |            |                | Breve descripción           |
-| codigoExterno     | string       |            |                | Breve descripción           |
-| ↓ detalleServicios| array[object]|            |                | Breve descripción           |
-| ⤷ servicio        | string       |            |                | Breve descripción           |
+| idEmpresa         | string       |            |                | ID de la empresa            |
+| operacion         | string       |            |                | Código de operación         |
+| codigoExterno     | string       |            |                | Código externo              |
+| ↓ detalleServicios| array[object]|            |                |                             |
+| ⤷ servicio        | string       |            |                | ID de servicio              |
 
 ### 1.8.1.- Ejemplo de llamada
 
@@ -638,8 +608,8 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 	}
 
 
-# 2.- Provisión
-## 2.1.- BlockSim
+# 2.- Soporte
+## 2.1.- Bloquear SIM
 Método que permite bloquear o desbloquear una SIM.
 
 Los parámetros que recibe son los siguientes:
@@ -649,8 +619,8 @@ Ruta : PATCH `/blockSim`
 **Parámetros de entrada:**
 | Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
 |:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
-| numeroTelefono    | string       |            |                | Breve descripción           |
-| simStatus         | string       |            |                | Breve descripción           |
+| numeroTelefono    | string       |            |                | Número de teléfono          |
+| simStatus         | string       |            |                | ID del estatus de la SIM    |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -692,7 +662,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         ...
 	}
 
-## 2.2.- CheckBuzon
+## 2.2.- Estado de Buzón de Voz
 Método que permite obtener el estado del buzón de voz.
 
 Los parámetros que recibe son los siguientes:
@@ -702,7 +672,7 @@ Ruta : GET `/checkBuzon`
 **Parámetros de entrada:**
 | Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
 |:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
-| numeroTelefono    | string       |            |                | Breve descripción           |
+| numeroTelefono    | string       |            |                | Número de teléfono          |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -733,7 +703,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         ...
 	}
 
-## 2.3.- CheckNum
+## 2.3.- Obtener Datos de una Línea
 Método que permite obtener los datos de una línea.
 
 Los parámetros que recibe son los siguientes:
@@ -743,22 +713,22 @@ Ruta : GET `/checkNum`
 **Parámetros de entrada:**
 | Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
 |:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
-| numeroTelefono    | string       |            |                | Breve descripción           |
+| numeroTelefono    | string       |            |                | Número de teléfono          |
 
 **Datos de salida:**
 | Campo                 |  Tipo        |                         Descripción              |
 |:----------------------|:------------:|-------------------------------------------------:| 
-| ↓ getMsisdnInfoResult | array[object]| Breve descripción                                |
-| ⤷ wsSessionId         | string       | Breve descripción                                |
-| ⤷ callID              | string       | Breve descripción                                |
-| ⤷ callCode            | int          | Breve descripción                                |
-| ⤷ resultCode          | string       | Breve descripción                                |
-| ⤷ callMsg             | string       | Breve descripción                                |
-| ⤷ subscriptionID      | string       | Breve descripción                                |
-| ↓↓ item               | array[object]| Breve descripción                                |
-| ⤷ packageInstanceID   | string       | Breve descripción                                |
-| ⤷ status              | int          | Breve descripción                                |
-| ⤷ msisdn              | string       | Breve descripción                                |
+| ↓ getMsisdnInfoResult | array[object]|                                                  |
+| ⤷ wsSessionId         | string       | ID de ws Session                                 |
+| ⤷ callID              | string       | Call ID                                          |
+| ⤷ callCode            | int          | Call code                                        |
+| ⤷ resultCode          | string       | Código de resultado                              |
+| ⤷ callMsg             | string       | Call message                                     |
+| ⤷ subscriptionID      | string       | ID de la suscripción                             |
+| ↓↓ item               | array[object]|                                                  |
+| ⤷ packageInstanceID   | string       | ID de la instancia del package                   |
+| ⤷ status              | int          | Estatus                                          |
+| ⤷ msisdn              | string       | Msisdn                                           |
 
 ### 2.3.1.- Ejemplo de llamada
 
@@ -814,7 +784,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "codigo": 200
     }
 
-## 2.4.- CheckPort
+## 2.4.- Estado de Portabilidad
 Método que permite obtener el estado de una portabilidad.
 
 Los parámetros que recibe son los siguientes:
@@ -824,7 +794,7 @@ Ruta : GET `/checkPort`
 **Parámetros de entrada:**
 | Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
 |:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
-| numeroTelefono    | string       |            |                | Breve descripción           |
+| numeroTelefono    | string       |            |                | Número de teléfono          |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -862,7 +832,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
     }
 
 
-## 2.5.- CheckSessions
+## 2.5.- Sesiones Abiertas
 Método que permite obtener las sesiones abiertas por el Ws de mundo móvil en SUMA.
 
 Los parámetros que recibe son los siguientes:
@@ -918,7 +888,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "codigo": 200
 	}
 
-## 2.6.- CheckSim
+## 2.6.- Obtener Datos de SIM
 Método que permite obtener los datos de una tarjeta sim.
 
 Los parámetros que recibe son los siguientes:
@@ -928,25 +898,25 @@ Ruta : GET `/checkSim`
 **Parámetros de entrada:**
 | Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
 |:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
-| icc               | int          |            |                | Breve descripción           |
+| icc               | int          |            |                | Código ICC                  |
 
 **Datos de salida:**
 | Campo              |  Tipo        |                         Descripción              |
 |:-------------------|:------------:|-------------------------------------------------:| 
 | ↓ getSimInfoResult | array[object]|                                                  |
-| ⤷ wsSessionId      | string       |                                                  |
-| ⤷ callID           | string       |                                                  |
-| ⤷ callCode         | int          |                                                  |
-| ⤷ resultCode       | string       |                                                  |
-| ⤷ callMsg          | string       |                                                  | 
-| ⤷ subscriptionID   | string       |                                                  | 
+| ⤷ wsSessionId      | string       | ID de ws Session                                 |
+| ⤷ callID           | string       | Call ID                                          |
+| ⤷ callCode         | int          | Call code                                        |
+| ⤷ resultCode       | string       | Código de resultado                              |
+| ⤷ callMsg          | string       | Call message                                     |
+| ⤷ subscriptionID   | string       | ID de la suscripción                             |
 | ↓↓ item            | array[object]|                                                  |
-| ⤷ packageInstanceID| string       |                                                  | 
-| ⤷ icc              | string       |                                                  | 
-| ⤷ puk              | string       |                                                  | 
-| ⤷ status           | int          |                                                  | 
-| ⤷ imsiID           | string       |                                                  | 
-| ⤷ additionalImsi   | string       |                                                  | 
+| ⤷ packageInstanceID| string       | ID de la instancia del package                   |
+| ⤷ icc              | string       | Código ICC                                       | 
+| ⤷ puk              | string       | Código PUK                                       | 
+| ⤷ status           | int          | Estatus                                          | 
+| ⤷ imsiID           | string       | Código IMSI                                      | 
+| ⤷ additionalImsi   | string       | IMSI adicional                                   | 
 
 ### 2.6.1.- Ejemplo de llamada
 
@@ -993,7 +963,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         }
     }
 
-## 2.7.- CheckSubscription
+## 2.7.- Obtener Datos de una Suscripción
 Método que permite obtener datos de una suscripción (más completa, incluye consumo).
 
 Los parámetros que recibe son los siguientes:
@@ -1003,104 +973,104 @@ Ruta : GET `/checkSubscription`
 **Parámetros de entrada:**
 | Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
 |:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
-| subscriptionID    | string       |            |                | Breve descripción           |
+| subscriptionID    | string       |            |                | ID de la suscripción        |
 
 **Datos de salida:**
 | Campo                   |  Tipo        |                         Descripción              |
 |:------------------------|:------------:|-------------------------------------------------:| 
-| wsSessionId             | Tipo de dato | Breve descripción                                |
-| callID                  | Tipo de dato | Breve descripción                                |
-| callCode                | Tipo de dato | Breve descripción                                |
-| resultCode              | Tipo de dato | Breve descripción                                |
-| callMsg                 | Tipo de dato | Breve descripción                                |
-| item                    | Tipo de dato | Breve descripción                                |
-| subscriptionBasic       | Tipo de dato | Breve descripción                                |
-| subscriptionID          | Tipo de dato | Breve descripción                                |
-| idSubscriber            | Tipo de dato | Breve descripción                                |
-| msisdn                  | Tipo de dato | Breve descripción                                |
-| icc                     | Tipo de dato | Breve descripción                                |
-| imsi                    | Tipo de dato | Breve descripción                                |
-| status                  | Tipo de dato | Breve descripción                                |
-| computedStatus          | Tipo de dato | Breve descripción                                |
-| networkStatus           | Tipo de dato | Breve descripción                                |
-| type                    | Tipo de dato | Breve descripción                                |
-| portabilityStatus       | Tipo de dato | Breve descripción                                |
-| itemBalance             | Tipo de dato | Breve descripción                                |
-| balance                 | Tipo de dato | Breve descripción                                |
-| expirationDate          | Tipo de dato | Breve descripción                                |
-| service                 | Tipo de dato | Breve descripción                                |
-| active                  | Tipo de dato | Breve descripción                                |
-| extBool                 | Tipo de dato | Breve descripción                                |
-| extNumber               | Tipo de dato | Breve descripción                                |
-| extString               | Tipo de dato | Breve descripción                                |
-| userModifiable          | Tipo de dato | Breve descripción                                |
-| userVisible             | Tipo de dato | Breve descripción                                |
-| featureName             | Tipo de dato | Breve descripción                                |
-| featureID               | Tipo de dato | Breve descripción                                |
-| featureModel            | Tipo de dato | Breve descripción                                |
-| featureOnlyAdmin        | Tipo de dato | Breve descripción                                |
-| bonus                   | Tipo de dato | Breve descripción                                |
-| packageInstanceID       | Tipo de dato | Breve descripción                                |
-| bssRefID                | Tipo de dato | Breve descripción                                |
-| status                  | Tipo de dato | Breve descripción                                |
-| scope                   | Tipo de dato | Breve descripción                                |
-| renewable               | Tipo de dato | Breve descripción                                |
-| renewalCount            | Tipo de dato | Breve descripción                                |
-| promotion               | Tipo de dato | Breve descripción                                |
-| startDate               | Tipo de dato | Breve descripción                                |
-| origStartDate           | Tipo de dato | Breve descripción                                |
-| terminationDate         | Tipo de dato | Breve descripción                                |
-| trafficLimitValueOrig   | Tipo de dato | Breve descripción                                |
-| trafficLimitValue       | Tipo de dato | Breve descripción                                |
-| trafficLimitValueRenewal| Tipo de dato | Breve descripción                                |
-| name                    | Tipo de dato | Breve descripción                                |
-| deltaPriceplanID        | Tipo de dato | Breve descripción                                |
-| type                    | Tipo de dato | Breve descripción                                |
-| category                | Tipo de dato | Breve descripción                                |
-| mpp                     | Tipo de dato | Breve descripción                                |
-| packageInstanceID       | Tipo de dato | Breve descripción                                |
-| bssRefID                | Tipo de dato | Breve descripción                                |
-| status                  | Tipo de dato | Breve descripción                                |
-| scope                   | Tipo de dato | Breve descripción                                |
-| renewable               | Tipo de dato | Breve descripción                                |
-| renewalCount            | Tipo de dato | Breve descripción                                |
-| promotion               | Tipo de dato | Breve descripción                                |
-| startDate               | Tipo de dato | Breve descripción                                |
-| origStartDate           | Tipo de dato | Breve descripción                                |
-| name                    | Tipo de dato | Breve descripción                                |
-| deltaPriceplanID        | Tipo de dato | Breve descripción                                |
-| type                    | Tipo de dato | Breve descripción                                |
-| category                | Tipo de dato | Breve descripción                                |
-| pack                    | Tipo de dato | Breve descripción                                |
-| packageInstanceID       | Tipo de dato | Breve descripción                                |
-| bssRefID                | Tipo de dato | Breve descripción                                |
-| status                  | Tipo de dato | Breve descripción                                |
-| scope                   | Tipo de dato | Breve descripción                                |
-| renewable               | Tipo de dato | Breve descripción                                |
-| renewalCount            | Tipo de dato | Breve descripción                                |
-| promotion               | Tipo de dato | Breve descripción                                |
-| startDate               | Tipo de dato | Breve descripción                                |
-| origStartDate           | Tipo de dato | Breve descripción                                |
-| terminationDate         | Tipo de dato | Breve descripción                                |
-| chargingLimitValueOrig  | Tipo de dato | Breve descripción                                |
-| chargingLimitValue      | Tipo de dato | Breve descripción                                |
-| chargingLimitValueRenewal|Tipo de dato | Breve descripción                                |
-| name                    | Tipo de dato | Breve descripción                                |
-| deltaPriceplanID        | Tipo de dato | Breve descripción                                |
-| type                    | Tipo de dato | Breve descripción                                |
-| category                | Tipo de dato | Breve descripción                                |
-| child                   | Tipo de dato | Breve descripción                                |
-| bssRefID                | Tipo de dato | Breve descripción                                |
-| status                  | Tipo de dato | Breve descripción                                |
-| scope                   | Tipo de dato | Breve descripción                                |
-| renewalCount            | Tipo de dato | Breve descripción                                |
-| promotion               | Tipo de dato | Breve descripción                                |
-| startDate               | Tipo de dato | Breve descripción                                |
-| origStartDate           | Tipo de dato | Breve descripción                                |
-| name                    | Tipo de dato | Breve descripción                                |
-| deltaPriceplanID        | Tipo de dato | Breve descripción                                |
-| type                    | Tipo de dato | Breve descripción                                |
-| category                | Tipo de dato | Breve descripción                                |
+| wsSessionId             | string       | ID de la ws Session                              |
+| callID                  | string       | Call ID                                          |
+| callCode                | int          | Call code                                        |
+| resultCode              | string       | Código de resultado                              |
+| callMsg                 | string       | Call message                                     |
+| ↓ item                  | array[object]|                                                  |
+| ↓↓ subscriptionBasic    | array[object]|                                                  |
+| ⤷ subscriptionID        | string       | ID de la suscripción                             |
+| ⤷ idSubscriber          | int          | ID de la suscripción                             |
+| ⤷ msisdn                | string       | Código msisdn                                    |
+| ⤷ icc                   | string       | Código ICC                                       |
+| ⤷ imsi                  | string       | Código IMSI                                      |
+| ⤷ status                | int          | Estado                                           |
+| ⤷ computedStatus        | int          | ComputedStatus                                   |
+| ⤷ networkStatus         | int          | Estado de la red                                 |
+| ⤷ type                  | int          | ID del tipo                                      |
+| ⤷ portabilityStatus     | int          | Estado de la portabilidad                        |
+| ↓↓ itemBalance          | array[object]|                                                  |
+| ⤷ balance               | string       | Balance                                          |
+| ⤷ expirationDate        | timestamp    | Fecha de expiración                              |
+| ↓↓ service              | array[object]|                                                  |
+| ⤷ active                | boolean      | Breve descripción                                |
+| ⤷ extBool               | boolean      | Breve descripción                                |
+| ⤷ extNumber             | int          | Breve descripción                                |
+| ⤷ extString             | string       | Breve descripción                                |
+| ⤷ userModifiable        | boolean      | Breve descripción                                |
+| ⤷ userVisible           | boolean      | Breve descripción                                |
+| ⤷ featureName           | string       | Breve descripción                                |
+| ⤷ featureID             | string       | Breve descripción                                |
+| ⤷ featureModel          | string       | Breve descripción                                |
+| ⤷ featureOnlyAdmin      | boolean      | Breve descripción                                |
+| ↓↓ bonus                | array[object]|                                                  |
+| ⤷ packageInstanceID     | string       | Breve descripción                                |
+| ⤷ bssRefID              | string       | Breve descripción                                |
+| ⤷ status                | int          | Breve descripción                                |
+| ⤷ scope                 | int          | Breve descripción                                |
+| ⤷ renewable             | boolean      | Breve descripción                                |
+| ⤷ renewalCount          | int          | Breve descripción                                |
+| ⤷ promotion             | boolean      | Breve descripción                                |
+| ⤷ startDate             | timestamp    | Breve descripción                                |
+| ⤷ origStartDate         | timestamp    | Breve descripción                                |
+| ⤷ terminationDate       | timestamp    | Breve descripción                                |
+| ⤷ trafficLimitValueOrig | string       | Breve descripción                                |
+| ⤷ trafficLimitValue     | string       | Breve descripción                                |
+| ⤷ trafficLimitValueRenewal|string      | Breve descripción                                |
+| ⤷ name                  | string       | Breve descripción                                |
+| ⤷ deltaPriceplanID      | string       | Breve descripción                                |
+| ⤷ type                  | int          | Breve descripción                                |
+| ⤷ category              | string       | Breve descripción                                |
+| ↓↓ mpp                  | array[object]|                                                  |
+| ⤷ packageInstanceID     | string       | Breve descripción                                |
+| ⤷ bssRefID              | string       | Breve descripción                                |
+| ⤷ status                | int          | Breve descripción                                |
+| ⤷ scope                 | int          | Breve descripción                                |
+| ⤷ renewable             | boolean      | Breve descripción                                |
+| ⤷ renewalCount          | int          | Breve descripción                                |
+| ⤷ promotion             | boolean      | Breve descripción                                |
+| ⤷ startDate             | timestamp    | Breve descripción                                |
+| ⤷ origStartDate         | timestamp    | Breve descripción                                |
+| ⤷ name                  | string       | Breve descripción                                |
+| ⤷ deltaPriceplanID      | string       | Breve descripción                                |
+| ⤷ type                  | int          | Breve descripción                                |
+| ⤷ category              | string       | Breve descripción                                |
+| ↓↓ pack                 | array[object]|                                                  |
+| ⤷ packageInstanceID     | string       | Breve descripción                                |
+| ⤷ bssRefID              | string       | Breve descripción                                |
+| ⤷ status                | int          | Breve descripción                                |
+| ⤷ scope                 | int          | Breve descripción                                |
+| ⤷ renewable             | boolean      | Breve descripción                                |
+| ⤷ renewalCount          | int          | Breve descripción                                |
+| ⤷ promotion             | boolean      | Breve descripción                                |
+| ⤷ startDate             | timestamp    | Breve descripción                                |
+| ⤷ origStartDate         | timestamp    | Breve descripción                                |
+| ⤷ terminationDate       | timestamp    | Breve descripción                                |
+| ⤷ chargingLimitValueOrig| string       | Breve descripción                                |
+| ⤷ chargingLimitValue    | string       | Breve descripción                                |
+| ⤷ chargingLimitValueRenewal|string     | Breve descripción                                |
+| ⤷ name                  | string       | Breve descripción                                |
+| ⤷ deltaPriceplanID      | string       | Breve descripción                                |
+| ⤷ type                  | int          | Breve descripción                                |
+| ⤷ category              | string       | Breve descripción                                |
+| ↓↓↓ child               | array[object]|                                                  |
+| ⤷ bssRefID              | string       | Breve descripción                                |
+| ⤷ status                | int          | Breve descripción                                |
+| ⤷ scope                 | int          | Breve descripción                                |
+| ⤷ renewalCount          | int          | Breve descripción                                |
+| ⤷ promotion             | boolean      | Breve descripción                                |
+| ⤷ startDate             | timestamp    | Breve descripción                                |
+| ⤷ origStartDate         | timestamp    | Breve descripción                                |
+| ⤷ name                  | string       | Breve descripción                                |
+| ⤷ deltaPriceplanID      | string       | Breve descripción                                |
+| ⤷ type                  | int          | Breve descripción                                |
+| ⤷ category              | string       | Breve descripción                                |
 
 ### 2.7.1.- Ejemplo de llamada
 
@@ -1243,7 +1213,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         }
     }
 
-## 2.8.- getBolsas
+## 2.8.- Bolsas Adquiridas
 Método que permite obtener el historial de bolsas adquiridas por una línea.
 
 Los parámetros que recibe son los siguientes:
@@ -1299,7 +1269,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "codigo": 200
 	}
 
-## 2.9.- getConsumo
+## 2.9.- Obtener Consumo de una Línea
 Método que permite obtener el consumo de una línea.
 
 Los parámetros que recibe son los siguientes:
@@ -1309,17 +1279,17 @@ Ruta : GET `/getConsumo`
 **Parámetros de entrada:**
 | Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
 |:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
-| numeroTelefono    | string       |            |                | Breve descripción           |
+| numeroTelefono    | string       |            |                | Número de teléfono          |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| datos          | int          | Breve descripción                                |
-| voz            | int          | Breve descripción                                |
-| sms            | int          | Breve descripción                                |
-| fechaRenovacion| date         | Breve descripción                                |
-| fechaInicial   | date         | Breve descripción                                |
-| sim            | string       | Breve descripción                                |
+| datos          | int          | Datos consumidos                                 |
+| voz            | int          | Minutos consumidos                               |
+| sms            | int          | Sms consumidos                                   |
+| fechaRenovacion| date         | Fecha de renovación                              |
+| fechaInicial   | date         | Fecha inicial                                    |
+| sim            | string       | Código de SIM                                    |
 
 ### 2.9.1.- Ejemplo de llamada
 
@@ -1360,7 +1330,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "codigo": 200
     }
 
-## 2.10.- getConsumoIVR
+## 2.10.- Obtener Consumo de una Línea IVR
 Método que permite obtener el consumo de una línea con respuesta en formato especial para IVR.
 
 Los parámetros que recibe son los siguientes:
@@ -1416,7 +1386,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "codigo": 200
 	}
 
-## 2.11.- getConsumoPlan
+## 2.11.- Obtener Consumo de Plan de una Línea
 Método que permite obtener el consumo y los datos del plan de una línea.
 
 Los parámetros que recibe son los siguientes:
@@ -1472,7 +1442,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "codigo": 200
 	}
 
-## 2.12.- getESim
+## 2.12.- Obtener Código de Provisión E-SIM
 Método que permite obtener el código de provisión de una e-sim (QR).
 
 Los parámetros que recibe son los siguientes:
@@ -1483,7 +1453,7 @@ Ruta : GET `/getESim`
 | Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
 |:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
 | sid               |              |            |                | Breve descripción           |
-| icc               |              |            |                | Breve descripción           |
+| icc               |              |            |                | Código ICC                  |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -1515,7 +1485,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         ...
 	}
 
-## 2.13.- getPlan
+## 2.13.- Obtener Datos de Plan de una Línea
 Método que permite obtener los datos del plan de una línea.
 
 Los parámetros que recibe son los siguientes:
@@ -1525,22 +1495,22 @@ Ruta : GET `/getPlan`
 **Parámetros de entrada:**
 | Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
 |:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
-| numeroTelefono    | int          |            |                | Breve descripción           |
+| numeroTelefono    | int          |            |                | Número de teléfono          |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| nombre         | string       | Breve descripción                                |
-| traficoDatos   | int          | Breve descripción                                |
-| traficoVoz     | int          | Breve descripción                                |
-| traficoSms     | int          | Breve descripción                                |
-| imsi           | string       | Breve descripción                                |
-| dispositivos   | array[object]| Breve descripción                                |
-| msisdn         | int          | Breve descripción                                |
-| imsi           | string       | Breve descripción                                |
-| imei           | string       | Breve descripción                                |
-| modelo         | string       | Breve descripción                                |
-| marca          | string       | Breve descripción                                |
+| nombre         | string       | Nombre de plan                                   |
+| traficoDatos   | int          | Tráfico de datos                                 |
+| traficoVoz     | int          | Tráfico de voz                                   |
+| traficoSms     | int          | Tráfico de sms                                   |
+| imsi           | string       | Código IMSI                                      |
+| dispositivos   | array[object]|                                                  |
+| msisdn         | int          | msisdn                                           |
+| imsi           | string       | Código IMSI                                      |
+| imei           | string       | Código IMEI                                      |
+| modelo         | string       | Modelo de teléfono                               |
+| marca          | string       | Marca de teléfono                                |
 
 ### 2.13.1.- Ejemplo de llamada
 
@@ -1589,7 +1559,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "codigo": 200
     }
 
-## 2.14.- getSimInfo
+## 2.14.- Obtener Datos de SIM
 Método que devuelve los datos de una SIM a partir de una línea.
 
 Los parámetros que recibe son los siguientes:
@@ -1655,16 +1625,16 @@ Ruta : GET `/liberarNumero`
 **Parámetros de entrada:**
 | Campo             |  Tipo        | Formato    | Requerido      |             Descripción     |
 |:-----------------:|:------------:|:----------:|:--------------:|----------------------------:|
-| numeroTelefono    | int          |            |                | Breve descripción           |
+| numeroTelefono    | int          |            |                | Número de teléfono          |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| wsSessionId    | Tipo de dato | Breve descripción                                |
-| callID         | Tipo de dato | Breve descripción                                |
-| callCode       | Tipo de dato | Breve descripción                                |
-| resultCode     | Tipo de dato | Breve descripción                                |
-| callMsg        | Tipo de dato | Breve descripción                                |
+| wsSessionId    | string       | ID de ws Session                                 |
+| callID         | string       | Call ID                                          |
+| callCode       | int          | Call code                                        |
+| resultCode     | string       | Código de resultado                              |
+| callMsg        | string       | Call message                                     |
 
 ### 2.15.1.- Ejemplo de llamada
 
@@ -1804,7 +1774,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         "codigo": 200
 	}
 
-## 2.18.- UpdatePlan
+## 2.18.- Actualizar Plan
 Método que permite actualizar los montos de los bonos de un plan asignado a una suscripción, no funciona con bolsas sueltas.
 
 Los parámetros que recibe son los siguientes:
