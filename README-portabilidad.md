@@ -10,22 +10,22 @@
   - [Objetivo](#objetivo)
   - [Restricciones](#restricciones)
   - [1.- Monitor](#1--monitor)
-    - [1.1.- consultasPortOuts](#11--consultasPortOuts)
+    - [1.1.- **consultasPortOuts**](#11--consultasPortOuts)
         - [1.1.1.- Ejemplo de llamada](#111--ejemplo-de-llamada)
         - [1.1.2.- Respuesta de Salida](#112--respuesta-de-salida)
             - [1.1.2.1- Respuesta de error](#1121--respuesta-de-error)
             - [1.1.2.2- Respuesta de éxito](#1122--respuesta-de-éxito)
-    - [1.2.- monitor](#12--monitor)
+    - [1.2.- **monitor**](#12--monitor)
         - [1.2.1.- Ejemplo de llamada](#121--ejemplo-de-llamada)
         - [1.2.2.- Respuesta de Salida](#122--respuesta-de-salida)
             - [1.2.2.1- Respuesta de error](#1221--respuesta-de-error)
             - [1.2.2.2- Respuesta de éxito](#1222--respuesta-de-éxito)
-    - [1.3.- monitor/busqueda](#13--monitor/busqueda)
+    - [1.3.- **monitor/busqueda**](#13--monitor/busqueda)
         - [1.3.1.- Ejemplo de llamada](#131--ejemplo-de-llamada)
         - [1.3.2.- Respuesta de Salida](#132--respuesta-de-salida)
             - [1.3.2.1- Respuesta de error](#1321--respuesta-de-error)
             - [1.3.2.2- Respuesta de éxito](#1322--respuesta-de-éxito)
-    - [1.4.- portabilidadSalientes](#13--portabilidadSalientes)
+    - [1.4.- **portabilidadSalientes**](#13--portabilidadSalientes)
         - [1.4.1.- Ejemplo de llamada](#141--ejemplo-de-llamada)
         - [1.4.2.- Respuesta de Salida](#142--respuesta-de-salida)
             - [1.4.2.1- Respuesta de error](#1421--respuesta-de-error)
@@ -117,7 +117,7 @@ Describir objetivo
 Especificar restricciones
 
 
-# 1.- **Monitor**
+# 1.- Monitor
 ## 1.1.- consultasPortOuts
 Método que entrega la totalidad de las consultas de titularidad de nuestros clientes desde otras compañías.
 
@@ -287,8 +287,8 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         ...
 	}
 
-# 2.- **Portabilidad**
-## 2.1.- **bloquearEquipo**
+# 2.- Portabilidad
+## 2.1.- bloquearEquipo
 Método que permite el bloqueo de equipo por imei.
 
 Los parámetros que recibe son los siguientes:
