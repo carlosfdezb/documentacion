@@ -117,7 +117,7 @@ Describir objetivo
 Especificar restricciones
 
 
-# 1.- Monitor
+# 1.- **Monitor**
 ## 1.1.- consultasPortOuts
 Método que entrega la totalidad de las consultas de titularidad de nuestros clientes desde otras compañías.
 
@@ -287,8 +287,8 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         ...
 	}
 
-# 2.- Portabilidad
-## 2.1.- bloquearEquipo
+# 2.- **Portabilidad**
+## 2.1.- **bloquearEquipo**
 Método que permite el bloqueo de equipo por imei.
 
 Los parámetros que recibe son los siguientes:
