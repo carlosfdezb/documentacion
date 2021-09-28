@@ -25,7 +25,7 @@
         - [1.3.2.- Respuesta de Salida](#132--respuesta-de-salida)
             - [1.3.2.1- Respuesta de error](#1321--respuesta-de-error)
             - [1.3.2.2- Respuesta de éxito](#1322--respuesta-de-éxito)
-    - [1.4.- **portabilidadSalientes**](#13--portabilidadSalientes)
+    - [1.4.- **portabilidadSalientes**](#14--portabilidadSalientes)
         - [1.4.1.- Ejemplo de llamada](#141--ejemplo-de-llamada)
         - [1.4.2.- Respuesta de Salida](#142--respuesta-de-salida)
             - [1.4.2.1- Respuesta de error](#1421--respuesta-de-error)
