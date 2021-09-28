@@ -338,9 +338,13 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/cancelarPortacion`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo                 |  Tipo        | Formato       | Requerido    | Descripción                 |
+|:----------------------|:------------:|:-------------:|:------------:|----------------------------:|
+| descripcionMotivo     | string       |               |              | Breve descripción           |
+| ↓ documentos          | array[object]|               |              | Breve descripción           |
+| ⤷ tipoDocumento       | string       |               |              | Breve descripción           |
+| ⤷ archivoBinario      | string       |               |              | Breve descripción           |
+| idSolicitud           | int          |               |              | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -351,9 +355,16 @@ Ruta : POST `/cancelarPortacion`
 
 Ejemplo: JSON 
 
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
+        {	
+                "descripcionMotivo":"Motivo personal",
+                "documentos":[
+                        {
+                                "tipoDocumento":"021",
+                                "archivoBinario":"/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAYGBgYHBgcICAcKCwoLCg8ODAwODxYQERAREBYiFRkV"
+                        }
+                ],
+                "idSolicitud":85761
+        }
 
 ### 2.2.2.- Respuesta de salida
 
@@ -462,9 +473,10 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/generarCap`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo                 |  Tipo        | Formato       | Requerido    | Descripción                 |
+|:----------------------|:------------:|:-------------:|:------------:|----------------------------:|
+| numeroTelefono        | int          |               |              | Breve descripción           |
+| idSolicitud           | int          |               |              | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -475,9 +487,10 @@ Ruta : POST `/generarCap`
 
 Ejemplo: JSON 
 
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
+        {
+                "numeroTelefono":56936000014,
+                "idSolicitud":87
+        }
 
 ### 2.5.2.- Respuesta de salida
 
@@ -503,9 +516,13 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/informaFinProcesoInOut`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo                 |  Tipo        | Formato       | Requerido    | Descripción                 |
+|:----------------------|:------------:|:-------------:|:------------:|----------------------------:|
+| tipoOperacion         | int          |               |              | Breve descripción           |
+| idSolicitud           | int          |               |              | Breve descripción           |
+| detalleRespuestas     | string       |               |              | Breve descripción           |
+| ↓ numerosTelefonos    | array[object]|               |              | Breve descripción           |
+| ⤷ numero              | int          |               |              | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -516,9 +533,16 @@ Ruta : POST `/informaFinProcesoInOut`
 
 Ejemplo: JSON 
 
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
+        {
+                "tipoOperacion": 1,
+                "idSolicitud": 2737,
+                "detalleRespuestas": "",
+                "numerosTelefonos": [
+                        {
+                        "numero": 56977525479
+                        }
+                ]
+        }
 
 ### 2.6.2.- Respuesta de salida
 
@@ -526,9 +550,19 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 2.6.2.1.- Respuesta de error
 
-	{
-        ...
-	} 
+        {
+                "error": {
+                        "codigoRespuesta": 0,
+                        "descripcionRespuesta": "Error",
+                        "detalleRespuesta": [
+                        {
+                                "codigoError": 0,
+                                "descripcionError": "Solicitud de portabilidad no encontrada o aun en curso para este numero 56977525479"
+                        }
+                        ]
+                },
+                "codigo": 404
+        }
   
 #### 2.6.2.2.- Respuesta de éxito
 
@@ -840,9 +874,20 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/solicitarPortacion`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo                 |  Tipo        | Formato       | Requerido    | Descripción                 |
+|:----------------------|:------------:|:-------------:|:------------:|----------------------------:|
+| ↓ numerosTelefonico   | array[object]|               |              | Breve descripción           |
+| ⤷ numeroTelefono      | string       |               |              | Breve descripción           |
+| ⤷ indCuentaAlDia      | int          |               |              | Breve descripción           |
+| ⤷ montoDeudaAceptada  | int          |               |              | Breve descripción           |
+| ⤷ CAP                 | string       |               |              | Breve descripción           |
+| ⤷ iccid               | string       |               |              | Breve descripción           |
+| ⤷ idPlan              | int          |               |              | Breve descripción           |
+| ↓ documentos          | array[object]|               |              | Breve descripción           |
+| ⤷ numeroTelefonoDoc   | sring        |               |              | Breve descripción           |
+| ⤷ tipoDocumento       | sring        |               |              | Breve descripción           |
+| ⤷ documentoBinario    | sring        |               |              | Breve descripción           |
+| idSolicitud           | int          |               |              | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -853,9 +898,37 @@ Ruta : POST `/solicitarPortacion`
 
 Ejemplo: JSON 
 
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
+        {
+                "numerosTelefonico":[
+                        {
+                        "numeroTelefono":"56936000014",
+                        "indCuentaAlDia":0,
+                        "montoDeudaAceptada":0,
+                        "CAP":"348250361886", 
+                        "iccid":"8956072200000085070F",
+                        "idPlan":502
+                        }
+	        ],
+	        "documentos":[
+                        {
+                        "numeroTelefonoDoc":"0",
+                        "tipoDocumento":"001",
+                        "documentoBinario":"JVBERi0xLjQKJdPr6eEKMSAwIG9iago8PC9DcmVhdG9yIChDaHJvbWl1bSkKL1Byb2R1Y2VyIChTa2lhL1BERiBtNjYpCi9"
+                        },
+                        {
+                        "numeroTelefonoDoc":"0",
+                        "tipoDocumento":"006",
+                        "documentoBinario":"JVBERi0xLjQKJdPr6eEKMSAwIG9iago8PC9DcmVhdG9yIChDaHJvbWl1bSkKL1Byb2R1Y2VyIChTa2lhL1BERiBtNjYpCi9"
+                        },
+                        {
+                        "numeroTelefonoDoc":"0",
+                        "tipoDocumento":"020",
+                        "documentoBinario":"JVBERi0xLjQKJdPr6eEKMSAwIG9iago8PC9DcmVhdG9yIChDaHJvbWl1bSkKL1Byb2R1Y2VyIChTa2lhL1BERiBtNjYpCi9"
+                        }
+		
+	        ],
+	        "idSolicitud":87
+        }
 
 ### 2.14.2.- Respuesta de salida
 
@@ -882,22 +955,63 @@ Los parámetros que recibe son los siguientes:
 Ruta : POST `/verificarFactibilidad`
 
 **Parámetros de entrada:**
-| Campo        |  Tipo        | Formato                        |     Requerido                              |             Descripción     |
-|:------------:|:------------:|:------------------------------:|:------------------------------------------:|----------------------------:|
-| Nombre Campo | Tipo de dato | Especificar formato (opcional) | Especificar si parámetro es requerido o no | Breve descripción           |
+| Campo                 |  Tipo        | Formato       | Requerido    | Descripción                 |
+|:----------------------|:------------:|:-------------:|:------------:|----------------------------:|
+| ↓ data                | array[object]|               |              | Breve descripción           |
+| ⤷ ventaWeb            | int          |               |              | Breve descripción           |
+| ⤷ rutSolicitante      | string       |               |              | Breve descripción           |
+| ⤷ rutTitular          | string       |               |              | Breve descripción           |
+| ⤷ nombreTitular       | string       |               |              | Breve descripción           |
+| ⤷ apellidoTitular     | string       |               |              | Breve descripción           |
+| ⤷ direccionTitular    | string       |               |              | Breve descripción           |
+| ⤷ idModalidad         | int          |               |              | Breve descripción           |
+| ⤷ tipoServicioOrigen  | int          |               |              | Breve descripción           |
+| ⤷ tipoServicioDestino | int          |               |              | Breve descripción           |
+| ⤷ metodoContacto      | int          |               |              | Breve descripción           |
+| ⤷ region              | int          |               |              | Breve descripción           |
+| ⤷ comuna              | int          |               |              | Breve descripción           |
+| ⤷ localidad           | int          |               |              | Breve descripción           |
+| ⤷ tipoSuscriptor      | int          |               |              | Breve descripción           |
+| ↓↓ numeroTelefonos    | array[object]|               |              | Breve descripción           |
+| ⤷ numeroTelefono      | int          |               |              | Breve descripción           |
+| ⤷ IMEI                | string       |               |              | Breve descripción           |
+| plataforma            | int          |               |              | Breve descripción           |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| idSolicitud    | int          | Breve descripción                                |
 
 ### 2.15.1.- Ejemplo de llamada
 
 Ejemplo: JSON 
 
-	{
-        "NOMBRE_CAMPO":"valor"
-	}
+        {
+                "data": {
+                        "ventaWeb": 1,
+                        "rutSolicitante": "15178204-3",
+                        "rutTitular": "15178204-3",
+                        "nombreTitular": "cristian",
+                        "apellidoTitular": "fuentes",
+                        "direccionTitular": "PASAJE TALCA 543",
+                        "idModalidad":1,
+                        "tipoServicioOrigen":0,
+                        "tipoServicioDestino":0,
+                        "metodoContacto":1,
+                        "region": 8,
+                        "comuna": 8102,
+                        "localidad": 810201,
+                        "tipoSuscriptor":1,
+                        "numeroTelefonos":[
+                                {
+                                "numeroTelefono":56969078366,
+                                "IMEI":"869325035121053"
+                                }
+
+                        ]
+                },
+                "plataforma": 5
+        }
 
 ### 2.15.2.- Respuesta de salida
 
@@ -905,12 +1019,27 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 #### 2.15.2.1.- Respuesta de error
 
-	{
-        ...
-	} 
+        {
+                "error": {
+                        "codigoRespuesta": 0,
+                        "descripcionRespuesta": "Error",
+                        "detalleRespuesta": [
+                        {
+                                "codigoError": 500,
+                                "descripcionError": "Rut Solicitante es obligatorio."
+                        }
+                        ]
+                },
+                "codigo": 422
+        }
   
 #### 2.15.2.2.- Respuesta de éxito
 
-	{
-        ...
-	}
+        {
+                "success": {
+                        "codigoRespuesta": 1,
+                        "descripcionRespuesta": "Recibido correctamente",
+                        "idSolicitud": 148523
+                },
+                "codigo": 200
+        }
