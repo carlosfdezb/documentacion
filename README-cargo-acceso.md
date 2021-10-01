@@ -3,80 +3,65 @@
 |                  |
 
 <!-- Título -->
-# Documentación Api´s para TITULO
+# Documentación Api´s para Cargo de Acceso
 
 <!-- Índice -->
-- [Documentación Api´s para TITULO](#documentación-apis-para-TITULO)
+- [Documentación Api´s para Cargo de Acceso](#documentación-apis-para-cargo-de-acceso)
   - [Objetivo](#objetivo)
   - [Restricciones](#restricciones)
-    - [1.- tarifasPorEmpresa](#1--tarifasPorEmpresa)
+    - [1.- Tarifas por Empresa](#1--tarifas-por-empresa)
         - [1.1.- Ejemplo de llamada](#11--ejemplo-de-llamada)
         - [1.2.- Respuesta de Salida](#12--respuesta-de-salida)
-            - [1.2.1- Respuesta de error](#121--respuesta-de-error)
-            - [1.2.2- Respuesta de éxito](#122--respuesta-de-éxito)
-    - [2.- guardarTarifasPorEmpresa](#2--guardarTarifasPorEmpresa)
+            - [1.2.1- Respuesta de éxito](#121--respuesta-de-éxito)
+    - [2.- Guardar Tarifas por Empresa](#2--guardar-tarifas-por-empresa)
         - [2.1.- Ejemplo de llamada](#21--ejemplo-de-llamada)
         - [2.2.- Respuesta de Salida](#22--respuesta-de-salida)
-            - [2.2.1- Respuesta de error](#221--respuesta-de-error)
-            - [2.2.2- Respuesta de éxito](#222--respuesta-de-éxito)
-    - [3.- obtenerLiquidaciones](#3--obtenerLiquidaciones)
-        - [3.1.- Ejemplo de llamada](#31--ejemplo-de-llamada)
-        - [3.2.- Respuesta de Salida](#32--respuesta-de-salida)
-            - [3.2.1- Respuesta de error](#321--respuesta-de-error)
-            - [3.2.2- Respuesta de éxito](#322--respuesta-de-éxito)
-    - [4.- empresasHabilitadas](#4--empresasHabilitadas)
-        - [4.1.- Ejemplo de llamada](#41--ejemplo-de-llamada)
-        - [4.2.- Respuesta de Salida](#42--respuesta-de-salida)
-            - [4.2.1- Respuesta de error](#421--respuesta-de-error)
-            - [4.2.2- Respuesta de éxito](#422--respuesta-de-éxito)
-    - [5.- empresasPrincipales](#5--empresasPrincipales)
-        - [5.1.- Ejemplo de llamada](#51--ejemplo-de-llamada)
-        - [5.2.- Respuesta de Salida](#52--respuesta-de-salida)
-            - [5.2.1- Respuesta de error](#521--respuesta-de-error)
-            - [5.2.2- Respuesta de éxito](#522--respuesta-de-éxito)
-    - [6.- getListaAnos](#6--getListaAnos)
-        - [6.1.- Ejemplo de llamada](#61--ejemplo-de-llamada)
-        - [6.2.- Respuesta de Salida](#62--respuesta-de-salida)
-            - [6.2.1- Respuesta de error](#621--respuesta-de-error)
-            - [6.2.2- Respuesta de éxito](#622--respuesta-de-éxito)
-    - [7.- getListaMes](#7--getListaMes)
+            - [2.2.1- Respuesta de éxito](#221--respuesta-de-éxito)
+    - [3.- Obtener Liquidaciones](#3--obtener-liquidaciones)
+        - [3.1.- Respuesta de Salida](#31--respuesta-de-salida)
+            - [3.1.1- Respuesta de éxito](#311--respuesta-de-éxito)
+    - [4.- Empresas Habilitadas](#4--empresas-habilitadas)
+        - [4.1.- Respuesta de Salida](#41--respuesta-de-salida)
+            - [4.1.1- Respuesta de éxito](#411--respuesta-de-éxito)
+    - [5.- Empresa Principal](#5--empresa-principal)
+        - [5.1.- Respuesta de Salida](#51--respuesta-de-salida)
+            - [5.1.1- Respuesta de éxito](#511--respuesta-de-éxito)
+    - [6.- Obtener Años](#6--obtener-años)
+        - [6.1.- Respuesta de Salida](#61--respuesta-de-salida)
+            - [6.1.1- Respuesta de éxito](#611--respuesta-de-éxito)
+    - [7.- Obtener Meses](#7--obtener-meses)
         - [7.1.- Ejemplo de llamada](#71--ejemplo-de-llamada)
         - [7.2.- Respuesta de Salida](#72--respuesta-de-salida)
-            - [7.2.1- Respuesta de error](#721--respuesta-de-error)
-            - [7.2.2- Respuesta de éxito](#722--respuesta-de-éxito)
-    - [8.- cargarLiquidacionesId](#8--cargarLiquidacionesId)
+            - [7.2.1- Respuesta de éxito](#721--respuesta-de-éxito)
+    - [8.- Obtener Liquidación por ID](#8--obtener-liquidación-por-id)
         - [8.1.- Ejemplo de llamada](#81--ejemplo-de-llamada)
         - [8.2.- Respuesta de Salida](#82--respuesta-de-salida)
-            - [8.2.1- Respuesta de error](#821--respuesta-de-error)
-            - [8.2.2- Respuesta de éxito](#822--respuesta-de-éxito)
-    - [9.- generarPDF](#9--generarPDF)
+            - [8.2.1- Respuesta de éxito](#821--respuesta-de-éxito)
+    - [9.- Generar PDF](#9--generar-pdf)
         - [9.1.- Ejemplo de llamada](#91--ejemplo-de-llamada)
         - [9.2.- Respuesta de Salida](#92--respuesta-de-salida)
-            - [9.2.1- Respuesta de error](#921--respuesta-de-error)
-            - [9.2.2- Respuesta de éxito](#922--respuesta-de-éxito)
-    - [10.- ObtenerCdr](#10--ObtenerCdr)
+            - [9.2.1- Respuesta de éxito](#921--respuesta-de-éxito)
+    - [10.- Exportar CDR](#10--exportar-cdr)
         - [10.1.- Ejemplo de llamada](#101--ejemplo-de-llamada)
         - [10.2.- Respuesta de Salida](#102--respuesta-de-salida)
-            - [10.2.1- Respuesta de error](#1021--respuesta-de-error)
-            - [10.2.2- Respuesta de éxito](#1022--respuesta-de-éxito)
-    - [11.- guardarLiquidacion](#11--guardarLiquidacion)
+            - [10.2.1- Respuesta de éxito](#1021--respuesta-de-éxito)
+    - [11.- Guardar Liquidación](#11--guardar-liquidación)
         - [11.1.- Ejemplo de llamada](#111--ejemplo-de-llamada)
         - [11.2.- Respuesta de Salida](#112--respuesta-de-salida)
-            - [11.2.1- Respuesta de error](#1121--respuesta-de-error)
-            - [11.2.2- Respuesta de éxito](#1122--respuesta-de-éxito)
+            - [11.2.1- Respuesta de éxito](#1121--respuesta-de-éxito)
 
 
 
 # Objetivo
 
-Describir objetivo
+Disponer Api's para realizar la gestión de Cargos de Acceso de Mundo.
 
 # Restricciones
 
-Especificar restricciones
+En este documento solo se describen Api's propias del sistema, no externas a este.
 
 
-## 1.- tarifasPorEmpresa
+## 1.- Tarifas por Empresa
 Método que permite consultar tarifas de la empresa corresponsal indicada.
 
 Los parámetros que recibe son los siguientes:
@@ -89,12 +74,16 @@ Ruta : POST `/cargos/tarifasPorEmpresa`
 |:---------------|:------:|:--------:|:---------:|---------------------------:|
 | mes            | string |          |           | Mes a buscar               |
 | empresa        | int    |          |           | ID de la empresa           |
-| ejercicio      | string |          |           | Ejercicio                  |
+| ejercicio      | string |          |           | Año                        |
 
 **Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo                  |  Tipo        |                         Descripción              |
+|:-----------------------|:------------:|-------------------------------------------------:| 
+| id                     | int          | ID de la tarifa                                  |
+| fecha_inicio           | date         | Fecha de inicio                                  |
+| tarifa_horario_normal  | int          | Tarifa en horario normal                         |
+| tarifa_horario_reducido| int          | Tarifa en horario reducido                       |
+| tarifa_horario_nocturno| int          | Tarifa en horario nocturno                       |
 
 ### 1.1.- Ejemplo de llamada
 
@@ -109,20 +98,27 @@ Ejemplo: JSON
 ### 1.2.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 1.2.1.- Respuesta de error
-
-	{
-        ...
-	} 
   
-#### 1.2.2.- Respuesta de éxito
+#### 1.2.1.- Respuesta de éxito
 
-	{
-        ...
-	}
+        [
+                {
+                        "id": 163,
+                        "fecha_inicio": "2021-07-01",
+                        "tarifa_horario_normal": 0.0436,
+                        "tarifa_horario_reducido": 0.0326,
+                        "tarifa_horario_nocturno": 0.0218
+                },
+                {
+                        "id": 164,
+                        "fecha_inicio": "2021-07-25",
+                        "tarifa_horario_normal": 0.044,
+                        "tarifa_horario_reducido": 0.033,
+                        "tarifa_horario_nocturno": 0.022
+                }
+        ]
 
-## 2.- guardarTarifasPorEmpresa
+## 2.- Guardar Tarifas por Empresa
 Método que permite guardar la tarifa ingresada asociada a la empresa corresponsal en BD.
 
 Los parámetros que recibe son los siguientes:
@@ -134,7 +130,7 @@ Ruta : POST `/cargos/guardarTarifasPorEmpresa`
 | Campo                    |  Tipo        | Formato  | Requerido | Descripción                |
 |:-------------------------|:------------:|:--------:|:---------:|---------------------------:|
 | empresa                  | int          |          |           | ID de la empresa           |
-| ejercicio                | string       |          |           | Ejercicio                  |
+| ejercicio                | string       |          |           | Año                        |
 | mes                      | string       |          |           | Número del mes             |
 | ↓ tarifas                | array[object]|          |           |                            |
 | ⤷ id                     | int          |          |           | ID de la tarifa            |
@@ -145,9 +141,13 @@ Ruta : POST `/cargos/guardarTarifasPorEmpresa`
 | tarifasEliminadas        | array[object]|          |           | Array con tarifas eliminadas|
 
 **Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo                  |  Tipo        |                         Descripción              |
+|:-----------------------|:------------:|-------------------------------------------------:| 
+| id                     | int          | ID de la tarifa                                  |
+| fecha_inicio           | date         | Fecha de inicio                                  |
+| tarifa_horario_normal  | int          | Tarifa en horario normal                         |
+| tarifa_horario_reducido| int          | Tarifa en horario reducido                       |
+| tarifa_horario_nocturno| int          | Tarifa en horario nocturno                       |
 
 ### 2.1.- Ejemplo de llamada
 
@@ -178,21 +178,28 @@ Ejemplo: JSON
 ### 2.2.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 2.2.1.- Respuesta de error
-
-	{
-        ...
-	} 
   
-#### 2.2.2.- Respuesta de éxito
+#### 2.2.1.- Respuesta de éxito
 
-	{
-        ...
-	}
+        [
+                {
+                        "id": 163,
+                        "fecha_inicio": "2021-07-01",
+                        "tarifa_horario_normal": 0.0436,
+                        "tarifa_horario_reducido": 0.0326,
+                        "tarifa_horario_nocturno": 0.0218
+                },
+                {
+                        "id": 164,
+                        "fecha_inicio": "2021-07-25",
+                        "tarifa_horario_normal": 0.044,
+                        "tarifa_horario_reducido": 0.033,
+                        "tarifa_horario_nocturno": 0.022
+                }
+        ]
 
 
-## 3.- obtenerLiquidaciones
+## 3.- Obtener Liquidaciones
 Método que permite generar lista de liquidaciones generadas por entidad corresponsal.
 
 Los parámetros que recibe son los siguientes:
@@ -202,28 +209,28 @@ Ruta : GET `/cargos/obtenerLiquidaciones`
 **Datos de salida:**
 | Campo             |  Tipo        |                         Descripción              |
 |:------------------|:------------:|-------------------------------------------------:| 
-| id                | int          | Breve descripción                                |
-| id_empresa_origen | int          | Breve descripción                                |
-| id_empresa_destino| int          | Breve descripción                                |
-| ejercicio         | int          | Breve descripción                                |
-| mes               | int          | Breve descripción                                |
-| id_horario        | int          | Breve descripción                                |
-| monto_facturado   | int          | Breve descripción                                |
-| id_estado         | int          | Breve descripción                                |
-| indicador_entrada | int          | Breve descripción                                |
-| fecha_enviada     | date         | Breve descripción                                |
-| created_at        | timestamp    | Breve descripción                                |
-| updated_at        | timestamp    | Breve descripción                                |
-| ↓ empresa_origen  | array[object]| Breve descripción                                |
-| ⤷ ido             | int          | Breve descripción                                |
-| ⤷ nombre          | string       | Breve descripción                                |
-| ↓ empresa_destino | array[object]| Breve descripción                                |
-| ⤷ ido             | int          | Breve descripción                                |
-| ⤷ nombre          | string       | Breve descripción                                |
-| ⤷ dias_impugnacion| int          | Breve descripción                                |
-| ↓ estado          | array[object]| Breve descripción                                |
-| ⤷ id              | int          | Breve descripción                                |
-| ⤷ nombre          | string       | Breve descripción                                |
+| id                | int          | ID de la liquidación                             |
+| id_empresa_origen | int          | ID de la empresa de origen                       |
+| id_empresa_destino| int          | ID de la empresa de destino                      |
+| ejercicio         | int          | Año                                              |
+| mes               | int          | Mes                                              |
+| id_horario        | int          | ID del horario                                   |
+| monto_facturado   | int          | Monto facturado                                  |
+| id_estado         | int          | ID del estado                                    |
+| indicador_entrada | int          | Indicador de entrada                             |
+| fecha_enviada     | date         | Fecha enviada                                    |
+| created_at        | timestamp    | Fecha de creación                                |
+| updated_at        | timestamp    | Última fecha de actualización                    |
+| ↓ empresa_origen  | array[object]|                                                  |
+| ⤷ ido             | int          | ID empresa origen                                |
+| ⤷ nombre          | string       | Nombre de empresa de origen                      |
+| ↓ empresa_destino | array[object]|                                                  |
+| ⤷ ido             | int          | ID empresa destino                               |
+| ⤷ nombre          | string       | Nombre de empresa de destino                     |
+| ⤷ dias_impugnacion| int          | Cantidad de dias de impugnación                  |
+| ↓ estado          | array[object]|                                                  |
+| ⤷ id              | int          | ID del estado                                    |
+| ⤷ nombre          | string       | Descripción del estado                           |
 
 ### 3.1.- Respuesta de salida
 
@@ -275,7 +282,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         }
 
 
-## 4.- empresasHabilitadas
+## 4.- Empresas Habilitadas
 Método que permite obtener lista de empresas corresponsales.
 
 Los parámetros que recibe son los siguientes:
@@ -320,7 +327,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         ]
 
 
-## 5.- empresasPrincipales
+## 5.- Empresa Principal 
 Método que permite obtener lista de empresa principal Mundo Pacifico Móvil u Hogar como corresponsal.
 
 Los parámetros que recibe son los siguientes:
@@ -355,7 +362,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         ]
 
 
-## 6.- getListaAnos
+## 6.- Obtener Años
 Método que permite obtener lista de años anteriores como un año más a futuro.
 
 Los parámetros que recibe son los siguientes:
@@ -365,7 +372,7 @@ Ruta : GET `/cargos/getListaAnos`
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
 |:---------------|:------------:|-------------------------------------------------:| 
-| ejercicio      | int          | Breve descripción                                |
+| ejercicio      | int          | Año                                              |
 
 ### 6.1.- Respuesta de salida
 
@@ -386,7 +393,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
         ]
 
 
-## 7.- getListaMes
+## 7.- Obtener Meses
 Método que permite obtener lista de meses ya ingresados según las liquidaciones existentes del año seleccionado.
 
 Los parámetros que recibe son los siguientes:
@@ -450,7 +457,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 
 
-## 8.- cargarLiquidacionesId
+## 8.- Obtener Liquidación por ID
 Método que permite cargar datos de liquidación existente seleccionado de la grilla, para visualizar lo generado.
 
 Los parámetros que recibe son los siguientes:
@@ -461,67 +468,67 @@ Ruta : GET `/cargos/cargarLiquidacionesId`
 
 | Campo                    |  Tipo        | Formato  | Requerido | Descripción                |
 |:-------------------------|:------------:|:--------:|:---------:|---------------------------:|
-| id                       | int          |          | Si        |                            |
+| id                       | int          |          | Si        | ID de la liquidación       |
 
 **Datos de salida:**
 | Campo                       |  Tipo        |                         Descripción              |
 |:----------------------------|:------------:|-------------------------------------------------:| 
-| ↓ liquidacion               | array[object]| Breve descripción                                |
-| ⤷ id                        | string       | Breve descripción                                |
-| ⤷ estado                    | string       | Breve descripción                                |
-| ⤷ mes                       | string       | Breve descripción                                |
-| ⤷ ejercicio                 | string       | Breve descripción                                |
-| ⤷ indicador_entrada         | string       | Breve descripción                                |
-| ↓↓ empresa_liquidacion      | array[object]| Breve descripción                                |
-| ⤷ ido                       | string       | Breve descripción                                |
-| ⤷ rut                       | string       | Breve descripción                                |
-| ⤷ razon_social              | string       | Breve descripción                                |
-| ⤷ nombre                    | string       | Breve descripción                                |
-| ↓↓ empresa_origen           | array[object]| Breve descripción                                |
-| ⤷ ido                       | string       | Breve descripción                                |
-| ⤷ rut                       | string       | Breve descripción                                |
-| ⤷ razon_social              | string       | Breve descripción                                |
-| ⤷ nombre                    | string       | Breve descripción                                |
-| ↓↓ horario                  | array[object]| Breve descripción                                |
-| ⤷ id                        | string       | Breve descripción                                |
-| ⤷ nombre                    | string       | Breve descripción                                |
-| ↓↓ periodos                 | array[object]| Breve descripción                                |
-| ⤷ dia_inicio                | string       | Breve descripción                                |
-| ⤷ dia_fin                   | string       | Breve descripción                                |
-| ⤷ tarifa_horario_normal     | string       | Breve descripción                                |
-| ⤷ tarifa_horario_nocturno   | string       | Breve descripción                                |
-| ⤷ tarifa_horario_reducido   | string       | Breve descripción                                |
-| ↓↓↓ detalle                 | array[object]| Breve descripción                                |
-| ⤷ tipo_servicio             | string       | Breve descripción                                |
-| ⤷ servicio                  | string       | Breve descripción                                |
-| ⤷ monto_normal              | string       | Breve descripción                                |
-| ⤷ monto_nocturno            | string       | Breve descripción                                |
-| ⤷ monto_reducido            | string       | Breve descripción                                |
-| ⤷ cantidad_llamadas_normal  | string       | Breve descripción                                |
-| ⤷ cantidad_llamadas_nocturno| string       | Breve descripción                                |
-| ⤷ cantidad_llamadas_reducido| string       | Breve descripción                                |
-| ⤷ cantidad_segundos_normal  | string       | Breve descripción                                |
-| ⤷ cantidad_segundos_nocturno| string       | Breve descripción                                |
-| ⤷ cantidad_segundos_reducido| string       | Breve descripción                                |
-| ⤷ monto_total               | string       | Breve descripción                                |
-| ⤷ cantidad_total            | string       | Breve descripción                                |
-| ⤷ segundo_total             | string       | Breve descripción                                |
-| ↓↓ totales                  | array[object]| Breve descripción                                |
-| ⤷ monto                     | string       | Breve descripción                                |
-| ⤷ monto_normal              | string       | Breve descripción                                |
-| ⤷ monto_nocturno            | string       | Breve descripción                                |
-| ⤷ monto_reducido            | string       | Breve descripción                                |
-| ⤷ cantidad_normal           | string       | Breve descripción                                |
-| ⤷ cantidad_nocturno         | string       | Breve descripción                                |
-| ⤷ cantidad_reducido         | string       | Breve descripción                                |
-| ⤷ segundos_normal           | string       | Breve descripción                                |
-| ⤷ segundos_nocturno         | string       | Breve descripción                                |
-| ⤷ segundos_reducido         | string       | Breve descripción                                |
-| ⤷ monto_total               | string       | Breve descripción                                |
-| ⤷ cantidad_total            | string       | Breve descripción                                |
-| ⤷ segundos_total            | string       | Breve descripción                                |
-| ⤷ total_neto                | string       | Breve descripción                                |
-| ⤷ iva                       | string       | Breve descripción                                |
+| ↓ liquidacion               | array[object]|                                                  |
+| ⤷ id                        | string       | ID de la liquidación                             |
+| ⤷ estado                    | string       | Descripción del estado                           |
+| ⤷ mes                       | string       | Mes                                              |
+| ⤷ ejercicio                 | string       | Año                                              |
+| ⤷ indicador_entrada         | string       | Indicador de entrada                             |
+| ↓↓ empresa_liquidacion      | array[object]|                                                  |
+| ⤷ ido                       | string       | ID de empresa                                    |
+| ⤷ rut                       | string       | Rut de la empresa                                |
+| ⤷ razon_social              | string       | Razón social                                     |
+| ⤷ nombre                    | string       | Nombre de la empresa                             |
+| ↓↓ empresa_origen           | array[object]|                                                  |
+| ⤷ ido                       | string       | ID de empresa de origen                          |
+| ⤷ rut                       | string       | Rut de empresa de origen                         |
+| ⤷ razon_social              | string       | Razón social de la empresa                       |
+| ⤷ nombre                    | string       | Nombre de la empresa                             |
+| ↓↓ horario                  | array[object]|                                                  |
+| ⤷ id                        | string       | ID del horario                                   |
+| ⤷ nombre                    | string       | Nombre del horario                               |
+| ↓↓ periodos                 | array[object]|                                                  |
+| ⤷ dia_inicio                | string       | Día de inicio                                    |
+| ⤷ dia_fin                   | string       | Día de fin                                       |
+| ⤷ tarifa_horario_normal     | string       | Tarifa de horario normal                         |
+| ⤷ tarifa_horario_nocturno   | string       | Tarifa de horario nocturno                       |
+| ⤷ tarifa_horario_reducido   | string       | Tarifa de horario reducido                       |
+| ↓↓↓ detalle                 | array[object]|                                                  |
+| ⤷ tipo_servicio             | string       | ID de tipo de servicio                           |
+| ⤷ servicio                  | string       | Descripción del tipo de servicio                 |
+| ⤷ monto_normal              | string       | Monto normal                                     |
+| ⤷ monto_nocturno            | string       | Monto nocturno                                   |
+| ⤷ monto_reducido            | string       | Monto reducido                                   |
+| ⤷ cantidad_llamadas_normal  | string       | Cantidad de llamadas horario normal              |
+| ⤷ cantidad_llamadas_nocturno| string       | Cantidad de llamadas horario nocturno            |
+| ⤷ cantidad_llamadas_reducido| string       | Cantidad de llamadas horario reducido            |
+| ⤷ cantidad_segundos_normal  | string       | Cantidad de segundos horario normal              |
+| ⤷ cantidad_segundos_nocturno| string       | Cantidad de segundos horario nocturno            |
+| ⤷ cantidad_segundos_reducido| string       | Cantidad de segundos horario reducido            |
+| ⤷ monto_total               | string       | Monto total                                      |
+| ⤷ cantidad_total            | string       | Cantidad total                                   |
+| ⤷ segundo_total             | string       | Segundos totales                                 |
+| ↓↓ totales                  | array[object]|                                                  |
+| ⤷ monto                     | string       | Monto                                            |
+| ⤷ monto_normal              | string       | Monto en horario normal                          |
+| ⤷ monto_nocturno            | string       | Monto en horario nocturno                        |
+| ⤷ monto_reducido            | string       | Monto en horario reducido                        |
+| ⤷ cantidad_normal           | string       | Cantidad de llamadas en horario normal           |
+| ⤷ cantidad_nocturno         | string       | Cantidad de llamadas en horario nocturno         |
+| ⤷ cantidad_reducido         | string       | Cantidad de llamadas en horario reducido         |
+| ⤷ segundos_normal           | string       | Cantidad de segundos horario normal              |
+| ⤷ segundos_nocturno         | string       | Cantidad de segundos horario nocturno            |
+| ⤷ segundos_reducido         | string       | Cantidad de segundos horario reducido            |
+| ⤷ monto_total               | string       | Monto total                                      |
+| ⤷ cantidad_total            | string       | Cantidad de llamadas totales                     |
+| ⤷ segundos_total            | string       | Cantidad de segundos totales                     |
+| ⤷ total_neto                | string       | Total neto                                       |
+| ⤷ iva                       | string       | IVA                                              |
 
 ### 8.1.- Ejemplo de llamada
 
@@ -609,7 +616,7 @@ codigo: 200 éxito mensaje: descripcion del mensaje
                 }
         }
 
-## 9.- generarPDF
+## 9.- Generar PDF
 Método que permite generar archivo descargable en pdf de liquidación generada.
 
 Los parámetros que recibe son los siguientes:
@@ -621,14 +628,10 @@ Ruta : POST `/cargos/generarPDF`
 | Campo                    |  Tipo        | Formato  | Requerido | Descripción                |
 |:-------------------------|:------------:|:--------:|:---------:|---------------------------:|
 | ↓ data                   | array[object]|          |           |                            |
-| ⤷ titulo                 | string       |          |           |                            |
-| ⤷ totales                | string       |          |           |                            |
-| ⤷ empresaDestino         | string       |          |           |                            |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| ⤷ titulo                 | string       |          | Si        | Título del pdf             |
+| ⤷ periodos               | string       |          | Si        | Periodos                   |
+| ⤷ totales                | string       |          | Si        | Totales                    |
+| ⤷ empresaDestino         | string       |          | Si        | Empresa de destino         |
 
 ### 9.1.- Ejemplo de llamada
 
@@ -646,21 +649,13 @@ Ejemplo: JSON
 ### 9.2.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 9.2.1.- Respuesta de error
-
-	{
-        ...
-	} 
   
-#### 9.2.2.- Respuesta de éxito
+#### 9.2.1.- Respuesta de éxito
 
-	{
-        ...
-	}
+`Archivo PDF con liquidación generada`
 
 
-## 10.- ObtenerCdr
+## 10.- Exportar CDR
 Método que permite exportar en xls archivo cdr de la liquidación existente.
 
 Los parámetros que recibe son los siguientes:
@@ -671,10 +666,10 @@ Ruta : GET `/cargos/ObtenerCdr`
 
 | Campo                    |  Tipo        | Formato  | Requerido | Descripción                |
 |:-------------------------|:------------:|:--------:|:---------:|---------------------------:|
-| ido                      | int          |          |           |                            |
-| idd                      | int          |          |           |                            |
-| anio                     | int          |          |           |                            |
-| mes                      | int          |          |           |                            |
+| ido                      | int          |          |           |  ID empresa origen         |
+| idd                      | int          |          |           |  ID empresa destino        |
+| anio                     | int          |          |           |  Año                       |
+| mes                      | int          |          |           |  Mes                       |
 
 **Datos de salida:**
 | Campo          |  Tipo        |                         Descripción              |
@@ -695,21 +690,15 @@ Ejemplo: JSON
 ### 10.2.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 10.2.1.- Respuesta de error
-
-	{
-        ...
-	} 
   
-#### 10.2.2.- Respuesta de éxito
+#### 10.2.1.- Respuesta de éxito
 
 	{
         ...
 	}
 
 
-## 11.- guardarLiquidacion
+## 11.- Guardar Liquidación
 Método que permite guardar liquidación generada del corresponsal.
 
 Los parámetros que recibe son los siguientes:
@@ -720,16 +709,18 @@ Ruta : POST `/cargos/guardarLiquidacion`
 
 | Campo                    |  Tipo        | Formato  | Requerido | Descripción                |
 |:-------------------------|:------------:|:--------:|:---------:|---------------------------:|
-| id_estado                | int          |          |           |                            |
-| indicador_entrada        | int          |          |           |                            |
-| detalle                  | array[object]|          |           |                            |
-| mes                      | int          |          |           |                            |
-| ejercicio                | int          |          |           |                            |
+| id_estado                | int          |          |           | ID del estado              |
+| id_empresa_origen        | int          |          | Si        | ID de la empresa de origen |
+| id_empresa_destino       | int          |          | Si        | ID de la empresa de destino|
+| indicador_entrada        | int          |          |           | Indicador de entrada       |
+| detalle                  | array[object]|          |           | Array con detalle          |
+| mes                      | int          |          |           | Mes                        |
+| ejercicio                | int          |          |           | Año                        |
 
 **Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
+| Campo            |  Tipo        |                         Descripción              |
+|:-----------------|:------------:|-------------------------------------------------:| 
+| ID DE LIQUIDACIÓN| int          | ID de la liquidación generada                    |
 
 ### 11.1.- Ejemplo de llamada
 
@@ -737,6 +728,8 @@ Ejemplo: JSON
 
         {
                 "id_estado":1,
+                "id_empresa_origen":348,
+                "id_empresa_destino":322,
                 "indicador_entrada":1,
                 "detalle":[],
                 "mes":0,
@@ -746,15 +739,7 @@ Ejemplo: JSON
 ### 11.2.- Respuesta de salida
 
 codigo: 200 éxito mensaje: descripcion del mensaje
-
-#### 11.2.1.- Respuesta de error
-
-	{
-        ...
-	} 
   
-#### 11.2.2.- Respuesta de éxito
+#### 11.2.1.- Respuesta de éxito
 
-	{
-        ...
-	}
+`479`
