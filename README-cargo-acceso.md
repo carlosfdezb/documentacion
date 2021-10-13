@@ -1,6 +1,6 @@
 | Tipo de seguridad|
 |:----------------:|
-|                  |
+| Ninguna          |
 
 <!-- Título -->
 # Documentación Api´s para Cargo de Acceso
@@ -42,9 +42,6 @@
         - [9.2.- Respuesta de Salida](#92--respuesta-de-salida)
             - [9.2.1- Respuesta de éxito](#921--respuesta-de-éxito)
     - [10.- Exportar CDR](#10--exportar-cdr)
-        - [10.1.- Ejemplo de llamada](#101--ejemplo-de-llamada)
-        - [10.2.- Respuesta de Salida](#102--respuesta-de-salida)
-            - [10.2.1- Respuesta de éxito](#1021--respuesta-de-éxito)
     - [11.- Guardar Liquidación](#11--guardar-liquidación)
         - [11.1.- Ejemplo de llamada](#111--ejemplo-de-llamada)
         - [11.2.- Respuesta de Salida](#112--respuesta-de-salida)
@@ -656,46 +653,9 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
 
 ## 10.- Exportar CDR
-Método que permite exportar en xls archivo cdr de la liquidación existente.
-
-Los parámetros que recibe son los siguientes:
+**Ruta no operativa por limitaciones de memoria en el servidor.**
 
 Ruta : GET `/cargos/ObtenerCdr`
-
-**Parámetros de entrada:**
-
-| Campo                    |  Tipo        | Formato  | Requerido | Descripción                |
-|:-------------------------|:------------:|:--------:|:---------:|---------------------------:|
-| ido                      | int          |          |           |  ID empresa origen         |
-| idd                      | int          |          |           |  ID empresa destino        |
-| anio                     | int          |          |           |  Año                       |
-| mes                      | int          |          |           |  Mes                       |
-
-**Datos de salida:**
-| Campo          |  Tipo        |                         Descripción              |
-|:---------------|:------------:|-------------------------------------------------:| 
-| Nombre Campo   | Tipo de dato | Breve descripción                                |
-
-### 10.1.- Ejemplo de llamada
-
-Ejemplo: JSON 
-
-	{
-                "ido": 348,
-                "idd": 322,
-                "anio": 2019,
-                "mes": 9
-	}
-
-### 10.2.- Respuesta de salida
-
-codigo: 200 éxito mensaje: descripcion del mensaje
-  
-#### 10.2.1.- Respuesta de éxito
-
-	{
-        ...
-	}
 
 
 ## 11.- Guardar Liquidación
