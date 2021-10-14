@@ -30,12 +30,12 @@
         - [1.4.2.- Respuesta de Salida](#142--respuesta-de-salida)
             - [1.4.2.1- Respuesta de error](#1421--respuesta-de-error)
             - [1.4.2.2- Respuesta de éxito](#1422--respuesta-de-éxito)
-    - [1.5.- Horarios Listar Cliente](#15--horarios-listar-cliente)
+    - [1.5.- Horarios Cliente Listar](#15--horarios-cliente-listar)
         - [1.5.1.- Ejemplo de llamada](#151--ejemplo-de-llamada)
         - [1.5.2.- Respuesta de Salida](#152--respuesta-de-salida)
             - [1.5.2.1- Respuesta de error](#1521--respuesta-de-error)
             - [1.5.2.2- Respuesta de éxito](#1522--respuesta-de-éxito)
-    - [1.6.- Horarios Listar Turno](#16--horarios-listar-turno)
+    - [1.6.- Horarios Turno Listar](#16--horarios-turno-listar)
         - [1.6.1.- Ejemplo de llamada](#161--ejemplo-de-llamada)
         - [1.6.2.- Respuesta de Salida](#162--respuesta-de-salida)
             - [1.6.2.1- Respuesta de error](#1621--respuesta-de-error)
@@ -332,7 +332,7 @@ Método que permite eliminar un horario mediante un id.
 
 Los parámetros que recibe son los siguientes:
 
-Ruta : POST `api/horarios/eliminar`
+Ruta : POST `/api/horarios/eliminar`
 
 **Parámetros de entrada:**
 | Campo           |  Tipo        | Formato     | Requerido      |             Descripción     |
@@ -361,4 +361,313 @@ codigo: 200 éxito mensaje: descripcion del mensaje
 
     {
         "mensaje": "ELIMINADO"
+    }
+
+
+## 1.5.- Horarios Cliente Listar
+Método que permite listar solo los horarios de clientes.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/horarios/listar/cliente`
+
+**Datos de salida:**
+| Campo           |  Tipo        |                         Descripción              |
+|:----------------|:------------:|-------------------------------------------------:| 
+| hora_id         | int          | ID del horario                                   |
+| hora_descripcion| string       | Descripción del horario                          |
+| hora_ini        | time         | Hora de inicio                                   |
+| hora_fin        | time         | Hora de fin                                      |
+| hora_tipo       | string       | Tipo de hora                                     |
+| created_at      | timestamp    | Fecha de creación                                |
+| updated_at      | timestamp    | Última fecha de actualización                    |
+| hora_label      | string       | Rango de horario                                 |
+
+
+### 1.5.1.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+  
+#### 1.5.1.1.- Respuesta de éxito
+
+    [
+        {
+            "hora_id": 1,
+            "hora_descripcion": "ATENCION CLIENTES AM",
+            "hora_ini": "08:00:00",
+            "hora_fin": "14:00:00",
+            "hora_tipo": "CLIENTE",
+            "created_at": null,
+            "updated_at": "2020-05-26 18:05:38",
+            "hora_label": "08:00:00 a 14:00:00"
+        },
+        {
+            "hora_id": 2,
+            "hora_descripcion": "ATENCION CLIENTES PM",
+            "hora_ini": "14:00:00",
+            "hora_fin": "19:00:00",
+            "hora_tipo": "CLIENTE",
+            "created_at": null,
+            "updated_at": "2020-04-13 14:19:10",
+            "hora_label": "14:00:00 a 19:00:00"
+        }
+    ]
+
+
+## 1.6.- Horarios Turno Listar
+Método que permite listar solo los horarios de trabajos.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/horarios/listar/turno`
+
+**Datos de salida:**
+| Campo           |  Tipo        |                         Descripción              |
+|:----------------|:------------:|-------------------------------------------------:| 
+| hora_id         | int          | ID del horario                                   |
+| hora_descripcion| string       | Descripción del horario                          |
+| hora_ini        | time         | Hora de inicio                                   |
+| hora_fin        | time         | Hora de fin                                      |
+| hora_tipo       | string       | Tipo de hora                                     |
+| created_at      | timestamp    | Fecha de creación                                |
+| updated_at      | timestamp    | Última fecha de actualización                    |
+
+
+### 1.6.1.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+  
+#### 1.6.1.1.- Respuesta de éxito
+
+    [
+        {
+            "hora_id": 3,
+            "hora_descripcion": "TURNO UNO",
+            "hora_ini": "08:00:00",
+            "hora_fin": "18:00:00",
+            "hora_tipo": "TURNO",
+            "created_at": null,
+            "updated_at": "2020-05-18 16:20:15"
+        },
+        {
+            "hora_id": 4,
+            "hora_descripcion": "TURNO DOS",
+            "hora_ini": "11:00:00",
+            "hora_fin": "22:00:00",
+            "hora_tipo": "TURNO",
+            "created_at": null,
+            "updated_at": "2020-05-20 17:51:38"
+        }
+    ]
+
+## 1.7.- Regiones
+Método que devuelve las regiones que ATEC transforma desde los archivos de BU a su propia tabla.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/regiones`
+
+**Datos de salida:**
+| Campo           |  Tipo        |                         Descripción              |
+|:----------------|:------------:|-------------------------------------------------:|
+| regi_id         | int          | ID de la región                                  |
+| regi_descripcion| string       | Nombre de la región                              |
+| created_at      | timestamp    | Fecha de creación                                |
+| updated_at      | timestamp    | Última fecha de actualización                    |
+
+
+### 1.7.1.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+  
+#### 1.7.1.1.- Respuesta de éxito
+
+    [
+        {
+            "regi_id": 1,
+            "regi_descripcion": "BIOBIO",
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "regi_id": 2,
+            "regi_descripcion": "LA ARAUCANIA",
+            "created_at": null,
+            "updated_at": null
+        },
+        ...
+    ]
+
+
+## 1.8.- Provincias
+Método que devuelve las provincias que son cargadas por archivos de BU.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/provincias`
+
+**Parámetros de entrada:**
+| Campo           |  Tipo        | Formato     | Requerido      |             Descripción     |
+|:---------------:|:------------:|:-----------:|:--------------:|----------------------------:|
+| regi_id         | int          |             | Si             | ID de la región             |
+
+
+**Datos de salida:**
+| Campo           |  Tipo        |                         Descripción              |
+|:----------------|:------------:|-------------------------------------------------:|
+| prov_id         | int          | ID de la provincia                               |
+| regi_id         | int          | ID de la región                                  |
+| prov_descripcion| string       | Nombre de la provincia                           |
+
+### 1.8.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+    {
+        "regi_id": 1
+    }
+
+
+### 1.8.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+  
+#### 1.8.2.1.- Respuesta de éxito
+
+    [
+        {
+            "prov_id": 1,
+            "regi_id": 1,
+            "prov_descripcion": "ARAUCO"
+        },
+        {
+            "prov_id": 2,
+            "regi_id": 1,
+            "prov_descripcion": "BIOBIO"
+        },
+        {
+            "prov_id": 3,
+            "regi_id": 1,
+            "prov_descripcion": "CONCEPCION"
+        },
+        ...
+    ]
+
+
+## 1.9.- Comunas
+Método que devuelve lista con comunas.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/comunas`
+
+**Parámetros de entrada:**
+| Campo           |  Tipo        | Formato     | Requerido      |             Descripción     |
+|:---------------:|:------------:|:-----------:|:--------------:|----------------------------:|
+| prov_id         | int          |             | Si             | ID de la provincia          |
+
+
+**Datos de salida:**
+| Campo           |  Tipo        |                         Descripción              |
+|:----------------|:------------:|-------------------------------------------------:|
+| comu_id         | int          | ID de la comuna                                  |
+| prov_id         | int          | ID de la provincia                               |
+| comu_descripcion| string       | Nombre de la comuna                              |
+
+### 1.9.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+    {
+        "prov_id": 3
+    }
+
+
+### 1.9.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+  
+#### 1.9.2.1.- Respuesta de éxito
+
+    [
+        {
+            "comu_id": 13,
+            "prov_id": 3,
+            "comu_descripcion": "CONCEPCION"
+        },
+        {
+            "comu_id": 14,
+            "prov_id": 3,
+            "comu_descripcion": "CORONEL"
+        },
+        {
+            "comu_id": 12,
+            "prov_id": 3,
+            "comu_descripcion": "CHIGUAYANTE"
+        },
+        ...
+    ]
+
+
+## 1.10.- Ejecutivos Zonas Listar
+Método que devuelve ejecutivos de despacho.
+
+Los parámetros que recibe son los siguientes:
+
+Ruta : GET `/api/ejecutivos/zonas/listar`
+
+**Parámetros de entrada:**
+| Campo           |  Tipo        | Formato     | Requerido      |             Descripción        |
+|:---------------:|:------------:|:-----------:|:--------------:|-------------------------------:|
+| mail            | string       |             | Si             | Correo electrónico de ejecutivo|
+
+
+**Datos de salida:**
+| Campo               |  Tipo        |                         Descripción              |
+|:--------------------|:------------:|-------------------------------------------------:|
+| cate_id             | int          |                                  |
+| cate_nombre         | string       |                                  |
+| comu_id             | int          |                                  |
+| cate_direccion      | string       |                                  |
+| cate_coor_x         | string       |                                  |
+| cate_coor_y         | string       |                                  |
+| created_at          | timestamp    |                                  |
+| updated_at          | timestamp    |                                  |
+| cate_activa_capacity| boolean      |                                  |
+| cate_activa_apolo   | boolean      |                                  |
+| existe              | boolean      |                                  |
+
+### 1.10.1.- Ejemplo de llamada
+
+Ejemplo: JSON 
+
+    {
+        "mail": "kevin.orozco@mundopacifico.cl"
+    }
+
+
+### 1.10.2.- Respuesta de salida
+
+codigo: 200 éxito mensaje: descripcion del mensaje
+  
+#### 1.10.2.1.- Respuesta de éxito
+
+    {
+        "mensaje": "ok",
+        "data": [
+            {
+                "cate_id": 10,
+                "cate_nombre": "CT CONCEPCION",
+                "comu_id": 13,
+                "cate_direccion": "INDEPENDENCIA 2470, CONCEPCION",
+                "cate_coor_x": "-36.805061",
+                "cate_coor_y": "-73.057610",
+                "created_at": null,
+                "updated_at": null,
+                "cate_activa_capacity": true,
+                "cate_activa_apolo": false,
+                "existe": true
+            },
+            ...
+        ]
     }
